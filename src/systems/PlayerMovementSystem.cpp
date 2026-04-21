@@ -1,14 +1,12 @@
 #include "PlayerMovementSystem.h"
+#include "TransformComponent.h"
 #include "RigidBodyComponent.h"
 #include "SpeedComponent.h"
 #include "JumpPowerComponent.h"
 #include "PlayerTag.h"
 
 void PlayerMovementSystem::init(){
-
-}
-
-void PlayerMovementSystem::onLoad(){
+    
     scene.getInput()->registerAction("Forward", {HUGO::KeyCode::W});
     scene.getInput()->registerAction("Backward", {HUGO::KeyCode::S});
     scene.getInput()->registerAction("Right", {HUGO::KeyCode::D});
@@ -17,8 +15,27 @@ void PlayerMovementSystem::onLoad(){
     scene.getInput()->registerAction("Jump", {HUGO::KeyCode::Q});
 }
 
+// every time the scene is loaded, the mouse position is registered again
+void PlayerMovementSystem::onLoad(){
+    lastMousePosition = HUGO::Vector2(scene.getInput()->getMouseRelativePosition().x, 
+                                      scene.getInput()->getMouseRelativePosition().y);
+}
+
 void PlayerMovementSystem::update(uint32_t){
 
+    HUGO::Vector2 currentMousePosition = HUGO::Vector2(scene.getInput()->getMouseRelativePosition().x, 
+                                                       scene.getInput()->getMouseRelativePosition().y);
+    
+    HUGO::Vector2 diff = currentMousePosition - lastMousePosition;
+    // TODO calculate rotation degrees
+    // HUGO::Degree()
+
+    // rigidboy is a cylinder, rotation is not needed
+    for(auto& item : scene.query<TransformComponent, PlayerTag>()){
+        item.modify<TransformComponent>([](TransformComponent& trans){
+            // TODO trans.setRotation(HUGO::Quaternion())
+        });
+    }
 }
 
 void PlayerMovementSystem::fixedUpdate(uint32_t){

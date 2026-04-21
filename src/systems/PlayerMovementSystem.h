@@ -1,8 +1,11 @@
 #pragma once
 
 #include "HugoSystemMacros.h"
+#include "HugoMath.h"
 
 HSYSTEM(PlayerMovementSystem)
+
+HUGO::Vector2 lastMousePosition;
 
 public:
 void init() override;
