@@ -4,6 +4,6 @@
 
 HCOMPONENT(SpeedComponent)
 
-HUGO::Float Speed = 5.0;
+HUGO::Float speed = 5.f;
 
 END_HCOMPONENT()
