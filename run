@@ -34,8 +34,8 @@ cmake --build --preset "$BUILD_PRESET" --jobs 8
 # Run
 cd bin
 if [[ $BUILD_TYPE == "Debug" ]]; then
-  ./HUGOd
+  ./HUGOd JordiRoyale
 else
-  ./HUGO
+  ./HUGO JordiRoyale
 fi
 
