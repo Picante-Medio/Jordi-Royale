@@ -21,10 +21,10 @@ enabled=PackedStringArray("res://addons/HugosChatPlugin/plugin.cfg")
 [hugo]
 
 config/hugo/chats_path="Chats"
-components_path="MyComponents"
+components_path="src/components"
 chats_path="Chats"
 lua_path=""
-systems_path="Systems"
+systems_path="src/systems"
 
 [rendering]
 
