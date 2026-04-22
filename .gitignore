@@ -20,9 +20,6 @@
 *.log
 *.exp
 
-# Runfiles y demás
-**/project.godot
-
 #Ignores de Godot
 .godot/
 /android/
@@ -30,5 +27,4 @@
 *.import
 *.uid
 .builds/
-addons.zip
 export_presets.cfg

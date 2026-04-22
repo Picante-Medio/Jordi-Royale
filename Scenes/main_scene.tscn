@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dq2fl1vp76r7r"]
+
+[ext_resource type="Script" uid="uid://c3yactkk7nw7i" path="res://addons/HugosChatPlugin/Entities/scene_tracker.gd" id="1_865ah"]
+
+[node name="main_scene" type="Node3D" unique_id=1228723441]
+script = ExtResource("1_865ah")
