@@ -4,6 +4,6 @@
 
 HCOMPONENT(SpeedComponent)
 
-HUGO::Float speed = 5.f;
+DEFAULT_SERIALIZED_MEMBER(float, speed, 5.f);
 
 END_HCOMPONENT()

@@ -4,6 +4,6 @@
 
 HCOMPONENT(JumpPowerComponent)
 
-HUGO::Float power = 10.f;
+DEFAULT_SERIALIZED_MEMBER(float, power, 10.f);
 
 END_HCOMPONENT()

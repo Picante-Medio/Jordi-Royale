@@ -10,7 +10,7 @@ enum system {
 	RenderSystem,
 	TweenSystem,
 	UISystem,	DamageSystem,
+	ProjectileSystem,
 	EnemyMovementSystem,
 	PlayerMovementSystem,
-	ProjectileSystem,
 }

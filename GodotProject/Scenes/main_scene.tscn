@@ -1,6 +1,43 @@
 [gd_scene format=3 uid="uid://dq2fl1vp76r7r"]
 
-[ext_resource type="Script" uid="uid://c3yactkk7nw7i" path="res://addons/HugosChatPlugin/Entities/scene_tracker.gd" id="1_865ah"]
+[ext_resource type="Script" uid="uid://b5ore38alneu0" path="res://addons/HugosChatPlugin/Entities/scene_tracker.gd" id="1_865ah"]
+[ext_resource type="Script" uid="uid://dmak3mcg4w0h8" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="2_huasi"]
+[ext_resource type="Script" uid="uid://bewpcwg276ktv" path="res://addons/HugosChatPlugin/NativeComponents/ColliderComponent.gd" id="3_m1efj"]
+[ext_resource type="Script" uid="uid://dgu5myf6wqmwa" path="res://addons/HugosChatPlugin/NativeComponents/RigidBodyComponent.gd" id="4_mai8y"]
+[ext_resource type="Script" uid="uid://bbqhq5soqvu70" path="res://Components/PlayerTag.gd" id="5_76v2p"]
+[ext_resource type="Script" uid="uid://cvtg4usa810uw" path="res://Components/SpeedComponent.gd" id="6_drdnd"]
+[ext_resource type="Script" uid="uid://dcp0yk0bbo26h" path="res://Components/HPComponent.gd" id="7_ioaeq"]
+[ext_resource type="Script" uid="uid://csfqyfruahjnl" path="res://Components/JumpPowerComponent.gd" id="8_7ewk0"]
 
 [node name="main_scene" type="Node3D" unique_id=1228723441]
 script = ExtResource("1_865ah")
+
+[node name="Jordi" type="Node3D" parent="." unique_id=499115862]
+script = ExtResource("2_huasi")
+metadata/_custom_type_script = "uid://dmak3mcg4w0h8"
+
+[node name="CameraPivot" type="Node3D" parent="Jordi" unique_id=1502736894]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8199276, 0)
+script = ExtResource("2_huasi")
+metadata/_custom_type_script = "uid://dmak3mcg4w0h8"
+
+[node name="ColliderComponent" type="Node" parent="Jordi" unique_id=645921025]
+script = ExtResource("3_m1efj")
+metadata/_custom_type_script = "uid://bewpcwg276ktv"
+
+[node name="RigidBodyComponent" type="Node" parent="Jordi" unique_id=2098395728]
+script = ExtResource("4_mai8y")
+metadata/_custom_type_script = "uid://dgu5myf6wqmwa"
+
+[node name="PlayerTag" type="Node" parent="Jordi" unique_id=564955268]
+script = ExtResource("5_76v2p")
+
+[node name="SpeedComponent" type="Node" parent="Jordi" unique_id=1142391415]
+script = ExtResource("6_drdnd")
+speed = null
+
+[node name="HPComponent" type="Node" parent="Jordi" unique_id=643363494]
+script = ExtResource("7_ioaeq")
+
+[node name="JumpPowerComponent" type="Node" parent="Jordi" unique_id=63813157]
+script = ExtResource("8_7ewk0")
