@@ -1,17 +1,16 @@
 #pragma once
 
-#include "HugoComponentMacros.h"
+#include "HUGO.h"
 
 HCOMPONENT(ProjectileComponent)
 
-HUGO::Int lifetime; // ms
+SERIALIZED_MEMBER(HUGO::Int, lifetime); // m/s
 
-HUGO::Float speed; // m/s
-uint32_t t;
+SERIALIZED_MEMBER(HUGO::Float, speed); // m/s
+uint32_t t = 0; // ms, time it's been alive for
 
 /// @brief lambda function that describes the direction of the projectile, based on its speed and delta time
-/// @param t <uint32_t> time since spawn in ms
-/// @param speed <HUGO::Float> speed in m/s
-std::function<HUGO::Vector3(uint32_t, HUGO::Float)> nextDirection;
+/// @param projectileComp <ProjectileComponent> this component, so it can access t and speed members
+std::function<HUGO::Vector3(ProjectileComponent)> nextDirection;
 
 END_HCOMPONENT()
