@@ -4,6 +4,7 @@
 #include "SpeedComponent.h"
 #include "JumpPowerComponent.h"
 #include "PlayerTag.h"
+#include "CameraPivotTag.h"
 
 void PlayerMovementSystem::init(){
     
@@ -27,11 +28,11 @@ void PlayerMovementSystem::update(uint32_t){
                                                        scene.getInput()->getMouseRelativePosition().y);
     
     HUGO::Vector2 diff = currentMousePosition - lastMousePosition;
-    // TODO calculate rotation degrees
-    // HUGO::Degree()
+    HUGO::Quaternion rotation = HUGO::Quaternion(HUGO::Radian(HUGO::Degree(diff.x * 360 * sensibility)), HUGO::Vector3(0, 1, 0))
+                              * HUGO::Quaternion(HUGO::Radian(HUGO::Degree(diff.y * 360 * sensibility)), HUGO::Vector3(1, 0, 0));
 
     // rigidboy is a cylinder, rotation is not needed
-    for(auto& item : scene.query<TransformComponent, PlayerTag>()){
+    for(auto& item : scene.query<TransformComponent, CameraPivotTag>()){
         item.modify<TransformComponent>([](TransformComponent& trans){
             // TODO trans.setRotation(HUGO::Quaternion())
         });
