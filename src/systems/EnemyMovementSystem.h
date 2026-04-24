@@ -1,7 +1,9 @@
+#include "EcsTypes.h"
 #include "HugoSystemMacros.h"
 
 
 HSYSTEM(EnemyMovementSystem)
+    EntityID jordi;
 public:
     void init() override;
     void onLoad() override;
