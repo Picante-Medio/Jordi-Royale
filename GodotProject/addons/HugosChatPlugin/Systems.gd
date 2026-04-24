@@ -9,4 +9,8 @@ enum system {
 	LightSystem,
 	RenderSystem,
 	TweenSystem,
-	UISystem,}
+	UISystem,	DamageSystem,
+	EnemyMovementSystem,
+	PlayerMovementSystem,
+	ProjectileSystem,
+}
