@@ -33,8 +33,8 @@ void PlayerMovementSystem::update(uint32_t){
 
     // rigidboy is a cylinder, rotation is not needed
     for(auto& item : scene.query<TransformComponent, CameraPivotTag>()){
-        item.modify<TransformComponent>([](TransformComponent& trans){
-            // TODO trans.setRotation(HUGO::Quaternion())
+        item.modify<TransformComponent>([rotation](TransformComponent& trans){
+            trans.setRotation(trans.getRotation() * rotation);
         });
     }
 }
