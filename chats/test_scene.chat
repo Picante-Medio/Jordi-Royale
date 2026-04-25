@@ -1,4 +1,4 @@
-MAIN SCENE main_scene
+SCENE test_scene
 SYSTEM AudioSystem
 SYSTEM PhysicsGizmoSystem
 SYSTEM HierarchySystem
