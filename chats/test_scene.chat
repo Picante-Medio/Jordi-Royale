@@ -1,4 +1,4 @@
-SCENE test_scene
+MAIN SCENE main_scene
 SYSTEM AudioSystem
 SYSTEM PhysicsGizmoSystem
 SYSTEM HierarchySystem
@@ -38,6 +38,9 @@ ENTITY Jordi 0
 		VECTOR_3 position 0.0 0.0 0.0
 		QUATERNION rotation 0.0 0.0 0.0 1.0
 		VECTOR_3 scale 1.0 1.0 1.0
+    COMPONENT RenderComponent
+        STRING mesh Jordi.fbx
+        STRING materialName
 
 ENTITY CameraPivot 1
 	COMPONENT ParentComponent
