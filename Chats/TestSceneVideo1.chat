@@ -1,0 +1,12 @@
+MAIN SCENE TestSceneVideo1
+
+SYSTEM AudioSystem
+SYSTEM RenderSystem
+SYSTEM LightSystem
+SYSTEM CameraSystem
+SYSTEM UISystem
+SYSTEM HierarchySystem
+SYSTEM ParticleSystem
+SYSTEM PhysicsGizmoSystem
+SYSTEM TweenSystem
+SYSTEM InitSystem
