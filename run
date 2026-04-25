@@ -33,7 +33,7 @@ cmake --build --preset "$BUILD_PRESET"
 # Run
 cd bin
 if [[ $BUILD_TYPE == "Debug" ]]; then
-  ./HUGOd JordiRoyale
+  ./HUGOd JordiRoyale ../chats main_scene
 else
   ./HUGO JordiRoyale
 fi

@@ -1,4 +1,5 @@
 #include "DamageSystem.h"
+#include "HPComponent.h"
 
 void DamageSystem::init() {
 
