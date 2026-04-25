@@ -47,7 +47,7 @@ func gather_entities(parent:Node):
 			add_entity(child)
 			
 			if parent is Entity:
-				entities.get(child.name).get_or_add("ParentComponent", {"value" :  "INT " + str(entities_map[parent.name])})
+				entities.get(child.name).get_or_add("ParentComponent", {"parent" :  "INT parent " + str(entities_map[parent.name])})
 				
 			gather_entities(child)
 			
