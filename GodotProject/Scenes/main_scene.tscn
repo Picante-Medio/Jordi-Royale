@@ -15,7 +15,7 @@ script = ExtResource("1_865ah")
 entities = Dictionary[String, Dictionary]({
 "Camara": {
 "ParentComponent": {
-"parent": "INT 1"
+"parent": "INT parent 1"
 },
 "TransformComponent": Dictionary[String, Variant]({
 "position": "VECTOR_3 position 0.0 0.0 2.0",
@@ -26,15 +26,10 @@ entities = Dictionary[String, Dictionary]({
 "CameraPivot": {
 "CameraPivotTag": Dictionary[String, Variant]({}),
 "ParentComponent": {
-"parent": "INT 0"
+"parent": "INT parent 0"
 },
 "TransformComponent": Dictionary[String, Variant]({
 "position": "VECTOR_3 position 0.0 0.81992757320404 0.0",
-"rotation": "QUATERNION rotation 0.0 0.0 0.0 1.0",
-"scale": "VECTOR_3 scale 1.0 1.0 1.0"
-}),
-"entity3d": Dictionary[String, Variant]({
-"position": "VECTOR_3 position 0.0 0.0 2.0",
 "rotation": "QUATERNION rotation 0.0 0.0 0.0 1.0",
 "scale": "VECTOR_3 scale 1.0 1.0 1.0"
 })
@@ -73,25 +68,23 @@ entities = Dictionary[String, Dictionary]({
 "position": "VECTOR_3 position 0.0 0.0 0.0",
 "rotation": "QUATERNION rotation 0.0 0.0 0.0 1.0",
 "scale": "VECTOR_3 scale 1.0 1.0 1.0"
-}),
-"entity3d": Dictionary[String, Variant]({
-"position": "VECTOR_3 position 0.0 0.81992757320404 0.0",
-"rotation": "QUATERNION rotation 0.0 0.0 0.0 1.0",
-"scale": "VECTOR_3 scale 1.0 1.0 1.0"
 })
 }
 })
 
 [node name="Jordi" type="Node3D" parent="." unique_id=499115862]
 script = ExtResource("2_huasi")
+is_main = null
 
 [node name="CameraPivot" type="Node3D" parent="Jordi" unique_id=1502736894]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8199276, 0)
 script = ExtResource("2_huasi")
+is_main = null
 
 [node name="Camara" type="Node3D" parent="Jordi/CameraPivot" unique_id=507972397]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
 script = ExtResource("2_huasi")
+is_main = null
 
 [node name="Camera3D" type="Camera3D" parent="Jordi/CameraPivot/Camara" unique_id=114110815]
 
