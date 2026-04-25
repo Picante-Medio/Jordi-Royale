@@ -1,17 +1,82 @@
 [gd_scene format=3 uid="uid://dq2fl1vp76r7r"]
 
-[ext_resource type="Script" uid="uid://dl0iqgqbq0f8a" path="res://addons/HugosChatPlugin/Entities/scene_tracker.gd" id="1_865ah"]
-[ext_resource type="Script" uid="uid://bv4fdb5khcnbk" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="2_huasi"]
+[ext_resource type="Script" uid="uid://cft1fgdpqn2vu" path="res://addons/HugosChatPlugin/Entities/scene_tracker.gd" id="1_865ah"]
+[ext_resource type="Script" uid="uid://dimuk3ggoam44" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="2_huasi"]
 [ext_resource type="Script" uid="uid://s2j52p8es0or" path="res://addons/HugosChatPlugin/NativeComponents/ColliderComponent.gd" id="3_m1efj"]
-[ext_resource type="Script" uid="uid://cauioprn35hgk" path="res://Components/CameraPivotTag.gd" id="3_mai8y"]
+[ext_resource type="Script" uid="uid://d1ljapb1i86tc" path="res://Components/CameraPivotTag.gd" id="3_mai8y"]
 [ext_resource type="Script" uid="uid://dpjupwgyydq3o" path="res://addons/HugosChatPlugin/NativeComponents/RigidBodyComponent.gd" id="4_mai8y"]
-[ext_resource type="Script" uid="uid://c1imlqkk7gkdd" path="res://Components/PlayerTag.gd" id="5_76v2p"]
-[ext_resource type="Script" uid="uid://cip1v7uoq008a" path="res://Components/SpeedComponent.gd" id="6_drdnd"]
-[ext_resource type="Script" uid="uid://dcqpn65lxc6a1" path="res://Components/HPComponent.gd" id="7_ioaeq"]
-[ext_resource type="Script" uid="uid://dq8gc8vsslxqn" path="res://Components/JumpPowerComponent.gd" id="8_7ewk0"]
+[ext_resource type="Script" uid="uid://bbqhq5soqvu70" path="res://Components/PlayerTag.gd" id="5_76v2p"]
+[ext_resource type="Script" uid="uid://cvtg4usa810uw" path="res://Components/SpeedComponent.gd" id="6_drdnd"]
+[ext_resource type="Script" uid="uid://dcp0yk0bbo26h" path="res://Components/HPComponent.gd" id="7_ioaeq"]
+[ext_resource type="Script" uid="uid://csfqyfruahjnl" path="res://Components/JumpPowerComponent.gd" id="8_7ewk0"]
 
 [node name="main_scene" type="Node3D" unique_id=1228723441]
 script = ExtResource("1_865ah")
+entities = Dictionary[String, Dictionary]({
+"Camara": {
+"ParentComponent": {
+"value": "INT 1"
+},
+"TransformComponent": Dictionary[String, Variant]({
+"position": "VECTOR_3 position 0.0 0.0 2.0",
+"rotation": "QUATERNION rotation 0.0 0.0 0.0 1.0",
+"scale": "VECTOR_3 scale 1.0 1.0 1.0"
+})
+},
+"CameraPivot": {
+"CameraPivotTag": Dictionary[String, Variant]({}),
+"ParentComponent": {
+"value": "INT 0"
+},
+"TransformComponent": Dictionary[String, Variant]({
+"position": "VECTOR_3 position 0.0 0.81992757320404 0.0",
+"rotation": "QUATERNION rotation 0.0 0.0 0.0 1.0",
+"scale": "VECTOR_3 scale 1.0 1.0 1.0"
+}),
+"entity3d": Dictionary[String, Variant]({
+"position": "VECTOR_3 position 0.0 0.0 2.0",
+"rotation": "QUATERNION rotation 0.0 0.0 0.0 1.0",
+"scale": "VECTOR_3 scale 1.0 1.0 1.0"
+})
+},
+"Jordi": {
+"ColliderComponent": Dictionary[String, Variant]({
+"active": "BOOL active false",
+"friction": "FLOAT friction 0.0",
+"info": "INT info 0",
+"positionOffset": "VECTOR_3 positionOffset 0.0 0.0 0.0",
+"restitution": "FLOAT restitution 0.0",
+"rotationOffset": "QUATERNION rotationOffset 0.0 0.0 0.0 1.0",
+"useGizmo": "BOOL useGizmo false"
+}),
+"HPComponent": Dictionary[String, Variant]({
+"CurrentHP": "INT CurrentHP 0",
+"HPMax": "INT HPMax 0"
+}),
+"JumpPowerComponent": Dictionary[String, Variant]({}),
+"PlayerTag": Dictionary[String, Variant]({}),
+"RigidBodyComponent": Dictionary[String, Variant]({
+"angularDamping": "FLOAT angularDamping 0.0",
+"angularSleepingThreshold": "FLOAT angularSleepingThreshold 0.0",
+"angularVelocity": "VECTOR_3 angularVelocity 0.0 0.0 0.0",
+"linearDamping": "FLOAT linearDamping 0.0",
+"linearSleepingThreshold": "FLOAT linearSleepingThreshold 0.0",
+"linearVelocity": "VECTOR_3 linearVelocity 0.0 0.0 0.0",
+"mass": "FLOAT mass 0.0"
+}),
+"SpeedComponent": Dictionary[String, Variant]({}),
+"TransformComponent": Dictionary[String, Variant]({
+"position": "VECTOR_3 position 0.0 0.0 0.0",
+"rotation": "QUATERNION rotation 0.0 0.0 0.0 1.0",
+"scale": "VECTOR_3 scale 1.0 1.0 1.0"
+}),
+"entity3d": Dictionary[String, Variant]({
+"position": "VECTOR_3 position 0.0 0.81992757320404 0.0",
+"rotation": "QUATERNION rotation 0.0 0.0 0.0 1.0",
+"scale": "VECTOR_3 scale 1.0 1.0 1.0"
+})
+}
+})
 
 [node name="Jordi" type="Node3D" parent="." unique_id=499115862]
 script = ExtResource("2_huasi")
@@ -23,13 +88,11 @@ script = ExtResource("2_huasi")
 [node name="Camara" type="Node3D" parent="Jordi/CameraPivot" unique_id=507972397]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
 script = ExtResource("2_huasi")
-metadata/_custom_type_script = "uid://bv4fdb5khcnbk"
 
 [node name="Camera3D" type="Camera3D" parent="Jordi/CameraPivot/Camara" unique_id=114110815]
 
 [node name="CameraPivotTag" type="Node" parent="Jordi/CameraPivot" unique_id=231165414]
 script = ExtResource("3_mai8y")
-metadata/_custom_type_script = "uid://cauioprn35hgk"
 
 [node name="ColliderComponent" type="Node" parent="Jordi" unique_id=645921025]
 script = ExtResource("3_m1efj")
@@ -45,6 +108,8 @@ script = ExtResource("6_drdnd")
 
 [node name="HPComponent" type="Node" parent="Jordi" unique_id=643363494]
 script = ExtResource("7_ioaeq")
+HPMax = 0
+CurrentHP = 0
 
 [node name="JumpPowerComponent" type="Node" parent="Jordi" unique_id=63813157]
 script = ExtResource("8_7ewk0")

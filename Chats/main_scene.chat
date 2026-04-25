@@ -33,12 +33,10 @@ ENTITY Jordi 0
 		FLOAT angularSleepingThreshold 0.0
 	COMPONENT PlayerTag
 	COMPONENT SpeedComponent
-		FLOAT speed 0.0
 	COMPONENT HPComponent
 		INT HPMax 0
 		INT CurrentHP 0
 	COMPONENT JumpPowerComponent
-		FLOAT power 0.0
 	COMPONENT TransformComponent
 		VECTOR_3 position 0.0 0.0 0.0
 		QUATERNION rotation 0.0 0.0 0.0 1.0

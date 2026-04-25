@@ -2,7 +2,7 @@
 extends Component
 class_name JumpPowerComponent
 
-@export var power:float
+@export var power:float = 10.
 
 func get_component() -> Dictionary[String, Variant]:
 	return {

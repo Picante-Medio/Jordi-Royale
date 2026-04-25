@@ -2,8 +2,8 @@
 extends Component
 class_name HPComponent
 
-@export var HPMax:int
-@export var CurrentHP:int
+@export var HPMax:int = 100
+@export var CurrentHP:int = 100
 
 func get_component() -> Dictionary[String, Variant]:
 	return {
