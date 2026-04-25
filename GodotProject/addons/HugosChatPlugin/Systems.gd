@@ -12,7 +12,6 @@ enum system {
 	UISystem,	ChangeSceneSystem,
 	DamageSystem,
 	EnemyMovementSystem,
-	InitSystem,
 	PlayerMovementSystem,
 	ProjectileSystem,
 }

@@ -12,8 +12,6 @@ static var enums_dictionary:Dictionary
 static var types_dictionary:Dictionary
 static var components_dictionary:Dictionary
 
-const BLACK_LIST:Array[String] = ["TransformComponent", "CameraComponent", "RenderComponent"]
-
 func _run() -> void:
 	#write_enums()
 	sync()
@@ -198,7 +196,6 @@ static func hugo_parse_component(path: String) -> void:
 		line = file.get_line().strip_edges()
 
 	var component_name:String = line.split("(")[1].split(")")[0].strip_edges()
-	if BLACK_LIST.has(component_name): return
 
 	components_dictionary.get_or_add(component_name, [])
 
