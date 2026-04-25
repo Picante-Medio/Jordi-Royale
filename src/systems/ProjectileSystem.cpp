@@ -24,7 +24,7 @@ void ProjectileSystem::fixedUpdate(uint32_t dt) {
         });
 
         if(pack.getConst<RigidBodyComponent>().getBodyType() == HUGO::BodyType::KINEMATIC) {
-            
+
             const ProjectileComponent& projectileComp = pack.getConst<ProjectileComponent>() ;
             pack.modify<TransformComponent>([projectileComp, dt] (TransformComponent&tr){
 
@@ -44,13 +44,17 @@ void ProjectileSystem::update(uint32_t) {
             scene.removeEntity(projectileComp.entity);
             continue;
         }
-        
+
         const ColliderComponent& collider = pack.getConst<ColliderComponent>();
         if(collider.collisionInfo.empty())
             continue;
-        
+
         bool destroyOnEnemyContact = scene.hasComponent<DestroyOnEnemyContactTag>(collider.entity);
         bool destroyOnPlayerContact = scene.hasComponent<DestroyOnPlayerContactTag>(collider.entity);
+
+        if (!destroyOnEnemyContact && !destroyOnPlayerContact) 
+            return;
+
         for(EntityID id : collider.collisionInfo) {
             if(destroyOnEnemyContact && scene.hasComponent<EnemyComponent>(id)) {
                 scene.removeEntity(collider.entity);
@@ -62,7 +66,5 @@ void ProjectileSystem::update(uint32_t) {
                 break;
             }
         }
-
-        
     }
 }
