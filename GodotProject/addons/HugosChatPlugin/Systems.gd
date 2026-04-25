@@ -11,6 +11,7 @@ enum system {
 	TweenSystem,
 	UISystem,	DamageSystem,
 	EnemyMovementSystem,
+	InitSystem,
 	PlayerMovementSystem,
 	ProjectileSystem,
 }
