@@ -4,7 +4,7 @@
 
 HCOMPONENT(LevelComponent)
 
-DEFAULT_SERIALIZED_MEMBER(unsigned int, level, 1)
+DEFAULT_SERIALIZED_MEMBER(int, level, 1)
 
 // Provisional values. Test is needed
 unsigned long int currentExperience = 0;
