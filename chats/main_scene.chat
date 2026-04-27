@@ -9,7 +9,6 @@ SYSTEM RenderSystem
 SYSTEM TweenSystem
 SYSTEM UISystem
 SYSTEM ConsoleSystem
-SYSTEM PlayerMovementSystem
 
 ENTITY Jordi 0
 	COMPONENT ColliderComponent

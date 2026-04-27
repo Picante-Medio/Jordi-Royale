@@ -4,7 +4,11 @@
 
 HSYSTEM(ProgressionSystem)
 
-
+    // time for clock
+    int hours = 0;
+    int minutes = 0;
+    int seconds = 0;
+    int miliseconds = 0;
 
 public:
 
