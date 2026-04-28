@@ -29,7 +29,6 @@ static func write():
 	
 	if root is not Entity:
 		var scene_text = "SCENE "
-		if root.is_main: scene_text = "MAIN SCENE "
 		scene_text = scene_text + root.name
 		
 		file.store_line(scene_text)
@@ -38,7 +37,10 @@ static func write():
 			file.store_line("SYSTEM " + system_name)
 		file.store_line("")
 	else:
-		file.store_line("PREFAB")
+		var scene_text = "PREFAB "
+		scene_text = scene_text + root.name
+		
+		file.store_line(scene_text)
 	
 	for entity_key in root.entities.keys():
 		file.store_line("ENTITY " + str(entity_key) + " " + str(entity_map[entity_key]))
