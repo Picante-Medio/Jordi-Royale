@@ -2,7 +2,7 @@
 
 #include "EcsTypes.h"
 #include "HugoMath.h"
-#include "HugoSystemMacros.h"
+#include "HUGO.h"
 
 const int HP_FOR_SPAWN = 50;
 
