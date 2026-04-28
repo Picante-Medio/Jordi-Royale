@@ -11,8 +11,7 @@ SYSTEM UISystem
 <<<<<<< HEAD
 SYSTEM ConsoleSystem
 SYSTEM PlayerMovementSystem
-=======
->>>>>>> aa6c06d (Prueba en el editor)
+SYSTEM ChangeSceneSystem
 
 ENTITY Jordi 0
 	COMPONENT TransformComponent

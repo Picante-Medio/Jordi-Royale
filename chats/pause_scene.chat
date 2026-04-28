@@ -1,0 +1,26 @@
+SCENE pause_scene
+SYSTEM AudioSystem
+SYSTEM PhysicsGizmoSystem
+SYSTEM HierarchySystem
+SYSTEM ParticleSystem
+SYSTEM CameraSystem
+SYSTEM LightSystem
+SYSTEM RenderSystem
+SYSTEM TweenSystem
+SYSTEM UISystem
+SYSTEM ConsoleSystem
+SYSTEM PauseSystem
+
+ENTITY pauseText 0
+    COMPONENT PanelComponent
+        STRING overlayName Console/LogText
+        STRING containerName Console/LogText/Container
+        STRING material Console/InputBackground
+        BOOL isVisible true
+        FLOAT left 0.25
+        FLOAT top 0.2
+        FLOAT width 0.5
+        FLOAT height 0.2
+    COMPONENT TextComponent
+        STRING textAreaName Pause/Title/Container/Text
+        STRING text PAUSE
