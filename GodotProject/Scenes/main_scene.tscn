@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dq2fl1vp76r7r"]
 
+<<<<<<< HEAD
 [ext_resource type="Script" uid="uid://cft1fgdpqn2vu" path="res://addons/HugosChatPlugin/Entities/scene_tracker.gd" id="1_865ah"]
 [ext_resource type="Script" uid="uid://dimuk3ggoam44" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="2_huasi"]
 [ext_resource type="Script" uid="uid://50d7wdkoyo4b" path="res://Components/CameraPivotTag.gd" id="3_mai8y"]
@@ -8,16 +9,41 @@
 [ext_resource type="Script" uid="uid://bxtnhlmmus6l2" path="res://Components/SpeedComponent.gd" id="6_drdnd"]
 [ext_resource type="Script" uid="uid://dfj2qxmqtkj0s" path="res://Components/HPComponent.gd" id="7_ioaeq"]
 [ext_resource type="Script" uid="uid://ctauv0e0re3vs" path="res://Components/JumpPowerComponent.gd" id="8_7ewk0"]
+=======
+[ext_resource type="Script" uid="uid://dociyemdev2j1" path="res://addons/HugosChatPlugin/Entities/scene_tracker.gd" id="1_865ah"]
+[ext_resource type="Script" uid="uid://dmak3mcg4w0h8" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="2_huasi"]
+[ext_resource type="Script" uid="uid://d10rufr7dnrt6" path="res://addons/HugosChatPlugin/NativeComponents/CameraComponent.gd" id="3_drdnd"]
+[ext_resource type="Script" uid="uid://bewpcwg276ktv" path="res://addons/HugosChatPlugin/NativeComponents/ColliderComponent.gd" id="3_m1efj"]
+[ext_resource type="Script" uid="uid://d1ljapb1i86tc" path="res://Components/CameraPivotTag.gd" id="3_mai8y"]
+[ext_resource type="Script" uid="uid://dgu5myf6wqmwa" path="res://addons/HugosChatPlugin/NativeComponents/RigidBodyComponent.gd" id="4_mai8y"]
+[ext_resource type="Script" uid="uid://bbqhq5soqvu70" path="res://Components/PlayerTag.gd" id="5_76v2p"]
+[ext_resource type="Script" uid="uid://b5eh7xi0wb6sr" path="res://Components/SpeedComponent.gd" id="6_drdnd"]
+[ext_resource type="Script" uid="uid://n0mg3tlxesna" path="res://Components/HPComponent.gd" id="7_ioaeq"]
+[ext_resource type="Script" uid="uid://b0wvdonh0f2yf" path="res://Components/JumpPowerComponent.gd" id="8_7ewk0"]
+[ext_resource type="Script" uid="uid://c0wlt0qsxdika" path="res://addons/HugosChatPlugin/NativeComponents/RenderComponent.gd" id="10_mai8y"]
+[ext_resource type="PackedScene" uid="uid://dk5yg00wwn2fu" path="res://Resources/jordi/jordi.glb" id="11_76v2p"]
+>>>>>>> aa6c06d (Prueba en el editor)
 
 [node name="main_scene" type="Node3D" unique_id=1228723441]
 script = ExtResource("1_865ah")
 entities = Dictionary[String, Dictionary]({
 "Camara": {
+"CameraComponent": Dictionary[String, Variant]({
+"autoAspectRatio": "BOOL autoAspectRatio true",
+"clearColor": "VECTOR_4 clearColor 0.30000001192093 0.30000001192093 0.5 1.0",
+"farClip": "FLOAT farClip 10000.0",
+"fovY": "FLOAT fovY 60.0",
+"mainCamera": "BOOL mainCamera true",
+"nearClip": "FLOAT nearClip 1.0",
+"orthoHeight": "FLOAT orthoHeight 10.0",
+"orthoWidth": "FLOAT orthoWidth 10.0",
+"projectionType": "INT projectionType 0"
+}),
 "ParentComponent": {
 "parent": "INT parent 1"
 },
 "TransformComponent": Dictionary[String, Variant]({
-"position": "VECTOR_3 position 0.0 0.0 2.0",
+"position": "VECTOR_3 position 0.0 0.0 3.47000002861023",
 "rotation": "QUATERNION rotation 0.0 0.0 0.0 1.0",
 "scale": "VECTOR_3 scale 1.0 1.0 1.0"
 })
@@ -51,6 +77,11 @@ entities = Dictionary[String, Dictionary]({
 "power": "FLOAT power 10.0"
 }),
 "PlayerTag": Dictionary[String, Variant]({}),
+"RenderComponent": Dictionary[String, Variant]({
+"materialName": "STRING materialName ",
+"mesh": "STRING mesh jordi.glb",
+"objectID": "INT objectID 0"
+}),
 "RigidBodyComponent": Dictionary[String, Variant]({
 "angularDamping": "FLOAT angularDamping 0.0",
 "angularSleepingThreshold": "FLOAT angularSleepingThreshold 0.0",
@@ -76,15 +107,27 @@ is_main = true
 [node name="Jordi" type="Node3D" parent="." unique_id=499115862]
 script = ExtResource("2_huasi")
 
+[node name="RenderComponent" type="MeshInstance3D" parent="Jordi" unique_id=33261350]
+script = ExtResource("10_mai8y")
+mesh_name = "jordi.glb"
+metadata/_custom_type_script = "uid://c0wlt0qsxdika"
+
+[node name="jordi" parent="Jordi/RenderComponent" unique_id=1187907538 instance=ExtResource("11_76v2p")]
+
 [node name="CameraPivot" type="Node3D" parent="Jordi" unique_id=1502736894]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8199276, 0)
 script = ExtResource("2_huasi")
 
 [node name="Camara" type="Node3D" parent="Jordi/CameraPivot" unique_id=507972397]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.47)
 script = ExtResource("2_huasi")
 
 [node name="Camera3D" type="Camera3D" parent="Jordi/CameraPivot/Camara" unique_id=114110815]
+
+[node name="CameraComponent" type="Node" parent="Jordi/CameraPivot/Camara" unique_id=508518349]
+script = ExtResource("3_drdnd")
+mainCamera = true
+metadata/_custom_type_script = "uid://d10rufr7dnrt6"
 
 [node name="CameraPivotTag" type="Node" parent="Jordi/CameraPivot" unique_id=231165414]
 script = ExtResource("3_mai8y")

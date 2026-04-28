@@ -1,4 +1,4 @@
-SCENE main_scene
+MAIN SCENE main_scene
 SYSTEM AudioSystem
 SYSTEM PhysicsGizmoSystem
 SYSTEM HierarchySystem
@@ -8,10 +8,21 @@ SYSTEM LightSystem
 SYSTEM RenderSystem
 SYSTEM TweenSystem
 SYSTEM UISystem
+<<<<<<< HEAD
 SYSTEM ConsoleSystem
 SYSTEM PlayerMovementSystem
+=======
+>>>>>>> aa6c06d (Prueba en el editor)
 
 ENTITY Jordi 0
+	COMPONENT TransformComponent
+		VECTOR_3 position 0.0 0.0 0.0
+		QUATERNION rotation 0.0 0.0 0.0 1.0
+		VECTOR_3 scale 1.0 1.0 1.0
+	COMPONENT RenderComponent
+		STRING mesh jordi.glb
+		STRING materialName 
+		INT objectID 0
 	COMPONENT ColliderComponent
 		FLOAT restitution 0.0
 		FLOAT friction 0.0
@@ -36,21 +47,31 @@ ENTITY Jordi 0
 		INT CurrentHP 0
 	COMPONENT JumpPowerComponent
 		FLOAT power 10.0
-	COMPONENT TransformComponent
-		VECTOR_3 position 0.0 0.0 -10.0
-    COMPONENT RenderComponent
-		STRING meshName jordi.glb
 
 ENTITY CameraPivot 1
+	COMPONENT TransformComponent
+		VECTOR_3 position 0.0 0.81992757320404 0.0
+		QUATERNION rotation 0.0 0.0 0.0 1.0
+		VECTOR_3 scale 1.0 1.0 1.0
 	COMPONENT ParentComponent
 		INT parent 0
 	COMPONENT CameraPivotTag
-	COMPONENT TransformComponent
 
 ENTITY Camara 2
+	COMPONENT TransformComponent
+		VECTOR_3 position 0.0 0.0 3.47000002861023
+		QUATERNION rotation 0.0 0.0 0.0 1.0
+		VECTOR_3 scale 1.0 1.0 1.0
 	COMPONENT ParentComponent
 		INT parent 1
-	COMPONENT TransformComponent
 	COMPONENT CameraComponent
+		INT projectionType 0
+		FLOAT fovY 60.0
+		FLOAT nearClip 1.0
+		FLOAT farClip 10000.0
+		FLOAT orthoWidth 10.0
+		FLOAT orthoHeight 10.0
+		BOOL autoAspectRatio true
 		BOOL mainCamera true
-	
+		VECTOR_4 clearColor 0.30000001192093 0.30000001192093 0.5 1.0
+
