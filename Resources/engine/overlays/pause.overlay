@@ -14,6 +14,58 @@ overlay Pause/Title
             left 0.075
             top -0.02
             font_name Roboto 
+            char_height 1.0
+            space_width 0.025
+            colour_top 0.0 0.0 0.0 1.0
+            colour_bottom 0.0 0.0 0.0 1.0
+            horz_align left 
+            vert_align center
+        }
+    }
+}
+
+overlay Pause/Resume
+{
+    zorder 500
+
+    overlay_element Pause/Resume/Container Panel
+    {
+        left 0.25
+        top 0.2
+        width 0.5
+        height 0.3
+
+        overlay_element Pause/Resume/Container/Text TextArea
+        {
+            left 0.075
+            top -0.02
+            font_name Roboto 
+            char_height 0.04 
+            space_width 0.025
+            colour_top 0.0 0.0 0.0 1.0
+            colour_bottom 0.0 0.0 0.0 1.0
+            horz_align left 
+            vert_align center
+        }
+    }
+}
+
+overlay Pause/Return
+{
+    zorder 500
+
+    overlay_element Pause/Return/Container Panel
+    {
+        left 0.25
+        top 0.2
+        width 0.5
+        height 0.3
+
+        overlay_element Pause/Return/Container/Text TextArea
+        {
+            left 0.075
+            top -0.02
+            font_name Roboto 
             char_height 0.04 
             space_width 0.025
             colour_top 0.0 0.0 0.0 1.0

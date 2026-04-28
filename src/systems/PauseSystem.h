@@ -1,7 +1,11 @@
 #pragma once
 #include "HUGO.h"
 
+#include "ResumeTag.h"
+
 HSYSTEM(PauseSystem)
+
+    void initButtons(ResumeTag& resume);
 
 public:
 

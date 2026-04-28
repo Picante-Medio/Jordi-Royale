@@ -60,7 +60,7 @@ void PlayerMovementSystem::init(){
     scene.getInput()->registerAction("Right", {HUGO::KeyCode::D});
     scene.getInput()->registerAction("Left", {HUGO::KeyCode::A});
     // Will be KeyCode::SPACE as soon as changes in HUGO are brought to main
-    scene.getInput()->registerAction("Jump", {HUGO::KeyCode::Q});
+    scene.getInput()->registerAction("Jump", {HUGO::KeyCode::SPACE});
 }
 
 // every time the scene is loaded, the mouse position is registered again
@@ -114,8 +114,8 @@ void PlayerMovementSystem::fixedUpdate(uint32_t){
             rb.applyForce(velocity * item.getConst<SpeedComponent>().speed);
 
             // vertical movement
-            // if(rb.getLinearVelocity().y < 0.05f && rb.getLinearVelocity().y > -0.05f)
-            //     rb.applyForce(jumpDirection * item.getConst<JumpPowerComponent>().power);
+            if(rb.getLinearVelocity().y < 0.05f && rb.getLinearVelocity().y > -0.05f)
+                rb.applyForce(jumpDirection * item.getConst<JumpPowerComponent>().power);
 
             // rotation
             item.modify<TransformComponent>([rb](TransformComponent& trans){
