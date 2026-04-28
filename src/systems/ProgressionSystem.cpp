@@ -5,6 +5,7 @@
 #include "IncreaseEnemyDensityMessage.h"
 #include "DecreaseEnemyDensityMessage.h"
 #include "IncreaseEnemyLevelMessage.h"
+#include "SpawnBossMessage.h"
 
 #include <iostream>
 
@@ -80,8 +81,9 @@ ProgressionSystem::update(uint32_t dt){
 
     //------Boss managing------
     if(minutesUntilBoss <= 0){
-        // TODO scene.instantiatePrefab(boss);
         minutesUntilBoss = minutesBetweenBosses;
+        SpawnBossMessage msg;
+        scene.sendMessage<SpawnBossMessage>(msg);
     }
 }
 

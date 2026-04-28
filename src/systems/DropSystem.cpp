@@ -36,7 +36,8 @@ DropSystem::killEnemy(EntityID enemy) {
     //Otherwise, spawn xp depending on max health
     else {
         const HPComponent& hp = scene.getComponentConst<HPComponent>(enemy);
-        spawnXP(tr.getWorldPosition(), (hp.HPMax / HP_PER_XP) + 1);
+        // ! HP_PER_XP not declared
+        // spawnXP(tr.getWorldPosition(), (hp.HPMax / HP_PER_XP) + 1);
     }
 
     // Play audio of dead enemy
