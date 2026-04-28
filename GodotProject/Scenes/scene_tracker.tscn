@@ -14,7 +14,7 @@ entities = Dictionary[String, Dictionary]({
 "active": "BOOL active false",
 "friction": "FLOAT friction 0.0",
 "halfExtents": "VECTOR_3 halfExtents 1.0 1.0 1.0",
-"info": "INT info 0",
+"info": "COLLIDER_TYPE info 0",
 "positionOffset": "VECTOR_3 positionOffset 0.0 0.0 0.0",
 "restitution": "FLOAT restitution 0.0",
 "rotationOffset": "QUATERNION rotationOffset 0.0 0.0 0.0 1.0",
