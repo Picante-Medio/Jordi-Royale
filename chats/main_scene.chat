@@ -36,8 +36,9 @@ ENTITY Jordi 0
 	COMPONENT JumpPowerComponent
 		FLOAT power 10.0
 	COMPONENT TransformComponent
-		VECTOR_3 worldPosition 0.0 0.0 -10.0
+		VECTOR_3 position 0.0 0.0 -10.0
     COMPONENT RenderComponent
+		STRING meshName jordi.glb
 
 ENTITY CameraPivot 1
 	COMPONENT ParentComponent
