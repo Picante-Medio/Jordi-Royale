@@ -2,6 +2,9 @@
 
 #include "ClockTag.h"
 #include "TextComponent.h"
+#include "IncreaseEnemyDensityMessage.h"
+#include "DecreaseEnemyDensityMessage.h"
+#include "IncreaseEnemyLevelMessage.h"
 
 #include <iostream>
 
@@ -12,12 +15,12 @@ ProgressionSystem::onLoad(){
 
 void 
 ProgressionSystem::init(){
-    
 }
 
 void 
 ProgressionSystem::update(uint32_t dt){
 
+    //------Time managing------
     miliseconds += dt;
 
     while(miliseconds >= 1000){
@@ -28,6 +31,8 @@ ProgressionSystem::update(uint32_t dt){
     // not a while because the game should NEVER have 120 seconds between 2 given frames
     if(seconds >= 60){
         minutes++;
+        if(!waveActive) minutesToNextWave--;
+        else currentWaveMinutesLeft--;
         seconds -= 60;
     }
 
@@ -35,6 +40,8 @@ ProgressionSystem::update(uint32_t dt){
         hours++;
         minutes -= 60;
     }
+
+    //------Clock UI update------
     
     for(auto& item : scene.query<ClockTag, TextComponent>()){
 
@@ -45,9 +52,45 @@ ProgressionSystem::update(uint32_t dt){
             text.text = timeText;
         });
     }
+
+
+    //------Wave managing------
+
+    if(!waveActive && minutesToNextWave <= 0){
+        changeEnemyDensity(true);
+        currentWaveMinutesLeft = waveMinutesDuration;
+        waveActive = true;
+        wavesUntilEnemyLevelUp--;
+    }
+
+    if(waveActive && currentWaveMinutesLeft <= 0){
+        changeEnemyDensity(false);
+        minutesToNextWave = minutesBetweenWaves;
+        waveActive = false;
+    }
+
+    //------Enemy level managing------
+
+    if(wavesUntilEnemyLevelUp <= 0){
+        wavesUntilEnemyLevelUp = wavesToEnemyLevelUp;
+        IncreaseEnemyLevelMessage msg;
+        scene.sendMessage<IncreaseEnemyLevelMessage>(msg);
+    }
 }
 
 void 
 ProgressionSystem::fixedUpdate(uint32_t){
 
+}
+
+void
+ProgressionSystem::changeEnemyDensity(bool increase){
+    if(increase){
+        IncreaseEnemyDensityMessage msg;
+        scene.sendMessage<IncreaseEnemyDensityMessage>(msg);
+    }
+    else{
+        DecreaseEnemyDensityMessage msg;
+        scene.sendMessage<DecreaseEnemyDensityMessage>(msg);
+    }
 }

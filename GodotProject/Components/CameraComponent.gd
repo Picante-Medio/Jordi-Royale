@@ -2,7 +2,7 @@
 extends Component
 class_name CameraComponent
 
-@export var projectionType:ProjectionType = HUGO::ProjectionType::Perspective
+@export var projectionType:ENUMS.ProjectionType = ENUMS.ProjectionType.Perspective
 @export var fovY:float = 60.0
 @export var nearClip:float = 1.0
 @export var farClip:float = 10000.0
@@ -10,7 +10,7 @@ class_name CameraComponent
 @export var orthoHeight:float = 10.
 @export var autoAspectRatio:bool = true
 @export var mainCamera:bool = false
-@export var clearColor:Vector4 = HUGO::Vector4(0.3f
+@export var clearColor:Vector4 = Vector4(0.3, 0.3, 0.3, 1.0)
 
 func get_component() -> Dictionary[String, Variant]:
 	return {
