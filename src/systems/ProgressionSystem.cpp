@@ -33,6 +33,7 @@ ProgressionSystem::update(uint32_t dt){
         minutes++;
         if(!waveActive) minutesToNextWave--;
         else currentWaveMinutesLeft--;
+        minutesUntilBoss--;
         seconds -= 60;
     }
 
@@ -75,6 +76,12 @@ ProgressionSystem::update(uint32_t dt){
         wavesUntilEnemyLevelUp = wavesToEnemyLevelUp;
         IncreaseEnemyLevelMessage msg;
         scene.sendMessage<IncreaseEnemyLevelMessage>(msg);
+    }
+
+    //------Boss managing------
+    if(minutesUntilBoss <= 0){
+        // TODO scene.instantiatePrefab(boss);
+        minutesUntilBoss = minutesBetweenBosses;
     }
 }
 

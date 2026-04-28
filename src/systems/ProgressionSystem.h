@@ -10,6 +10,7 @@ HSYSTEM(ProgressionSystem)
     int seconds = 0;
     int miliseconds = 0;
 
+    // wave times
     int minutesBetweenWaves = 10;
     int minutesToNextWave = 10;
 
@@ -18,8 +19,13 @@ HSYSTEM(ProgressionSystem)
 
     bool waveActive = false;
 
+    // enemy level times
     int wavesUntilEnemyLevelUp = 2;
     int wavesToEnemyLevelUp = 2;
+
+    // boss times
+    int minutesUntilBoss = 30;
+    int minutesBetweenBosses = 30;
 
     void changeEnemyDensity(bool increase);
 
