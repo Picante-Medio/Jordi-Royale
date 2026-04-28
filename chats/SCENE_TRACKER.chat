@@ -13,7 +13,7 @@ SYSTEM UISystem
 ENTITY Entity 0
 	COMPONENT ColliderComponent
 		COLLIDER_TYPE info 0
-		VECTOR_3 halfExtents 1.0 1.0 1.0
+		CAPSULE_COLLIDER 0.5 2.0
 		FLOAT restitution 0.0
 		FLOAT friction 0.0
 		VECTOR_3 positionOffset 0.0 0.0 0.0

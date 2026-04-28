@@ -16,18 +16,16 @@ func get_component() -> Dictionary[String, Variant]:
 	component_data.get_or_add("info", FormatWriter.format(info, "info"))
 	if shape is BoxShape3D:
 		var box:BoxShape3D = shape as BoxShape3D
-		component_data.get_or_add("halfExtents", FormatWriter.format(box.size, "halfExtents"))
+		component_data.get_or_add("BOX_COLLIDER", FormatWriter.format(box.size, "BOX_COLLIDER"))
 	elif shape is SphereShape3D:
 		var sphere:SphereShape3D = shape as SphereShape3D
-		component_data.get_or_add("radius", FormatWriter.format(sphere.radius, "radius"))
+		component_data.get_or_add("SPHERE_COLLIDER", FormatWriter.format(sphere.radius, "SPHERE_COLLIDER"))
 	elif shape is CapsuleShape3D:
 		var capsule:CapsuleShape3D = shape as CapsuleShape3D
-		component_data.get_or_add("radius", FormatWriter.format(capsule.radius, "radius"))
-		component_data.get_or_add("height", FormatWriter.format(capsule.height, "height"))
+		component_data.get_or_add("CAPSULE_COLLIDER", "CAPSULE_COLLIDER %s %s" % [capsule.radius, capsule.height])
 	elif shape is CylinderShape3D:
 		var cylinder:CylinderShape3D = shape as CylinderShape3D
-		component_data.get_or_add("radius", FormatWriter.format(cylinder.radius, "radius"))
-		component_data.get_or_add("height", FormatWriter.format(cylinder.height, "height"))
+		component_data.get_or_add("CYLINDER_COLLIDER", "CYLINDER_COLLIDER %s %s" % [cylinder.radius, cylinder.height])
 		
 	component_data.get_or_add("restitution", FormatWriter.format(restitution, "restitution"))
 	component_data.get_or_add("friction", FormatWriter.format(friction, "friction"))
