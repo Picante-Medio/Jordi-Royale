@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://cft1fgdpqn2vu" path="res://addons/HugosChatPlugin/Entities/scene_tracker.gd" id="1_865ah"]
 [ext_resource type="Script" uid="uid://dimuk3ggoam44" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="2_huasi"]
-[ext_resource type="Script" uid="uid://s2j52p8es0or" path="res://addons/HugosChatPlugin/NativeComponents/ColliderComponent.gd" id="3_m1efj"]
 [ext_resource type="Script" uid="uid://50d7wdkoyo4b" path="res://Components/CameraPivotTag.gd" id="3_mai8y"]
 [ext_resource type="Script" uid="uid://dpjupwgyydq3o" path="res://addons/HugosChatPlugin/NativeComponents/RigidBodyComponent.gd" id="4_mai8y"]
 [ext_resource type="Script" uid="uid://bfkq57mrubdne" path="res://Components/PlayerTag.gd" id="5_76v2p"]
@@ -91,7 +90,6 @@ script = ExtResource("2_huasi")
 script = ExtResource("3_mai8y")
 
 [node name="ColliderComponent" type="Node" parent="Jordi" unique_id=645921025]
-script = ExtResource("3_m1efj")
 
 [node name="RigidBodyComponent" type="Node" parent="Jordi" unique_id=2098395728]
 script = ExtResource("4_mai8y")

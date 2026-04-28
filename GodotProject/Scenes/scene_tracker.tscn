@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://b3ccaxtbilt8u"]
+
+[ext_resource type="Script" uid="uid://cft1fgdpqn2vu" path="res://addons/HugosChatPlugin/Entities/scene_tracker.gd" id="1_v722x"]
+[ext_resource type="Script" uid="uid://dcc6b5sxl6c7u" path="res://addons/HugosChatPlugin/Entities/entity.gd" id="2_v3db6"]
+[ext_resource type="Script" uid="uid://7yrjlv0jx5tv" path="res://addons/HugosChatPlugin/NativeComponents/ColliderComponent.gd" id="3_0rx7q"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gnrxi"]
+
+[node name="SCENE_TRACKER" type="Node3D" unique_id=233473685]
+script = ExtResource("1_v722x")
+entities = Dictionary[String, Dictionary]({
+"Entity": {
+"ColliderComponent": Dictionary[String, Variant]({
+"active": "BOOL active false",
+"friction": "FLOAT friction 0.0",
+"halfExtents": "VECTOR_3 halfExtents 1.0 1.0 1.0",
+"info": "INT info 0",
+"positionOffset": "VECTOR_3 positionOffset 0.0 0.0 0.0",
+"restitution": "FLOAT restitution 0.0",
+"rotationOffset": "QUATERNION rotationOffset 0.0 0.0 0.0 1.0",
+"useGizmo": "BOOL useGizmo false"
+})
+}
+})
+metadata/_custom_type_script = "uid://cft1fgdpqn2vu"
+
+[node name="Entity" type="Node3D" parent="." unique_id=2000039121]
+script = ExtResource("2_v3db6")
+metadata/_custom_type_script = "uid://dcc6b5sxl6c7u"
+
+[node name="ColliderComponent" type="CollisionShape3D" parent="Entity" unique_id=24415283]
+shape = SubResource("BoxShape3D_gnrxi")
+script = ExtResource("3_0rx7q")
+metadata/_custom_type_script = "uid://7yrjlv0jx5tv"

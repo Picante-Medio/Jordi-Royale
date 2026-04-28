@@ -15,4 +15,6 @@ static func format(variant: Variant, name: String):
 		return "PREFAB %s %s" % [name, variant.resource_path]
 	elif variant is String:
 		return "STRING %s %s" % [name, variant]
+	elif variant is ENUMS.ColliderType:
+		return "COLLIDER_TYPE %s %s" % [name, variant]
 	return "%s %s %s" % [ type_string(typeof(variant)).to_upper(), name, str(variant)]

@@ -1,0 +1,23 @@
+SCENE SCENE_TRACKER
+SYSTEM ConsoleSystem
+SYSTEM AudioSystem
+SYSTEM PhysicsGizmoSystem
+SYSTEM HierarchySystem
+SYSTEM ParticleSystem
+SYSTEM CameraSystem
+SYSTEM LightSystem
+SYSTEM RenderSystem
+SYSTEM TweenSystem
+SYSTEM UISystem
+
+ENTITY Entity 0
+	COMPONENT ColliderComponent
+		COLLIDER_TYPE info 0
+		VECTOR_3 halfExtents 1.0 1.0 1.0
+		FLOAT restitution 0.0
+		FLOAT friction 0.0
+		VECTOR_3 positionOffset 0.0 0.0 0.0
+		QUATERNION rotationOffset 0.0 0.0 0.0 1.0
+		BOOL active false
+		BOOL useGizmo false
+
