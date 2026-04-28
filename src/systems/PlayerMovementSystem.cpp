@@ -1,4 +1,5 @@
 #include "PlayerMovementSystem.h"
+#include "HugoMath.h"
 #include "TransformComponent.h"
 #include "RigidBodyComponent.h"
 #include "SpeedComponent.h"
@@ -88,6 +89,7 @@ void PlayerMovementSystem::update(uint32_t){
 void PlayerMovementSystem::fixedUpdate(uint32_t){
 
     HUGO::Vector3 velocity = HUGO::Vector3();
+    HUGO::Vector3 jumpDirection = HUGO::Vector3();
 
     // z-axis
     if(scene.getInput()->isActionPressed("Forward")) velocity = velocity - HUGO::Vector3(0, 0, 1);
@@ -97,18 +99,23 @@ void PlayerMovementSystem::fixedUpdate(uint32_t){
     if(scene.getInput()->isActionPressed("Right")) velocity += HUGO::Vector3(1, 0, 0);
     else if(scene.getInput()->isActionPressed("Left")) velocity = velocity - HUGO::Vector3(1, 0, 0);
 
+    // Jump
+    if(scene.getInput()->isActionPressed("Jump"))
+        jumpDirection = HUGO::Vector3(0.f, 1.f, 0.f);
+
     // normalize
     velocity.normalize();
 
     for(auto& item : scene.query<RigidBodyComponent, SpeedComponent, JumpPowerComponent, PlayerTag, TransformComponent>()){
-        item.modify<RigidBodyComponent>([&item, velocity](RigidBodyComponent& rb){
+        item.modify<RigidBodyComponent>([&item, velocity, jumpDirection](RigidBodyComponent& rb){
             // horizontal movement
             rb.applyForce(velocity * item.getConst<SpeedComponent>().speed);
 
             // vertical movement
-            if(rb.getLinearVelocity().y == 0)
-                rb.applyForce(HUGO::Vector3(0, 1, 0) * item.getConst<JumpPowerComponent>().power);
+            if(rb.getLinearVelocity().y < 0.05f && rb.getLinearVelocity().y > -0.05f)
+                rb.applyForce(jumpDirection * item.getConst<JumpPowerComponent>().power);
 
+            // rotation
             item.modify<TransformComponent>([rb](TransformComponent& trans){
                 // TODO trans.setRotation(HUGO::Quaternion());
             });
