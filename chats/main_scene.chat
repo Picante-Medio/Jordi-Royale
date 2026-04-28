@@ -8,6 +8,9 @@ SYSTEM LightSystem
 SYSTEM RenderSystem
 SYSTEM TweenSystem
 SYSTEM UISystem
+SYSTEM ConsoleSystem
+SYSTEM PlayerMovementSystem
+SYSTEM ChangeSceneSystem
 
 ENTITY Jordi 0
 	COMPONENT TransformComponent
