@@ -14,7 +14,6 @@
 [ext_resource type="Script" uid="uid://dmak3mcg4w0h8" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="2_huasi"]
 [ext_resource type="Script" uid="uid://d10rufr7dnrt6" path="res://addons/HugosChatPlugin/NativeComponents/CameraComponent.gd" id="3_drdnd"]
 [ext_resource type="Script" uid="uid://bewpcwg276ktv" path="res://addons/HugosChatPlugin/NativeComponents/ColliderComponent.gd" id="3_m1efj"]
-[ext_resource type="Script" uid="uid://d1ljapb1i86tc" path="res://Components/CameraPivotTag.gd" id="3_mai8y"]
 [ext_resource type="Script" uid="uid://dgu5myf6wqmwa" path="res://addons/HugosChatPlugin/NativeComponents/RigidBodyComponent.gd" id="4_mai8y"]
 [ext_resource type="Script" uid="uid://bbqhq5soqvu70" path="res://Components/PlayerTag.gd" id="5_76v2p"]
 [ext_resource type="Script" uid="uid://b5eh7xi0wb6sr" path="res://Components/SpeedComponent.gd" id="6_drdnd"]
@@ -102,7 +101,6 @@ entities = Dictionary[String, Dictionary]({
 }
 })
 systems = Array[int]([1, 2, 3, 4, 5, 6, 7, 8, 9])
-is_main = true
 
 [node name="Jordi" type="Node3D" parent="." unique_id=499115862]
 script = ExtResource("2_huasi")
@@ -113,24 +111,6 @@ mesh_name = "jordi.glb"
 metadata/_custom_type_script = "uid://c0wlt0qsxdika"
 
 [node name="jordi" parent="Jordi/RenderComponent" unique_id=1187907538 instance=ExtResource("11_76v2p")]
-
-[node name="CameraPivot" type="Node3D" parent="Jordi" unique_id=1502736894]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8199276, 0)
-script = ExtResource("2_huasi")
-
-[node name="Camara" type="Node3D" parent="Jordi/CameraPivot" unique_id=507972397]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.47)
-script = ExtResource("2_huasi")
-
-[node name="Camera3D" type="Camera3D" parent="Jordi/CameraPivot/Camara" unique_id=114110815]
-
-[node name="CameraComponent" type="Node" parent="Jordi/CameraPivot/Camara" unique_id=508518349]
-script = ExtResource("3_drdnd")
-mainCamera = true
-metadata/_custom_type_script = "uid://d10rufr7dnrt6"
-
-[node name="CameraPivotTag" type="Node" parent="Jordi/CameraPivot" unique_id=231165414]
-script = ExtResource("3_mai8y")
 
 [node name="ColliderComponent" type="Node" parent="Jordi" unique_id=645921025]
 
@@ -150,3 +130,14 @@ CurrentHP = 0
 
 [node name="JumpPowerComponent" type="Node" parent="Jordi" unique_id=63813157]
 script = ExtResource("8_7ewk0")
+
+[node name="Camara" type="Node3D" parent="." unique_id=507972397]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82, 4.05)
+script = ExtResource("2_huasi")
+
+[node name="Camera3D" type="Camera3D" parent="Camara" unique_id=114110815]
+
+[node name="CameraComponent" type="Node" parent="Camara" unique_id=508518349]
+script = ExtResource("3_drdnd")
+mainCamera = true
+metadata/_custom_type_script = "uid://d10rufr7dnrt6"

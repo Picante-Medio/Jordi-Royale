@@ -1,4 +1,4 @@
-MAIN SCENE main_scene
+SCENE main_scene
 SYSTEM AudioSystem
 SYSTEM PhysicsGizmoSystem
 SYSTEM HierarchySystem
@@ -16,13 +16,11 @@ SYSTEM PlayerMovementSystem
 
 ENTITY Jordi 0
 	COMPONENT TransformComponent
-		VECTOR_3 position 0.0 0.0 0.0
+		VECTOR_3 position 0.0 0.0 10.0
 		QUATERNION rotation 0.0 0.0 0.0 1.0
 		VECTOR_3 scale 1.0 1.0 1.0
 	COMPONENT RenderComponent
 		STRING mesh jordi.glb
-		STRING materialName 
-		INT objectID 0
 	COMPONENT ColliderComponent
 		FLOAT restitution 0.0
 		FLOAT friction 0.0
@@ -50,7 +48,7 @@ ENTITY Jordi 0
 
 ENTITY CameraPivot 1
 	COMPONENT TransformComponent
-		VECTOR_3 position 0.0 0.81992757320404 0.0
+		VECTOR_3 position 0.0 0.0 0.0
 		QUATERNION rotation 0.0 0.0 0.0 1.0
 		VECTOR_3 scale 1.0 1.0 1.0
 	COMPONENT ParentComponent
@@ -59,7 +57,7 @@ ENTITY CameraPivot 1
 
 ENTITY Camara 2
 	COMPONENT TransformComponent
-		VECTOR_3 position 0.0 0.0 3.47000002861023
+		VECTOR_3 position 0.0 0.0 0.0
 		QUATERNION rotation 0.0 0.0 0.0 1.0
 		VECTOR_3 scale 1.0 1.0 1.0
 	COMPONENT ParentComponent
@@ -73,5 +71,4 @@ ENTITY Camara 2
 		FLOAT orthoHeight 10.0
 		BOOL autoAspectRatio true
 		BOOL mainCamera true
-		VECTOR_4 clearColor 0.30000001192093 0.30000001192093 0.5 1.0
 
