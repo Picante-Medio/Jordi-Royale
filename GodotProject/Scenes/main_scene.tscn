@@ -1,16 +1,19 @@
 [gd_scene format=3 uid="uid://dq2fl1vp76r7r"]
 
-[ext_resource type="Script" uid="uid://dociyemdev2j1" path="res://addons/HugosChatPlugin/Entities/scene_tracker.gd" id="1_865ah"]
-[ext_resource type="Script" uid="uid://dmak3mcg4w0h8" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="2_huasi"]
+[ext_resource type="Script" uid="uid://dstqkjl1nichv" path="res://addons/HugosChatPlugin/Entities/scene_tracker.gd" id="1_865ah"]
+[ext_resource type="Script" uid="uid://d3fypo3sn4qu3" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="2_huasi"]
 [ext_resource type="Script" uid="uid://d10rufr7dnrt6" path="res://addons/HugosChatPlugin/NativeComponents/CameraComponent.gd" id="3_drdnd"]
-[ext_resource type="Script" uid="uid://bewpcwg276ktv" path="res://addons/HugosChatPlugin/NativeComponents/ColliderComponent.gd" id="3_m1efj"]
+[ext_resource type="Script" uid="uid://bg5luietaqtrx" path="res://addons/HugosChatPlugin/NativeComponents/ColliderComponent.gd" id="3_m1efj"]
 [ext_resource type="Script" uid="uid://dgu5myf6wqmwa" path="res://addons/HugosChatPlugin/NativeComponents/RigidBodyComponent.gd" id="4_mai8y"]
 [ext_resource type="Script" uid="uid://bbqhq5soqvu70" path="res://Components/PlayerTag.gd" id="5_76v2p"]
-[ext_resource type="Script" uid="uid://b5eh7xi0wb6sr" path="res://Components/SpeedComponent.gd" id="6_drdnd"]
-[ext_resource type="Script" uid="uid://n0mg3tlxesna" path="res://Components/HPComponent.gd" id="7_ioaeq"]
-[ext_resource type="Script" uid="uid://b0wvdonh0f2yf" path="res://Components/JumpPowerComponent.gd" id="8_7ewk0"]
-[ext_resource type="Script" uid="uid://c0wlt0qsxdika" path="res://addons/HugosChatPlugin/NativeComponents/RenderComponent.gd" id="10_mai8y"]
-[ext_resource type="PackedScene" uid="uid://dk5yg00wwn2fu" path="res://Resources/jordi/jordi.glb" id="11_76v2p"]
+[ext_resource type="Script" uid="uid://bxtnhlmmus6l2" path="res://Components/SpeedComponent.gd" id="6_drdnd"]
+[ext_resource type="Script" uid="uid://dfj2qxmqtkj0s" path="res://Components/HPComponent.gd" id="7_ioaeq"]
+[ext_resource type="Script" uid="uid://ctauv0e0re3vs" path="res://Components/JumpPowerComponent.gd" id="8_7ewk0"]
+[ext_resource type="Script" uid="uid://430akguj0twj" path="res://addons/HugosChatPlugin/NativeComponents/RenderComponent.gd" id="10_mai8y"]
+[ext_resource type="PackedScene" uid="uid://c462xqhte7va4" path="res://Resources/jordi/jordi.glb" id="11_76v2p"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_76v2p"]
+size = Vector3(2.43, 2.255, 1)
 
 [node name="main_scene" type="Node3D" unique_id=1228723441]
 script = ExtResource("1_865ah")
@@ -18,48 +21,35 @@ entities = Dictionary[String, Dictionary]({
 "Camara": {
 "CameraComponent": Dictionary[String, Variant]({
 "autoAspectRatio": "BOOL autoAspectRatio true",
-"clearColor": "VECTOR_4 clearColor 0.30000001192093 0.30000001192093 0.5 1.0",
+"clearColor": "VECTOR_4 clearColor 1.0 1.0 0.5 1.0",
 "farClip": "FLOAT farClip 10000.0",
 "fovY": "FLOAT fovY 60.0",
 "mainCamera": "BOOL mainCamera true",
 "nearClip": "FLOAT nearClip 1.0",
 "orthoHeight": "FLOAT orthoHeight 10.0",
 "orthoWidth": "FLOAT orthoWidth 10.0",
-"projectionType": "INT projectionType 0"
+"projectionType": "COLLIDER_TYPE projectionType 0"
 }),
-"ParentComponent": {
-"parent": "INT parent 1"
-},
 "TransformComponent": Dictionary[String, Variant]({
-"position": "VECTOR_3 position 0.0 0.0 3.47000002861023",
-"rotation": "QUATERNION rotation 0.0 0.0 0.0 1.0",
-"scale": "VECTOR_3 scale 1.0 1.0 1.0"
-})
-},
-"CameraPivot": {
-"CameraPivotTag": Dictionary[String, Variant]({}),
-"ParentComponent": {
-"parent": "INT parent 0"
-},
-"TransformComponent": Dictionary[String, Variant]({
-"position": "VECTOR_3 position 0.0 0.81992757320404 0.0",
+"position": "VECTOR_3 position 0.0 0.81999999284744 4.05000019073486",
 "rotation": "QUATERNION rotation 0.0 0.0 0.0 1.0",
 "scale": "VECTOR_3 scale 1.0 1.0 1.0"
 })
 },
 "Jordi": {
 "ColliderComponent": Dictionary[String, Variant]({
+"BOX_COLLIDER": "VECTOR_3 BOX_COLLIDER 1.0 1.0 1.0",
 "active": "BOOL active false",
 "friction": "FLOAT friction 0.0",
-"info": "INT info 0",
+"info": "COLLIDER_TYPE info 0",
 "positionOffset": "VECTOR_3 positionOffset 0.0 0.0 0.0",
 "restitution": "FLOAT restitution 0.0",
 "rotationOffset": "QUATERNION rotationOffset 0.0 0.0 0.0 1.0",
 "useGizmo": "BOOL useGizmo false"
 }),
 "HPComponent": Dictionary[String, Variant]({
-"CurrentHP": "INT CurrentHP 0",
-"HPMax": "INT HPMax 0"
+"CurrentHP": "COLLIDER_TYPE CurrentHP 0",
+"HPMax": "COLLIDER_TYPE HPMax 0"
 }),
 "JumpPowerComponent": Dictionary[String, Variant]({
 "power": "FLOAT power 10.0"
@@ -67,8 +57,8 @@ entities = Dictionary[String, Dictionary]({
 "PlayerTag": Dictionary[String, Variant]({}),
 "RenderComponent": Dictionary[String, Variant]({
 "materialName": "STRING materialName ",
-"mesh": "STRING mesh jordi.glb",
-"objectID": "INT objectID 0"
+"meshName": "STRING meshName jordi.glb",
+"objectID": "COLLIDER_TYPE objectID 0"
 }),
 "RigidBodyComponent": Dictionary[String, Variant]({
 "angularDamping": "FLOAT angularDamping 0.0",
@@ -83,8 +73,8 @@ entities = Dictionary[String, Dictionary]({
 "speed": "FLOAT speed 5.0"
 }),
 "TransformComponent": Dictionary[String, Variant]({
-"position": "VECTOR_3 position 0.0 0.0 0.0",
-"rotation": "QUATERNION rotation 0.0 0.0 0.0 1.0",
+"position": "VECTOR_3 position 0.0 0.08866310119629 0.0",
+"rotation": "QUATERNION rotation 0.0 0.98570495843887 0.0 0.16848082840443",
 "scale": "VECTOR_3 scale 1.0 1.0 1.0"
 })
 }
@@ -92,19 +82,14 @@ entities = Dictionary[String, Dictionary]({
 systems = Array[int]([1, 2, 3, 4, 5, 6, 7, 8, 9])
 
 [node name="Jordi" type="Node3D" parent="." unique_id=499115862]
+transform = Transform3D(-0.9432285, 0, 0.33214477, 0, 1, 0, -0.33214477, 0, -0.9432285, 0, 0.0886631, 0)
 script = ExtResource("2_huasi")
 
 [node name="RenderComponent" type="MeshInstance3D" parent="Jordi" unique_id=33261350]
 script = ExtResource("10_mai8y")
 mesh_name = "jordi.glb"
-metadata/_custom_type_script = "uid://c0wlt0qsxdika"
 
 [node name="jordi" parent="Jordi/RenderComponent" unique_id=1187907538 instance=ExtResource("11_76v2p")]
-
-[node name="ColliderComponent" type="Node" parent="Jordi" unique_id=645921025]
-
-[node name="RigidBodyComponent" type="Node" parent="Jordi" unique_id=2098395728]
-script = ExtResource("4_mai8y")
 
 [node name="PlayerTag" type="Node" parent="Jordi" unique_id=564955268]
 script = ExtResource("5_76v2p")
@@ -120,13 +105,25 @@ CurrentHP = 0
 [node name="JumpPowerComponent" type="Node" parent="Jordi" unique_id=63813157]
 script = ExtResource("8_7ewk0")
 
+[node name="RigidBodyComponent" type="Node" parent="Jordi" unique_id=829447572]
+script = ExtResource("4_mai8y")
+metadata/_custom_type_script = "uid://dgu5myf6wqmwa"
+
+[node name="ColliderComponent" type="CollisionShape3D" parent="Jordi" unique_id=1509470861]
+transform = Transform3D(0.9999999, 0, 1.7881393e-07, 0, 1, 0, -1.7881393e-07, 0, 0.9999999, 0, 0.8738843, 0)
+shape = SubResource("BoxShape3D_76v2p")
+script = ExtResource("3_m1efj")
+metadata/_custom_type_script = "uid://bg5luietaqtrx"
+
 [node name="Camara" type="Node3D" parent="." unique_id=507972397]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82, 4.05)
 script = ExtResource("2_huasi")
 
 [node name="Camera3D" type="Camera3D" parent="Camara" unique_id=114110815]
+fov = 60.0
 
 [node name="CameraComponent" type="Node" parent="Camara" unique_id=508518349]
 script = ExtResource("3_drdnd")
 mainCamera = true
+clearColor = Vector4(1, 1, 0.5, 1)
 metadata/_custom_type_script = "uid://d10rufr7dnrt6"
