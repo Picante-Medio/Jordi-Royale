@@ -8,9 +8,6 @@ SYSTEM LightSystem
 SYSTEM RenderSystem
 SYSTEM TweenSystem
 SYSTEM UISystem
-SYSTEM ConsoleSystem
-SYSTEM PlayerMovementSystem
-SYSTEM ChangeSceneSystem
 
 ENTITY Jordi 0
 	COMPONENT TransformComponent
@@ -20,13 +17,13 @@ ENTITY Jordi 0
 	COMPONENT RenderComponent
 		STRING meshName jordi.glb
 		STRING materialName 
-		COLLIDER_TYPE objectID 0
+		COLLIDER_INFO objectID
 	COMPONENT PlayerTag
 	COMPONENT SpeedComponent
 		FLOAT speed 5.0
 	COMPONENT HPComponent
-		COLLIDER_TYPE HPMax 0
-		COLLIDER_TYPE CurrentHP 0
+		COLLIDER_INFO HPMax
+		COLLIDER_INFO CurrentHP
 	COMPONENT JumpPowerComponent
 		FLOAT power 10.0
 	COMPONENT RigidBodyComponent
@@ -38,7 +35,8 @@ ENTITY Jordi 0
 		FLOAT linearSleepingThreshold 0.0
 		FLOAT angularSleepingThreshold 0.0
 	COMPONENT ColliderComponent
-		COLLIDER_INFO BOX_COLLIDER 2.430 2.255 1.0
+		COLLIDER_INFO info
+		BOX_COLLIDER 2.4300000667572 2.25500011444092 1.0
 		FLOAT restitution 0.0
 		FLOAT friction 0.0
 		VECTOR_3 positionOffset 0.0 0.0 0.0
@@ -52,7 +50,7 @@ ENTITY Camara 1
 		QUATERNION rotation 0.0 0.0 0.0 1.0
 		VECTOR_3 scale 1.0 1.0 1.0
 	COMPONENT CameraComponent
-		COLLIDER_TYPE projectionType 0
+		COLLIDER_INFO projectionType
 		FLOAT fovY 60.0
 		FLOAT nearClip 1.0
 		FLOAT farClip 10000.0

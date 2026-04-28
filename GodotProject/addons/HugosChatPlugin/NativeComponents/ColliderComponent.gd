@@ -16,10 +16,10 @@ func get_component() -> Dictionary[String, Variant]:
 	component_data.get_or_add("info", FormatWriter.format(info, "info"))
 	if shape is BoxShape3D:
 		var box:BoxShape3D = shape as BoxShape3D
-		component_data.get_or_add("BOX_COLLIDER", FormatWriter.format(box.size, "BOX_COLLIDER"))
+		component_data.get_or_add("BOX_COLLIDER", "BOX_COLLIDER %s %s %s" % [box.size.x, box.size.y, box.size.z])
 	elif shape is SphereShape3D:
 		var sphere:SphereShape3D = shape as SphereShape3D
-		component_data.get_or_add("SPHERE_COLLIDER", FormatWriter.format(sphere.radius, "SPHERE_COLLIDER"))
+		component_data.get_or_add("SPHERE_COLLIDER", "SPHERE_COLLIDER %s" % [sphere.radius])
 	elif shape is CapsuleShape3D:
 		var capsule:CapsuleShape3D = shape as CapsuleShape3D
 		component_data.get_or_add("CAPSULE_COLLIDER", "CAPSULE_COLLIDER %s %s" % [capsule.radius, capsule.height])

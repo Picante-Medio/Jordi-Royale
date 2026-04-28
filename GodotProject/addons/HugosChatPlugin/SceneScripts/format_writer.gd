@@ -16,5 +16,5 @@ static func format(variant: Variant, name: String):
 	elif variant is String:
 		return "STRING %s %s" % [name, variant]
 	elif variant is ENUMS.ColliderType:
-		return "COLLIDER_TYPE %s %s" % [name, variant]
+		return "COLLIDER_INFO %s" % [name]
 	return "%s %s %s" % [ type_string(typeof(variant)).to_upper(), name, str(variant)]

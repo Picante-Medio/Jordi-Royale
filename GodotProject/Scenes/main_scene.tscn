@@ -28,7 +28,7 @@ entities = Dictionary[String, Dictionary]({
 "nearClip": "FLOAT nearClip 1.0",
 "orthoHeight": "FLOAT orthoHeight 10.0",
 "orthoWidth": "FLOAT orthoWidth 10.0",
-"projectionType": "COLLIDER_TYPE projectionType 0"
+"projectionType": "COLLIDER_INFO projectionType 0"
 }),
 "TransformComponent": Dictionary[String, Variant]({
 "position": "VECTOR_3 position 0.0 0.81999999284744 4.05000019073486",
@@ -38,18 +38,18 @@ entities = Dictionary[String, Dictionary]({
 },
 "Jordi": {
 "ColliderComponent": Dictionary[String, Variant]({
-"BOX_COLLIDER": "VECTOR_3 BOX_COLLIDER 1.0 1.0 1.0",
+"BOX_COLLIDER": "BOX_COLLIDER 2.4300000667572 2.25500011444092 1.0",
 "active": "BOOL active false",
 "friction": "FLOAT friction 0.0",
-"info": "COLLIDER_TYPE info 0",
+"info": "COLLIDER_INFO info 0",
 "positionOffset": "VECTOR_3 positionOffset 0.0 0.0 0.0",
 "restitution": "FLOAT restitution 0.0",
 "rotationOffset": "QUATERNION rotationOffset 0.0 0.0 0.0 1.0",
 "useGizmo": "BOOL useGizmo false"
 }),
 "HPComponent": Dictionary[String, Variant]({
-"CurrentHP": "COLLIDER_TYPE CurrentHP 0",
-"HPMax": "COLLIDER_TYPE HPMax 0"
+"CurrentHP": "COLLIDER_INFO CurrentHP 0",
+"HPMax": "COLLIDER_INFO HPMax 0"
 }),
 "JumpPowerComponent": Dictionary[String, Variant]({
 "power": "FLOAT power 10.0"
@@ -58,7 +58,7 @@ entities = Dictionary[String, Dictionary]({
 "RenderComponent": Dictionary[String, Variant]({
 "materialName": "STRING materialName ",
 "meshName": "STRING meshName jordi.glb",
-"objectID": "COLLIDER_TYPE objectID 0"
+"objectID": "COLLIDER_INFO objectID 0"
 }),
 "RigidBodyComponent": Dictionary[String, Variant]({
 "angularDamping": "FLOAT angularDamping 0.0",
