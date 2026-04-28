@@ -9,6 +9,7 @@ SYSTEM RenderSystem
 SYSTEM TweenSystem
 SYSTEM UISystem
 SYSTEM ConsoleSystem
+SYSTEM PlayerMovementSystem
 
 ENTITY Jordi 0
 	COMPONENT ColliderComponent
@@ -17,10 +18,10 @@ ENTITY Jordi 0
 		VECTOR_3 positionOffset 0.0 0.0 0.0
 		QUATERNION rotationOffset 0.0 0.0 0.0 1.0
 		BOOL active false
-		BOOL useGizmo false
+		BOOL useGizmo true
 		INT info 0
 	COMPONENT RigidBodyComponent
-		FLOAT mass 0.0
+		FLOAT mass 5.0
 		FLOAT linearDamping 0.0
 		FLOAT angularDamping 0.0
 		VECTOR_3 linearVelocity 0.0 0.0 0.0
@@ -52,3 +53,4 @@ ENTITY Camara 2
 	COMPONENT TransformComponent
 	COMPONENT CameraComponent
 		BOOL mainCamera true
+	

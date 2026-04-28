@@ -6,7 +6,53 @@
 #include "PlayerTag.h"
 #include "CameraPivotTag.h"
 
+//*---Test includes---
+#include "ColliderComponent.h"
+#include "RenderComponent.h"
+
 void PlayerMovementSystem::init(){
+
+    // * TESTING: Floor for Jordi
+    EntityID floor = scene.createEntity();
+
+    scene.addComponent<TransformComponent>(floor, [](TransformComponent& trans){
+        trans.setPosition(HUGO::Vector3(0, -3, -10));
+    });
+
+    scene.addComponent<ColliderComponent>(floor, [](ColliderComponent& col){
+        col.info = HUGO::BoxColliderInfo({HUGO::Vector3(5, 1, 5)});
+        col.useGizmo = true;
+    });
+
+    scene.addComponent<RigidBodyComponent>(floor, [](RigidBodyComponent& rb){
+        rb.setBodyType(HUGO::STATIC);
+    });
+
+    EntityID JordiTest = scene.createEntity();
+
+    scene.addComponent<TransformComponent>(JordiTest, [](TransformComponent& trans){
+        trans.setPosition(HUGO::Vector3(0, 5, -10));
+    });
+
+    scene.addComponent<ColliderComponent>(JordiTest, [](ColliderComponent& col){
+        col.info = HUGO::BoxColliderInfo({HUGO::Vector3(0.5, 0.5, 0.5)});
+        col.useGizmo = true;
+    });
+
+    scene.addComponent<RigidBodyComponent>(JordiTest, [](RigidBodyComponent& rb){
+        rb.setBodyType(HUGO::DYNAMIC);
+        rb.setMass(5.0f);
+    });
+
+    scene.addComponent<PlayerTag>(JordiTest);
+    scene.addComponent<SpeedComponent>(JordiTest, [](SpeedComponent& sp){
+        sp.speed = 50;
+    });
+    scene.addComponent<JumpPowerComponent>(JordiTest);
+    scene.addComponent<RenderComponent>(JordiTest, [](RenderComponent& rc){
+        rc.meshName = "jordi.glb";
+    });
+    // * TESTING END
     
     scene.getInput()->registerAction("Forward", {HUGO::KeyCode::W});
     scene.getInput()->registerAction("Backward", {HUGO::KeyCode::S});
@@ -44,24 +90,28 @@ void PlayerMovementSystem::fixedUpdate(uint32_t){
     HUGO::Vector3 velocity = HUGO::Vector3();
 
     // z-axis
-    if(scene.getInput()->isActionPressed("Forward")) velocity += HUGO::Vector3(0, 0, 1);
-    else if(scene.getInput()->isActionPressed("Backward")) velocity = velocity - HUGO::Vector3(0, 0, 1);
+    if(scene.getInput()->isActionPressed("Forward")) velocity = velocity - HUGO::Vector3(0, 0, 1);
+    else if(scene.getInput()->isActionPressed("Backward")) velocity += HUGO::Vector3(0, 0, 1);
 
     // x-axis
     if(scene.getInput()->isActionPressed("Right")) velocity += HUGO::Vector3(1, 0, 0);
-    else if(scene.getInput()->isActionPressed("Left")) velocity = velocity - HUGO::Vector3(0, 0, 1);
+    else if(scene.getInput()->isActionPressed("Left")) velocity = velocity - HUGO::Vector3(1, 0, 0);
 
     // normalize
     velocity.normalize();
 
-    for(auto& item : scene.query<RigidBodyComponent, SpeedComponent, JumpPowerComponent, PlayerTag>()){
-        item.modify<RigidBodyComponent>([item, velocity](RigidBodyComponent& rb){
+    for(auto& item : scene.query<RigidBodyComponent, SpeedComponent, JumpPowerComponent, PlayerTag, TransformComponent>()){
+        item.modify<RigidBodyComponent>([&item, velocity](RigidBodyComponent& rb){
             // horizontal movement
             rb.applyForce(velocity * item.getConst<SpeedComponent>().speed);
 
             // vertical movement
             if(rb.getLinearVelocity().y == 0)
                 rb.applyForce(HUGO::Vector3(0, 1, 0) * item.getConst<JumpPowerComponent>().power);
+
+            item.modify<TransformComponent>([rb](TransformComponent& trans){
+                // TODO trans.setRotation(HUGO::Quaternion());
+            });
         });
     }
 }
