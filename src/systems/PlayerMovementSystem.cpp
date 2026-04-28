@@ -73,10 +73,10 @@ void PlayerMovementSystem::update(uint32_t){
 
     HUGO::Vector2 currentMousePosition = HUGO::Vector2(scene.getInput()->getMouseRelativePosition().x, 
                                                        scene.getInput()->getMouseRelativePosition().y);
-    
+
     HUGO::Vector2 diff = currentMousePosition - lastMousePosition;
-    HUGO::Quaternion rotation = HUGO::Quaternion(HUGO::Radian(HUGO::Degree(diff.x * 360 * sensibility)), HUGO::Vector3(0, 1, 0))
-                              * HUGO::Quaternion(HUGO::Radian(HUGO::Degree(diff.y * 360 * sensibility)), HUGO::Vector3(1, 0, 0));
+    HUGO::Quaternion rotation = HUGO::Quaternion(HUGO::Radian(HUGO::Degree(diff.x * 360 * SENSIBILITY)), HUGO::Vector3(0, 1, 0))
+                              * HUGO::Quaternion(HUGO::Radian(HUGO::Degree(diff.y * 360 * SENSIBILITY)), HUGO::Vector3(1, 0, 0));
 
     // rigidboy is a cylinder, rotation is not needed
     for(auto& item : scene.query<TransformComponent, CameraPivotTag>()){
@@ -84,6 +84,8 @@ void PlayerMovementSystem::update(uint32_t){
             trans.setRotation(trans.getRotation() * rotation);
         });
     }
+
+    lastMousePosition = currentMousePosition;
 }
 
 void PlayerMovementSystem::fixedUpdate(uint32_t){
@@ -112,8 +114,8 @@ void PlayerMovementSystem::fixedUpdate(uint32_t){
             rb.applyForce(velocity * item.getConst<SpeedComponent>().speed);
 
             // vertical movement
-            if(rb.getLinearVelocity().y < 0.05f && rb.getLinearVelocity().y > -0.05f)
-                rb.applyForce(jumpDirection * item.getConst<JumpPowerComponent>().power);
+            // if(rb.getLinearVelocity().y < 0.05f && rb.getLinearVelocity().y > -0.05f)
+            //     rb.applyForce(jumpDirection * item.getConst<JumpPowerComponent>().power);
 
             // rotation
             item.modify<TransformComponent>([rb](TransformComponent& trans){
