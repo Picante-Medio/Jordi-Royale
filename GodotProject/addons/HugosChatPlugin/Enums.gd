@@ -83,6 +83,9 @@ enum TrayLocationTypes
 	TL_NONE
 };
 
+class ColliderInfo:
+	var shape: Shape3D
+
 enum ColliderType 
 {
 	BOX,

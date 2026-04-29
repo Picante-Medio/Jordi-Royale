@@ -20,13 +20,12 @@ ENTITY Jordi 0
 	COMPONENT RenderComponent
 		STRING meshName jordi.glb
 		STRING materialName 
-		COLLIDER_INFO objectID
 	COMPONENT PlayerTag
 	COMPONENT SpeedComponent
 		FLOAT speed 5.0
 	COMPONENT HPComponent
-		COLLIDER_INFO HPMax
-		COLLIDER_INFO CurrentHP
+		INT HPMax 0
+		INT CurrentHP 0
 	COMPONENT JumpPowerComponent
 		FLOAT power 10.0
 	COMPONENT RigidBodyComponent
@@ -38,14 +37,13 @@ ENTITY Jordi 0
 		FLOAT linearSleepingThreshold 0.0
 		FLOAT angularSleepingThreshold 0.0
 	COMPONENT ColliderComponent
-		COLLIDER_INFO info
-		BOX_COLLIDER 2.4300000667572 2.25500011444092 1.0
+		COLLIDER_INFO info BOX_COLLIDER 1.80499994754791 1.0 1.0
 		FLOAT restitution 0.0
 		FLOAT friction 0.0
 		VECTOR_3 positionOffset 0.0 0.0 0.0
 		QUATERNION rotationOffset 0.0 0.0 0.0 1.0
-		BOOL active false
-		BOOL useGizmo false
+		BOOL active true
+		BOOL useGizmo true
 
 ENTITY Camara 1
 	COMPONENT TransformComponent
@@ -53,7 +51,7 @@ ENTITY Camara 1
 		QUATERNION rotation 0.0 0.0 0.0 1.0
 		VECTOR_3 scale 1.0 1.0 1.0
 	COMPONENT CameraComponent
-		COLLIDER_INFO projectionType
+		INT projectionType 0
 		FLOAT fovY 60.0
 		FLOAT nearClip 1.0
 		FLOAT farClip 10000.0
@@ -61,5 +59,5 @@ ENTITY Camara 1
 		FLOAT orthoHeight 10.0
 		BOOL autoAspectRatio true
 		BOOL mainCamera true
-		VECTOR_4 clearColor 1.0 1.0 0.5 1.0
+		VECTOR_4 clearColor 0.0 0.0 0.0 1.0
 

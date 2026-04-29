@@ -8,25 +8,13 @@ class_name ColliderComponent
 @export var rotationOffset:Quaternion
 @export var active:bool
 @export var useGizmo:bool
-@export var info:ENUMS.ColliderType
+@export var info:Shape3D
 
 func get_component() -> Dictionary[String, Variant]:
 	var component_data:Dictionary[String, Variant]
 	
 	component_data.get_or_add("info", FormatWriter.format(info, "info"))
-	if shape is BoxShape3D:
-		var box:BoxShape3D = shape as BoxShape3D
-		component_data.get_or_add("BOX_COLLIDER", "BOX_COLLIDER %s %s %s" % [box.size.x, box.size.y, box.size.z])
-	elif shape is SphereShape3D:
-		var sphere:SphereShape3D = shape as SphereShape3D
-		component_data.get_or_add("SPHERE_COLLIDER", "SPHERE_COLLIDER %s" % [sphere.radius])
-	elif shape is CapsuleShape3D:
-		var capsule:CapsuleShape3D = shape as CapsuleShape3D
-		component_data.get_or_add("CAPSULE_COLLIDER", "CAPSULE_COLLIDER %s %s" % [capsule.radius, capsule.height])
-	elif shape is CylinderShape3D:
-		var cylinder:CylinderShape3D = shape as CylinderShape3D
-		component_data.get_or_add("CYLINDER_COLLIDER", "CYLINDER_COLLIDER %s %s" % [cylinder.radius, cylinder.height])
-		
+	
 	component_data.get_or_add("restitution", FormatWriter.format(restitution, "restitution"))
 	component_data.get_or_add("friction", FormatWriter.format(friction, "friction"))
 	component_data.get_or_add("positionOffset", FormatWriter.format(positionOffset, "positionOffset"))

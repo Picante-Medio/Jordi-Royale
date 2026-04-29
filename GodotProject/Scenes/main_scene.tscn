@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://c462xqhte7va4" path="res://Resources/jordi/jordi.glb" id="11_76v2p"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_76v2p"]
-size = Vector3(2.43, 2.255, 1)
+size = Vector3(1.805, 1, 1)
 
 [node name="main_scene" type="Node3D" unique_id=1228723441]
 script = ExtResource("1_865ah")
@@ -21,14 +21,14 @@ entities = Dictionary[String, Dictionary]({
 "Camara": {
 "CameraComponent": Dictionary[String, Variant]({
 "autoAspectRatio": "BOOL autoAspectRatio true",
-"clearColor": "VECTOR_4 clearColor 1.0 1.0 0.5 1.0",
+"clearColor": "VECTOR_4 clearColor 0.0 0.0 0.0 1.0",
 "farClip": "FLOAT farClip 10000.0",
 "fovY": "FLOAT fovY 60.0",
 "mainCamera": "BOOL mainCamera true",
 "nearClip": "FLOAT nearClip 1.0",
 "orthoHeight": "FLOAT orthoHeight 10.0",
 "orthoWidth": "FLOAT orthoWidth 10.0",
-"projectionType": "COLLIDER_INFO projectionType 0"
+"projectionType": "INT projectionType 0"
 }),
 "TransformComponent": Dictionary[String, Variant]({
 "position": "VECTOR_3 position 0.0 0.81999999284744 4.05000019073486",
@@ -38,18 +38,17 @@ entities = Dictionary[String, Dictionary]({
 },
 "Jordi": {
 "ColliderComponent": Dictionary[String, Variant]({
-"BOX_COLLIDER": "BOX_COLLIDER 2.4300000667572 2.25500011444092 1.0",
-"active": "BOOL active false",
+"active": "BOOL active true",
 "friction": "FLOAT friction 0.0",
-"info": "COLLIDER_INFO info 0",
+"info": "COLLIDER_INFO info SPHERE_COLLIDER 1.72000002861023",
 "positionOffset": "VECTOR_3 positionOffset 0.0 0.0 0.0",
 "restitution": "FLOAT restitution 0.0",
 "rotationOffset": "QUATERNION rotationOffset 0.0 0.0 0.0 1.0",
-"useGizmo": "BOOL useGizmo false"
+"useGizmo": "BOOL useGizmo true"
 }),
 "HPComponent": Dictionary[String, Variant]({
-"CurrentHP": "COLLIDER_INFO CurrentHP 0",
-"HPMax": "COLLIDER_INFO HPMax 0"
+"CurrentHP": "INT CurrentHP 0",
+"HPMax": "INT HPMax 0"
 }),
 "JumpPowerComponent": Dictionary[String, Variant]({
 "power": "FLOAT power 10.0"
@@ -57,8 +56,7 @@ entities = Dictionary[String, Dictionary]({
 "PlayerTag": Dictionary[String, Variant]({}),
 "RenderComponent": Dictionary[String, Variant]({
 "materialName": "STRING materialName ",
-"meshName": "STRING meshName jordi.glb",
-"objectID": "COLLIDER_INFO objectID 0"
+"meshName": "STRING meshName jordi.glb"
 }),
 "RigidBodyComponent": Dictionary[String, Variant]({
 "angularDamping": "FLOAT angularDamping 0.0",
@@ -113,6 +111,9 @@ metadata/_custom_type_script = "uid://dgu5myf6wqmwa"
 transform = Transform3D(0.9999999, 0, 1.7881393e-07, 0, 1, 0, -1.7881393e-07, 0, 0.9999999, 0, 0.8738843, 0)
 shape = SubResource("BoxShape3D_76v2p")
 script = ExtResource("3_m1efj")
+active = true
+useGizmo = true
+info = SubResource("BoxShape3D_76v2p")
 metadata/_custom_type_script = "uid://bg5luietaqtrx"
 
 [node name="Camara" type="Node3D" parent="." unique_id=507972397]
@@ -125,5 +126,5 @@ fov = 60.0
 [node name="CameraComponent" type="Node" parent="Camara" unique_id=508518349]
 script = ExtResource("3_drdnd")
 mainCamera = true
-clearColor = Vector4(1, 1, 0.5, 1)
+clearColor = Vector4(0, 0, 0, 1)
 metadata/_custom_type_script = "uid://d10rufr7dnrt6"
