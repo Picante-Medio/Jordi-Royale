@@ -40,9 +40,9 @@ entities = Dictionary[String, Dictionary]({
 "active": "BOOL active true",
 "friction": "FLOAT friction 0.0",
 "info": "COLLIDER_INFO info CYLINDER_COLLIDER 0.5 1.0 0.5",
-"positionOffset": "VECTOR_3 positionOffset 0.0 1.87999999523163 0.0",
+"positionOffset": "VECTOR_3 positionOffset 0.0 0.0 0.0",
 "restitution": "FLOAT restitution 0.0",
-"rotationOffset": "QUATERNION rotationOffset 0.50023275613785 0.00000007909467 -0.17614993453026 0.84778439998627",
+"rotationOffset": "QUATERNION rotationOffset 0.2095041424036 -0.33532723784447 -0.64207994937897 0.65680813789368",
 "useGizmo": "BOOL useGizmo true"
 }),
 "HPComponent": Dictionary[String, Variant]({
@@ -107,7 +107,7 @@ script = ExtResource("4_mai8y")
 metadata/_custom_type_script = "uid://dgu5myf6wqmwa"
 
 [node name="ColliderComponent" type="CollisionShape3D" parent="Jordi" unique_id=1509470861]
-transform = Transform3D(0.9379423, 0.29867446, -0.17623179, -0.29867426, 0.4374768, -0.848179, -0.17623207, 0.8481791, 0.49953437, 0, 1.88, 0)
+transform = Transform3D(-0.049422134, 0.7029419, -0.7095281, -0.98395157, 0.08768265, 0.15540582, 0.17145452, 0.705822, 0.6873272, 0, 0, 0)
 shape = SubResource("CylinderShape3D_76v2p")
 script = ExtResource("3_m1efj")
 active = true
