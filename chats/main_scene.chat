@@ -8,9 +8,6 @@ SYSTEM LightSystem
 SYSTEM RenderSystem
 SYSTEM TweenSystem
 SYSTEM UISystem
-SYSTEM ConsoleSystem
-SYSTEM PlayerMovementSystem
-SYSTEM ChangeSceneSystem
 
 ENTITY Jordi 0
 	COMPONENT TransformComponent
@@ -37,11 +34,11 @@ ENTITY Jordi 0
 		FLOAT linearSleepingThreshold 0.0
 		FLOAT angularSleepingThreshold 0.0
 	COMPONENT ColliderComponent
-		COLLIDER_INFO info BOX_COLLIDER 1.80499994754791 1.0 1.0
+		COLLIDER_INFO info CYLINDER_COLLIDER 0.5 1.0 0.5
 		FLOAT restitution 0.0
 		FLOAT friction 0.0
-		VECTOR_3 positionOffset 0.0 0.0 0.0
-		QUATERNION rotationOffset 0.0 0.0 0.0 1.0
+		VECTOR_3 positionOffset 0.0 1.87999999523163 0.0
+		QUATERNION rotationOffset 0.50023275613785 0.00000007909467 -0.17614993453026 0.84778439998627
 		BOOL active true
 		BOOL useGizmo true
 

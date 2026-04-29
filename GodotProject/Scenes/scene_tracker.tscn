@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://b3ccaxtbilt8u"]
 
-[ext_resource type="Script" uid="uid://cft1fgdpqn2vu" path="res://addons/HugosChatPlugin/Entities/scene_tracker.gd" id="1_v722x"]
-[ext_resource type="Script" uid="uid://dcc6b5sxl6c7u" path="res://addons/HugosChatPlugin/Entities/entity.gd" id="2_v3db6"]
-[ext_resource type="Script" uid="uid://7yrjlv0jx5tv" path="res://addons/HugosChatPlugin/NativeComponents/ColliderComponent.gd" id="3_0rx7q"]
+[ext_resource type="Script" uid="uid://dstqkjl1nichv" path="res://addons/HugosChatPlugin/Entities/scene_tracker.gd" id="1_v722x"]
+[ext_resource type="Script" uid="uid://cnmiha8rgpnhn" path="res://addons/HugosChatPlugin/Entities/entity.gd" id="2_v3db6"]
+[ext_resource type="Script" uid="uid://bg5luietaqtrx" path="res://addons/HugosChatPlugin/NativeComponents/ColliderComponent.gd" id="3_0rx7q"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v722x"]
 
@@ -22,13 +22,12 @@ entities = Dictionary[String, Dictionary]({
 })
 }
 })
-metadata/_custom_type_script = "uid://cft1fgdpqn2vu"
 
 [node name="Entity" type="Node3D" parent="." unique_id=2000039121]
 script = ExtResource("2_v3db6")
-metadata/_custom_type_script = "uid://dcc6b5sxl6c7u"
 
 [node name="ColliderComponent" type="CollisionShape3D" parent="Entity" unique_id=24415283]
 shape = SubResource("CapsuleShape3D_v722x")
 script = ExtResource("3_0rx7q")
-metadata/_custom_type_script = "uid://7yrjlv0jx5tv"
+positionOffset = Vector3(0, 0, 0)
+rotationOffset = Quaternion(0, 0, 0, 1)
