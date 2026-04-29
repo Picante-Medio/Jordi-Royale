@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://dl0iqgqbq0f8a" path="res://addons/HugosChatPlugin/Entities/scene_tracker.gd" id="1_d3awe"]
 [ext_resource type="Script" uid="uid://bv4fdb5khcnbk" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="2_yglu3"]
 [ext_resource type="Script" uid="uid://cauioprn35hgk" path="res://Components/CameraPivotTag.gd" id="3_bwjpn"]
-[ext_resource type="Script" uid="uid://s2j52p8es0or" path="res://addons/HugosChatPlugin/NativeComponents/ColliderComponent.gd" id="4_ibmi3"]
 [ext_resource type="Script" uid="uid://dpjupwgyydq3o" path="res://addons/HugosChatPlugin/NativeComponents/RigidBodyComponent.gd" id="5_4blnk"]
 [ext_resource type="Script" uid="uid://c1imlqkk7gkdd" path="res://Components/PlayerTag.gd" id="6_tnimv"]
 [ext_resource type="Script" uid="uid://cip1v7uoq008a" path="res://Components/SpeedComponent.gd" id="7_4qg1e"]
@@ -35,21 +34,12 @@ entities = Dictionary[String, Dictionary]({
 })
 },
 "Jordi": {
-"ColliderComponent": Dictionary[String, Variant]({
-"active": "BOOL active false",
-"friction": "FLOAT friction 0.0",
-"info": "INT info 0",
-"positionOffset": "VECTOR_3 positionOffset 0.0 0.0 0.0",
-"restitution": "FLOAT restitution 0.0",
-"rotationOffset": "QUATERNION rotationOffset 0.0 0.0 0.0 1.0",
-"useGizmo": "BOOL useGizmo false"
-}),
 "HPComponent": Dictionary[String, Variant]({
 "CurrentHP": "INT CurrentHP 0",
 "HPMax": "INT HPMax 0"
 }),
 "JumpPowerComponent": Dictionary[String, Variant]({
-"power": "FLOAT power 10.0"
+"power": "FLOAT power 500.0"
 }),
 "PlayerTag": Dictionary[String, Variant]({}),
 "RigidBodyComponent": Dictionary[String, Variant]({
@@ -71,18 +61,20 @@ entities = Dictionary[String, Dictionary]({
 })
 }
 })
-systems = Array[int]([1, 2, 3, 4, 5, 6, 7, 8, 9])
 
 [node name="Jordi" type="Node3D" parent="." unique_id=499115862]
 script = ExtResource("2_yglu3")
+systems = Array[int]([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 
 [node name="CameraPivot" type="Node3D" parent="Jordi" unique_id=1502736894]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8199276, 0)
 script = ExtResource("2_yglu3")
+systems = Array[int]([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 
 [node name="Camara" type="Node3D" parent="Jordi/CameraPivot" unique_id=507972397]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
 script = ExtResource("2_yglu3")
+systems = Array[int]([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 
 [node name="Camera3D" type="Camera3D" parent="Jordi/CameraPivot/Camara" unique_id=114110815]
 
@@ -90,7 +82,6 @@ script = ExtResource("2_yglu3")
 script = ExtResource("3_bwjpn")
 
 [node name="ColliderComponent" type="Node" parent="Jordi" unique_id=645921025]
-script = ExtResource("4_ibmi3")
 
 [node name="RigidBodyComponent" type="Node" parent="Jordi" unique_id=2098395728]
 script = ExtResource("5_4blnk")

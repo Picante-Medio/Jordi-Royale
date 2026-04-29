@@ -8,6 +8,8 @@ SYSTEM LightSystem
 SYSTEM RenderSystem
 SYSTEM TweenSystem
 SYSTEM UISystem
+SYSTEM ConsoleSystem
+SYSTEM DamageSystem
 
 ENTITY Jordi 0
 	COMPONENT TransformComponent
@@ -24,7 +26,7 @@ ENTITY Jordi 0
 		INT HPMax 0
 		INT CurrentHP 0
 	COMPONENT JumpPowerComponent
-		FLOAT power 10.0
+		FLOAT power 500.0
 	COMPONENT RigidBodyComponent
 		FLOAT mass 0.0
 		FLOAT linearDamping 0.0

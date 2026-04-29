@@ -5,7 +5,6 @@ class_name SCENE_TRACKER
 
 @export var entities:Dictionary[String, Dictionary]
 @export var systems:Array[SYSTEMS.system] = [
-	SYSTEMS.system.ConsoleSystem,
 	SYSTEMS.system.AudioSystem,
 	SYSTEMS.system.PhysicsGizmoSystem,
 	SYSTEMS.system.HierarchySystem,
@@ -14,7 +13,8 @@ class_name SCENE_TRACKER
 	SYSTEMS.system.LightSystem,
 	SYSTEMS.system.RenderSystem,
 	SYSTEMS.system.TweenSystem,
-	SYSTEMS.system.UISystem
+	SYSTEMS.system.UISystem,
+	SYSTEMS.system.ConsoleSystem
 ]
 
 @export_tool_button("Save Scene") var button = SceneWriter.write

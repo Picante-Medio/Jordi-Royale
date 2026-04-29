@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://dq2fl1vp76r7r"]
 
-[ext_resource type="Script" uid="uid://dstqkjl1nichv" path="res://addons/HugosChatPlugin/Entities/scene_tracker.gd" id="1_865ah"]
-[ext_resource type="Script" uid="uid://d3fypo3sn4qu3" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="2_huasi"]
-[ext_resource type="Script" uid="uid://d10rufr7dnrt6" path="res://addons/HugosChatPlugin/NativeComponents/CameraComponent.gd" id="3_drdnd"]
-[ext_resource type="Script" uid="uid://bg5luietaqtrx" path="res://addons/HugosChatPlugin/NativeComponents/ColliderComponent.gd" id="3_m1efj"]
-[ext_resource type="Script" uid="uid://dgu5myf6wqmwa" path="res://addons/HugosChatPlugin/NativeComponents/RigidBodyComponent.gd" id="4_mai8y"]
-[ext_resource type="Script" uid="uid://bbqhq5soqvu70" path="res://Components/PlayerTag.gd" id="5_76v2p"]
-[ext_resource type="Script" uid="uid://bxtnhlmmus6l2" path="res://Components/SpeedComponent.gd" id="6_drdnd"]
-[ext_resource type="Script" uid="uid://dfj2qxmqtkj0s" path="res://Components/HPComponent.gd" id="7_ioaeq"]
-[ext_resource type="Script" uid="uid://ctauv0e0re3vs" path="res://Components/JumpPowerComponent.gd" id="8_7ewk0"]
-[ext_resource type="Script" uid="uid://430akguj0twj" path="res://addons/HugosChatPlugin/NativeComponents/RenderComponent.gd" id="10_mai8y"]
+[ext_resource type="Script" uid="uid://dl0iqgqbq0f8a" path="res://addons/HugosChatPlugin/Entities/scene_tracker.gd" id="1_865ah"]
+[ext_resource type="Script" uid="uid://bv4fdb5khcnbk" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="2_huasi"]
+[ext_resource type="Script" uid="uid://bjwx87l5l8cjv" path="res://addons/HugosChatPlugin/NativeComponents/CameraComponent.gd" id="3_drdnd"]
+[ext_resource type="Script" uid="uid://s2j52p8es0or" path="res://addons/HugosChatPlugin/NativeComponents/ColliderComponent.gd" id="3_m1efj"]
+[ext_resource type="Script" uid="uid://dpjupwgyydq3o" path="res://addons/HugosChatPlugin/NativeComponents/RigidBodyComponent.gd" id="4_mai8y"]
+[ext_resource type="Script" uid="uid://c1imlqkk7gkdd" path="res://Components/PlayerTag.gd" id="5_76v2p"]
+[ext_resource type="Script" uid="uid://cip1v7uoq008a" path="res://Components/SpeedComponent.gd" id="6_drdnd"]
+[ext_resource type="Script" uid="uid://dcqpn65lxc6a1" path="res://Components/HPComponent.gd" id="7_ioaeq"]
+[ext_resource type="Script" uid="uid://dq8gc8vsslxqn" path="res://Components/JumpPowerComponent.gd" id="8_7ewk0"]
+[ext_resource type="Script" uid="uid://bpive0dt6e0xe" path="res://addons/HugosChatPlugin/NativeComponents/RenderComponent.gd" id="10_mai8y"]
 [ext_resource type="PackedScene" uid="uid://c462xqhte7va4" path="res://Resources/jordi/jordi.glb" id="11_76v2p"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_76v2p"]
@@ -50,7 +50,7 @@ entities = Dictionary[String, Dictionary]({
 "HPMax": "INT HPMax 0"
 }),
 "JumpPowerComponent": Dictionary[String, Variant]({
-"power": "FLOAT power 10.0"
+"power": "FLOAT power 500.0"
 }),
 "PlayerTag": Dictionary[String, Variant]({}),
 "RenderComponent": Dictionary[String, Variant]({
@@ -76,11 +76,12 @@ entities = Dictionary[String, Dictionary]({
 })
 }
 })
-systems = Array[int]([1, 2, 3, 4, 5, 6, 7, 8, 9])
+systems = Array[int]([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 10])
 
 [node name="Jordi" type="Node3D" parent="." unique_id=499115862]
 transform = Transform3D(-0.9432285, 0, 0.33214477, 0, 1, 0, -0.33214477, 0, -0.9432285, 0, 0.0886631, 0)
 script = ExtResource("2_huasi")
+systems = Array[int]([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 
 [node name="RenderComponent" type="MeshInstance3D" parent="Jordi" unique_id=33261350]
 script = ExtResource("10_mai8y")
@@ -104,7 +105,6 @@ script = ExtResource("8_7ewk0")
 
 [node name="RigidBodyComponent" type="Node" parent="Jordi" unique_id=829447572]
 script = ExtResource("4_mai8y")
-metadata/_custom_type_script = "uid://dgu5myf6wqmwa"
 
 [node name="ColliderComponent" type="CollisionShape3D" parent="Jordi" unique_id=1509470861]
 transform = Transform3D(-0.049422134, 0.7029419, -0.7095281, -0.98395157, 0.08768265, 0.15540582, 0.17145452, 0.705822, 0.6873272, 0, 0, 0)
@@ -113,11 +113,11 @@ script = ExtResource("3_m1efj")
 active = true
 useGizmo = true
 info = SubResource("CylinderShape3D_76v2p")
-metadata/_custom_type_script = "uid://bg5luietaqtrx"
 
 [node name="Camara" type="Node3D" parent="." unique_id=507972397]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82, 4.05)
 script = ExtResource("2_huasi")
+systems = Array[int]([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 
 [node name="Camera3D" type="Camera3D" parent="Camara" unique_id=114110815]
 fov = 60.0
@@ -126,4 +126,3 @@ fov = 60.0
 script = ExtResource("3_drdnd")
 mainCamera = true
 clearColor = Vector4(0, 0, 0, 1)
-metadata/_custom_type_script = "uid://d10rufr7dnrt6"

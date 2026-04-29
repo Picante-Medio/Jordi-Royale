@@ -24,6 +24,7 @@ ENTITY pauseText 0
         FLOAT height 0.2
     COMPONENT TextComponent
         STRING text PAUSE
+        STRING textAreaName pause
         VECTOR_4 colourTop 0.0 0.0 0.0 1.0
         VECTOR_4 colourBottom 0.0 0.0 0.0 1.0
         VECTOR_4 colour 0.0 0.0 0.0 1.0
@@ -45,6 +46,7 @@ ENTITY resumeButton 1
         FLOAT height 0.08
     COMPONENT TextComponent
         STRING text RESUME
+        STRING textAreaName resume
         VECTOR_4 colourTop 0.0 0.0 0.0 1.0
         VECTOR_4 colourBottom 0.0 0.0 0.0 1.0
         VECTOR_4 colour 0.0 0.0 0.0 1.0
@@ -73,6 +75,7 @@ ENTITY returnButton 2
         FLOAT height 0.08
     COMPONENT TextComponent
         STRING text RETURN
+        STRING textAreaName return
         VECTOR_4 colourTop 0.0 0.0 0.0 1.0
         VECTOR_4 colourBottom 0.0 0.0 0.0 1.0
         VECTOR_4 colour 0.0 0.0 0.0 1.0
@@ -86,3 +89,19 @@ ENTITY returnButton 2
         STRING hoverMaterial UI/Hover
         STRING pressedMaterial UI/Pressed
         STRING disabledMaterial prueba/Disabled
+
+ENTITY camera 3
+    COMPONENT TransformComponent
+		VECTOR_3 position 0.0 0.81999999284744 4.05000019073486
+		QUATERNION rotation 0.0 0.0 0.0 1.0
+		VECTOR_3 scale 1.0 1.0 1.0
+	COMPONENT CameraComponent
+		INT projectionType 0
+		FLOAT fovY 60.0
+		FLOAT nearClip 1.0
+		FLOAT farClip 10000.0
+		FLOAT orthoWidth 10.0
+		FLOAT orthoHeight 10.0
+		BOOL autoAspectRatio true
+		BOOL mainCamera true
+		VECTOR_4 clearColor 0.0 0.0 0.0 1.0

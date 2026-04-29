@@ -8,16 +8,13 @@ SYSTEM LightSystem
 SYSTEM RenderSystem
 SYSTEM TweenSystem
 SYSTEM UISystem
+SYSTEM ConsoleSystem
 
 ENTITY Jordi 0
-	COMPONENT ColliderComponent
-		FLOAT restitution 0.0
-		FLOAT friction 0.0
-		VECTOR_3 positionOffset 0.0 0.0 0.0
-		QUATERNION rotationOffset 0.0 0.0 0.0 1.0
-		BOOL active false
-		BOOL useGizmo false
-		INT info 0
+	COMPONENT TransformComponent
+		VECTOR_3 position 0.0 0.0 0.0
+		QUATERNION rotation 0.0 0.0 0.0 1.0
+		VECTOR_3 scale 1.0 1.0 1.0
 	COMPONENT RigidBodyComponent
 		FLOAT mass 0.0
 		FLOAT linearDamping 0.0
@@ -33,29 +30,22 @@ ENTITY Jordi 0
 		INT HPMax 0
 		INT CurrentHP 0
 	COMPONENT JumpPowerComponent
-		FLOAT power 10.0
-	COMPONENT TransformComponent
-		VECTOR_3 position 0.0 0.0 0.0
-		QUATERNION rotation 0.0 0.0 0.0 1.0
-		VECTOR_3 scale 1.0 1.0 1.0
-    COMPONENT RenderComponent
-        STRING mesh Jordi.fbx
-        STRING materialName
+		FLOAT power 500.0
 
 ENTITY CameraPivot 1
-	COMPONENT ParentComponent
-		INT parent 0
-	COMPONENT CameraPivotTag
 	COMPONENT TransformComponent
 		VECTOR_3 position 0.0 0.81992757320404 0.0
 		QUATERNION rotation 0.0 0.0 0.0 1.0
 		VECTOR_3 scale 1.0 1.0 1.0
+	COMPONENT ParentComponent
+		INT parent 0
+	COMPONENT CameraPivotTag
 
 ENTITY Camara 2
-	COMPONENT ParentComponent
-		INT parent 1
 	COMPONENT TransformComponent
 		VECTOR_3 position 0.0 0.0 2.0
 		QUATERNION rotation 0.0 0.0 0.0 1.0
 		VECTOR_3 scale 1.0 1.0 1.0
+	COMPONENT ParentComponent
+		INT parent 1
 
