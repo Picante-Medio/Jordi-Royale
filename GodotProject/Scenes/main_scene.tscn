@@ -1,23 +1,17 @@
 [gd_scene format=3 uid="uid://dq2fl1vp76r7r"]
 
-[ext_resource type="Script" uid="uid://b5ore38alneu0" path="res://addons/HugosChatPlugin/Entities/scene_tracker.gd" id="1_865ah"]
-[ext_resource type="Script" uid="uid://dmak3mcg4w0h8" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="2_huasi"]
-[ext_resource type="Script" uid="uid://d10rufr7dnrt6" path="res://addons/HugosChatPlugin/NativeComponents/CameraComponent.gd" id="3_drdnd"]
-[ext_resource type="Script" uid="uid://bewpcwg276ktv" path="res://addons/HugosChatPlugin/NativeComponents/ColliderComponent.gd" id="3_m1efj"]
-[ext_resource type="Script" uid="uid://dgu5myf6wqmwa" path="res://addons/HugosChatPlugin/NativeComponents/RigidBodyComponent.gd" id="4_mai8y"]
-[ext_resource type="Script" uid="uid://bbqhq5soqvu70" path="res://Components/PlayerTag.gd" id="5_76v2p"]
-[ext_resource type="Script" uid="uid://cvtg4usa810uw" path="res://Components/SpeedComponent.gd" id="6_drdnd"]
-[ext_resource type="Script" uid="uid://dcp0yk0bbo26h" path="res://Components/HPComponent.gd" id="7_ioaeq"]
-[ext_resource type="Script" uid="uid://csfqyfruahjnl" path="res://Components/JumpPowerComponent.gd" id="8_7ewk0"]
-[ext_resource type="Script" uid="uid://c0wlt0qsxdika" path="res://addons/HugosChatPlugin/NativeComponents/RenderComponent.gd" id="10_mai8y"]
-[ext_resource type="PackedScene" uid="uid://c462xqhte7va4" path="res://Resources/jordi/jordi.glb" id="11_76v2p"]
+[ext_resource type="Script" uid="uid://cft1fgdpqn2vu" path="res://addons/HugosChatPlugin/Entities/scene_tracker.gd" id="1_865ah"]
+[ext_resource type="Script" uid="uid://dimuk3ggoam44" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="2_huasi"]
+[ext_resource type="Script" uid="uid://m1etoujkmig8" path="res://addons/HugosChatPlugin/NativeComponents/CameraComponent.gd" id="3_drdnd"]
+[ext_resource type="Script" uid="uid://7yrjlv0jx5tv" path="res://addons/HugosChatPlugin/NativeComponents/ColliderComponent.gd" id="3_m1efj"]
+[ext_resource type="Script" uid="uid://dpjupwgyydq3o" path="res://addons/HugosChatPlugin/NativeComponents/RigidBodyComponent.gd" id="4_mai8y"]
+[ext_resource type="Script" uid="uid://bfkq57mrubdne" path="res://Components/PlayerTag.gd" id="5_76v2p"]
+[ext_resource type="Script" uid="uid://bxtnhlmmus6l2" path="res://Components/SpeedComponent.gd" id="6_drdnd"]
+[ext_resource type="Script" uid="uid://dfj2qxmqtkj0s" path="res://Components/HPComponent.gd" id="7_ioaeq"]
+[ext_resource type="Script" uid="uid://ctauv0e0re3vs" path="res://Components/JumpPowerComponent.gd" id="8_7ewk0"]
+[ext_resource type="Script" uid="uid://bnjt3w18hk2gs" path="res://addons/HugosChatPlugin/NativeComponents/RenderComponent.gd" id="10_mai8y"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_76v2p"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_76v2p"]
-size = Vector3(15.475, 1, 15.855)
-
-[sub_resource type="BoxMesh" id="BoxMesh_drdnd"]
 
 [node name="main_scene" type="Node3D" unique_id=1228723441]
 script = ExtResource("1_865ah")
@@ -40,48 +34,19 @@ entities = Dictionary[String, Dictionary]({
 "scale": "VECTOR_3 scale 1.0 1.0 1.0"
 })
 },
-"Floor": {
-"ColliderComponent": Dictionary[String, Variant]({
-"active": "BOOL active false",
-"friction": "FLOAT friction 0.5",
-"info": "COLLIDER_INFO info BOX_COLLIDER 7.73750019073486 0.5 7.92749977111816",
-"positionOffset": "VECTOR_3 positionOffset 0.0 0.0 0.0",
-"restitution": "FLOAT restitution 0.0",
-"rotationOffset": "QUATERNION rotationOffset 0.0 0.0 0.0 1.0",
-"useGizmo": "BOOL useGizmo false"
-}),
-"RenderComponent": Dictionary[String, Variant]({
-"materialName": "STRING materialName ",
-"meshName": "STRING meshName cube.mesh"
-}),
-"RigidBodyComponent": Dictionary[String, Variant]({
-"angularDamping": "FLOAT angularDamping 0.5",
-"angularSleepingThreshold": "FLOAT angularSleepingThreshold 1.0",
-"angularVelocity": "VECTOR_3 angularVelocity 0.0 0.0 0.0",
-"linearDamping": "FLOAT linearDamping 0.5",
-"linearSleepingThreshold": "FLOAT linearSleepingThreshold 0.8",
-"linearVelocity": "VECTOR_3 linearVelocity 0.0 0.0 0.0",
-"mass": "FLOAT mass 0.0"
-}),
-"TransformComponent": Dictionary[String, Variant]({
-"position": "VECTOR_3 position 0.0 -0.25499999523163 0.0",
-"rotation": "QUATERNION rotation 0.0 0.0 0.0 1.0",
-"scale": "VECTOR_3 scale 17.3150005340576 0.75499999523163 13.2049999237061"
-})
-},
 "Jordi": {
 "ColliderComponent": Dictionary[String, Variant]({
 "active": "BOOL active true",
-"friction": "FLOAT friction 0.5",
+"friction": "FLOAT friction 0.0",
 "info": "COLLIDER_INFO info CYLINDER_COLLIDER 0.5 1.0 0.5",
-"positionOffset": "VECTOR_3 positionOffset 0.11396269500256 1.01498281955719 0.10334438830614",
+"positionOffset": "VECTOR_3 positionOffset 0.0 0.0 0.0",
 "restitution": "FLOAT restitution 0.0",
-"rotationOffset": "QUATERNION rotationOffset 0.0 0.0 0.0 1.0",
+"rotationOffset": "QUATERNION rotationOffset 0.2095041424036 -0.33532723784447 -0.64207994937897 0.65680813789368",
 "useGizmo": "BOOL useGizmo true"
 }),
 "HPComponent": Dictionary[String, Variant]({
-"CurrentHP": "INT CurrentHP 100",
-"HPMax": "INT HPMax 100"
+"CurrentHP": "INT CurrentHP 0",
+"HPMax": "INT HPMax 0"
 }),
 "JumpPowerComponent": Dictionary[String, Variant]({
 "power": "FLOAT power 500.0"
@@ -92,28 +57,28 @@ entities = Dictionary[String, Dictionary]({
 "meshName": "STRING meshName jordi.glb"
 }),
 "RigidBodyComponent": Dictionary[String, Variant]({
-"angularDamping": "FLOAT angularDamping 0.5",
-"angularSleepingThreshold": "FLOAT angularSleepingThreshold 1.0",
+"angularDamping": "FLOAT angularDamping 0.0",
+"angularSleepingThreshold": "FLOAT angularSleepingThreshold 0.0",
 "angularVelocity": "VECTOR_3 angularVelocity 0.0 0.0 0.0",
-"linearDamping": "FLOAT linearDamping 0.5",
-"linearSleepingThreshold": "FLOAT linearSleepingThreshold 0.8",
+"linearDamping": "FLOAT linearDamping 0.0",
+"linearSleepingThreshold": "FLOAT linearSleepingThreshold 0.0",
 "linearVelocity": "VECTOR_3 linearVelocity 0.0 0.0 0.0",
-"mass": "FLOAT mass 5.0"
+"mass": "FLOAT mass 0.0"
 }),
 "SpeedComponent": Dictionary[String, Variant]({
-"speed": "FLOAT speed 50.0"
+"speed": "FLOAT speed 5.0"
 }),
 "TransformComponent": Dictionary[String, Variant]({
-"position": "VECTOR_3 position 0.0 0.47485065460205 0.0",
+"position": "VECTOR_3 position 0.0 0.08866310119629 0.0",
 "rotation": "QUATERNION rotation 0.0 0.98570495843887 0.0 0.16848082840443",
 "scale": "VECTOR_3 scale 1.0 1.0 1.0"
 })
 }
 })
-systems = Array[int]([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 17, 10])
+systems = Array[int]([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 10])
 
 [node name="Jordi" type="Node3D" parent="." unique_id=499115862]
-transform = Transform3D(-0.9432285, 0, 0.33214477, 0, 1, 0, -0.33214477, 0, -0.9432285, 0, 0.47485065, 0)
+transform = Transform3D(-0.9432285, 0, 0.33214477, 0, 1, 0, -0.33214477, 0, -0.9432285, 0, 0.0886631, 0)
 script = ExtResource("2_huasi")
 systems = Array[int]([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 
@@ -121,37 +86,32 @@ systems = Array[int]([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 script = ExtResource("10_mai8y")
 mesh_name = "jordi.glb"
 
-[node name="jordi" parent="Jordi/RenderComponent" unique_id=1187907538 instance=ExtResource("11_76v2p")]
+[node name="jordi" parent="Jordi/RenderComponent" unique_id=1187907538]
 
 [node name="PlayerTag" type="Node" parent="Jordi" unique_id=564955268]
 script = ExtResource("5_76v2p")
 
 [node name="SpeedComponent" type="Node" parent="Jordi" unique_id=1142391415]
 script = ExtResource("6_drdnd")
-speed = 50.0
 
 [node name="HPComponent" type="Node" parent="Jordi" unique_id=643363494]
 script = ExtResource("7_ioaeq")
+HPMax = 0
+CurrentHP = 0
 
 [node name="JumpPowerComponent" type="Node" parent="Jordi" unique_id=63813157]
 script = ExtResource("8_7ewk0")
 
+[node name="RigidBodyComponent" type="Node" parent="Jordi" unique_id=829447572]
+script = ExtResource("4_mai8y")
+
 [node name="ColliderComponent" type="CollisionShape3D" parent="Jordi" unique_id=1509470861]
-transform = Transform3D(0.9999996, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1, 0.113962695, 1.0149828, 0.10334439)
+transform = Transform3D(-0.049422134, 0.7029419, -0.7095281, -0.98395157, 0.08768265, 0.15540582, 0.17145452, 0.705822, 0.6873272, 0, 0, 0)
 shape = SubResource("CylinderShape3D_76v2p")
 script = ExtResource("3_m1efj")
-friction = 0.5
 active = true
 useGizmo = true
 info = SubResource("CylinderShape3D_76v2p")
-
-[node name="RigidBodyComponent" type="Node" parent="Jordi" unique_id=829447572]
-script = ExtResource("4_mai8y")
-mass = 5.0
-linearDamping = 0.5
-angularDamping = 0.5
-linearSleepingThreshold = 0.8
-angularSleepingThreshold = 1.0
 
 [node name="Camara" type="Node3D" parent="." unique_id=507972397]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82, 4.05)
@@ -165,32 +125,3 @@ fov = 60.0
 script = ExtResource("3_drdnd")
 mainCamera = true
 clearColor = Vector4(0, 0, 0, 1)
-
-[node name="Floor" type="Node3D" parent="." unique_id=1424496944]
-transform = Transform3D(17.315, 0, 0, 0, 0.755, 0, 0, 0, 13.205, 0, -0.255, 0)
-script = ExtResource("2_huasi")
-metadata/_custom_type_script = "uid://dmak3mcg4w0h8"
-
-[node name="ColliderComponent" type="CollisionShape3D" parent="Floor" unique_id=1473443608]
-transform = Transform3D(1, 0, 0, 0, 0.99999917, 0, 0, 0, 1.0000005, 0, 0, 0)
-shape = SubResource("BoxShape3D_76v2p")
-script = ExtResource("3_m1efj")
-friction = 0.5
-info = SubResource("BoxShape3D_76v2p")
-metadata/_custom_type_script = "uid://bewpcwg276ktv"
-
-[node name="RigidBodyComponent" type="Node" parent="Floor" unique_id=1619248699]
-script = ExtResource("4_mai8y")
-linearDamping = 0.5
-angularDamping = 0.5
-linearSleepingThreshold = 0.8
-angularSleepingThreshold = 1.0
-metadata/_custom_type_script = "uid://dgu5myf6wqmwa"
-
-[node name="RenderComponent" type="MeshInstance3D" parent="Floor" unique_id=2090118452]
-script = ExtResource("10_mai8y")
-mesh_name = "cube.mesh"
-metadata/_custom_type_script = "uid://c0wlt0qsxdika"
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor/RenderComponent" unique_id=1436799718]
-mesh = SubResource("BoxMesh_drdnd")
