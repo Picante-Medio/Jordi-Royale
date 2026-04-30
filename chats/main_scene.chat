@@ -69,7 +69,7 @@ ENTITY Floor 2
 	COMPONENT ColliderComponent
 		COLLIDER_INFO info BOX_COLLIDER 7.73750019073486 0.5 7.92749977111816
 		FLOAT restitution 0.0
-		FLOAT friction 0.5
+		FLOAT friction 1.5
 		VECTOR_3 positionOffset 0.0 0.0 0.0
 		QUATERNION rotationOffset 0.0 0.0 0.0 1.0
 		BOOL active false
