@@ -87,6 +87,7 @@ script = ExtResource("10_mai8y")
 mesh_name = "jordi.glb"
 
 [node name="jordi" parent="Jordi/RenderComponent" unique_id=1187907538]
+[node name="jordi" parent="Jordi/RenderComponent" unique_id=1187907538]
 
 [node name="PlayerTag" type="Node" parent="Jordi" unique_id=564955268]
 script = ExtResource("5_76v2p")

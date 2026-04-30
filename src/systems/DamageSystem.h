@@ -1,8 +1,11 @@
 #pragma once
-
+#include "Message.h"
 #include "HugoSystemMacros.h"
 
 HSYSTEM(DamageSystem)
+private:
+EntityID playerID;
+void heal(std::shared_ptr<HUGO::Message> m);
 
 public:
 void init() override;
