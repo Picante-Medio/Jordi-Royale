@@ -5,6 +5,7 @@
 #include "HUGO.h"
 
 const int HP_FOR_SPAWN = 50;
+const float ROTATION_OFFSET = 5.0f;
 
 HSYSTEM(DropSystem)
     void killEnemy(EntityID enemy);

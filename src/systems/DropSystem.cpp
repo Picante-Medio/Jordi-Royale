@@ -9,6 +9,7 @@
 #include "HugoError.h"
 #include "HugoMath.h"
 #include "TransformComponent.h"
+#include "XPComponent.h"
 
 void
 DropSystem::init() {
@@ -20,7 +21,12 @@ DropSystem::init() {
 
 void
 DropSystem::update(uint32_t dt) {
-
+    //Rotate spawned xp on update
+    for(auto pack : scene.query<XPComponent, TransformComponent>()) {
+        pack.modify<TransformComponent>([](TransformComponent& tc){
+            tc.setRotation(tc.getRotation() + HUGO::Quaternion(HUGO::Degree(ROTATION_OFFSET), HUGO::Vector3(0, 1, 0)));
+        });
+    }
 }
 
 void 
@@ -36,8 +42,7 @@ DropSystem::killEnemy(EntityID enemy) {
     //Otherwise, spawn xp depending on max health
     else {
         const HPComponent& hp = scene.getComponentConst<HPComponent>(enemy);
-        // ! HP_PER_XP not declared
-        // spawnXP(tr.getWorldPosition(), (hp.HPMax / HP_PER_XP) + 1);
+        spawnXP(tr.getWorldPosition(), (hp.HPMax / HP_FOR_SPAWN) + 1);
     }
 
     // Play audio of dead enemy
