@@ -11,6 +11,7 @@ SYSTEM UISystem
 SYSTEM ConsoleSystem
 SYSTEM PlayerMovementSystem
 SYSTEM ChangeSceneSystem
+SYSTEM DynamicAudioSystem
 
 ENTITY Jordi 0
 	COMPONENT TransformComponent
