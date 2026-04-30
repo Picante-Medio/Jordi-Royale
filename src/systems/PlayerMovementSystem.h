@@ -1,13 +1,20 @@
 #pragma once
 
-#include "HugoSystemMacros.h"
-#include "HugoMath.h"
+#include "HUGO.h"
+#include "TransformComponent.h"
 
 HSYSTEM(PlayerMovementSystem)
 
 HUGO::Vector2 lastMousePosition;
 // a value of 1 means that moving the mouse the total horizontal length of the screen will do a 360 degree rotation
 const HUGO::Float SENSIBILITY = 0.5;
+
+// * TESTING OFFSET WHILE HIERARCHY DOESN'T EXIST
+HUGO::Float yOffset = 1;
+HUGO::Float zOffset = 5;
+
+// * TESTING METHOD TO MOVE CAMERA WHILE HIERARCHY DOESN'T EXIST
+void updateCamera(TransformComponent& playerTrans);
 
 public:
 void init() override;

@@ -9,11 +9,12 @@ SYSTEM RenderSystem
 SYSTEM TweenSystem
 SYSTEM UISystem
 SYSTEM ConsoleSystem
-SYSTEM DamageSystem
+SYSTEM PlayerMovementSystem
+SYSTEM ChangeSceneSystem
 
 ENTITY Jordi 0
 	COMPONENT TransformComponent
-		VECTOR_3 position 0.0 0.08866310119629 0.0
+		VECTOR_3 position 0.0 0.47485065460205 0.0
 		QUATERNION rotation 0.0 0.98570495843887 0.0 0.16848082840443
 		VECTOR_3 scale 1.0 1.0 1.0
 	COMPONENT RenderComponent
@@ -21,28 +22,28 @@ ENTITY Jordi 0
 		STRING materialName 
 	COMPONENT PlayerTag
 	COMPONENT SpeedComponent
-		FLOAT speed 5.0
+		FLOAT speed 50.0
 	COMPONENT HPComponent
-		INT HPMax 0
-		INT CurrentHP 0
+		INT HPMax 100
+		INT CurrentHP 100
 	COMPONENT JumpPowerComponent
 		FLOAT power 500.0
-	COMPONENT RigidBodyComponent
-		FLOAT mass 0.0
-		FLOAT linearDamping 0.0
-		FLOAT angularDamping 0.0
-		VECTOR_3 linearVelocity 0.0 0.0 0.0
-		VECTOR_3 angularVelocity 0.0 0.0 0.0
-		FLOAT linearSleepingThreshold 0.0
-		FLOAT angularSleepingThreshold 0.0
 	COMPONENT ColliderComponent
 		COLLIDER_INFO info CYLINDER_COLLIDER 0.5 1.0 0.5
 		FLOAT restitution 0.0
-		FLOAT friction 0.0
-		VECTOR_3 positionOffset 0.0 0.0 0.0
-		QUATERNION rotationOffset 0.2095041424036 -0.33532723784447 -0.64207994937897 0.65680813789368
+		FLOAT friction 0.5
+		VECTOR_3 positionOffset 0.11396269500256 1.01498281955719 0.10334438830614
+		QUATERNION rotationOffset 0.0 0.00000001490117 0.0 1.0
 		BOOL active true
 		BOOL useGizmo true
+	COMPONENT RigidBodyComponent
+		FLOAT mass 5.0
+		FLOAT linearDamping 0.5
+		FLOAT angularDamping 0.5
+		VECTOR_3 linearVelocity 0.0 0.0 0.0
+		VECTOR_3 angularVelocity 0.0 0.0 0.0
+		FLOAT linearSleepingThreshold 0.8
+		FLOAT angularSleepingThreshold 1.0
 
 ENTITY Camara 1
 	COMPONENT TransformComponent
@@ -59,4 +60,29 @@ ENTITY Camara 1
 		BOOL autoAspectRatio true
 		BOOL mainCamera true
 		VECTOR_4 clearColor 0.0 0.0 0.0 1.0
+
+ENTITY Floor 2
+	COMPONENT TransformComponent
+		VECTOR_3 position 0.0 -0.25499999523163 0.0
+		QUATERNION rotation 0.0 0.0 0.0 1.0
+		VECTOR_3 scale 17.3150005340576 0.75499999523163 13.2049999237061
+	COMPONENT ColliderComponent
+		COLLIDER_INFO info BOX_COLLIDER 7.73750019073486 0.5 7.92749977111816
+		FLOAT restitution 0.0
+		FLOAT friction 0.5
+		VECTOR_3 positionOffset 0.0 0.0 0.0
+		QUATERNION rotationOffset 0.0 0.0 0.0 1.0
+		BOOL active false
+		BOOL useGizmo false
+	COMPONENT RigidBodyComponent
+		FLOAT mass 0.0
+		FLOAT linearDamping 0.5
+		FLOAT angularDamping 0.5
+		VECTOR_3 linearVelocity 0.0 0.0 0.0
+		VECTOR_3 angularVelocity 0.0 0.0 0.0
+		FLOAT linearSleepingThreshold 0.8
+		FLOAT angularSleepingThreshold 1.0
+	COMPONENT RenderComponent
+		STRING meshName cube.mesh
+		STRING materialName 
 

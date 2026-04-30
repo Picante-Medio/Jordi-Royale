@@ -6,54 +6,9 @@
 #include "JumpPowerComponent.h"
 #include "PlayerTag.h"
 #include "CameraPivotTag.h"
-
-//*---Test includes---
-#include "ColliderComponent.h"
-#include "RenderComponent.h"
+#include "CameraComponent.h"
 
 void PlayerMovementSystem::init(){
-
-    // * TESTING: Floor for Jordi
-    EntityID floor = scene.createEntity();
-
-    scene.addComponent<TransformComponent>(floor, [](TransformComponent& trans){
-        trans.setPosition(HUGO::Vector3(0, -3, -10));
-    });
-
-    scene.addComponent<ColliderComponent>(floor, [](ColliderComponent& col){
-        col.info = HUGO::BoxColliderInfo({HUGO::Vector3(5, 1, 5)});
-        col.useGizmo = true;
-    });
-
-    scene.addComponent<RigidBodyComponent>(floor, [](RigidBodyComponent& rb){
-        rb.setBodyType(HUGO::STATIC);
-    });
-
-    EntityID JordiTest = scene.createEntity();
-
-    scene.addComponent<TransformComponent>(JordiTest, [](TransformComponent& trans){
-        trans.setPosition(HUGO::Vector3(0, 5, -10));
-    });
-
-    scene.addComponent<ColliderComponent>(JordiTest, [](ColliderComponent& col){
-        col.info = HUGO::BoxColliderInfo({HUGO::Vector3(0.5, 0.5, 0.5)});
-        col.useGizmo = true;
-    });
-
-    scene.addComponent<RigidBodyComponent>(JordiTest, [](RigidBodyComponent& rb){
-        rb.setBodyType(HUGO::DYNAMIC);
-        rb.setMass(5.0f);
-    });
-
-    scene.addComponent<PlayerTag>(JordiTest);
-    scene.addComponent<SpeedComponent>(JordiTest, [](SpeedComponent& sp){
-        sp.speed = 50;
-    });
-    scene.addComponent<JumpPowerComponent>(JordiTest);
-    scene.addComponent<RenderComponent>(JordiTest, [](RenderComponent& rc){
-        rc.meshName = "jordi.glb";
-    });
-    // * TESTING END
     
     scene.getInput()->registerAction("Forward", {HUGO::KeyCode::W});
     scene.getInput()->registerAction("Backward", {HUGO::KeyCode::S});
@@ -86,6 +41,12 @@ void PlayerMovementSystem::update(uint32_t){
     }
 
     lastMousePosition = currentMousePosition;
+
+    // * TESTING METHOD CALL
+
+    scene.query<TransformComponent, PlayerTag>()[0].modify<TransformComponent>([this](TransformComponent& trans){
+        updateCamera(trans);
+    });
 }
 
 void PlayerMovementSystem::fixedUpdate(uint32_t){
@@ -121,6 +82,18 @@ void PlayerMovementSystem::fixedUpdate(uint32_t){
             item.modify<TransformComponent>([rb](TransformComponent& trans){
                 // TODO trans.setRotation(HUGO::Quaternion());
             });
+
+            rb.setAngularVelocity(HUGO::Vector3());
         });
     }
+
+}
+
+// * TESTING METHOD
+
+void
+PlayerMovementSystem::updateCamera(TransformComponent& playerTrans){
+    scene.query<TransformComponent, CameraComponent>()[0].modify<TransformComponent>([this, playerTrans](TransformComponent& trans){
+        trans.setPosition(playerTrans.getPosition() + HUGO::Vector3(0, yOffset, zOffset));
+    });
 }
