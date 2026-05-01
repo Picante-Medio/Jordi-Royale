@@ -1,6 +1,7 @@
 #pragma once
 
 #include "HUGO.h"
+#include "HugoComponentMacros.h"
 
 HCOMPONENT(WeaponInfoComponent)
 
@@ -21,4 +22,4 @@ std::function<HUGO::Quaternion(uint32_t)> initialDirection;
 
 WeaponType type;
 
-HCOMPONENT_END()
+END_HCOMPONENT()

@@ -1,3 +1,5 @@
+#pragma once
+
 #include "HugoSystemMacros.h"
 
 HSYSTEM(EnemyMovementSystem)

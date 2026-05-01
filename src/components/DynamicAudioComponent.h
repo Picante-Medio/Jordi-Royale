@@ -1,3 +1,5 @@
+# pragma once
+
 #include "HugoComponentMacros.h"
 #include "HugoTypes.h"
 
