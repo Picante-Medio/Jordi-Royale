@@ -9,43 +9,5 @@ SYSTEM RenderSystem
 SYSTEM TweenSystem
 SYSTEM UISystem
 SYSTEM ConsoleSystem
-
-ENTITY Jordi 0
-	COMPONENT TransformComponent
-		VECTOR_3 position 0.0 0.0 0.0
-		QUATERNION rotation 0.0 0.0 0.0 1.0
-		VECTOR_3 scale 1.0 1.0 1.0
-	COMPONENT RigidBodyComponent
-		FLOAT mass 0.0
-		FLOAT linearDamping 0.0
-		FLOAT angularDamping 0.0
-		VECTOR_3 linearVelocity 0.0 0.0 0.0
-		VECTOR_3 angularVelocity 0.0 0.0 0.0
-		FLOAT linearSleepingThreshold 0.0
-		FLOAT angularSleepingThreshold 0.0
-	COMPONENT PlayerTag
-	COMPONENT SpeedComponent
-		FLOAT speed 5.0
-	COMPONENT HPComponent
-		INT HPMax 0
-		INT CurrentHP 0
-	COMPONENT JumpPowerComponent
-		FLOAT power 500.0
-
-ENTITY CameraPivot 1
-	COMPONENT TransformComponent
-		VECTOR_3 position 0.0 0.81992757320404 0.0
-		QUATERNION rotation 0.0 0.0 0.0 1.0
-		VECTOR_3 scale 1.0 1.0 1.0
-	COMPONENT ParentComponent
-		INT parent 0
-	COMPONENT CameraPivotTag
-
-ENTITY Camara 2
-	COMPONENT TransformComponent
-		VECTOR_3 position 0.0 0.0 2.0
-		QUATERNION rotation 0.0 0.0 0.0 1.0
-		VECTOR_3 scale 1.0 1.0 1.0
-	COMPONENT ParentComponent
-		INT parent 1
-
+SYSTEM InitSystem
+SYSTEM PlayerMovementSystem
