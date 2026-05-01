@@ -2,10 +2,12 @@
 #include "HUGO.h"
 
 #include "ResumeTag.h"
+#include "ExitTag.h"
 
 HSYSTEM(PauseSystem)
 
-    void initButtons(ResumeTag& resume);
+    void initResume(ResumeTag& resume);
+    void initExit(ExitTag& exit);
 
 public:
 
