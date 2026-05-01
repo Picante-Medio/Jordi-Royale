@@ -5,7 +5,7 @@
 HSYSTEM(DamageSystem)
 private:
 EntityID playerID;
-void heal(std::shared_ptr<HUGO::Message> m);
+void changeHP(EntityID id, HUGO::Int hp);
 
 public:
 void init() override;
