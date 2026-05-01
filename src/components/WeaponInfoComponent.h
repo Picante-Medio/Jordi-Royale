@@ -12,9 +12,11 @@ enum WeaponType {
 
 HUGO::String prefab;
 
-// ms between firing an attack
+// ms between firing each attack
 int32_t firingRate;
 
+// direction in which a projectile is fired
+// can be costant or variable
 std::function<HUGO::Quaternion(uint32_t)> initialDirection;
 
 WeaponType type;
