@@ -66,6 +66,7 @@ InitSystem::init(){
         rb.setAngularVelocity(HUGO::Vector3(0, 0, 0));
         rb.setLinearSleepingThreshold(0.8);
         rb.setAngularSleepingThreshold(1);
+        rb.dontRotateWithPhysicsOnDynamic = true;
     });
 
     // Camera

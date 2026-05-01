@@ -79,8 +79,15 @@ void PlayerMovementSystem::fixedUpdate(uint32_t){
                 rb.applyForce(jumpDirection * item.getConst<JumpPowerComponent>().power);
 
             // rotation
-            item.modify<TransformComponent>([rb](TransformComponent& trans){
-                // TODO trans.setRotation(HUGO::Quaternion());
+            item.modify<TransformComponent>([rb, velocity](TransformComponent& trans){
+                if(velocity == HUGO::Vector3()) return;
+                HUGO::Vector3 rotation = HUGO::Vector3(0, 0, 1).cross(velocity);
+                HUGO::Float wValue = sqrt(pow(HUGO::Vector3(0, 0, 1).length(), 2) * pow(velocity.length(), 2)) + velocity.z;
+                trans.setRotation(HUGO::Quaternion(wValue, rotation.x, rotation.y, rotation.z));
+
+                // Needed because previous calculations doesn't work properly when going forward and I don't know math
+                if(trans.getRotation() == HUGO::Quaternion(0, 0, 0, 0))
+                    trans.setRotation(HUGO::Quaternion(HUGO::Degree(180), HUGO::Vector3(0, 1, 0)));
             });
 
             rb.setAngularVelocity(HUGO::Vector3());
