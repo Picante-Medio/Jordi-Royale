@@ -1,0 +1,126 @@
+material JordiUI/Pause
+{
+    technique
+    {
+        pass
+        {
+            lighting off
+            depth_check off
+            depth_write off
+            scene_blend alpha_blend
+
+            texture_unit{
+                texture JordiPause.png
+                colour_op replace
+            }
+        }
+    }
+}
+material JordiUI/Resume
+{
+    technique
+    {
+        pass
+        {
+            lighting off
+            depth_check off
+            depth_write off
+            scene_blend alpha_blend
+
+            texture_unit{
+                texture JordiResume.png
+                colour_op replace
+            }
+        }
+    }
+}
+material JordiUI/ResumeHover
+{
+    technique
+    {
+        pass
+        {
+            lighting off
+            depth_check off
+            depth_write off
+            scene_blend alpha_blend
+
+            texture_unit{
+                texture JordiResumeHover.png
+                colour_op replace
+            }
+        }
+    }
+}
+material JordiUI/ResumePressed
+{
+    technique
+    {
+        pass
+        {
+            lighting off
+            depth_check off
+            depth_write off
+            scene_blend alpha_blend
+
+            texture_unit{
+                texture JordiResumePressed.png
+                colour_op replace
+            }
+        }
+    }
+}
+material JordiUI/Exit
+{
+    technique
+    {
+        pass
+        {
+            lighting off
+            depth_check off
+            depth_write off
+            scene_blend alpha_blend
+
+            texture_unit{
+                texture JordiExit.png
+                colour_op replace
+            }
+        }
+    }
+}
+material JordiUI/ExitHover
+{
+    technique
+    {
+        pass
+        {
+            lighting off
+            depth_check off
+            depth_write off
+            scene_blend alpha_blend
+
+            texture_unit{
+                texture JordiExitHover.png
+                colour_op replace
+            }
+        }
+    }
+}
+material JordiUI/ExitPressed
+{
+    technique
+    {
+        pass
+        {
+            lighting off
+            depth_check off
+            depth_write off
+            scene_blend alpha_blend
+
+            texture_unit{
+                texture JordiExitPressed.png
+                colour_op replace
+            }
+        }
+    }
+}

@@ -2,5 +2,5 @@
 
 #include "HugoComponentMacros.h"
 
-HCOMPONENT(EnemyComponent)
+HCOMPONENT(EnemyTag)
 END_HCOMPONENT()

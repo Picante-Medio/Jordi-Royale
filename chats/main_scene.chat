@@ -1,4 +1,4 @@
-SCENE test_scene
+SCENE main_scene
 SYSTEM AudioSystem
 SYSTEM PhysicsGizmoSystem
 SYSTEM HierarchySystem
@@ -11,3 +11,4 @@ SYSTEM UISystem
 SYSTEM ConsoleSystem
 SYSTEM InitSystem
 SYSTEM PlayerMovementSystem
+SYSTEM ChangeSceneSystem

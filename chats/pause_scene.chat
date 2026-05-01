@@ -1,0 +1,14 @@
+SCENE pause_scene
+SYSTEM AudioSystem
+SYSTEM PhysicsGizmoSystem
+SYSTEM HierarchySystem
+SYSTEM ParticleSystem
+SYSTEM CameraSystem
+SYSTEM LightSystem
+SYSTEM RenderSystem
+SYSTEM TweenSystem
+SYSTEM UISystem
+SYSTEM ConsoleSystem
+SYSTEM PauseSystem
+SYSTEM ChangeSceneSystem
+SYSTEM PauseInitSystem

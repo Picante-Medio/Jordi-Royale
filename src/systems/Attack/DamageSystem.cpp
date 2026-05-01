@@ -3,7 +3,7 @@
 #include "DamageComponent.h"
 #include "PlayerTag.h"
 #include "ColliderComponent.h"
-#include "EnemyComponent.h"
+#include "EnemyTag.h"
 #include "EnemyDeadMessage.h"
 #include "PlayerDeadMessage.h"
 #include "HealPlayerMessage.h"
@@ -34,7 +34,7 @@ void DamageSystem::update(uint32_t) {
         }
     }
         
-    for(auto enemy : scene.query<HPComponent, ColliderComponent, EnemyComponent>()){
+    for(auto enemy : scene.query<HPComponent, ColliderComponent, EnemyTag>()){
         const ColliderComponent& collider = enemy.getConst<ColliderComponent>();
         if(collider.collisionInfo.empty()) continue;
         

@@ -2,5 +2,5 @@
 
 #include "HUGO.h"
 
-HCOMPONENT(ReturnTag)
+HCOMPONENT(ExitTag)
 END_HCOMPONENT()
