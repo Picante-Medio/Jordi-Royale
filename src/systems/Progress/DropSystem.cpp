@@ -6,7 +6,6 @@
 #include "EnemyDeadMessage.h"
 #include "HPComponent.h"
 #include "BossTag.h"
-#include "HugoError.h"
 #include "HugoMath.h"
 #include "TransformComponent.h"
 #include "XPComponent.h"
@@ -54,11 +53,11 @@ DropSystem::killEnemy(EntityID enemy) {
 
 void 
 DropSystem::spawnChest(HUGO::Vector3 position) {
-    ErrorOrType<EntityID> chestPrefab = scene.instantiatePrefab("Chest");
+    HUGO::ErrorOrType<EntityID> chestPrefab = scene.instantiatePrefab("Chest");
 
     // If the prefab does not exist, log it to console
     if(chestPrefab.isError()) {
-        scene.log(std::make_shared<StringError>(chestPrefab.getError()));
+        scene.log(std::make_shared<HUGO::StringError>(chestPrefab.getError()));
         return;
     }
 
@@ -72,11 +71,11 @@ DropSystem::spawnChest(HUGO::Vector3 position) {
 void 
 DropSystem::spawnXP(HUGO::Vector3 position, int amount) {
     for(int i = 0; i < amount; ++i) {
-        ErrorOrType<EntityID> xpPrefab = scene.instantiatePrefab("XP");
+        HUGO::ErrorOrType<EntityID> xpPrefab = scene.instantiatePrefab("XP");
 
         // If the prefab does not exist, log it to console
         if(xpPrefab.isError()) {
-            scene.log(std::make_shared<StringError>(xpPrefab.getError()));
+            scene.log(std::make_shared<HUGO::StringError>(xpPrefab.getError()));
             return;
         }
 
