@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://c3kkpdeydr4yq"]
+
+[ext_resource type="Script" uid="uid://bv4fdb5khcnbk" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="1_ej3y6"]
+[ext_resource type="Script" uid="uid://dc6egsdq3qnrj" path="res://Components/EnemyComponent.gd" id="2_imfm6"]
+[ext_resource type="Script" uid="uid://s2j52p8es0or" path="res://addons/HugosChatPlugin/NativeComponents/ColliderComponent.gd" id="3_wft1y"]
+[ext_resource type="Script" uid="uid://dpjupwgyydq3o" path="res://addons/HugosChatPlugin/NativeComponents/RigidBodyComponent.gd" id="4_2tswx"]
+[ext_resource type="Script" uid="uid://bpive0dt6e0xe" path="res://addons/HugosChatPlugin/NativeComponents/RenderComponent.gd" id="5_nj6ug"]
+[ext_resource type="Script" uid="uid://dlt0sfvp2lxlg" path="res://Components/DamageComponent.gd" id="6_jnpp6"]
+[ext_resource type="Script" uid="uid://dcqpn65lxc6a1" path="res://Components/HPComponent.gd" id="7_jn2bs"]
+[ext_resource type="Script" uid="uid://dk4nyrs1a6elm" path="res://Components/LevelComponent.gd" id="8_7larv"]
+[ext_resource type="Script" uid="uid://cip1v7uoq008a" path="res://Components/SpeedComponent.gd" id="9_aubs4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jccr3"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_jd3y4"]
+
+[node name="Boss" type="Node3D" unique_id=1370903902]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+script = ExtResource("1_ej3y6")
+metadata/_custom_type_script = "uid://bv4fdb5khcnbk"
+
+[node name="EnemyComponent" type="Node" parent="." unique_id=1774900825]
+script = ExtResource("2_imfm6")
+metadata/_custom_type_script = "uid://dc6egsdq3qnrj"
+
+[node name="ColliderComponent" type="CollisionShape3D" parent="." unique_id=60116402]
+shape = SubResource("BoxShape3D_jccr3")
+script = ExtResource("3_wft1y")
+friction = 0.5
+active = true
+info = SubResource("BoxShape3D_jccr3")
+metadata/_custom_type_script = "uid://s2j52p8es0or"
+
+[node name="RigidBodyComponent" type="Node" parent="." unique_id=1724793733]
+script = ExtResource("4_2tswx")
+linearSleepingThreshold = 0.8
+angularSleepingThreshold = 1.0
+metadata/_custom_type_script = "uid://dpjupwgyydq3o"
+
+[node name="RenderComponent" type="MeshInstance3D" parent="." unique_id=1222548737]
+script = ExtResource("5_nj6ug")
+mesh_name = "cube.mesh"
+metadata/_custom_type_script = "uid://bpive0dt6e0xe"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RenderComponent" unique_id=871455293]
+mesh = SubResource("BoxMesh_jd3y4")
+
+[node name="DamageComponent" type="Node" parent="." unique_id=919601672]
+script = ExtResource("6_jnpp6")
+Damage = 30
+metadata/_custom_type_script = "uid://dlt0sfvp2lxlg"
+
+[node name="HPComponent" type="Node" parent="." unique_id=742118507]
+script = ExtResource("7_jn2bs")
+HPMax = 500
+CurrentHP = 500
+metadata/_custom_type_script = "uid://dcqpn65lxc6a1"
+
+[node name="LevelComponent" type="Node" parent="." unique_id=554129512]
+script = ExtResource("8_7larv")
+metadata/_custom_type_script = "uid://dk4nyrs1a6elm"
+
+[node name="SpeedComponent" type="Node" parent="." unique_id=101251184]
+script = ExtResource("9_aubs4")
+speed = 2.0
+metadata/_custom_type_script = "uid://cip1v7uoq008a"

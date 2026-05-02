@@ -9,23 +9,19 @@ SYSTEM RenderSystem
 SYSTEM TweenSystem
 SYSTEM UISystem
 SYSTEM ConsoleSystem
-SYSTEM ChangeSceneSystem
+SYSTEM DamageSystem
+SYSTEM PlayerMovementSystem
 
-ENTITY Jordi 1
+ENTITY Jordi 0
     COMPONENT TransformComponent
         VECTOR_3 position 0.0 0.08866310119629 0.0
         QUATERNION rotation 0.0 0.98570495843887 0.0 0.16848082840443
         VECTOR_3 scale 1.0 1.0 1.0
-    COMPONENT RenderComponent
-        STRING meshName jordi.glb
-        STRING materialName 
     COMPONENT SpeedComponent
         FLOAT speed 5.0
     COMPONENT HPComponent
         INT HPMax 0
         INT CurrentHP 0
-    COMPONENT JumpPowerComponent
-        FLOAT power 500.0
     COMPONENT RigidBodyComponent
         FLOAT mass 0.0
         FLOAT linearDamping 0.0
@@ -42,6 +38,16 @@ ENTITY Jordi 1
         QUATERNION rotationOffset 0.2095041424036 -0.33532723784447 -0.64207994937897 0.65680813789368
         BOOL active true
         BOOL useGizmo true
+    COMPONENT PlayerComponent
+        FLOAT jumpPower 500.0
+        FLOAT xpPickupRange 5.0
+        FLOAT objectPickupRange 1.0
+        INT airJumps 0
+    COMPONENT JumpPowerComponent
+        FLOAT power 500.0
+    COMPONENT RenderComponent
+        STRING meshName jordi.glb
+        STRING materialName 
     START_CHILDREN
     END_CHILDREN
 END_ENTITY
@@ -61,6 +67,15 @@ ENTITY Camara 1
         BOOL autoAspectRatio true
         BOOL mainCamera true
         VECTOR_4 clearColor 0.0 0.0 0.0 1.0
+    START_CHILDREN
+    END_CHILDREN
+END_ENTITY
+
+ENTITY Pepe 2
+    COMPONENT TransformComponent
+        VECTOR_3 position 0.0 0.0 0.0
+        QUATERNION rotation 0.0 0.0 0.0 1.0
+        VECTOR_3 scale 1.0 1.0 1.0
     START_CHILDREN
     END_CHILDREN
 END_ENTITY

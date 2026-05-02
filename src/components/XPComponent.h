@@ -2,10 +2,8 @@
 
 #include "HugoComponentMacros.h"
 
-const int XP_PER_PARTICLE = 5;
-
 HCOMPONENT(XPComponent)
 
-unsigned int experience = XP_PER_PARTICLE;
+DEFAULT_SERIALIZED_MEMBER(int, experience, 5);
 
 END_HCOMPONENT()

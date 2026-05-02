@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bmd0ahgtkarjd"]
+
+[ext_resource type="Script" uid="uid://bv4fdb5khcnbk" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="1_b8c6g"]
+[ext_resource type="Script" uid="uid://bpive0dt6e0xe" path="res://addons/HugosChatPlugin/NativeComponents/RenderComponent.gd" id="2_3tq3s"]
+[ext_resource type="Script" uid="uid://5g2xdwa7tbk8" path="res://Components/PickableComponent.gd" id="3_bdlh2"]
+[ext_resource type="Script" uid="uid://dcqpn65lxc6a1" path="res://Components/HPComponent.gd" id="4_opr0t"]
+
+[node name="Heal" type="Node3D" unique_id=1381693374]
+script = ExtResource("1_b8c6g")
+metadata/_custom_type_script = "uid://bv4fdb5khcnbk"
+
+[node name="RenderComponent" type="MeshInstance3D" parent="." unique_id=1989943249]
+script = ExtResource("2_3tq3s")
+metadata/_custom_type_script = "uid://bpive0dt6e0xe"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RenderComponent" unique_id=787102662]
+
+[node name="PickableComponent" type="Node" parent="." unique_id=262344704]
+script = ExtResource("3_bdlh2")
+metadata/_custom_type_script = "uid://5g2xdwa7tbk8"
+
+[node name="HPComponent" type="Node" parent="." unique_id=654174441]
+script = ExtResource("4_opr0t")
+HPMax = 10
+CurrentHP = 10
+metadata/_custom_type_script = "uid://dcqpn65lxc6a1"

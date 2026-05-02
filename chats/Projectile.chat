@@ -1,0 +1,39 @@
+PREFAB Projectile
+ENTITY Projectile 1
+    COMPONENT TransformComponent
+        VECTOR_3 position 0.0 0.0 0.0
+        QUATERNION rotation 0.0 0.0 0.0 1.0
+        VECTOR_3 scale 1.0 1.0 1.0
+    COMPONENT ProjectileComponent
+        INT lifetime 0
+        INT pathTypeX 0
+        VECTOR_4 pathInfoX 0.0 0.0 0.0 0.0
+        INT pathTypeY 0
+        VECTOR_4 pathInfoY 0.0 0.0 0.0 0.0
+        INT pathTypeZ 0
+        VECTOR_4 pathInfoZ 0.0 0.0 0.0 0.0
+    COMPONENT DamageComponent
+        INT Damage 10
+    COMPONENT ColliderComponent
+        COLLIDER_INFO info SPHERE_COLLIDER 0.6362669467926
+        FLOAT restitution 0.0
+        FLOAT friction 0.0
+        VECTOR_3 positionOffset 0.0 -0.0458984375 0.0
+        QUATERNION rotationOffset 0.0 0.0 0.0 1.0
+        BOOL active false
+        BOOL useGizmo false
+    COMPONENT RigidBodyComponent
+        FLOAT mass 0.0
+        FLOAT linearDamping 0.0
+        FLOAT angularDamping 0.0
+        VECTOR_3 linearVelocity 0.0 0.0 0.0
+        VECTOR_3 angularVelocity 0.0 0.0 0.0
+        FLOAT linearSleepingThreshold 0.8
+        FLOAT angularSleepingThreshold 1.0
+    COMPONENT RenderComponent
+        STRING meshName sphere.mesh
+        STRING materialName 
+    START_CHILDREN
+    END_CHILDREN
+END_ENTITY
+

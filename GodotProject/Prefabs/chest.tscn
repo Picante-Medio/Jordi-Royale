@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://4kuvg75yohgd"]
+
+[ext_resource type="Script" uid="uid://bv4fdb5khcnbk" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="1_yaanm"]
+[ext_resource type="Script" uid="uid://bpive0dt6e0xe" path="res://addons/HugosChatPlugin/NativeComponents/RenderComponent.gd" id="2_kbimj"]
+[ext_resource type="Script" uid="uid://5g2xdwa7tbk8" path="res://Components/PickableComponent.gd" id="3_b1fom"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_n5ncr"]
+
+[node name="Chest" type="Node3D" unique_id=892382048]
+script = ExtResource("1_yaanm")
+metadata/_custom_type_script = "uid://bv4fdb5khcnbk"
+
+[node name="RenderComponent" type="MeshInstance3D" parent="." unique_id=2078113015]
+script = ExtResource("2_kbimj")
+metadata/_custom_type_script = "uid://bpive0dt6e0xe"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RenderComponent" unique_id=1642802885]
+mesh = SubResource("BoxMesh_n5ncr")
+
+[node name="PickableComponent" type="Node" parent="." unique_id=159374335]
+script = ExtResource("3_b1fom")
+pickupRadius = 1.5350000000000001
+metadata/_custom_type_script = "uid://5g2xdwa7tbk8"

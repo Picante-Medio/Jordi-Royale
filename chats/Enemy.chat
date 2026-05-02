@@ -1,0 +1,39 @@
+PREFAB Enemy
+ENTITY Enemy 1
+    COMPONENT TransformComponent
+        VECTOR_3 position 0.0 0.0 0.0
+        QUATERNION rotation 0.0 0.0 0.0 1.0
+        VECTOR_3 scale 1.0 1.0 1.0
+    COMPONENT EnemyComponent
+    COMPONENT ColliderComponent
+        COLLIDER_INFO info BOX_COLLIDER 0.5 0.5 0.5
+        FLOAT restitution 0.0
+        FLOAT friction 0.5
+        VECTOR_3 positionOffset 0.0 0.0 0.0
+        QUATERNION rotationOffset 0.0 0.0 0.0 1.0
+        BOOL active true
+        BOOL useGizmo false
+    COMPONENT RigidBodyComponent
+        FLOAT mass 0.0
+        FLOAT linearDamping 0.0
+        FLOAT angularDamping 0.0
+        VECTOR_3 linearVelocity 0.0 0.0 0.0
+        VECTOR_3 angularVelocity 0.0 0.0 0.0
+        FLOAT linearSleepingThreshold 0.8
+        FLOAT angularSleepingThreshold 1.0
+    COMPONENT RenderComponent
+        STRING meshName cube.mesh
+        STRING materialName 
+    COMPONENT DamageComponent
+        INT Damage 10
+    COMPONENT HPComponent
+        INT HPMax 50
+        INT CurrentHP 50
+    COMPONENT LevelComponent
+        INT level 1
+    COMPONENT SpeedComponent
+        FLOAT speed 5.0
+    START_CHILDREN
+    END_CHILDREN
+END_ENTITY
+

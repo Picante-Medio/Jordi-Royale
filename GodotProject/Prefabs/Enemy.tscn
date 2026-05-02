@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c4148ap0mlp3i"]
 
 [ext_resource type="Script" uid="uid://dc6egsdq3qnrj" path="res://Components/EnemyComponent.gd" id="1_6ikya"]
+[ext_resource type="Script" uid="uid://bv4fdb5khcnbk" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="1_jiv5b"]
 [ext_resource type="Script" uid="uid://s2j52p8es0or" path="res://addons/HugosChatPlugin/NativeComponents/ColliderComponent.gd" id="2_jiv5b"]
 [ext_resource type="Script" uid="uid://dpjupwgyydq3o" path="res://addons/HugosChatPlugin/NativeComponents/RigidBodyComponent.gd" id="3_wkm8f"]
 [ext_resource type="Script" uid="uid://bpive0dt6e0xe" path="res://addons/HugosChatPlugin/NativeComponents/RenderComponent.gd" id="4_ypyg0"]
@@ -13,7 +14,8 @@
 
 [sub_resource type="BoxMesh" id="BoxMesh_jd3y4"]
 
-[node name="Enemy" type="Node3D" unique_id=1005265636]
+[node name="Enemy" type="Node3D" unique_id=1370903902]
+script = ExtResource("1_jiv5b")
 metadata/_custom_type_script = "uid://bv4fdb5khcnbk"
 
 [node name="EnemyComponent" type="Node" parent="." unique_id=1774900825]
@@ -36,6 +38,7 @@ metadata/_custom_type_script = "uid://dpjupwgyydq3o"
 
 [node name="RenderComponent" type="MeshInstance3D" parent="." unique_id=1222548737]
 script = ExtResource("4_ypyg0")
+mesh_name = "cube.mesh"
 metadata/_custom_type_script = "uid://bpive0dt6e0xe"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RenderComponent" unique_id=871455293]

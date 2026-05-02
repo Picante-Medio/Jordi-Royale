@@ -1,0 +1,18 @@
+PREFAB Heal
+ENTITY Heal 1
+    COMPONENT TransformComponent
+        VECTOR_3 position 0.0 0.0 0.0
+        QUATERNION rotation 0.0 0.0 0.0 1.0
+        VECTOR_3 scale 1.0 1.0 1.0
+    COMPONENT RenderComponent
+        STRING meshName 
+        STRING materialName 
+    COMPONENT PickableComponent
+        FLOAT pickupRadius 0.5
+    COMPONENT HPComponent
+        INT HPMax 10
+        INT CurrentHP 10
+    START_CHILDREN
+    END_CHILDREN
+END_ENTITY
+
