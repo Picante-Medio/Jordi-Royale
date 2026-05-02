@@ -2,10 +2,9 @@
 
 #include "TransformComponent.h"
 #include "RenderComponent.h"
-#include "PlayerTag.h"
+#include "PlayerComponent.h"
 #include "SpeedComponent.h"
 #include "HPComponent.h"
-#include "JumpPowerComponent.h"
 #include "ColliderComponent.h"
 #include "RigidBodyComponent.h"
 #include "CameraComponent.h"
@@ -33,7 +32,9 @@ InitSystem::init(){
         rc.setMaterialName("");
     });
 
-    scene.addComponent<PlayerTag>(jordi);
+    scene.addComponent<PlayerComponent>(jordi, [](PlayerComponent& pc){
+        pc.jumpPower = 500.0f;
+    });
 
     scene.addComponent<SpeedComponent>(jordi, [](SpeedComponent& sp){
         sp.speed = 50;
@@ -44,9 +45,6 @@ InitSystem::init(){
         hp.CurrentHP = 100;
     });
 
-    scene.addComponent<JumpPowerComponent>(jordi, [](JumpPowerComponent& jump){
-        jump.power = 500;
-    });
 
     scene.addComponent<ColliderComponent>(jordi, [](ColliderComponent& col){
         col.info = HUGO::CylinderColliderInfo({HUGO::Vector3(0.5, 1, 0.5)});

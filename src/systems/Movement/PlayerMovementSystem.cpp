@@ -1,21 +1,22 @@
+#include <math.h>
+
 #include "PlayerMovementSystem.h"
 #include "HugoMath.h"
 #include "TransformComponent.h"
 #include "RigidBodyComponent.h"
 #include "SpeedComponent.h"
-#include "JumpPowerComponent.h"
-#include "PlayerTag.h"
+#include "PlayerComponent.h"
 #include "CameraPivotTag.h"
 #include "CameraComponent.h"
 
 void PlayerMovementSystem::init(){
     
-    scene.getInput()->registerAction("Forward", {HUGO::KeyCode::W});
-    scene.getInput()->registerAction("Backward", {HUGO::KeyCode::S});
-    scene.getInput()->registerAction("Right", {HUGO::KeyCode::D});
-    scene.getInput()->registerAction("Left", {HUGO::KeyCode::A});
+    scene.getInput()->registerAction("Forward", HUGO::KeyCode::W);
+    scene.getInput()->registerAction("Backward", HUGO::KeyCode::S);
+    scene.getInput()->registerAction("Right", HUGO::KeyCode::D);
+    scene.getInput()->registerAction("Left", HUGO::KeyCode::A);
     // Will be KeyCode::SPACE as soon as changes in HUGO are brought to main
-    scene.getInput()->registerAction("Jump", {HUGO::KeyCode::SPACE});
+    scene.getInput()->registerAction("Jump", HUGO::KeyCode::SPACE);
 }
 
 // every time the scene is loaded, the mouse position is registered again
@@ -44,7 +45,7 @@ void PlayerMovementSystem::update(uint32_t){
 
     // * TESTING METHOD CALL
 
-    scene.query<TransformComponent, PlayerTag>()[0].modify<TransformComponent>([this](TransformComponent& trans){
+    scene.query<TransformComponent, PlayerComponent>()[0].modify<TransformComponent>([this](TransformComponent& trans){
         updateCamera(trans);
     });
 }
@@ -69,14 +70,14 @@ void PlayerMovementSystem::fixedUpdate(uint32_t){
     // normalize
     velocity.normalize();
 
-    for(auto& item : scene.query<RigidBodyComponent, SpeedComponent, JumpPowerComponent, PlayerTag, TransformComponent>()){
+    for(auto& item : scene.query<PlayerComponent, RigidBodyComponent, SpeedComponent, TransformComponent>()){
         item.modify<RigidBodyComponent>([&item, velocity, jumpDirection](RigidBodyComponent& rb){
             // horizontal movement
             rb.applyForce(velocity * item.getConst<SpeedComponent>().speed);
 
             // vertical movement
             if(rb.getLinearVelocity().y < 0.05f && rb.getLinearVelocity().y > -0.05f)
-                rb.applyForce(jumpDirection * item.getConst<JumpPowerComponent>().power);
+                rb.applyForce(jumpDirection * item.getConst<PlayerComponent>().jumpPower);
 
             // rotation
             item.modify<TransformComponent>([rb, velocity](TransformComponent& trans){

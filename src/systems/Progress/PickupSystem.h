@@ -4,6 +4,7 @@
 #include "HugoSystemMacros.h"
 
 HSYSTEM(PickupSystem)
+    float grabDistance = 5.f;
 public:
     void update(uint32_t dt) override;
 

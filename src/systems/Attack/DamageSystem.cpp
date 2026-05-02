@@ -1,7 +1,7 @@
 #include "DamageSystem.h"
 #include "HPComponent.h"
 #include "DamageComponent.h"
-#include "PlayerTag.h"
+#include "PlayerComponent.h"
 #include "ColliderComponent.h"
 #include "EnemyTag.h"
 #include "EnemyDeadMessage.h"
@@ -20,7 +20,7 @@ void DamageSystem::onLoad() {
 }
 
 void DamageSystem::update(uint32_t) {
-    playerID = scene.query<PlayerTag>().begin()->getConst<PlayerTag>().entity;
+    playerID = scene.query<PlayerComponent>().begin()->getConst<PlayerComponent>().entity;
     for(EntityID id : scene.getComponent<ColliderComponent>(playerID).getCollisionInfo()){
         if(scene.hasComponent<DamageComponent>(id) && scene.getComponent<DamageComponent>(id).DamType == DamageComponent::Enemy){
             const DamageComponent& damage = scene.getComponent<DamageComponent>(id);

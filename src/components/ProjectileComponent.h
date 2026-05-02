@@ -2,6 +2,7 @@
 
 #include <variant>
 #include "HUGO.h"
+#include "HugoComponentMacros.h"
 
 struct MRU {
     float s = 0.f; // speed (m/s)

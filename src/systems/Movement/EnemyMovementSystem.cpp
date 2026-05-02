@@ -4,7 +4,7 @@
 #include "EnemyTag.h"
 #include "HugoMath.h"
 #include "RigidBodyComponent.h"
-#include "PlayerTag.h"
+#include "PlayerComponent.h"
 #include "SpeedComponent.h"
 #include "TransformComponent.h"
 
@@ -17,7 +17,7 @@ EnemyMovementSystem::onLoad() {}
 void 
 EnemyMovementSystem::fixedUpdate(uint32_t dt) {
     // Find Jordi
-    EntityID jordi = scene.query<PlayerTag>().begin()->getConst<PlayerTag>().entity;
+    EntityID jordi = scene.query<PlayerComponent>().begin()->getConst<PlayerComponent>().entity;
 
     // Move enemies towards Jordi
     for(auto pack : scene.query<EnemyTag, RigidBodyComponent, TransformComponent, SpeedComponent>()) {

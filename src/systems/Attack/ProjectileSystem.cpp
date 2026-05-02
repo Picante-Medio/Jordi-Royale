@@ -7,7 +7,7 @@
 #include "ColliderComponent.h"
 #include "DestroyOnEnemyContactTag.h"
 #include "DestroyOnPlayerContactTag.h"
-#include "PlayerTag.h"
+#include "PlayerComponent.h"
 #include "EnemyTag.h"
 
 void ProjectileSystem::init() {
@@ -72,7 +72,7 @@ void ProjectileSystem::update(uint32_t) {
                 break;
             }
 
-            if(destroyOnPlayerContact && scene.hasComponent<PlayerTag>(id)) {
+            if(destroyOnPlayerContact && scene.hasComponent<PlayerComponent>(id)) {
                 scene.removeEntity(collider.entity);
                 break;
             }

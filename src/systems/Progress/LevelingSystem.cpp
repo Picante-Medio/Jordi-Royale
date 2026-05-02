@@ -2,7 +2,7 @@
 
 #include "XPComponent.h"
 #include "TransformComponent.h"
-#include "PlayerTag.h"
+#include "PlayerComponent.h"
 #include "LevelComponent.h"
 
 #include "LeveledUpMessage.h"
@@ -22,7 +22,7 @@ LevelingSystem::update(uint32_t){
 
     // Grab experience
     for(auto& xp : scene.query<XPComponent, TransformComponent>()){
-        for(auto& player : scene.query<PlayerTag, TransformComponent, LevelComponent>()){
+        for(auto& player : scene.query<PlayerComponent, TransformComponent, LevelComponent>()){
             TransformComponent xpTrans = xp.getConst<TransformComponent>();
             TransformComponent playerTrans = player.getConst<TransformComponent>();
 
@@ -42,7 +42,7 @@ LevelingSystem::update(uint32_t){
     }
 
     // Level up if needed
-    for(auto& player : scene.query<PlayerTag, LevelComponent>()){
+    for(auto& player : scene.query<PlayerComponent, LevelComponent>()){
         LevelComponent lvlCmp = player.getConst<LevelComponent>();
 
         // while there's enough experience to level up, the player keeps leveling up
