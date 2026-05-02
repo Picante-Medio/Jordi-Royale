@@ -1,11 +1,15 @@
 #include "LevelingSystem.h"
 
+#include "EcsTypes.h"
+#include "Message.h"
 #include "XPComponent.h"
 #include "TransformComponent.h"
 #include "PlayerComponent.h"
 #include "LevelComponent.h"
-
 #include "LeveledUpMessage.h"
+#include "XPGrabMessage.h"
+
+#include <memory>
 
 void 
 LevelingSystem::onLoad(){
@@ -15,31 +19,19 @@ LevelingSystem::onLoad(){
 void 
 LevelingSystem::init(){
 
+    // Grab experience through message
+    scene.subscribe<XPGrabMessage>([this](std::shared_ptr<HUGO::Message> message){
+        std::shared_ptr<XPGrabMessage> m = std::static_pointer_cast<XPGrabMessage>(message);
+        EntityID player = scene.query<PlayerComponent>().begin()->getConst<PlayerComponent>().entity;
+
+        scene.modifyComponent<LevelComponent>(player, [m](LevelComponent& lvl){
+            lvl.currentExperience += m->xp;
+        });
+    });
 }
 
 void 
 LevelingSystem::update(uint32_t){
-
-    // Grab experience
-    for(auto& xp : scene.query<XPComponent, TransformComponent>()){
-        for(auto& player : scene.query<PlayerComponent, TransformComponent, LevelComponent>()){
-            TransformComponent xpTrans = xp.getConst<TransformComponent>();
-            TransformComponent playerTrans = player.getConst<TransformComponent>();
-
-            HUGO::Vector3 distance = xpTrans.getPosition() - playerTrans.getPosition();
-            float distanceModule = distance.length();
-
-            if(distanceModule < grabDistance){
-                player.modify<LevelComponent>([xp](LevelComponent& lvl){
-
-                    lvl.currentExperience += xp.getConst<XPComponent>().experience;
-                });
-
-                // Animation of experience moving towards player may be added (optional)
-                scene.removeEntity(xpTrans.entity);
-            }
-        }
-    }
 
     // Level up if needed
     for(auto& player : scene.query<PlayerComponent, LevelComponent>()){
