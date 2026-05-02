@@ -1,80 +1,20 @@
 [gd_scene format=3 uid="uid://dq2fl1vp76r7r"]
 
-[ext_resource type="Script" uid="uid://cft1fgdpqn2vu" path="res://addons/HugosChatPlugin/Entities/scene_tracker.gd" id="1_865ah"]
-[ext_resource type="Script" uid="uid://dimuk3ggoam44" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="2_huasi"]
-[ext_resource type="Script" uid="uid://m1etoujkmig8" path="res://addons/HugosChatPlugin/NativeComponents/CameraComponent.gd" id="3_drdnd"]
-[ext_resource type="Script" uid="uid://7yrjlv0jx5tv" path="res://addons/HugosChatPlugin/NativeComponents/ColliderComponent.gd" id="3_m1efj"]
-[ext_resource type="Script" uid="uid://dpjupwgyydq3o" path="res://addons/HugosChatPlugin/NativeComponents/RigidBodyComponent.gd" id="4_mai8y"]
-[ext_resource type="Script" uid="uid://bfkq57mrubdne" path="res://Components/PlayerTag.gd" id="5_76v2p"]
+[ext_resource type="Script" uid="uid://dstqkjl1nichv" path="res://addons/HugosChatPlugin/Entities/scene_tracker.gd" id="1_865ah"]
+[ext_resource type="Script" uid="uid://d3fypo3sn4qu3" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="2_huasi"]
+[ext_resource type="Script" uid="uid://d10rufr7dnrt6" path="res://addons/HugosChatPlugin/NativeComponents/CameraComponent.gd" id="3_drdnd"]
+[ext_resource type="Script" uid="uid://bg5luietaqtrx" path="res://addons/HugosChatPlugin/NativeComponents/ColliderComponent.gd" id="3_m1efj"]
+[ext_resource type="Script" uid="uid://dgu5myf6wqmwa" path="res://addons/HugosChatPlugin/NativeComponents/RigidBodyComponent.gd" id="4_mai8y"]
+[ext_resource type="Script" uid="uid://bbqhq5soqvu70" path="res://Components/PlayerTag.gd" id="5_76v2p"]
 [ext_resource type="Script" uid="uid://bxtnhlmmus6l2" path="res://Components/SpeedComponent.gd" id="6_drdnd"]
 [ext_resource type="Script" uid="uid://dfj2qxmqtkj0s" path="res://Components/HPComponent.gd" id="7_ioaeq"]
 [ext_resource type="Script" uid="uid://ctauv0e0re3vs" path="res://Components/JumpPowerComponent.gd" id="8_7ewk0"]
-[ext_resource type="Script" uid="uid://bnjt3w18hk2gs" path="res://addons/HugosChatPlugin/NativeComponents/RenderComponent.gd" id="10_mai8y"]
+[ext_resource type="Script" uid="uid://430akguj0twj" path="res://addons/HugosChatPlugin/NativeComponents/RenderComponent.gd" id="10_mai8y"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_76v2p"]
 
 [node name="main_scene" type="Node3D" unique_id=1228723441]
 script = ExtResource("1_865ah")
-entities = Dictionary[String, Dictionary]({
-"Camara": {
-"CameraComponent": Dictionary[String, Variant]({
-"autoAspectRatio": "BOOL autoAspectRatio true",
-"clearColor": "VECTOR_4 clearColor 0.0 0.0 0.0 1.0",
-"farClip": "FLOAT farClip 10000.0",
-"fovY": "FLOAT fovY 60.0",
-"mainCamera": "BOOL mainCamera true",
-"nearClip": "FLOAT nearClip 1.0",
-"orthoHeight": "FLOAT orthoHeight 10.0",
-"orthoWidth": "FLOAT orthoWidth 10.0",
-"projectionType": "INT projectionType 0"
-}),
-"TransformComponent": Dictionary[String, Variant]({
-"position": "VECTOR_3 position 0.0 0.81999999284744 4.05000019073486",
-"rotation": "QUATERNION rotation 0.0 0.0 0.0 1.0",
-"scale": "VECTOR_3 scale 1.0 1.0 1.0"
-})
-},
-"Jordi": {
-"ColliderComponent": Dictionary[String, Variant]({
-"active": "BOOL active true",
-"friction": "FLOAT friction 0.0",
-"info": "COLLIDER_INFO info CYLINDER_COLLIDER 0.5 1.0 0.5",
-"positionOffset": "VECTOR_3 positionOffset 0.0 0.0 0.0",
-"restitution": "FLOAT restitution 0.0",
-"rotationOffset": "QUATERNION rotationOffset 0.2095041424036 -0.33532723784447 -0.64207994937897 0.65680813789368",
-"useGizmo": "BOOL useGizmo true"
-}),
-"HPComponent": Dictionary[String, Variant]({
-"CurrentHP": "INT CurrentHP 0",
-"HPMax": "INT HPMax 0"
-}),
-"JumpPowerComponent": Dictionary[String, Variant]({
-"power": "FLOAT power 500.0"
-}),
-"PlayerTag": Dictionary[String, Variant]({}),
-"RenderComponent": Dictionary[String, Variant]({
-"materialName": "STRING materialName ",
-"meshName": "STRING meshName jordi.glb"
-}),
-"RigidBodyComponent": Dictionary[String, Variant]({
-"angularDamping": "FLOAT angularDamping 0.0",
-"angularSleepingThreshold": "FLOAT angularSleepingThreshold 0.0",
-"angularVelocity": "VECTOR_3 angularVelocity 0.0 0.0 0.0",
-"linearDamping": "FLOAT linearDamping 0.0",
-"linearSleepingThreshold": "FLOAT linearSleepingThreshold 0.0",
-"linearVelocity": "VECTOR_3 linearVelocity 0.0 0.0 0.0",
-"mass": "FLOAT mass 0.0"
-}),
-"SpeedComponent": Dictionary[String, Variant]({
-"speed": "FLOAT speed 5.0"
-}),
-"TransformComponent": Dictionary[String, Variant]({
-"position": "VECTOR_3 position 0.0 0.08866310119629 0.0",
-"rotation": "QUATERNION rotation 0.0 0.98570495843887 0.0 0.16848082840443",
-"scale": "VECTOR_3 scale 1.0 1.0 1.0"
-})
-}
-})
 systems = Array[int]([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 10])
 
 [node name="Jordi" type="Node3D" parent="." unique_id=499115862]
@@ -85,9 +25,6 @@ systems = Array[int]([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 [node name="RenderComponent" type="MeshInstance3D" parent="Jordi" unique_id=33261350]
 script = ExtResource("10_mai8y")
 mesh_name = "jordi.glb"
-
-[node name="jordi" parent="Jordi/RenderComponent" unique_id=1187907538]
-[node name="jordi" parent="Jordi/RenderComponent" unique_id=1187907538]
 
 [node name="PlayerTag" type="Node" parent="Jordi" unique_id=564955268]
 script = ExtResource("5_76v2p")
