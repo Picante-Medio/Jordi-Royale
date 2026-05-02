@@ -11,12 +11,7 @@ struct MRU {
 struct MRUA {
     float s = 0.f; // speed (m/s)
     float a = 0.f; // acceleration (m/s2);
-
-    // MRUA(float s, float a) : s(s), a(a) {}
 };
-// struct MCU {
-//     float w; // angular speed (radians/s)
-// };
 struct SIN {
     float A = 1.f; // amplitude
     float b = 0.f; // phase shift
