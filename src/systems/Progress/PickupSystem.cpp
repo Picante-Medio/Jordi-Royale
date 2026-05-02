@@ -1,8 +1,12 @@
 #include "PickupSystem.h"
+#include "HPComponent.h"
+#include "HealPlayerMessage.h"
+#include "PickableComponent.h"
 #include "TransformComponent.h"
 #include "XPComponent.h"
 #include "PlayerComponent.h"
 #include "XPGrabMessage.h"
+#include "ChestGrabMessage.h"
 
 void
 PickupSystem::update(uint32_t dt) {
@@ -10,29 +14,39 @@ PickupSystem::update(uint32_t dt) {
         const PlayerComponent& playerComp = player.getConst<PlayerComponent>();
         const TransformComponent& playerTrans = player.getConst<TransformComponent>();
 
-        // XP Pickups
-        for(auto& xp : scene.query<XPComponent, TransformComponent>()){
-            const TransformComponent& xpTrans = xp.getConst<TransformComponent>();
-            const XPComponent& xpComponent = xp.getConst<XPComponent>();
+        for(auto& pickable : scene.query<PickableComponent, TransformComponent>()){
+            const TransformComponent& pickabeTransform = pickable.getConst<TransformComponent>();
+            const PickableComponent& pickableComp = pickable.getConst<PickableComponent>();
 
-            if(pickup(playerTrans, xpTrans, playerComp.pickupRange)) {
-                // Pickup in the form of a message
-                XPGrabMessage message;
-                message.xp = xpComponent.experience;
-                scene.sendMessage(message);
+            // XP Pickups
+            if(pickup(playerTrans, pickabeTransform, playerComp.xpPickupRange + pickableComp.pickupRadius)) {
+                if(scene.hasComponent<XPComponent>(pickableComp.entity)) {
+                    // Pickup in the form of a message
+                    XPGrabMessage message;
+                    message.xp = scene.getComponentConst<XPComponent>(pickableComp.entity).experience;
 
-                // Animation of experience moving towards player may be added (optional)
-                scene.removeEntity(xpTrans.entity);
+                    // TODO Animation of experience moving towards player may be added (optional)
+                }
+
+                // Health pickups
+                else if(scene.hasComponent<HPComponent>(pickableComp.entity)) {
+                    HealPlayerMessage message;
+                    message.healPoints = scene.getComponentConst<HPComponent>(pickableComp.entity).HPMax;
+                    scene.sendMessage(message);
+
+                }
+
+                // Chest pickups
+                else {
+                    ChestGrabMessage message;
+                    // TODO Add info to message
+                    scene.sendMessage(message);
+                }
+
+                // Killed the grabbed entity
+                scene.removeEntity(pickabeTransform.entity);
             }
-
-            // Chest pickups
-
-
-            // Health pickups
-
         }
-
-
     }
 }
 
