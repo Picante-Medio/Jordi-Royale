@@ -4,12 +4,11 @@ class_name ProjectileComponent
 
 @export var lifetime:int
 @export var pathTypeX:int = 0
-@export var pathInfoX:Vector4 = Vector4(0.
+@export var pathInfoX:Vector4 = Vector4(0., 0., 0., 0.)
 @export var pathTypeY:int = 0
-@export var pathInfoY:Vector4 = Vector4(0.
+@export var pathInfoY:Vector4 = Vector4(0., 0., 0., 0.)
 @export var pathTypeZ:int = 0
-@export var pathInfoZ:Vector4 = Vector4(0.
-@export var pathZ:ProjectilePath = MRU(
+@export var pathInfoZ:Vector4 = Vector4(0., 0., 0., 0.)
 
 func get_component() -> Dictionary[String, Variant]:
 	return {
@@ -20,5 +19,4 @@ func get_component() -> Dictionary[String, Variant]:
 		"pathInfoY" : FormatWriter.format(pathInfoY, "pathInfoY"),
 		"pathTypeZ" : FormatWriter.format(pathTypeZ, "pathTypeZ"),
 		"pathInfoZ" : FormatWriter.format(pathInfoZ, "pathInfoZ"),
-		"pathZ" : FormatWriter.format(pathZ, "pathZ"),
 	}

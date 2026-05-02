@@ -2,8 +2,7 @@
 
 #include "ClockTag.h"
 #include "TextComponent.h"
-#include "IncreaseEnemyDensityMessage.h"
-#include "DecreaseEnemyDensityMessage.h"
+#include "ChangeEnemyDensityMessage.h"
 #include "IncreaseEnemyLevelMessage.h"
 #include "SpawnBossMessage.h"
 
@@ -95,11 +94,15 @@ ProgressionSystem::fixedUpdate(uint32_t){
 void
 ProgressionSystem::changeEnemyDensity(bool increase){
     if(increase){
-        IncreaseEnemyDensityMessage msg;
-        scene.sendMessage<IncreaseEnemyDensityMessage>(msg);
+        ChangeEnemyDensityMessage msg;
+        msg.milisecondsBetweenSpawns = regularSpawnRate/wavemultiplier;
+        scene.sendMessage<ChangeEnemyDensityMessage>(msg);
+        wavemultiplier++;
     }
     else{
-        DecreaseEnemyDensityMessage msg;
-        scene.sendMessage<DecreaseEnemyDensityMessage>(msg);
+        ChangeEnemyDensityMessage msg;
+        msg.milisecondsBetweenSpawns = regularSpawnRate;
+        scene.sendMessage<ChangeEnemyDensityMessage>(msg);
+        regularSpawnRate -= enemyTimeReductionBetweenWaves;
     }
 }
