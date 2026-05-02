@@ -3,12 +3,12 @@ extends Component
 class_name ProjectileComponent
 
 @export var lifetime:int
-@export var pathTypeX:int = PathType::mru
-@export var pathInfoX:Vector4 = HUGO::Vector4(0.f
-@export var pathTypeY:int = PathType::mru
-@export var pathInfoY:Vector4 = HUGO::Vector4(0.f
-@export var pathTypeZ:int = PathType::mru
-@export var pathInfoZ:Vector4 = HUGO::Vector4(0.f
+@export var pathTypeX:int = 0
+@export var pathInfoX:Vector4 = Vector4(0.
+@export var pathTypeY:int = 0
+@export var pathInfoY:Vector4 = Vector4(0.
+@export var pathTypeZ:int = 0
+@export var pathInfoZ:Vector4 = Vector4(0.
 @export var pathZ:ProjectilePath = MRU(
 
 func get_component() -> Dictionary[String, Variant]:

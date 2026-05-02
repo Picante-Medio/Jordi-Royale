@@ -3,6 +3,7 @@
 #include <variant>
 #include "HUGO.h"
 #include "HugoComponentMacros.h"
+using namespace HUGO;
 
 struct MRU {
     float s = 0.f; // speed (m/s)
@@ -47,16 +48,16 @@ enum class PathInfo {
 
 // projectiles move in a straight path by default
 // pathX represents movement in the right vector
-DEFAULT_SERIALIZED_MEMBER(HUGO::Int, pathTypeX, PathType::mru);
-DEFAULT_SERIALIZED_MEMBER(HUGO::Vector4, pathInfoX, HUGO::Vector4(0.f, 0.f, 0.f, 0.f));
+DEFAULT_SERIALIZED_MEMBER(HUGO::Int, pathTypeX, 0);
+DEFAULT_SERIALIZED_MEMBER(HUGO::Vector4, pathInfoX, Vector4(0., 0., 0., 0.));
 
 // pathY represents movement in the up vector
-DEFAULT_SERIALIZED_MEMBER(HUGO::Int, pathTypeY, PathType::mru);
-DEFAULT_SERIALIZED_MEMBER(HUGO::Vector4, pathInfoY, HUGO::Vector4(0.f, 0.f, 0.f, 0.f));
+DEFAULT_SERIALIZED_MEMBER(HUGO::Int, pathTypeY, 0);
+DEFAULT_SERIALIZED_MEMBER(HUGO::Vector4, pathInfoY, Vector4(0., 0., 0., 0.));
 
 // // pathZ represents movement in the forward vector
-DEFAULT_SERIALIZED_MEMBER(HUGO::Int, pathTypeZ, PathType::mru);
-DEFAULT_SERIALIZED_MEMBER(HUGO::Vector4, pathInfoZ, HUGO::Vector4(0.f, 0.f, 0.f, 0.f));
+DEFAULT_SERIALIZED_MEMBER(HUGO::Int, pathTypeZ, 0);
+DEFAULT_SERIALIZED_MEMBER(HUGO::Vector4, pathInfoZ, Vector4(0., 0., 0., 0.));
 // DEFAULT_SERIALIZED_MEMBER(ProjectilePath, pathZ, MRU());
 
 ProjectilePath pathX;

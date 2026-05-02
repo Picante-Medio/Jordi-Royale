@@ -15,4 +15,5 @@ enum system {
 	Progress,
 	Scenes,
 	TestInit,
+	Test,
 }
