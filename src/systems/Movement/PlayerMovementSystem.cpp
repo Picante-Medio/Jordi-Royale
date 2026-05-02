@@ -8,6 +8,7 @@
 #include "PlayerComponent.h"
 #include "CameraPivotTag.h"
 #include "CameraComponent.h"
+#include <cmath>
 
 void PlayerMovementSystem::init(){
     

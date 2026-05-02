@@ -9,6 +9,60 @@ SYSTEM RenderSystem
 SYSTEM TweenSystem
 SYSTEM UISystem
 SYSTEM ConsoleSystem
-SYSTEM InitSystem
-SYSTEM PlayerMovementSystem
 SYSTEM ChangeSceneSystem
+
+ENTITY Jordi 1
+    COMPONENT TransformComponent
+        VECTOR_3 position 0.0 0.08866310119629 0.0
+        QUATERNION rotation 0.0 0.98570495843887 0.0 0.16848082840443
+        VECTOR_3 scale 1.0 1.0 1.0
+    COMPONENT RenderComponent
+        STRING meshName jordi.glb
+        STRING materialName 
+    COMPONENT PlayerTag
+    COMPONENT SpeedComponent
+        FLOAT speed 5.0
+    COMPONENT HPComponent
+        INT HPMax 0
+        INT CurrentHP 0
+    COMPONENT JumpPowerComponent
+        FLOAT power 500.0
+    COMPONENT RigidBodyComponent
+        FLOAT mass 0.0
+        FLOAT linearDamping 0.0
+        FLOAT angularDamping 0.0
+        VECTOR_3 linearVelocity 0.0 0.0 0.0
+        VECTOR_3 angularVelocity 0.0 0.0 0.0
+        FLOAT linearSleepingThreshold 0.0
+        FLOAT angularSleepingThreshold 0.0
+    COMPONENT ColliderComponent
+        COLLIDER_INFO info CYLINDER_COLLIDER 0.5 1.0 0.5
+        FLOAT restitution 0.0
+        FLOAT friction 0.0
+        VECTOR_3 positionOffset 0.0 0.0 0.0
+        QUATERNION rotationOffset 0.2095041424036 -0.33532723784447 -0.64207994937897 0.65680813789368
+        BOOL active true
+        BOOL useGizmo true
+    START_CHILDREN
+    ENTITY Camara 1
+        COMPONENT TransformComponent
+            VECTOR_3 position -1.34518623352051 0.73133689165115 -3.82007503509521
+            QUATERNION rotation 0.0 0.98570495843887 0.0 -0.16848082840443
+            VECTOR_3 scale 0.99999994039536 1.0 0.99999994039536
+        COMPONENT CameraComponent
+            INT projectionType 0
+            FLOAT fovY 60.0
+            FLOAT nearClip 1.0
+            FLOAT farClip 10000.0
+            FLOAT orthoWidth 10.0
+            FLOAT orthoHeight 10.0
+            BOOL autoAspectRatio true
+            BOOL mainCamera true
+            VECTOR_4 clearColor 0.0 0.0 0.0 1.0
+        START_CHILDREN
+        END_CHILDREN
+    END_ENTITY
+
+    END_CHILDREN
+END_ENTITY
+
