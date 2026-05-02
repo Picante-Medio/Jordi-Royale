@@ -208,9 +208,21 @@ static func hugo_parse_component(path: String) -> void:
 		
 		var cleaned_parameters:PackedStringArray
 		var parameter_default_value
+		
+		if line.begins_with("//"): continue
+		
 		if line.contains("DEFAULT_SERIALIZED_MEMBER("):
 			cleaned_parameters = line.split("DEFAULT_SERIALIZED_MEMBER(")[1].split(")")[0].split(",")
 			parameter_default_value = cleaned_parameters[2].strip_edges()
+			
+			var composite:bool = cleaned_parameters.size() > 3
+			if composite: parameter_default_value += ","
+			
+			for i in range(3, cleaned_parameters.size()):
+				parameter_default_value += cleaned_parameters[i]
+				if i != cleaned_parameters.size() - 1: parameter_default_value += ","
+				
+			if composite: parameter_default_value += ")"
 		elif line.contains("SERIALIZED_MEMBER("):
 			cleaned_parameters = line.split("SERIALIZED_MEMBER(")[1].split(")")[0].split(",")
 		else: continue
