@@ -16,10 +16,10 @@ ENTITY Entity3D 1
         VECTOR_3 position 0.0 0.0 -0.53464275598526
         QUATERNION rotation 0.0 0.0 0.0 1.0
         VECTOR_3 scale 1.0 1.0 1.0
+    COMPONENT RotateComponent
     COMPONENT RenderComponent
         STRING meshName jordi.glb
         STRING materialName 
-    COMPONENT RotateComponent
     START_CHILDREN
     ENTITY Entity3D 1
         COMPONENT TransformComponent

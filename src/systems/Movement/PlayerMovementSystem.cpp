@@ -45,10 +45,6 @@ void PlayerMovementSystem::update(uint32_t){
     lastMousePosition = currentMousePosition;
 
     // * TESTING METHOD CALL
-
-    scene.query<TransformComponent, PlayerComponent>()[0].modify<TransformComponent>([this](TransformComponent& trans){
-        updateCamera(trans);
-    });
 }
 
 void PlayerMovementSystem::fixedUpdate(uint32_t){
