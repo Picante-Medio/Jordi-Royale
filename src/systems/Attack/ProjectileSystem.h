@@ -13,6 +13,12 @@ public:
     void update(uint32_t dt) override;
 
 private:
+    // update position of every existing projectile
+    void updateProjectiles(uint32_t dt);
+    void createProjectiles(uint32_t dt);
+    // destroy projectiles that have collided or expired
+    void destroyProjectiles();
+
     // returns delta position (m). Parameters: s (speed magnitude)
     static float mru(float s, uint32_t t);
     // returns delta position (m). Parameters: s0 (initial speed), a (acceleration magnitude)

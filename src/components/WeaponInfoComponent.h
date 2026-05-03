@@ -13,6 +13,6 @@ uint32_t t;
 
 // direction in which a projectile is fired
 // can be costant or variable
-std::function<HUGO::Quaternion(uint32_t)> initialDirection;
+std::function<HUGO::Vector3(uint32_t)> initialDirection;
 
 END_HCOMPONENT()

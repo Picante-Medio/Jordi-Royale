@@ -4,9 +4,10 @@
 #include "RigidBodyComponent.h"
 #include "TransformComponent.h"
 #include "ColliderComponent.h"
+#include "PlayerComponent.h"
+#include "WeaponInfoComponent.h"
 #include "DestroyOnEnemyContactTag.h"
 #include "DestroyOnPlayerContactTag.h"
-#include "PlayerComponent.h"
 #include "EnemyTag.h"
 
 void ProjectileSystem::init() {
@@ -18,7 +19,15 @@ void ProjectileSystem::onLoad() {
 }
 
 void ProjectileSystem::fixedUpdate(uint32_t dt) {
-    // update position of every projectile
+    destroyProjectiles();
+    updateProjectiles(dt);
+}
+
+void ProjectileSystem::update(uint32_t dt) {
+    createProjectiles(dt);
+}
+
+void ProjectileSystem::updateProjectiles(uint32_t dt) {
     for(auto pack : scene.query<ProjectileComponent, RigidBodyComponent, TransformComponent>()) {
         pack.modify<ProjectileComponent>([dt] (ProjectileComponent& comp) {
             comp.lifetime -= dt;
@@ -71,8 +80,35 @@ void ProjectileSystem::fixedUpdate(uint32_t dt) {
     }
 }
 
-void ProjectileSystem::update(uint32_t) {
-    // check for projectiles that must be destroyed
+void ProjectileSystem::createProjectiles(uint32_t dt) {
+    for(auto pack : scene.query<WeaponInfoComponent>()) {
+        bool fire = false;
+
+        pack.modify<WeaponInfoComponent>([dt, &fire] (WeaponInfoComponent& comp) {
+            comp.t += dt;
+            if(comp.t >= comp.firingRate) {
+                comp.t = 0.f;
+                fire = true;
+            }
+        }); 
+
+        if(fire) {
+            const WeaponInfoComponent& weaponInfo = pack.getConst<WeaponInfoComponent>();
+            HUGO::ErrorOrType<EntityID> id = scene.instantiatePrefab(weaponInfo.prefab);
+            if(!id.isError() && scene.hasComponent<ProjectileComponent>(id.getValue())) {
+                // Set projectile paths
+                ProjectileComponent& projectileComp = scene.getComponent<ProjectileComponent>(id.getValue());
+                projectileComp.setPaths();
+
+                // Set forward direction
+                TransformComponent& tr = scene.getComponent<TransformComponent>(id.getValue());
+                tr.setWorldRotation(HUGO::lookAt(tr.getRotation().forward(), tr.getRotation().up(), weaponInfo.initialDirection(dt)));
+            }
+        }
+    }
+}
+
+void ProjectileSystem::destroyProjectiles() {
     for(auto pack : scene.query<ProjectileComponent, ColliderComponent>()) {
 
         const ProjectileComponent& projectileComp = pack.getConst<ProjectileComponent>();
@@ -89,7 +125,7 @@ void ProjectileSystem::update(uint32_t) {
         bool destroyOnPlayerContact = scene.hasComponent<DestroyOnPlayerContactTag>(collider.entity);
 
         if (!destroyOnEnemyContact && !destroyOnPlayerContact) 
-            return;
+            continue;;
 
         for(EntityID id : collider.collisionInfo) {
             if(destroyOnEnemyContact && scene.hasComponent<EnemyTag>(id)) {
