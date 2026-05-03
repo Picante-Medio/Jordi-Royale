@@ -82,9 +82,6 @@ void PlayerMovementSystem::fixedUpdate(uint32_t){
     for(auto& item : scene.query<PlayerComponent, RigidBodyComponent, SpeedComponent, TransformComponent>()){
         item.modify<RigidBodyComponent>([&item, velocity, jumpDirection](RigidBodyComponent& rb){
 
-            //! provisional until property is serialized
-            rb.dontRotateWithPhysicsOnDynamic = true;
-
             // horizontal movement
             rb.applyForce(velocity * item.getConst<SpeedComponent>().speed);
 

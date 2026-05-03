@@ -21,6 +21,7 @@ ENTITY Enemy 1
         VECTOR_3 angularVelocity 0.0 0.0 0.0
         FLOAT linearSleepingThreshold 0.8
         FLOAT angularSleepingThreshold 1.0
+        NIL type <null>
     COMPONENT RenderComponent
         STRING meshName cube.mesh
         STRING materialName 

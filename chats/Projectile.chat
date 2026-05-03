@@ -30,6 +30,7 @@ ENTITY Projectile 1
         VECTOR_3 angularVelocity 0.0 0.0 0.0
         FLOAT linearSleepingThreshold 0.8
         FLOAT angularSleepingThreshold 1.0
+        INT type 0
     COMPONENT RenderComponent
         STRING meshName sphere.mesh
         STRING materialName 

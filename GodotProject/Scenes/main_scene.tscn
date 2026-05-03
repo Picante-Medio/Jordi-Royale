@@ -53,6 +53,7 @@ script = ExtResource("4_mai8y")
 mass = 5.0
 linearSleepingThreshold = 0.8
 angularSleepingThreshold = 1.0
+dontRotateWithPhysicsOnDynamic = true
 metadata/_custom_type_script = "uid://dpjupwgyydq3o"
 
 [node name="RenderComponent" type="MeshInstance3D" parent="Jordi" unique_id=1294126534]
@@ -73,7 +74,7 @@ script = ExtResource("9_mai8y")
 metadata/_custom_type_script = "uid://cauioprn35hgk"
 
 [node name="Camara" type="Node3D" parent="Pivot" unique_id=507972397]
-transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -0.99999994, 0, 0, -3.015)
+transform = Transform3D(-0.9999999, 3.2508648e-15, -8.742276e-08, -3.1447712e-08, 0.9330602, 0.35971993, 8.157069e-08, 0.35971996, -0.9330601, 0, 2.1693187, -4.7527)
 script = ExtResource("2_huasi")
 systems = Array[int]([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 
@@ -102,6 +103,7 @@ metadata/_custom_type_script = "uid://s2j52p8es0or"
 script = ExtResource("4_mai8y")
 linearSleepingThreshold = 0.8
 angularSleepingThreshold = 1.0
+dontRotateWithPhysicsOnDynamic = null
 metadata/_custom_type_script = "uid://dpjupwgyydq3o"
 
 [node name="RenderComponent" type="MeshInstance3D" parent="Floor" unique_id=345801481]

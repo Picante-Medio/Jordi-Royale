@@ -40,6 +40,8 @@ ENTITY Jordi 1
         VECTOR_3 angularVelocity 0.0 0.0 0.0
         FLOAT linearSleepingThreshold 0.8
         FLOAT angularSleepingThreshold 1.0
+        INT type 0
+        BOOL dontRotateWithPhysicsOnDynamic true
     COMPONENT RenderComponent
         STRING meshName jordi.glb
         STRING materialName 
@@ -50,15 +52,15 @@ END_ENTITY
 ENTITY Pivot 1
     COMPONENT TransformComponent
         VECTOR_3 position 0.0 1.41499996185303 0.0
-        QUATERNION rotation 0.0 1.0 0.0 -0.00000004371139
+        QUATERNION rotation 0.0 0.0 0.0 1.0
         VECTOR_3 scale 1.0 1.0 1.0
     COMPONENT CameraPivotTag
     START_CHILDREN
     ENTITY Camara 1
         COMPONENT TransformComponent
-            VECTOR_3 position 0.0 2.26216268539429 -5.20671653747559
-            QUATERNION rotation -0.00000001042292 0.97115510702133 0.23844869434834 -0.00000004245053
-            VECTOR_3 scale 0.99999988079071 0.99999994039536 0.99999988079071
+            VECTOR_3 position 0.0 2.16931867599487 -4.75269985198975
+            QUATERNION rotation -0.0000000079969 0.98312264680862 0.18294766545296 -0.00000004297364
+            VECTOR_3 scale 0.99999988079071 0.99999994039536 0.99999982118607
         COMPONENT CameraComponent
             INT projectionType 0
             FLOAT fovY 60.0
@@ -97,6 +99,8 @@ ENTITY Floor 1
         VECTOR_3 angularVelocity 0.0 0.0 0.0
         FLOAT linearSleepingThreshold 0.8
         FLOAT angularSleepingThreshold 1.0
+        INT type 0
+        NIL dontRotateWithPhysicsOnDynamic <null>
     COMPONENT RenderComponent
         STRING meshName cube.mesh
         STRING materialName 
