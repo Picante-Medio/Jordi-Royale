@@ -1,6 +1,6 @@
 #pragma once
 
-#include "HUGO.h"
+#include "HugoComponentMacros.h"
 
 HCOMPONENT(DestroyOnEnemyContactTag)
 END_HCOMPONENT()

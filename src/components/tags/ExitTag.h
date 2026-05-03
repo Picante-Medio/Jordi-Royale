@@ -1,6 +1,6 @@
 #pragma once
 
-#include "HUGO.h"
+#include "HugoComponentMacros.h"
 
 HCOMPONENT(ExitTag)
 END_HCOMPONENT()
