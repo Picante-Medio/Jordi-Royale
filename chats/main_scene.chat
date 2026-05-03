@@ -11,6 +11,7 @@ SYSTEM UISystem
 SYSTEM ConsoleSystem
 SYSTEM DamageSystem
 SYSTEM PlayerMovementSystem
+SYSTEM ChangeSceneSystem
 
 ENTITY Jordi 1
     COMPONENT TransformComponent

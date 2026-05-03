@@ -31,6 +31,7 @@ ENTITY Projectile 1
         FLOAT linearSleepingThreshold 0.8
         FLOAT angularSleepingThreshold 1.0
         INT type 0
+        BOOL dontRotateWithPhysicsOnDynamic false
     COMPONENT RenderComponent
         STRING meshName sphere.mesh
         STRING materialName 

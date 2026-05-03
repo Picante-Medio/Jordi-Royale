@@ -1,16 +1,16 @@
 [gd_scene format=3 uid="uid://dq2fl1vp76r7r"]
 
-[ext_resource type="Script" uid="uid://dociyemdev2j1" path="res://addons/HugosChatPlugin/Entities/scene_tracker.gd" id="1_865ah"]
-[ext_resource type="Script" uid="uid://dmak3mcg4w0h8" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="2_huasi"]
-[ext_resource type="Script" uid="uid://d10rufr7dnrt6" path="res://addons/HugosChatPlugin/NativeComponents/CameraComponent.gd" id="3_drdnd"]
-[ext_resource type="Script" uid="uid://bewpcwg276ktv" path="res://addons/HugosChatPlugin/NativeComponents/ColliderComponent.gd" id="3_m1efj"]
-[ext_resource type="PackedScene" uid="uid://dk5yg00wwn2fu" path="res://Resources/jordi/jordi.glb" id="4_m1efj"]
-[ext_resource type="Script" uid="uid://dgu5myf6wqmwa" path="res://addons/HugosChatPlugin/NativeComponents/RigidBodyComponent.gd" id="4_mai8y"]
-[ext_resource type="Script" uid="uid://b5eh7xi0wb6sr" path="res://Components/SpeedComponent.gd" id="6_drdnd"]
-[ext_resource type="Script" uid="uid://d1ljapb1i86tc" path="res://Components/CameraPivotTag.gd" id="9_mai8y"]
-[ext_resource type="Script" uid="uid://4g74yjtjf8u2" path="res://Components/PlayerComponent.gd" id="10_76v2p"]
-[ext_resource type="Script" uid="uid://c0wlt0qsxdika" path="res://addons/HugosChatPlugin/NativeComponents/RenderComponent.gd" id="10_mai8y"]
-[ext_resource type="PackedScene" uid="uid://dhhopmfyxf4cv" path="res://Scenes/moai.tscn" id="11_76v2p"]
+[ext_resource type="Script" uid="uid://dl0iqgqbq0f8a" path="res://addons/HugosChatPlugin/Entities/scene_tracker.gd" id="1_865ah"]
+[ext_resource type="Script" uid="uid://bv4fdb5khcnbk" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="2_huasi"]
+[ext_resource type="Script" uid="uid://bjwx87l5l8cjv" path="res://addons/HugosChatPlugin/NativeComponents/CameraComponent.gd" id="3_drdnd"]
+[ext_resource type="Script" uid="uid://s2j52p8es0or" path="res://addons/HugosChatPlugin/NativeComponents/ColliderComponent.gd" id="3_m1efj"]
+[ext_resource type="PackedScene" uid="uid://c462xqhte7va4" path="res://Resources/jordi/jordi.glb" id="4_m1efj"]
+[ext_resource type="Script" uid="uid://dpjupwgyydq3o" path="res://addons/HugosChatPlugin/NativeComponents/RigidBodyComponent.gd" id="4_mai8y"]
+[ext_resource type="Script" uid="uid://cip1v7uoq008a" path="res://Components/SpeedComponent.gd" id="6_drdnd"]
+[ext_resource type="Script" uid="uid://cauioprn35hgk" path="res://Components/CameraPivotTag.gd" id="9_mai8y"]
+[ext_resource type="Script" uid="uid://d1ahje4cv4ooh" path="res://Components/PlayerComponent.gd" id="10_76v2p"]
+[ext_resource type="Script" uid="uid://bpive0dt6e0xe" path="res://addons/HugosChatPlugin/NativeComponents/RenderComponent.gd" id="10_mai8y"]
+[ext_resource type="PackedScene" uid="uid://dhhopmfyxf4cv" path="res://Prefabs/moai.tscn" id="11_76v2p"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_mai8y"]
 height = 1.7327881
@@ -23,7 +23,7 @@ size = Vector3(40, 1, 25)
 
 [node name="main_scene" type="Node3D" unique_id=1228723441]
 script = ExtResource("1_865ah")
-systems = Array[int]([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 10, 14])
+systems = Array[int]([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 10, 14, 19])
 
 [node name="Jordi" type="Node3D" parent="." unique_id=499115862]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14266133, 0)

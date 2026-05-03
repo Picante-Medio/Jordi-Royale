@@ -11,4 +11,80 @@ SYSTEM UISystem
 SYSTEM ConsoleSystem
 SYSTEM PauseSystem
 SYSTEM ChangeSceneSystem
-SYSTEM PauseInitSystem
+
+ENTITY Camera 1
+    COMPONENT TransformComponent
+        VECTOR_3 position 0.0 0.0 0.0
+        QUATERNION rotation 0.0 0.0 0.0 1.0
+        VECTOR_3 scale 1.0 1.0 1.0
+    COMPONENT CameraComponent
+        INT projectionType 0
+        FLOAT fovY 60.0
+        FLOAT nearClip 1.0
+        FLOAT farClip 10000.0
+        FLOAT orthoWidth 10.0
+        FLOAT orthoHeight 10.0
+        BOOL autoAspectRatio true
+        BOOL mainCamera true
+        VECTOR_4 clearColor 0.30000001192093 0.30000001192093 0.5 1.0
+    START_CHILDREN
+    END_CHILDREN
+END_ENTITY
+
+ENTITY Pause 1
+    COMPONENT PanelComponent
+        STRING overlayName JordiUI/JordiOverlay
+        STRING containerName JordiUI/JordiOverlay/JordiContainer
+        BOOL isVisible true
+        INT metricsMode 0
+        FLOAT left 0.25
+        FLOAT top 0.3
+        FLOAT width 0.5
+        FLOAT height 0.2
+        STRING material JordiUI/Pause
+    START_CHILDREN
+    END_CHILDREN
+END_ENTITY
+
+ENTITY Resume 1
+    COMPONENT PanelComponent
+        STRING overlayName JordiUI/JordiOverlay2
+        STRING containerName JordiUI/JordiOverlay2/JordiContainer2
+        BOOL isVisible true
+        INT metricsMode 0
+        FLOAT left 0.25
+        FLOAT top 0.6
+        FLOAT width 0.25
+        FLOAT height 0.1
+        STRING material JordiUI/Resume
+    COMPONENT ButtonComponent
+        STRING normalMaterial JordiUI/Resume
+        STRING hoverMaterial JordiUI/ResumeHover
+        STRING pressedMaterial JordiUI/ResumePressed
+        STRING disabledMaterial 
+    COMPONENT ResumeTag
+    START_CHILDREN
+    END_CHILDREN
+END_ENTITY
+
+ENTITY Exit 1
+    COMPONENT PanelComponent
+        STRING overlayName JordiUI/JordiOverlay3
+        STRING containerName JordiUI/JordiOverlay3/JordiContainer3
+        BOOL isVisible true
+        INT metricsMode 0
+        FLOAT left 0.5
+        FLOAT top 0.6
+        FLOAT width 0.25
+        FLOAT height 0.1
+        STRING material JordiUI/Exit
+    COMPONENT ButtonComponent
+        STRING normalMaterial JordiUI/Exit
+        STRING hoverMaterial JordiUI/ExitHover
+        STRING pressedMaterial JordiUI/ExitPressed
+        STRING disabledMaterial 
+    COMPONENT ExitTag
+    START_CHILDREN
+    END_CHILDREN
+END_ENTITY
+

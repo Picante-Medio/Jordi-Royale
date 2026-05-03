@@ -15,6 +15,7 @@ enum system {
 	EnemyMovementSystem,
 	PlayerMovementSystem,
 	DropSystem,
+	EnemySpawnSystem,
 	LevelingSystem,
 	PickupSystem,
 	ProgressionSystem,
