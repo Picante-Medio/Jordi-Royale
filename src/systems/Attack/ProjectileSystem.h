@@ -1,6 +1,6 @@
 #pragma once
 
-#include "HUGO.h"
+#include "HugoSystemMacros.h"
 #include "ProjectileComponent.h"
 
 HSYSTEM(ProjectileSystem)

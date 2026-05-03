@@ -1,6 +1,8 @@
-#include <math.h>
-
 #include "PlayerMovementSystem.h"
+
+#include <math.h>
+#include <cmath>
+
 #include "HugoMath.h"
 #include "TransformComponent.h"
 #include "RigidBodyComponent.h"
@@ -8,9 +10,7 @@
 #include "PlayerComponent.h"
 #include "CameraPivotTag.h"
 #include "CameraComponent.h"
-#include <cmath>
 
-#include "RenderComponent.h"
 
 void PlayerMovementSystem::init(){
     

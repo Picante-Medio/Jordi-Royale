@@ -1,9 +1,10 @@
 #pragma once
 
-#include "EcsTypes.h"
-#include "HugoSystemMacros.h"
 #include <array>
 #include <cstdint>
+
+#include "EcsTypes.h"
+#include "HugoSystemMacros.h"
 
 HSYSTEM(DynamicAudioSystem)
     enum SongID {

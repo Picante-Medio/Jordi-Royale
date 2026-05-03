@@ -1,5 +1,5 @@
 #pragma once
-#include "Message.h"
+
 #include "HugoSystemMacros.h"
 
 HSYSTEM(DamageSystem)

@@ -2,6 +2,8 @@
 
 #include "ButtonComponent.h"
 #include "ChangeSceneMessage.h"
+#include "ResumeTag.h"
+#include "ExitTag.h"
 
 void
 PauseSystem::initResume(ResumeTag& resume){

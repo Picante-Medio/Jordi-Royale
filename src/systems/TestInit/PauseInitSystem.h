@@ -1,6 +1,6 @@
 #pragma once
 
-#include "HUGO.h"
+#include "HugoSystemMacros.h"
 
 // PROVISIONAL SYSTEM TO TRY THE GAME LOGIC WHILE THE CHATS AREN'T WORKING
 

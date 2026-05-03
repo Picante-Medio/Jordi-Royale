@@ -1,8 +1,9 @@
 #pragma once
-#include "HUGO.h"
 
-#include "ResumeTag.h"
-#include "ExitTag.h"
+#include "HugoSystemMacros.h"
+
+struct ResumeTag;
+struct ExitTag;
 
 HSYSTEM(PauseSystem)
 

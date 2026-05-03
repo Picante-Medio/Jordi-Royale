@@ -1,8 +1,9 @@
 #pragma once
 
-#include "HUGO.h"
-#include "TransformComponent.h"
+#include "HugoSystemMacros.h"
+#include "HugoMath.h"
 
+struct TransformComponent;
 HSYSTEM(PlayerMovementSystem)
 
 HUGO::Vector2 lastMousePosition;
