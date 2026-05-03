@@ -1,18 +1,19 @@
 [gd_scene format=3 uid="uid://dq2fl1vp76r7r"]
 
-[ext_resource type="Script" uid="uid://dl0iqgqbq0f8a" path="res://addons/HugosChatPlugin/Entities/scene_tracker.gd" id="1_865ah"]
-[ext_resource type="Script" uid="uid://bv4fdb5khcnbk" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="2_huasi"]
-[ext_resource type="Script" uid="uid://bjwx87l5l8cjv" path="res://addons/HugosChatPlugin/NativeComponents/CameraComponent.gd" id="3_drdnd"]
-[ext_resource type="Script" uid="uid://s2j52p8es0or" path="res://addons/HugosChatPlugin/NativeComponents/ColliderComponent.gd" id="3_m1efj"]
-[ext_resource type="PackedScene" uid="uid://c462xqhte7va4" path="res://Resources/jordi/jordi.glb" id="4_m1efj"]
-[ext_resource type="Script" uid="uid://dpjupwgyydq3o" path="res://addons/HugosChatPlugin/NativeComponents/RigidBodyComponent.gd" id="4_mai8y"]
-[ext_resource type="Script" uid="uid://cip1v7uoq008a" path="res://Components/SpeedComponent.gd" id="6_drdnd"]
-[ext_resource type="Script" uid="uid://cauioprn35hgk" path="res://Components/CameraPivotTag.gd" id="9_mai8y"]
-[ext_resource type="Script" uid="uid://d1ahje4cv4ooh" path="res://Components/PlayerComponent.gd" id="10_76v2p"]
-[ext_resource type="Script" uid="uid://bpive0dt6e0xe" path="res://addons/HugosChatPlugin/NativeComponents/RenderComponent.gd" id="10_mai8y"]
+[ext_resource type="Script" uid="uid://dociyemdev2j1" path="res://addons/HugosChatPlugin/Entities/scene_tracker.gd" id="1_865ah"]
+[ext_resource type="Script" uid="uid://dmak3mcg4w0h8" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="2_huasi"]
+[ext_resource type="Script" uid="uid://d10rufr7dnrt6" path="res://addons/HugosChatPlugin/NativeComponents/CameraComponent.gd" id="3_drdnd"]
+[ext_resource type="Script" uid="uid://bewpcwg276ktv" path="res://addons/HugosChatPlugin/NativeComponents/ColliderComponent.gd" id="3_m1efj"]
+[ext_resource type="PackedScene" uid="uid://dk5yg00wwn2fu" path="res://Resources/jordi/jordi.glb" id="4_m1efj"]
+[ext_resource type="Script" uid="uid://dgu5myf6wqmwa" path="res://addons/HugosChatPlugin/NativeComponents/RigidBodyComponent.gd" id="4_mai8y"]
+[ext_resource type="Script" uid="uid://b5eh7xi0wb6sr" path="res://Components/SpeedComponent.gd" id="6_drdnd"]
+[ext_resource type="Script" uid="uid://d1ljapb1i86tc" path="res://Components/CameraPivotTag.gd" id="9_mai8y"]
+[ext_resource type="Script" uid="uid://4g74yjtjf8u2" path="res://Components/PlayerComponent.gd" id="10_76v2p"]
+[ext_resource type="Script" uid="uid://c0wlt0qsxdika" path="res://addons/HugosChatPlugin/NativeComponents/RenderComponent.gd" id="10_mai8y"]
+[ext_resource type="PackedScene" uid="uid://dhhopmfyxf4cv" path="res://Scenes/moai.tscn" id="11_76v2p"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_mai8y"]
-height = 1.4946289
+height = 1.7327881
 radius = 0.20214844
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mai8y"]
@@ -25,20 +26,19 @@ script = ExtResource("1_865ah")
 systems = Array[int]([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 10, 14])
 
 [node name="Jordi" type="Node3D" parent="." unique_id=499115862]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14266133, 0)
 script = ExtResource("2_huasi")
 systems = Array[int]([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 
 [node name="PlayerComponent" type="Node" parent="Jordi" unique_id=1647389333]
 script = ExtResource("10_76v2p")
-metadata/_custom_type_script = "uid://d1ahje4cv4ooh"
 
 [node name="SpeedComponent" type="Node" parent="Jordi" unique_id=1177972851]
 script = ExtResource("6_drdnd")
 speed = 50.0
-metadata/_custom_type_script = "uid://cip1v7uoq008a"
 
 [node name="ColliderComponent" type="CollisionShape3D" parent="Jordi" unique_id=456906020]
-transform = Transform3D(0.9999999, 0, 1.7881393e-07, 0, 1, 0, -1.7881393e-07, 0, 0.9999999, 0, 0.9912596, 0)
+transform = Transform3D(0.9999999, 0, 1.7881393e-07, 0, 1, 0, -1.7881393e-07, 0, 0.9999999, 0, 0.87218, 0)
 shape = SubResource("CylinderShape3D_mai8y")
 disabled = true
 script = ExtResource("3_m1efj")
@@ -46,7 +46,6 @@ friction = 0.5
 active = true
 useGizmo = true
 info = SubResource("CylinderShape3D_mai8y")
-metadata/_custom_type_script = "uid://s2j52p8es0or"
 
 [node name="RigidBodyComponent" type="Node" parent="Jordi" unique_id=1846346120]
 script = ExtResource("4_mai8y")
@@ -54,24 +53,20 @@ mass = 5.0
 linearSleepingThreshold = 0.8
 angularSleepingThreshold = 1.0
 dontRotateWithPhysicsOnDynamic = true
-metadata/_custom_type_script = "uid://dpjupwgyydq3o"
 
 [node name="RenderComponent" type="MeshInstance3D" parent="Jordi" unique_id=1294126534]
 transform = Transform3D(1, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1, 0, 0, 0)
 script = ExtResource("10_mai8y")
 mesh_name = "jordi.glb"
-metadata/_custom_type_script = "uid://bpive0dt6e0xe"
 
 [node name="jordi" parent="Jordi/RenderComponent" unique_id=1176765947 instance=ExtResource("4_m1efj")]
 
 [node name="Pivot" type="Node3D" parent="." unique_id=671569509]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.415, 0)
 script = ExtResource("2_huasi")
-metadata/_custom_type_script = "uid://bv4fdb5khcnbk"
 
 [node name="CameraPivotTag" type="Node" parent="Pivot" unique_id=323821913]
 script = ExtResource("9_mai8y")
-metadata/_custom_type_script = "uid://cauioprn35hgk"
 
 [node name="Camara" type="Node3D" parent="Pivot" unique_id=507972397]
 transform = Transform3D(-0.9999999, 3.2508648e-15, -8.742276e-08, -3.1447712e-08, 0.9330602, 0.35971993, 8.157069e-08, 0.35971996, -0.9330601, 0, 2.1693187, -4.7527)
@@ -89,7 +84,6 @@ clearColor = Vector4(0, 0, 0, 1)
 [node name="Floor" type="Node3D" parent="." unique_id=616089284]
 transform = Transform3D(40, 0, 0, 0, 1, 0, 0, 0, 25, 0, -0.43083662, 0)
 script = ExtResource("2_huasi")
-metadata/_custom_type_script = "uid://bv4fdb5khcnbk"
 
 [node name="ColliderComponent" type="CollisionShape3D" parent="Floor" unique_id=226508761]
 shape = SubResource("BoxShape3D_mai8y")
@@ -97,19 +91,18 @@ script = ExtResource("3_m1efj")
 friction = 0.5
 active = true
 info = SubResource("BoxShape3D_mai8y")
-metadata/_custom_type_script = "uid://s2j52p8es0or"
 
 [node name="RigidBodyComponent" type="Node" parent="Floor" unique_id=1076463016]
 script = ExtResource("4_mai8y")
 linearSleepingThreshold = 0.8
 angularSleepingThreshold = 1.0
-dontRotateWithPhysicsOnDynamic = null
-metadata/_custom_type_script = "uid://dpjupwgyydq3o"
 
 [node name="RenderComponent" type="MeshInstance3D" parent="Floor" unique_id=345801481]
 script = ExtResource("10_mai8y")
 mesh_name = "cube.mesh"
-metadata/_custom_type_script = "uid://bpive0dt6e0xe"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor/RenderComponent" unique_id=1519663056]
 mesh = SubResource("BoxMesh_76v2p")
+
+[node name="Moai" parent="." unique_id=1191298425 instance=ExtResource("11_76v2p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9547067, 2.8018076, -1.3404636)

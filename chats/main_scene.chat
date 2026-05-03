@@ -14,7 +14,7 @@ SYSTEM PlayerMovementSystem
 
 ENTITY Jordi 1
     COMPONENT TransformComponent
-        VECTOR_3 position 0.0 0.0 0.0
+        VECTOR_3 position 0.0 0.14266133308411 0.0
         QUATERNION rotation 0.0 0.0 0.0 1.0
         VECTOR_3 scale 1.0 1.0 1.0
     COMPONENT PlayerComponent
@@ -25,10 +25,10 @@ ENTITY Jordi 1
     COMPONENT SpeedComponent
         FLOAT speed 50.0
     COMPONENT ColliderComponent
-        COLLIDER_INFO info CYLINDER_COLLIDER 0.2021484375 0.747314453125 0.2021484375
+        COLLIDER_INFO info CYLINDER_COLLIDER 0.2021484375 0.86639404296875 0.2021484375
         FLOAT restitution 0.0
         FLOAT friction 0.5
-        VECTOR_3 positionOffset 0.0 0.99125957489014 0.0
+        VECTOR_3 positionOffset 0.0 0.87217998504639 0.0
         QUATERNION rotationOffset 0.0 0.00000008940698 0.0 1.0
         BOOL active true
         BOOL useGizmo true
@@ -100,10 +100,40 @@ ENTITY Floor 1
         FLOAT linearSleepingThreshold 0.8
         FLOAT angularSleepingThreshold 1.0
         INT type 0
-        NIL dontRotateWithPhysicsOnDynamic <null>
+        BOOL dontRotateWithPhysicsOnDynamic false
     COMPONENT RenderComponent
         STRING meshName cube.mesh
         STRING materialName 
+    START_CHILDREN
+    END_CHILDREN
+END_ENTITY
+
+ENTITY Moai 1
+    COMPONENT TransformComponent
+        VECTOR_3 position -5.95470666885376 2.80180764198303 -1.34046363830566
+        QUATERNION rotation 0.0 0.0 0.0 1.0
+        VECTOR_3 scale 1.0 1.0 1.0
+    COMPONENT ColliderComponent
+        COLLIDER_INFO info CYLINDER_COLLIDER 1.646484375 4.21636962890625 1.646484375
+        FLOAT restitution 0.0
+        FLOAT friction 0.0
+        VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
+        QUATERNION rotationOffset 0.0 0.0 0.0 1.0
+        BOOL active false
+        BOOL useGizmo false
+    COMPONENT RenderComponent
+        STRING meshName jordi-moai.glb
+        STRING materialName 
+    COMPONENT RigidBodyComponent
+        FLOAT mass 0.0
+        FLOAT linearDamping 0.0
+        FLOAT angularDamping 0.0
+        VECTOR_3 linearVelocity 0.0 0.0 0.0
+        VECTOR_3 angularVelocity 0.0 0.0 0.0
+        FLOAT linearSleepingThreshold 0.0
+        FLOAT angularSleepingThreshold 0.0
+        INT type 1
+        BOOL dontRotateWithPhysicsOnDynamic false
     START_CHILDREN
     END_CHILDREN
 END_ENTITY
