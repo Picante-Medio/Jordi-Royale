@@ -2,6 +2,7 @@
 
 #include <memory>
 
+#include "EcsTypes.h"
 #include "Message.h"
 #include "PlayerComponent.h"
 #include "LevelComponent.h"
@@ -15,13 +16,12 @@ LevelingSystem::onLoad(){
 
 void 
 LevelingSystem::init(){
-    // Jordi can be found on init because upon player death the scene gets deleted, Jordi is always a valid entity
-    player = scene.query<PlayerComponent>().begin()->getConst<PlayerComponent>().entity;
 
     // Grab experience through message
     scene.subscribe<XPGrabMessage>([this](std::shared_ptr<HUGO::Message> message){
         std::shared_ptr<XPGrabMessage> m = std::static_pointer_cast<XPGrabMessage>(message);
 
+        EntityID player = scene.query<PlayerComponent>().begin()->getConst<PlayerComponent>().entity;
         scene.modifyComponent<LevelComponent>(player, [m](LevelComponent& lvl){
             lvl.currentExperience += m->xp;
         });

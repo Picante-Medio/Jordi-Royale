@@ -1,12 +1,12 @@
 #pragma once
 
+#include "EcsTypes.h"
 #include "HugoSystemMacros.h"
 
 HSYSTEM(DamageSystem)
 private:
-EntityID playerID;
 void changeHP(EntityID id, HUGO::Int hp);
-
+EntityID playerID;
 public:
 void init() override;
 void onLoad() override;

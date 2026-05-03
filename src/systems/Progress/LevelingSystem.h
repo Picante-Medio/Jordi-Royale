@@ -1,12 +1,10 @@
 #pragma once
 
-#include "EcsTypes.h"
 #include "HugoSystemMacros.h"
 
 HSYSTEM(LevelingSystem)
 
     unsigned long int experienceIncrement = 100;
-    EntityID player;
 
 public:
 

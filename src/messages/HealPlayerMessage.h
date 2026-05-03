@@ -1,6 +1,5 @@
 #pragma once
 
-#include "EcsTypes.h"
 #include "Message.h"
 #include "HugoTypes.h"
 
