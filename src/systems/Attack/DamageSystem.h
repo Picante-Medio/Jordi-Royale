@@ -1,5 +1,4 @@
 #pragma once
-
 #include "EcsTypes.h"
 #include "HugoSystemMacros.h"
 
