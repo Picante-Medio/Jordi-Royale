@@ -1,11 +1,12 @@
 #pragma once
 
+#include "EcsTypes.h"
 #include "HugoSystemMacros.h"
 
 HSYSTEM(LevelingSystem)
 
-    float grabDistance = 5.f;
     unsigned long int experienceIncrement = 100;
+    EntityID player;
 
 public:
 

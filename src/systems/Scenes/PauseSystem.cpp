@@ -1,7 +1,6 @@
 #include "PauseSystem.h"
 
 #include "ButtonComponent.h"
-
 #include "ChangeSceneMessage.h"
 
 void
@@ -13,7 +12,7 @@ PauseSystem::initResume(ResumeTag& resume){
             ChangeSceneMessage message;
             message.sceneName = "main_scene";
             message.destroyCurrent = true;
-    
+
             scene.sendMessage<ChangeSceneMessage>(message);
         };
     });
@@ -28,7 +27,6 @@ PauseSystem::initExit(ExitTag& exit){
             ChangeSceneMessage message;
             message.sceneName = "menu_scene";
             message.destroyCurrent = true;
-    
             scene.sendMessage<ChangeSceneMessage>(message);
         };
     });
@@ -36,7 +34,7 @@ PauseSystem::initExit(ExitTag& exit){
 
 void 
 PauseSystem::onLoad(){
-    
+
 }
 
 void 
@@ -47,7 +45,7 @@ PauseSystem::init(){
 
 void 
 PauseSystem::update(uint32_t){
-    
+
 }
 
 void 

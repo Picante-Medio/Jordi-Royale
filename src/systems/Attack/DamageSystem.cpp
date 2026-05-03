@@ -13,6 +13,9 @@ void DamageSystem::init() {
         std::shared_ptr<HealPlayerMessage> m = std::static_pointer_cast<HealPlayerMessage>(message);
         changeHP(playerID, m->healPoints);
     });
+
+    // player can be found on init because upon player death the scene gets deleted, Jordi is always a valid entity
+    playerID = scene.query<PlayerComponent>().begin()->getConst<PlayerComponent>().entity;
 }
 
 void DamageSystem::onLoad() {
@@ -20,7 +23,6 @@ void DamageSystem::onLoad() {
 }
 
 void DamageSystem::update(uint32_t) {
-    playerID = scene.query<PlayerComponent>().begin()->getConst<PlayerComponent>().entity;
     for(EntityID id : scene.getComponent<ColliderComponent>(playerID).getCollisionInfo()){
         if(scene.hasComponent<DamageComponent>(id) && scene.getComponent<DamageComponent>(id).DamType == DamageComponent::Enemy){
             const DamageComponent& damage = scene.getComponent<DamageComponent>(id);

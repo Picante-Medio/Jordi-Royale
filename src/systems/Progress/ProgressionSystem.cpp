@@ -6,8 +6,6 @@
 #include "IncreaseEnemyLevelMessage.h"
 #include "SpawnBossMessage.h"
 
-#include <iostream>
-
 void 
 ProgressionSystem::onLoad(){
 

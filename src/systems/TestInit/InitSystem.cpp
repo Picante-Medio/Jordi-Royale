@@ -1,5 +1,6 @@
 #include "InitSystem.h"
 
+#include "JordiRandom.h"
 #include "TransformComponent.h"
 #include "RenderComponent.h"
 #include "PlayerComponent.h"
@@ -16,6 +17,9 @@ InitSystem::onLoad(){
 
 void 
 InitSystem::init(){
+
+    //RNG
+    JordiRandom::Instance().Init();
 
     // Jordi
 
