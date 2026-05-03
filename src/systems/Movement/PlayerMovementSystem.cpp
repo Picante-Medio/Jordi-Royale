@@ -10,6 +10,8 @@
 #include "CameraComponent.h"
 #include <cmath>
 
+#include "RenderComponent.h"
+
 void PlayerMovementSystem::init(){
     
     scene.getInput()->registerAction("Forward", HUGO::KeyCode::W);
@@ -31,20 +33,30 @@ void PlayerMovementSystem::update(uint32_t){
     HUGO::Vector2 currentMousePosition = HUGO::Vector2(scene.getInput()->getMouseRelativePosition().x, 
                                                        scene.getInput()->getMouseRelativePosition().y);
 
+    HUGO::Vector3 playerUp = scene.query<PlayerComponent, TransformComponent>().begin()->getConst<TransformComponent>().getWorldRotation().up();
+    HUGO::Vector3 camPos = scene.query<CameraComponent, TransformComponent>().begin()->getConst<TransformComponent>().getWorldPosition();
+    HUGO::Vector3 playerPos = scene.query<PlayerComponent, TransformComponent>().begin()->getConst<TransformComponent>().getWorldPosition();
+
+    diffVectorxz = HUGO::Vector3((playerPos - camPos).x, 0, (playerPos - camPos).z);
+    HUGO::Vector3 normalVector = diffVectorxz.normalized().cross(HUGO::Vector3(0, 1, 0)).normalized();
+
     HUGO::Vector2 diff = currentMousePosition - lastMousePosition;
-    HUGO::Quaternion rotation = HUGO::Quaternion(HUGO::Radian(HUGO::Degree(diff.x * 360 * SENSIBILITY)), HUGO::Vector3(0, 1, 0))
-                              * HUGO::Quaternion(HUGO::Radian(HUGO::Degree(diff.y * 360 * SENSIBILITY)), HUGO::Vector3(1, 0, 0));
+    HUGO::Quaternion rotation = HUGO::Quaternion(HUGO::Radian(HUGO::Degree(-diff.x * 360 * SENSIBILITY)), playerUp);
+    //                        ! I can't figure out why this isn't working
+    //                        * HUGO::Quaternion(HUGO::Radian(HUGO::Degree(diff.y * 360 * SENSIBILITY)), normalVector);
 
     // rigidboy is a cylinder, rotation is not needed
     for(auto& item : scene.query<TransformComponent, CameraPivotTag>()){
         item.modify<TransformComponent>([rotation](TransformComponent& trans){
-            trans.setRotation(trans.getRotation() * rotation);
+            trans.setWorldRotation(trans.getWorldRotation() * rotation);
         });
     }
 
     lastMousePosition = currentMousePosition;
 
-    // * TESTING METHOD CALL
+    scene.query<TransformComponent, PlayerComponent>()[0].modify<TransformComponent>([this](TransformComponent& trans){
+        updateCamera(trans);
+    });
 }
 
 void PlayerMovementSystem::fixedUpdate(uint32_t){
@@ -53,12 +65,12 @@ void PlayerMovementSystem::fixedUpdate(uint32_t){
     HUGO::Vector3 jumpDirection = HUGO::Vector3();
 
     // z-axis
-    if(scene.getInput()->isActionPressed("Forward")) velocity = velocity - HUGO::Vector3(0, 0, 1);
-    else if(scene.getInput()->isActionPressed("Backward")) velocity += HUGO::Vector3(0, 0, 1);
+    if(scene.getInput()->isActionPressed("Forward")) velocity += diffVectorxz;
+    else if(scene.getInput()->isActionPressed("Backward")) velocity = velocity - diffVectorxz;
 
     // x-axis
-    if(scene.getInput()->isActionPressed("Right")) velocity += HUGO::Vector3(1, 0, 0);
-    else if(scene.getInput()->isActionPressed("Left")) velocity = velocity - HUGO::Vector3(1, 0, 0);
+    if(scene.getInput()->isActionPressed("Right")) velocity += diffVectorxz.cross(HUGO::Vector3(0, 1, 0));
+    else if(scene.getInput()->isActionPressed("Left")) velocity = velocity - diffVectorxz.cross(HUGO::Vector3(0, 1, 0));
 
     // Jump
     if(scene.getInput()->isActionPressed("Jump"))
@@ -69,6 +81,10 @@ void PlayerMovementSystem::fixedUpdate(uint32_t){
 
     for(auto& item : scene.query<PlayerComponent, RigidBodyComponent, SpeedComponent, TransformComponent>()){
         item.modify<RigidBodyComponent>([&item, velocity, jumpDirection](RigidBodyComponent& rb){
+
+            //! provisional until property is serialized
+            rb.dontRotateWithPhysicsOnDynamic = true;
+
             // horizontal movement
             rb.applyForce(velocity * item.getConst<SpeedComponent>().speed);
 
@@ -98,7 +114,7 @@ void PlayerMovementSystem::fixedUpdate(uint32_t){
 
 void
 PlayerMovementSystem::updateCamera(TransformComponent& playerTrans){
-    scene.query<TransformComponent, CameraComponent>()[0].modify<TransformComponent>([this, playerTrans](TransformComponent& trans){
-        trans.setPosition(playerTrans.getPosition() + HUGO::Vector3(0, yOffset, zOffset));
+    scene.query<TransformComponent, CameraPivotTag>()[0].modify<TransformComponent>([this, playerTrans](TransformComponent& trans){
+        trans.setPosition(playerTrans.getPosition() + HUGO::Vector3(0, yOffset, 0));
     });
 }

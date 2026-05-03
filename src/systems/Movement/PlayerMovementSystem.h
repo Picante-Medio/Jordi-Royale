@@ -7,13 +7,13 @@ HSYSTEM(PlayerMovementSystem)
 
 HUGO::Vector2 lastMousePosition;
 // a value of 1 means that moving the mouse the total horizontal length of the screen will do a 360 degree rotation
-const HUGO::Float SENSIBILITY = 0.5;
+const HUGO::Float SENSIBILITY = 0.75;
 
-// * TESTING OFFSET WHILE HIERARCHY DOESN'T EXIST
-HUGO::Float yOffset = 1;
-HUGO::Float zOffset = 5;
+// vector from camera to Jordi in x and z exes
+HUGO::Vector3 diffVectorxz;
 
-// * TESTING METHOD TO MOVE CAMERA WHILE HIERARCHY DOESN'T EXIST
+HUGO::Float yOffset = 1.4;
+
 void updateCamera(TransformComponent& playerTrans);
 
 public:
