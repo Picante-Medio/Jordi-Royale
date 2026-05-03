@@ -26,7 +26,7 @@ ENTITY Camera 1
         FLOAT orthoHeight 10.0
         BOOL autoAspectRatio true
         BOOL mainCamera true
-        VECTOR_4 clearColor 0.30000001192093 0.30000001192093 0.5 1.0
+        VECTOR_4 clearColor 0.0 0.0 0.0 1.0
     START_CHILDREN
     END_CHILDREN
 END_ENTITY

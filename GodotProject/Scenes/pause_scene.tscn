@@ -19,6 +19,7 @@ script = ExtResource("2_p5iuk")
 [node name="CameraComponent" type="Node" parent="Camera" unique_id=1314922791]
 script = ExtResource("3_iqreg")
 mainCamera = true
+clearColor = Vector4(0, 0, 0, 1)
 metadata/_custom_type_script = "uid://bjwx87l5l8cjv"
 
 [node name="Pause" type="Node3D" parent="." unique_id=414518703]
