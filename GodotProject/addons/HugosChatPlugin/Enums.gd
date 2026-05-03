@@ -83,6 +83,13 @@ enum TrayLocationTypes
 	TL_NONE
 };
 
+enum BodyType
+{
+	DYNAMIC,
+	STATIC,
+	KINEMATIC
+};
+
 class ColliderInfo:
 	var shape: Shape3D
 
