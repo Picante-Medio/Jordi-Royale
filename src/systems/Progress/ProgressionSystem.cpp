@@ -5,6 +5,8 @@
 #include "ChangeEnemyDensityMessage.h"
 #include "IncreaseEnemyLevelMessage.h"
 #include "SpawnBossMessage.h"
+#include "ChangeSceneMessage.h"
+#include "PanelComponent.h"
 
 void 
 ProgressionSystem::onLoad(){
@@ -13,6 +15,13 @@ ProgressionSystem::onLoad(){
 
 void 
 ProgressionSystem::init(){
+    scene.subscribe<ChangeSceneMessage>([this](std::shared_ptr<HUGO::Message> message) {
+        std::shared_ptr<ChangeSceneMessage> m = std::static_pointer_cast<ChangeSceneMessage>(message);
+        std::cout << "SE EJECUTA ESTO\n\n\n";
+        scene.query<ClockTag, PanelComponent>().begin()->modify<PanelComponent>([](PanelComponent& panel){
+            panel.isVisible = false;
+        });
+    });
 }
 
 void 
@@ -47,7 +56,23 @@ ProgressionSystem::update(uint32_t dt){
         // Update clock
         item.modify<TextComponent>([this](TextComponent& text){
 
-            HUGO::String timeText = std::to_string(hours) + ":" + std::to_string(minutes) + ":" + std::to_string(seconds) + ":" + std::to_string(miliseconds);
+            HUGO::String sHours = "";
+            HUGO::String sMinutes = "";
+            HUGO::String sSeconds = "";
+            HUGO::String sMilisenconds = "";
+
+            if(hours < 10) sHours += "0";
+            if(minutes < 10) sMinutes += "0";
+            if(seconds < 10) sSeconds += "0";
+            if(miliseconds < 100) sMilisenconds += "0";
+            if(miliseconds < 10) sMilisenconds += "0";
+
+            sHours += std::to_string(hours);
+            sMinutes += std::to_string(minutes);
+            sSeconds += std::to_string(seconds);
+            sMilisenconds += std::to_string(miliseconds);
+
+            HUGO::String timeText = sHours + ":" + sMinutes + ":" + sSeconds + ":" + sMilisenconds;
             text.text = timeText;
         });
     }

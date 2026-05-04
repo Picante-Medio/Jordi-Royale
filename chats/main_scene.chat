@@ -139,3 +139,31 @@ ENTITY Moai 1
     END_CHILDREN
 END_ENTITY
 
+ENTITY Clock 1
+    COMPONENT ClockTag
+    COMPONENT PanelComponent
+        STRING overlayName JordiUI/Overlay4
+        STRING containerName JordiUI/Overlay4/Container4
+        BOOL isVisible true
+        INT metricsMode 0
+        FLOAT left 0.0
+        FLOAT top 0.05
+        FLOAT width 0.4
+        FLOAT height 0.1
+        STRING material 
+    COMPONENT TextComponent
+        STRING textAreaName JordUI/Overlay4/Container4/Text4
+        STRING text 00:00:00:000
+        STRING textFont Roboto
+        FLOAT characterHeight 0.035
+        FLOAT spaceWidth 0.01
+        VECTOR_4 colour 1.0 1.0 1.0 1.0
+        VECTOR_4 colourTop 1.0 1.0 1.0 1.0
+        VECTOR_4 colourBottom 1.0 1.0 1.0 1.0
+        FLOAT left 0.45
+        FLOAT top 0.06
+        FLOAT maxWidth 0.0
+    START_CHILDREN
+    END_CHILDREN
+END_ENTITY
+

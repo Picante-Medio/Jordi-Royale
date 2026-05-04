@@ -2,6 +2,7 @@
 extends Component
 class_name TextComponent
 
+@export var textAreaName:String
 @export var text:String
 @export var textFont:String
 @export var characterHeight:float
@@ -15,6 +16,7 @@ class_name TextComponent
 
 func get_component() -> Dictionary[String, Variant]:
 	return {
+		"textAreaName" : FormatWriter.format(textAreaName, "textAreaName"),
 		"text" : FormatWriter.format(text, "text"),
 		"textFont" : FormatWriter.format(textFont, "textFont"),
 		"characterHeight" : FormatWriter.format(characterHeight, "characterHeight"),

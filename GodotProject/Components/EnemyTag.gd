@@ -1,6 +1,6 @@
 @tool
 extends Component
-class_name EnemyComponent
+class_name EnemyTag
 
 
 func get_component() -> Dictionary[String, Variant]:

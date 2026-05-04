@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://c4148ap0mlp3i"]
 
-[ext_resource type="Script" uid="uid://dc6egsdq3qnrj" path="res://Components/EnemyComponent.gd" id="1_6ikya"]
-[ext_resource type="Script" uid="uid://bv4fdb5khcnbk" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="1_jiv5b"]
-[ext_resource type="Script" uid="uid://s2j52p8es0or" path="res://addons/HugosChatPlugin/NativeComponents/ColliderComponent.gd" id="2_jiv5b"]
-[ext_resource type="Script" uid="uid://dpjupwgyydq3o" path="res://addons/HugosChatPlugin/NativeComponents/RigidBodyComponent.gd" id="3_wkm8f"]
-[ext_resource type="Script" uid="uid://bpive0dt6e0xe" path="res://addons/HugosChatPlugin/NativeComponents/RenderComponent.gd" id="4_ypyg0"]
-[ext_resource type="Script" uid="uid://dlt0sfvp2lxlg" path="res://Components/DamageComponent.gd" id="5_7r2yr"]
-[ext_resource type="Script" uid="uid://dcqpn65lxc6a1" path="res://Components/HPComponent.gd" id="6_gyj42"]
-[ext_resource type="Script" uid="uid://dk4nyrs1a6elm" path="res://Components/LevelComponent.gd" id="7_yepe2"]
-[ext_resource type="Script" uid="uid://cip1v7uoq008a" path="res://Components/SpeedComponent.gd" id="8_t1v36"]
+[ext_resource type="Script" uid="uid://d3gpbv1up76xn" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="1_jiv5b"]
+[ext_resource type="Script" uid="uid://5ysnehctvx5b" path="res://addons/HugosChatPlugin/NativeComponents/ColliderComponent.gd" id="2_jiv5b"]
+[ext_resource type="Script" uid="uid://b4cohkcfhgq44" path="res://addons/HugosChatPlugin/NativeComponents/RigidBodyComponent.gd" id="3_wkm8f"]
+[ext_resource type="Script" uid="uid://cmidua6v4bry" path="res://addons/HugosChatPlugin/NativeComponents/RenderComponent.gd" id="4_ypyg0"]
+[ext_resource type="Script" uid="uid://bwwrka02til6w" path="res://Components/DamageComponent.gd" id="5_7r2yr"]
+[ext_resource type="Script" uid="uid://yr66mrh8xaa8" path="res://Components/HPComponent.gd" id="6_gyj42"]
+[ext_resource type="Script" uid="uid://chnmaof0a3ll8" path="res://Components/LevelComponent.gd" id="7_yepe2"]
+[ext_resource type="Script" uid="uid://dgscgud8jyhsm" path="res://Components/SpeedComponent.gd" id="8_t1v36"]
+[ext_resource type="Script" uid="uid://bnnrk17c7rob4" path="res://Components/EnemyTag.gd" id="9_jiv5b"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jccr3"]
 
@@ -16,11 +16,6 @@
 
 [node name="Enemy" type="Node3D" unique_id=1370903902]
 script = ExtResource("1_jiv5b")
-metadata/_custom_type_script = "uid://bv4fdb5khcnbk"
-
-[node name="EnemyComponent" type="Node" parent="." unique_id=1774900825]
-script = ExtResource("1_6ikya")
-metadata/_custom_type_script = "uid://dc6egsdq3qnrj"
 
 [node name="ColliderComponent" type="CollisionShape3D" parent="." unique_id=60116402]
 shape = SubResource("BoxShape3D_jccr3")
@@ -28,36 +23,32 @@ script = ExtResource("2_jiv5b")
 friction = 0.5
 active = true
 info = SubResource("BoxShape3D_jccr3")
-metadata/_custom_type_script = "uid://s2j52p8es0or"
 
 [node name="RigidBodyComponent" type="Node" parent="." unique_id=1724793733]
 script = ExtResource("3_wkm8f")
 linearSleepingThreshold = 0.8
 angularSleepingThreshold = 1.0
-metadata/_custom_type_script = "uid://dpjupwgyydq3o"
 
 [node name="RenderComponent" type="MeshInstance3D" parent="." unique_id=1222548737]
 script = ExtResource("4_ypyg0")
 mesh_name = "cube.mesh"
-metadata/_custom_type_script = "uid://bpive0dt6e0xe"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RenderComponent" unique_id=871455293]
 mesh = SubResource("BoxMesh_jd3y4")
 
 [node name="DamageComponent" type="Node" parent="." unique_id=919601672]
 script = ExtResource("5_7r2yr")
-metadata/_custom_type_script = "uid://dlt0sfvp2lxlg"
 
 [node name="HPComponent" type="Node" parent="." unique_id=742118507]
 script = ExtResource("6_gyj42")
 HPMax = 50
 CurrentHP = 50
-metadata/_custom_type_script = "uid://dcqpn65lxc6a1"
 
 [node name="LevelComponent" type="Node" parent="." unique_id=554129512]
 script = ExtResource("7_yepe2")
-metadata/_custom_type_script = "uid://dk4nyrs1a6elm"
 
 [node name="SpeedComponent" type="Node" parent="." unique_id=101251184]
 script = ExtResource("8_t1v36")
-metadata/_custom_type_script = "uid://cip1v7uoq008a"
+
+[node name="EnemyTag" type="Node" parent="." unique_id=961059566]
+script = ExtResource("9_jiv5b")
