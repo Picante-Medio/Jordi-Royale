@@ -7,6 +7,7 @@
 #include "SpawnBossMessage.h"
 #include "ChangeSceneMessage.h"
 #include "PanelComponent.h"
+#include "TransformComponent.h"
 
 void 
 ProgressionSystem::onLoad(){
@@ -14,6 +15,7 @@ ProgressionSystem::onLoad(){
     scene.query<ClockTag, PanelComponent>().begin()->modify<PanelComponent>([](PanelComponent& panel){
             panel.isVisible = true;
     });
+
 }
 
 void 

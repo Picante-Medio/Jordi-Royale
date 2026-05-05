@@ -1,40 +1,46 @@
 [gd_scene format=3 uid="uid://c4148ap0mlp3i"]
 
-[ext_resource type="Script" uid="uid://d3gpbv1up76xn" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="1_jiv5b"]
-[ext_resource type="Script" uid="uid://5ysnehctvx5b" path="res://addons/HugosChatPlugin/NativeComponents/ColliderComponent.gd" id="2_jiv5b"]
-[ext_resource type="Script" uid="uid://b4cohkcfhgq44" path="res://addons/HugosChatPlugin/NativeComponents/RigidBodyComponent.gd" id="3_wkm8f"]
-[ext_resource type="Script" uid="uid://cmidua6v4bry" path="res://addons/HugosChatPlugin/NativeComponents/RenderComponent.gd" id="4_ypyg0"]
-[ext_resource type="Script" uid="uid://bwwrka02til6w" path="res://Components/DamageComponent.gd" id="5_7r2yr"]
-[ext_resource type="Script" uid="uid://yr66mrh8xaa8" path="res://Components/HPComponent.gd" id="6_gyj42"]
-[ext_resource type="Script" uid="uid://chnmaof0a3ll8" path="res://Components/LevelComponent.gd" id="7_yepe2"]
-[ext_resource type="Script" uid="uid://dgscgud8jyhsm" path="res://Components/SpeedComponent.gd" id="8_t1v36"]
+[ext_resource type="Script" uid="uid://dmak3mcg4w0h8" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="1_jiv5b"]
+[ext_resource type="Script" uid="uid://bewpcwg276ktv" path="res://addons/HugosChatPlugin/NativeComponents/ColliderComponent.gd" id="2_jiv5b"]
+[ext_resource type="Script" uid="uid://dgu5myf6wqmwa" path="res://addons/HugosChatPlugin/NativeComponents/RigidBodyComponent.gd" id="3_wkm8f"]
+[ext_resource type="Script" uid="uid://c0wlt0qsxdika" path="res://addons/HugosChatPlugin/NativeComponents/RenderComponent.gd" id="4_ypyg0"]
+[ext_resource type="Script" uid="uid://dvkcj1hifj6ui" path="res://Components/DamageComponent.gd" id="5_7r2yr"]
+[ext_resource type="PackedScene" uid="uid://bwqapp5sejmab" path="res://Resources/enemies/jordi-head.glb" id="5_wkm8f"]
+[ext_resource type="Script" uid="uid://dcp0yk0bbo26h" path="res://Components/HPComponent.gd" id="6_gyj42"]
+[ext_resource type="Script" uid="uid://dk4nyrs1a6elm" path="res://Components/LevelComponent.gd" id="7_yepe2"]
+[ext_resource type="Script" uid="uid://cvtg4usa810uw" path="res://Components/SpeedComponent.gd" id="8_t1v36"]
 [ext_resource type="Script" uid="uid://bnnrk17c7rob4" path="res://Components/EnemyTag.gd" id="9_jiv5b"]
+[ext_resource type="Script" uid="uid://ooxkdcy2pv63" path="res://addons/HugosChatPlugin/NativeComponents/AnimationComponent.gd" id="11_ypyg0"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_jccr3"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_jd3y4"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_ypyg0"]
+radius = 0.68064976
 
 [node name="Enemy" type="Node3D" unique_id=1370903902]
+transform = Transform3D(3.875586e-09, 0, -0.325, 0, 0.325, 0, 0.325, 0, 3.875586e-09, 0, 0, 0)
 script = ExtResource("1_jiv5b")
 
 [node name="ColliderComponent" type="CollisionShape3D" parent="." unique_id=60116402]
-shape = SubResource("BoxShape3D_jccr3")
+transform = Transform3D(1.0000001, 0, 8.881784e-16, 0, 1.0000001, 0, -8.881784e-16, 0, 1.0000001, -0.103484645, 0.34419435, -0.0027465809)
+shape = SubResource("SphereShape3D_ypyg0")
 script = ExtResource("2_jiv5b")
 friction = 0.5
 active = true
-info = SubResource("BoxShape3D_jccr3")
+info = SubResource("SphereShape3D_ypyg0")
 
 [node name="RigidBodyComponent" type="Node" parent="." unique_id=1724793733]
 script = ExtResource("3_wkm8f")
+mass = 5.0
+linearDamping = 0.5
 linearSleepingThreshold = 0.8
 angularSleepingThreshold = 1.0
+dontRotateWithPhysicsOnDynamic = true
+gravity = Vector3(0, 0, 0)
 
 [node name="RenderComponent" type="MeshInstance3D" parent="." unique_id=1222548737]
 script = ExtResource("4_ypyg0")
-mesh_name = "cube.mesh"
+mesh_name = "jordi-head.glb"
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RenderComponent" unique_id=871455293]
-mesh = SubResource("BoxMesh_jd3y4")
+[node name="jordi-head" parent="RenderComponent" unique_id=2059198894 instance=ExtResource("5_wkm8f")]
 
 [node name="DamageComponent" type="Node" parent="." unique_id=919601672]
 script = ExtResource("5_7r2yr")
@@ -49,6 +55,11 @@ script = ExtResource("7_yepe2")
 
 [node name="SpeedComponent" type="Node" parent="." unique_id=101251184]
 script = ExtResource("8_t1v36")
+speed = 15.0
 
 [node name="EnemyTag" type="Node" parent="." unique_id=961059566]
 script = ExtResource("9_jiv5b")
+
+[node name="AnimationComponent" type="Node" parent="." unique_id=25858165]
+script = ExtResource("11_ypyg0")
+metadata/_custom_type_script = "uid://ooxkdcy2pv63"

@@ -4,7 +4,6 @@ ENTITY Boss 1
         VECTOR_3 position 0.0 0.0 0.0
         QUATERNION rotation 0.0 0.0 0.0 1.0
         VECTOR_3 scale 2.0 2.0 2.0
-    COMPONENT EnemyComponent
     COMPONENT ColliderComponent
         COLLIDER_INFO info BOX_COLLIDER 0.5 0.5 0.5
         FLOAT restitution 0.0
@@ -13,6 +12,7 @@ ENTITY Boss 1
         QUATERNION rotationOffset 0.0 0.0 0.0 1.0
         BOOL active true
         BOOL useGizmo false
+        BOOL isTrigger false
     COMPONENT RigidBodyComponent
         FLOAT mass 0.0
         FLOAT linearDamping 0.0
@@ -23,6 +23,7 @@ ENTITY Boss 1
         FLOAT angularSleepingThreshold 1.0
         INT type 0
         BOOL dontRotateWithPhysicsOnDynamic false
+        VECTOR_3 gravity 0.0 0.0 0.0
     COMPONENT RenderComponent
         STRING meshName cube.mesh
         STRING materialName 
@@ -35,6 +36,7 @@ ENTITY Boss 1
         INT level 1
     COMPONENT SpeedComponent
         FLOAT speed 2.0
+    COMPONENT EnemyTag
     START_CHILDREN
     END_CHILDREN
 END_ENTITY

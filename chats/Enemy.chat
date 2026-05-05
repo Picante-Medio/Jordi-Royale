@@ -2,29 +2,30 @@ PREFAB Enemy
 ENTITY Enemy 1
     COMPONENT TransformComponent
         VECTOR_3 position 0.0 0.0 0.0
-        QUATERNION rotation 0.0 0.0 0.0 1.0
-        VECTOR_3 scale 1.0 1.0 1.0
-    COMPONENT EnemyComponent
+        QUATERNION rotation 0.0 -0.70710676908493 0.0 0.70710676908493
+        VECTOR_3 scale 0.32499998807907 0.32499998807907 0.32499998807907
     COMPONENT ColliderComponent
-        COLLIDER_INFO info BOX_COLLIDER 0.5 0.5 0.5
+        COLLIDER_INFO info SPHERE_COLLIDER 0.68064975738525
         FLOAT restitution 0.0
         FLOAT friction 0.5
-        VECTOR_3 positionOffset 0.0 0.0 0.0
+        VECTOR_3 positionOffset -0.10348464548588 0.3441943526268 -0.0027465808671
         QUATERNION rotationOffset 0.0 0.0 0.0 1.0
         BOOL active true
         BOOL useGizmo false
+        BOOL isTrigger false
     COMPONENT RigidBodyComponent
-        FLOAT mass 0.0
-        FLOAT linearDamping 0.0
+        FLOAT mass 5.0
+        FLOAT linearDamping 0.5
         FLOAT angularDamping 0.0
         VECTOR_3 linearVelocity 0.0 0.0 0.0
         VECTOR_3 angularVelocity 0.0 0.0 0.0
         FLOAT linearSleepingThreshold 0.8
         FLOAT angularSleepingThreshold 1.0
         INT type 0
-        BOOL dontRotateWithPhysicsOnDynamic false
+        BOOL dontRotateWithPhysicsOnDynamic true
+        VECTOR_3 gravity 0.0 0.0 0.0
     COMPONENT RenderComponent
-        STRING meshName cube.mesh
+        STRING meshName jordi-head.glb
         STRING materialName 
     COMPONENT DamageComponent
         INT Damage 10
@@ -34,7 +35,9 @@ ENTITY Enemy 1
     COMPONENT LevelComponent
         INT level 1
     COMPONENT SpeedComponent
-        FLOAT speed 5.0
+        FLOAT speed 15.0
+    COMPONENT EnemyTag
+    COMPONENT AnimationComponent
     START_CHILDREN
     END_CHILDREN
 END_ENTITY

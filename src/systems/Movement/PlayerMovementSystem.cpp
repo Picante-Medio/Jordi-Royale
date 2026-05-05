@@ -22,15 +22,6 @@ void PlayerMovementSystem::init(){
     scene.getInput()->registerAction("Left", HUGO::KeyCode::A);
     // Will be KeyCode::SPACE as soon as changes in HUGO are brought to main
     scene.getInput()->registerAction("Jump", HUGO::KeyCode::SPACE);
-
-    HUGO::ErrorOrType<EntityID> enemy = scene.instantiatePrefab("Enemy");
-
-    for(auto item : scene.query<TransformComponent, EnemyTag>()){
-        item.modify<TransformComponent>([](TransformComponent& trans){
-            trans.setPosition(HUGO::Vector3(5, 2, 0));
-        });
-        std::cout << "Enemigo" << "\n";
-    }
 }
 
 // every time the scene is loaded, the mouse position is registered again

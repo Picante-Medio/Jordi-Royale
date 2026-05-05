@@ -11,6 +11,7 @@ class_name RigidBodyComponent
 @export var angularSleepingThreshold:float
 @export var type:ENUMS.BodyType
 @export var dontRotateWithPhysicsOnDynamic:bool
+@export var gravity:Vector3 = Vector3(0, -9.8, 0)
 
 func get_component() -> Dictionary[String, Variant]:
 	return {
@@ -22,5 +23,6 @@ func get_component() -> Dictionary[String, Variant]:
 		"linearSleepingThreshold" : FormatWriter.format(linearSleepingThreshold, "linearSleepingThreshold"),
 		"angularSleepingThreshold" : FormatWriter.format(angularSleepingThreshold, "angularSleepingThreshold"),
 		"type" : FormatWriter.format(type, "type"),
-		"dontRotateWithPhysicsOnDynamic" : FormatWriter.format(dontRotateWithPhysicsOnDynamic, "dontRotateWithPhysicsOnDynamic")
+		"dontRotateWithPhysicsOnDynamic" : FormatWriter.format(dontRotateWithPhysicsOnDynamic, "dontRotateWithPhysicsOnDynamic"),
+		"gravity" : FormatWriter.format(gravity, "gravity")
 	}

@@ -13,6 +13,7 @@ SYSTEM DamageSystem
 SYSTEM PlayerMovementSystem
 SYSTEM ChangeSceneSystem
 SYSTEM ProgressionSystem
+SYSTEM EnemyMovementSystem
 
 ENTITY Jordi 1
     COMPONENT TransformComponent

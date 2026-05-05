@@ -12,6 +12,7 @@ ENTITY Moai 1
         QUATERNION rotationOffset 0.0 0.0 0.0 1.0
         BOOL active false
         BOOL useGizmo false
+        BOOL isTrigger false
     COMPONENT RenderComponent
         STRING meshName jordi-moai.glb
         STRING materialName 
@@ -25,6 +26,7 @@ ENTITY Moai 1
         FLOAT angularSleepingThreshold 0.0
         INT type 1
         BOOL dontRotateWithPhysicsOnDynamic false
+        VECTOR_3 gravity 0.0 0.0 0.0
     START_CHILDREN
     END_CHILDREN
 END_ENTITY

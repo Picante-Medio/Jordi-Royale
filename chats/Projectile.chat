@@ -22,6 +22,7 @@ ENTITY Projectile 1
         QUATERNION rotationOffset 0.0 0.0 0.0 1.0
         BOOL active false
         BOOL useGizmo false
+        BOOL isTrigger false
     COMPONENT RigidBodyComponent
         FLOAT mass 0.0
         FLOAT linearDamping 0.0
@@ -32,6 +33,7 @@ ENTITY Projectile 1
         FLOAT angularSleepingThreshold 1.0
         INT type 0
         BOOL dontRotateWithPhysicsOnDynamic false
+        VECTOR_3 gravity 0.0 0.0 0.0
     COMPONENT RenderComponent
         STRING meshName sphere.mesh
         STRING materialName 

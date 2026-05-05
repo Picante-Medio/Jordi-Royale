@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://bf0333laqfej"]
 
-[ext_resource type="Script" uid="uid://bv4fdb5khcnbk" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="1_bcgpj"]
-[ext_resource type="Script" uid="uid://bt6201u67nng5" path="res://Components/ProjectileComponent.gd" id="2_1xi6d"]
-[ext_resource type="Script" uid="uid://dlt0sfvp2lxlg" path="res://Components/DamageComponent.gd" id="3_h1d07"]
-[ext_resource type="Script" uid="uid://s2j52p8es0or" path="res://addons/HugosChatPlugin/NativeComponents/ColliderComponent.gd" id="4_gckpq"]
-[ext_resource type="Script" uid="uid://dpjupwgyydq3o" path="res://addons/HugosChatPlugin/NativeComponents/RigidBodyComponent.gd" id="5_ywhl1"]
-[ext_resource type="Script" uid="uid://bpive0dt6e0xe" path="res://addons/HugosChatPlugin/NativeComponents/RenderComponent.gd" id="6_3a3ai"]
+[ext_resource type="Script" uid="uid://dmak3mcg4w0h8" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="1_bcgpj"]
+[ext_resource type="Script" uid="uid://bwaburuf8hfgu" path="res://Components/ProjectileComponent.gd" id="2_1xi6d"]
+[ext_resource type="Script" uid="uid://dvkcj1hifj6ui" path="res://Components/DamageComponent.gd" id="3_h1d07"]
+[ext_resource type="Script" uid="uid://bewpcwg276ktv" path="res://addons/HugosChatPlugin/NativeComponents/ColliderComponent.gd" id="4_gckpq"]
+[ext_resource type="Script" uid="uid://dgu5myf6wqmwa" path="res://addons/HugosChatPlugin/NativeComponents/RigidBodyComponent.gd" id="5_ywhl1"]
+[ext_resource type="Script" uid="uid://c0wlt0qsxdika" path="res://addons/HugosChatPlugin/NativeComponents/RenderComponent.gd" id="6_3a3ai"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0bcok"]
 radius = 0.63626695
@@ -14,33 +14,28 @@ radius = 0.63626695
 
 [node name="Projectile" type="Node3D" unique_id=1223833635]
 script = ExtResource("1_bcgpj")
-metadata/_custom_type_script = "uid://bv4fdb5khcnbk"
 
 [node name="ProjectileComponent" type="Node" parent="." unique_id=497583327]
 script = ExtResource("2_1xi6d")
-metadata/_custom_type_script = "uid://bt6201u67nng5"
 
 [node name="DamageComponent" type="Node" parent="." unique_id=1169978160]
 script = ExtResource("3_h1d07")
-metadata/_custom_type_script = "uid://dlt0sfvp2lxlg"
 
 [node name="ColliderComponent" type="CollisionShape3D" parent="." unique_id=115889932]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.045898438, 0)
 shape = SubResource("SphereShape3D_0bcok")
 script = ExtResource("4_gckpq")
 info = SubResource("SphereShape3D_0bcok")
-metadata/_custom_type_script = "uid://s2j52p8es0or"
 
 [node name="RigidBodyComponent" type="Node" parent="." unique_id=75536127]
 script = ExtResource("5_ywhl1")
 linearSleepingThreshold = 0.8
 angularSleepingThreshold = 1.0
-metadata/_custom_type_script = "uid://dpjupwgyydq3o"
+gravity = Vector3(0, 0, 0)
 
 [node name="RenderComponent" type="MeshInstance3D" parent="." unique_id=83649830]
 script = ExtResource("6_3a3ai")
 mesh_name = "sphere.mesh"
-metadata/_custom_type_script = "uid://bpive0dt6e0xe"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RenderComponent" unique_id=65340573]
 mesh = SubResource("SphereMesh_hhqa1")

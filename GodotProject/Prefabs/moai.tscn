@@ -31,4 +31,5 @@ metadata/_custom_type_script = "uid://c0wlt0qsxdika"
 [node name="RigidBodyComponent" type="Node" parent="." unique_id=1471038585]
 script = ExtResource("5_dsilo")
 type = 1
+gravity = Vector3(0, 0, 0)
 metadata/_custom_type_script = "uid://dgu5myf6wqmwa"
