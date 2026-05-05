@@ -10,15 +10,17 @@
 
 void 
 ProgressionSystem::onLoad(){
-
+    
+    scene.query<ClockTag, PanelComponent>().begin()->modify<PanelComponent>([](PanelComponent& panel){
+            panel.isVisible = true;
+    });
 }
 
 void 
 ProgressionSystem::init(){
     scene.subscribe<ChangeSceneMessage>([this](std::shared_ptr<HUGO::Message> message) {
         std::shared_ptr<ChangeSceneMessage> m = std::static_pointer_cast<ChangeSceneMessage>(message);
-        std::cout << "SE EJECUTA ESTO\n\n\n";
-        scene.query<ClockTag, PanelComponent>().begin()->modify<PanelComponent>([](PanelComponent& panel){
+        scene.query<ClockTag, PanelComponent>().begin()->modify<PanelComponent>([m](PanelComponent& panel){
             panel.isVisible = false;
         });
     });
