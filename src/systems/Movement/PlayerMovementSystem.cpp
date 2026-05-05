@@ -131,12 +131,3 @@ void PlayerMovementSystem::fixedUpdate(uint32_t){
     }
 
 }
-
-// * TESTING METHOD
-
-void
-PlayerMovementSystem::updateCamera(TransformComponent& playerTrans){
-    scene.query<TransformComponent, CameraPivotTag>()[0].modify<TransformComponent>([this, playerTrans](TransformComponent& trans){
-        trans.setPosition(playerTrans.getPosition() + HUGO::Vector3(0, yOffset, 0));
-    });
-}

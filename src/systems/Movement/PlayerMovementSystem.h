@@ -15,8 +15,6 @@ HUGO::Vector3 diffVectorxz;
 
 HUGO::Float yOffset = 1.4;
 
-void updateCamera(TransformComponent& playerTrans);
-
 public:
 void init() override;
 void onLoad() override;

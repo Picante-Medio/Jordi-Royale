@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://c4148ap0mlp3i"]
 
-[ext_resource type="Script" uid="uid://dmak3mcg4w0h8" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="1_jiv5b"]
-[ext_resource type="Script" uid="uid://bewpcwg276ktv" path="res://addons/HugosChatPlugin/NativeComponents/ColliderComponent.gd" id="2_jiv5b"]
+[ext_resource type="Script" uid="uid://d3fypo3sn4qu3" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="1_jiv5b"]
+[ext_resource type="Script" uid="uid://bg5luietaqtrx" path="res://addons/HugosChatPlugin/NativeComponents/ColliderComponent.gd" id="2_jiv5b"]
 [ext_resource type="Script" uid="uid://dgu5myf6wqmwa" path="res://addons/HugosChatPlugin/NativeComponents/RigidBodyComponent.gd" id="3_wkm8f"]
-[ext_resource type="Script" uid="uid://c0wlt0qsxdika" path="res://addons/HugosChatPlugin/NativeComponents/RenderComponent.gd" id="4_ypyg0"]
+[ext_resource type="Script" uid="uid://430akguj0twj" path="res://addons/HugosChatPlugin/NativeComponents/RenderComponent.gd" id="4_ypyg0"]
 [ext_resource type="Script" uid="uid://dvkcj1hifj6ui" path="res://Components/DamageComponent.gd" id="5_7r2yr"]
 [ext_resource type="PackedScene" uid="uid://bwqapp5sejmab" path="res://Resources/enemies/jordi-head.glb" id="5_wkm8f"]
-[ext_resource type="Script" uid="uid://dcp0yk0bbo26h" path="res://Components/HPComponent.gd" id="6_gyj42"]
+[ext_resource type="Script" uid="uid://dfj2qxmqtkj0s" path="res://Components/HPComponent.gd" id="6_gyj42"]
 [ext_resource type="Script" uid="uid://dk4nyrs1a6elm" path="res://Components/LevelComponent.gd" id="7_yepe2"]
-[ext_resource type="Script" uid="uid://cvtg4usa810uw" path="res://Components/SpeedComponent.gd" id="8_t1v36"]
+[ext_resource type="Script" uid="uid://bxtnhlmmus6l2" path="res://Components/SpeedComponent.gd" id="8_t1v36"]
 [ext_resource type="Script" uid="uid://bnnrk17c7rob4" path="res://Components/EnemyTag.gd" id="9_jiv5b"]
 [ext_resource type="Script" uid="uid://ooxkdcy2pv63" path="res://addons/HugosChatPlugin/NativeComponents/AnimationComponent.gd" id="11_ypyg0"]
 
@@ -40,7 +40,7 @@ gravity = Vector3(0, 0, 0)
 script = ExtResource("4_ypyg0")
 mesh_name = "jordi-head.glb"
 
-[node name="jordi-head" parent="RenderComponent" unique_id=2059198894 instance=ExtResource("5_wkm8f")]
+[node name="jordi-head" parent="RenderComponent" unique_id=1640375158 instance=ExtResource("5_wkm8f")]
 
 [node name="DamageComponent" type="Node" parent="." unique_id=919601672]
 script = ExtResource("5_7r2yr")

@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dhhopmfyxf4cv"]
 
-[ext_resource type="Script" uid="uid://dmak3mcg4w0h8" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="1_83jca"]
-[ext_resource type="Script" uid="uid://bewpcwg276ktv" path="res://addons/HugosChatPlugin/NativeComponents/ColliderComponent.gd" id="2_4rfy7"]
-[ext_resource type="Script" uid="uid://c0wlt0qsxdika" path="res://addons/HugosChatPlugin/NativeComponents/RenderComponent.gd" id="2_paxit"]
+[ext_resource type="Script" uid="uid://d3fypo3sn4qu3" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="1_83jca"]
+[ext_resource type="Script" uid="uid://bg5luietaqtrx" path="res://addons/HugosChatPlugin/NativeComponents/ColliderComponent.gd" id="2_4rfy7"]
+[ext_resource type="Script" uid="uid://430akguj0twj" path="res://addons/HugosChatPlugin/NativeComponents/RenderComponent.gd" id="2_paxit"]
 [ext_resource type="PackedScene" uid="uid://sexmm4a14j08" path="res://Resources/jordi/jordi-moai.glb" id="3_qpgin"]
 [ext_resource type="Script" uid="uid://dgu5myf6wqmwa" path="res://addons/HugosChatPlugin/NativeComponents/RigidBodyComponent.gd" id="5_dsilo"]
 
@@ -12,19 +12,17 @@ radius = 1.6464844
 
 [node name="Moai" type="Node3D" unique_id=1191298425]
 script = ExtResource("1_83jca")
-metadata/_custom_type_script = "uid://dmak3mcg4w0h8"
 
 [node name="ColliderComponent" type="CollisionShape3D" parent="." unique_id=1025703186]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10321045, 0)
 shape = SubResource("CylinderShape3D_c771c")
 script = ExtResource("2_4rfy7")
+active = true
 info = SubResource("CylinderShape3D_c771c")
-metadata/_custom_type_script = "uid://bewpcwg276ktv"
 
 [node name="RenderComponent" type="MeshInstance3D" parent="." unique_id=204463073]
 script = ExtResource("2_paxit")
 mesh_name = "jordi-moai.glb"
-metadata/_custom_type_script = "uid://c0wlt0qsxdika"
 
 [node name="jordi-moai" parent="RenderComponent" unique_id=721947767 instance=ExtResource("3_qpgin")]
 
