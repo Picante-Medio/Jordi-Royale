@@ -8,6 +8,7 @@ HSYSTEM(EnemySpawnSystem)
 private:
 EntityID playerID;
 std::vector<HUGO::String> prefabs;
+std::vector<HUGO::String> bossPrefabs;
 std::vector<EntityID> spawners;
 JordiRandom rnd;
 HUGO::Int spawnTime = 1000;    //in miliseconds
