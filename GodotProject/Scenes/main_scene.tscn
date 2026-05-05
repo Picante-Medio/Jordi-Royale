@@ -1,20 +1,20 @@
 [gd_scene format=3 uid="uid://dq2fl1vp76r7r"]
 
-[ext_resource type="Script" uid="uid://dsrxmoaefi1rn" path="res://addons/HugosChatPlugin/Entities/scene_tracker.gd" id="1_865ah"]
-[ext_resource type="Script" uid="uid://d3gpbv1up76xn" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="2_huasi"]
-[ext_resource type="Script" uid="uid://bjwx87l5l8cjv" path="res://addons/HugosChatPlugin/NativeComponents/CameraComponent.gd" id="3_drdnd"]
-[ext_resource type="Script" uid="uid://5ysnehctvx5b" path="res://addons/HugosChatPlugin/NativeComponents/ColliderComponent.gd" id="3_m1efj"]
+[ext_resource type="Script" uid="uid://b5ore38alneu0" path="res://addons/HugosChatPlugin/Entities/scene_tracker.gd" id="1_865ah"]
+[ext_resource type="Script" uid="uid://dmak3mcg4w0h8" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="2_huasi"]
+[ext_resource type="Script" uid="uid://d10rufr7dnrt6" path="res://addons/HugosChatPlugin/NativeComponents/CameraComponent.gd" id="3_drdnd"]
+[ext_resource type="Script" uid="uid://bewpcwg276ktv" path="res://addons/HugosChatPlugin/NativeComponents/ColliderComponent.gd" id="3_m1efj"]
 [ext_resource type="PackedScene" uid="uid://c462xqhte7va4" path="res://Resources/jordi/jordi.glb" id="4_m1efj"]
-[ext_resource type="Script" uid="uid://b4cohkcfhgq44" path="res://addons/HugosChatPlugin/NativeComponents/RigidBodyComponent.gd" id="4_mai8y"]
-[ext_resource type="Script" uid="uid://dgscgud8jyhsm" path="res://Components/SpeedComponent.gd" id="6_drdnd"]
-[ext_resource type="Script" uid="uid://cauioprn35hgk" path="res://Components/CameraPivotTag.gd" id="9_mai8y"]
-[ext_resource type="Script" uid="uid://dbu2e7vd80ife" path="res://Components/PlayerComponent.gd" id="10_76v2p"]
-[ext_resource type="Script" uid="uid://cmidua6v4bry" path="res://addons/HugosChatPlugin/NativeComponents/RenderComponent.gd" id="10_mai8y"]
+[ext_resource type="Script" uid="uid://dgu5myf6wqmwa" path="res://addons/HugosChatPlugin/NativeComponents/RigidBodyComponent.gd" id="4_mai8y"]
+[ext_resource type="Script" uid="uid://cvtg4usa810uw" path="res://Components/SpeedComponent.gd" id="6_drdnd"]
+[ext_resource type="Script" uid="uid://d1ljapb1i86tc" path="res://Components/CameraPivotTag.gd" id="9_mai8y"]
+[ext_resource type="Script" uid="uid://b0nmxwhquuske" path="res://Components/PlayerComponent.gd" id="10_76v2p"]
+[ext_resource type="Script" uid="uid://c0wlt0qsxdika" path="res://addons/HugosChatPlugin/NativeComponents/RenderComponent.gd" id="10_mai8y"]
 [ext_resource type="PackedScene" uid="uid://dhhopmfyxf4cv" path="res://Prefabs/moai.tscn" id="11_76v2p"]
-[ext_resource type="Script" uid="uid://dvoket7v7vbwo" path="res://addons/HugosChatPlugin/Entities/entity.gd" id="12_lhp3t"]
-[ext_resource type="Script" uid="uid://cvf74f7xkct5i" path="res://Components/ClockTag.gd" id="13_gnsmo"]
-[ext_resource type="Script" uid="uid://dk4tsyuerxuda" path="res://addons/HugosChatPlugin/NativeComponents/PanelComponent.gd" id="14_psl12"]
-[ext_resource type="Script" uid="uid://esoqdkwkniof" path="res://addons/HugosChatPlugin/NativeComponents/TextComponent.gd" id="15_2ebs2"]
+[ext_resource type="Script" uid="uid://cnmiha8rgpnhn" path="res://addons/HugosChatPlugin/Entities/entity.gd" id="12_lhp3t"]
+[ext_resource type="Script" uid="uid://b1n66dftn6a7i" path="res://Components/ClockTag.gd" id="13_gnsmo"]
+[ext_resource type="Script" uid="uid://pcb3jv2yfyt7" path="res://addons/HugosChatPlugin/NativeComponents/PanelComponent.gd" id="14_psl12"]
+[ext_resource type="Script" uid="uid://gxurxa2dpqpy" path="res://addons/HugosChatPlugin/NativeComponents/TextComponent.gd" id="15_2ebs2"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_mai8y"]
 height = 1.7327881
@@ -113,11 +113,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9547067, 2.8018076, -1.340
 
 [node name="Clock" type="Node3D" parent="." unique_id=389011601]
 script = ExtResource("12_lhp3t")
-metadata/_custom_type_script = "uid://dvoket7v7vbwo"
 
 [node name="ClockTag" type="Node" parent="Clock" unique_id=536491359]
 script = ExtResource("13_gnsmo")
-metadata/_custom_type_script = "uid://cvf74f7xkct5i"
 
 [node name="PanelComponent" type="Node" parent="Clock" unique_id=751017874]
 script = ExtResource("14_psl12")
@@ -127,7 +125,6 @@ isVisible = true
 top = 0.05
 width = 0.4
 height = 0.1
-metadata/_custom_type_script = "uid://dk4tsyuerxuda"
 
 [node name="TextComponent" type="Node" parent="Clock" unique_id=1871784455]
 script = ExtResource("15_2ebs2")
@@ -141,4 +138,3 @@ colourTop = Vector4(1, 1, 1, 1)
 colourBottom = Vector4(1, 1, 1, 1)
 left = 0.45
 top = 0.06
-metadata/_custom_type_script = "uid://esoqdkwkniof"
