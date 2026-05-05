@@ -43,6 +43,7 @@ EnemySpawnSystem::update(uint32_t dt) {
         i++;
     }
 
+    /*
     if(spawnTimeWithVariance <= ms){
         HUGO::ErrorOrType<EntityID> en = scene.instantiatePrefab(prefabs[actWave]);
         if(en.isError()){
@@ -58,4 +59,5 @@ EnemySpawnSystem::update(uint32_t dt) {
         }
 
     }
+        */
 }

@@ -12,26 +12,38 @@
 [ext_resource type="Script" uid="uid://4g74yjtjf8u2" path="res://Components/PlayerComponent.gd" id="10_76v2p"]
 [ext_resource type="Script" uid="uid://c0wlt0qsxdika" path="res://addons/HugosChatPlugin/NativeComponents/RenderComponent.gd" id="10_mai8y"]
 [ext_resource type="Script" uid="uid://cnmiha8rgpnhn" path="res://addons/HugosChatPlugin/Entities/entity.gd" id="12_lhp3t"]
+[ext_resource type="PackedScene" uid="uid://bab5vrefib3f8" path="res://Resources/jordi/moon_floor.glb" id="12_psl12"]
 [ext_resource type="Script" uid="uid://b1n66dftn6a7i" path="res://Components/ClockTag.gd" id="13_gnsmo"]
 [ext_resource type="Script" uid="uid://pcb3jv2yfyt7" path="res://addons/HugosChatPlugin/NativeComponents/PanelComponent.gd" id="14_psl12"]
 [ext_resource type="Script" uid="uid://gxurxa2dpqpy" path="res://addons/HugosChatPlugin/NativeComponents/TextComponent.gd" id="15_2ebs2"]
 [ext_resource type="PackedScene" uid="uid://dhhopmfyxf4cv" path="res://Prefabs/moai.tscn" id="16_gnsmo"]
+[ext_resource type="PackedScene" uid="uid://dflq65k0gtdbd" path="res://Resources/skybox.glb" id="18_2ebs2"]
+[ext_resource type="PackedScene" uid="uid://cytukbwvo1kyf" path="res://Prefabs/Mountain.tscn" id="19_oyb3p"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_mai8y"]
 height = 1.7327881
 radius = 0.20214844
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mai8y"]
-size = Vector3(40, 1, 25)
-
-[sub_resource type="BoxMesh" id="BoxMesh_76v2p"]
+size = Vector3(100000, 1, 100000)
 
 [node name="main_scene" type="Node3D" unique_id=1228723441]
 script = ExtResource("1_865ah")
 systems = Array[int]([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 10, 14, 20, 19, 13])
 
+[node name="Skybox" type="Node3D" parent="." unique_id=1067618066]
+script = ExtResource("2_huasi")
+metadata/_custom_type_script = "uid://dmak3mcg4w0h8"
+
+[node name="RenderComponent" type="MeshInstance3D" parent="Skybox" unique_id=2091797453]
+script = ExtResource("10_mai8y")
+mesh_name = "skybox.glb"
+metadata/_custom_type_script = "uid://c0wlt0qsxdika"
+
+[node name="skybox" parent="Skybox/RenderComponent" unique_id=1470652032 instance=ExtResource("18_2ebs2")]
+
 [node name="Jordi" type="Node3D" parent="." unique_id=499115862]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14266133, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.582476, 0)
 script = ExtResource("2_huasi")
 systems = Array[int]([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 
@@ -96,6 +108,7 @@ transform = Transform3D(40, 0, 0, 0, 1, 0, 0, 0, 25, 0, -0.43083662, 0)
 script = ExtResource("2_huasi")
 
 [node name="ColliderComponent" type="CollisionShape3D" parent="Floor" unique_id=226508761]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000005, -2.810608, 0, 1.8479648)
 shape = SubResource("BoxShape3D_mai8y")
 script = ExtResource("3_m1efj")
 friction = 1.0
@@ -106,13 +119,14 @@ info = SubResource("BoxShape3D_mai8y")
 script = ExtResource("4_mai8y")
 linearSleepingThreshold = 0.8
 angularSleepingThreshold = 1.0
+gravity = Vector3(0, 0, 0)
 
 [node name="RenderComponent" type="MeshInstance3D" parent="Floor" unique_id=345801481]
 script = ExtResource("10_mai8y")
-mesh_name = "cube.mesh"
+mesh_name = "moon_floor.glb"
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor/RenderComponent" unique_id=1519663056]
-mesh = SubResource("BoxMesh_76v2p")
+[node name="moon_floor" parent="Floor/RenderComponent" unique_id=812548192 instance=ExtResource("12_psl12")]
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.137, 0, 0, 0)
 
 [node name="Clock" type="Node3D" parent="." unique_id=389011601]
 script = ExtResource("12_lhp3t")
@@ -144,3 +158,33 @@ top = 0.06
 
 [node name="Moai" parent="." unique_id=1191298425 instance=ExtResource("16_gnsmo")]
 transform = Transform3D(1, 0, 0, 0, 0.83728004, -0.5467743, 0, 0.5467743, 0.83728004, -2.8857927, 2.606374, 4.364914)
+
+[node name="Mountain" parent="." unique_id=1764324010 instance=ExtResource("19_oyb3p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.45827, -0.014413834, -175.89311)
+
+[node name="Mountain2" parent="." unique_id=575300981 instance=ExtResource("19_oyb3p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.892673, -0.028827667, 208.88855)
+
+[node name="Mountain3" parent="." unique_id=2023667337 instance=ExtResource("19_oyb3p")]
+transform = Transform3D(-0.588886, 0, 0.8082161, 0, 1, 0, -0.8082161, 0, -0.588886, -154.51926, -0.028827667, 144.6419)
+
+[node name="Mountain4" parent="." unique_id=17438290 instance=ExtResource("19_oyb3p")]
+transform = Transform3D(-0.5989636, 1.0250311e-05, -0.8007765, -0.00064251316, 0.99999964, 0.00049340026, 0.8007761, 0.0008100383, -0.5989634, -155.05844, -0.057655334, -109.608696)
+
+[node name="Mountain5" parent="." unique_id=398368995 instance=ExtResource("19_oyb3p")]
+transform = Transform3D(-0.081781894, 0, 0.9966503, 0, 1, 0, -0.9966503, 0, -0.081781894, -196.77435, -0.028827667, 6.724495)
+
+[node name="Mountain6" parent="." unique_id=1552800560 instance=ExtResource("19_oyb3p")]
+transform = Transform3D(0.59378415, 0, -0.8046244, 0, 1, 0, 0.8046244, 0, 0.59378415, 239.49811, -0.028827667, -116.714386)
+
+[node name="Mountain7" parent="." unique_id=823493834 instance=ExtResource("19_oyb3p")]
+transform = Transform3D(0.5940888, -1.5170124e-05, 0.8043998, -0.0006425131, 0.99999976, 0.00049340026, -0.80439943, -0.0008099608, 0.59408855, 241.58156, -0.057655334, 137.52826)
+
+[node name="Mountain8" parent="." unique_id=2122856210 instance=ExtResource("19_oyb3p")]
+transform = Transform3D(0.08783387, 0, -0.9961352, 0, 1, 0, 0.9961352, 0, 0.08783387, 282.59012, -0.028827667, 20.943834)
+
+[node name="Mountain9" parent="." unique_id=1477695598 instance=ExtResource("19_oyb3p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 116.43756, -0.014413834, -175.89311)
+
+[node name="Mountain10" parent="." unique_id=1889239480 instance=ExtResource("19_oyb3p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 118.00316, -0.028827667, 208.88855)

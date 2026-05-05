@@ -1,0 +1,218 @@
+[gd_scene format=3 uid="uid://cytukbwvo1kyf"]
+
+[ext_resource type="Script" uid="uid://dmak3mcg4w0h8" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="1_gex45"]
+[ext_resource type="Script" uid="uid://c0wlt0qsxdika" path="res://addons/HugosChatPlugin/NativeComponents/RenderComponent.gd" id="2_3yw86"]
+[ext_resource type="PackedScene" uid="uid://cd05a1tkx44hi" path="res://Resources/mountain.glb" id="3_0ds3f"]
+[ext_resource type="Script" uid="uid://dgu5myf6wqmwa" path="res://addons/HugosChatPlugin/NativeComponents/RigidBodyComponent.gd" id="4_tn1l3"]
+[ext_resource type="Script" uid="uid://bewpcwg276ktv" path="res://addons/HugosChatPlugin/NativeComponents/ColliderComponent.gd" id="5_2f001"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x3lde"]
+size = Vector3(19.60112, 14.736145, 18.863342)
+
+[node name="Mountain" type="Node3D" unique_id=1764324010]
+script = ExtResource("1_gex45")
+metadata/_custom_type_script = "uid://dmak3mcg4w0h8"
+
+[node name="Entity3D" type="Node3D" parent="." unique_id=139036396]
+script = ExtResource("1_gex45")
+metadata/_custom_type_script = "uid://dmak3mcg4w0h8"
+
+[node name="RenderComponent" type="MeshInstance3D" parent="Entity3D" unique_id=149222017]
+skeleton = NodePath("../..")
+script = ExtResource("2_3yw86")
+mesh_name = "mountain.glb"
+metadata/_custom_type_script = "uid://c0wlt0qsxdika"
+
+[node name="mountain" parent="Entity3D/RenderComponent" unique_id=1671548849 instance=ExtResource("3_0ds3f")]
+
+[node name="RigidBodyComponent" type="Node" parent="Entity3D" unique_id=726412883]
+script = ExtResource("4_tn1l3")
+type = 1
+metadata/_custom_type_script = "uid://dgu5myf6wqmwa"
+
+[node name="ColliderComponent" type="CollisionShape3D" parent="Entity3D" unique_id=286215959]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10582733, 4.195038, -0.0663147)
+shape = SubResource("BoxShape3D_x3lde")
+script = ExtResource("5_2f001")
+active = true
+useGizmo = true
+info = SubResource("BoxShape3D_x3lde")
+metadata/_custom_type_script = "uid://bewpcwg276ktv"
+
+[node name="Entity3D2" type="Node3D" parent="." unique_id=2098924152]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.519848, 0, 0)
+script = ExtResource("1_gex45")
+metadata/_custom_type_script = "uid://dmak3mcg4w0h8"
+
+[node name="RenderComponent" type="MeshInstance3D" parent="Entity3D2" unique_id=1670369484]
+script = ExtResource("2_3yw86")
+mesh_name = "mountain.glb"
+metadata/_custom_type_script = "uid://c0wlt0qsxdika"
+
+[node name="mountain" parent="Entity3D2/RenderComponent" unique_id=1808003567 instance=ExtResource("3_0ds3f")]
+
+[node name="RigidBodyComponent" type="Node" parent="Entity3D2" unique_id=1686149122]
+script = ExtResource("4_tn1l3")
+type = 1
+metadata/_custom_type_script = "uid://dgu5myf6wqmwa"
+
+[node name="ColliderComponent" type="CollisionShape3D" parent="Entity3D2" unique_id=1979804502]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10582733, 4.195038, -0.0663147)
+shape = SubResource("BoxShape3D_x3lde")
+script = ExtResource("5_2f001")
+active = true
+info = SubResource("BoxShape3D_x3lde")
+metadata/_custom_type_script = "uid://bewpcwg276ktv"
+
+[node name="Entity3D3" type="Node3D" parent="." unique_id=1622520612]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.893024, 0, 0)
+script = ExtResource("1_gex45")
+metadata/_custom_type_script = "uid://dmak3mcg4w0h8"
+
+[node name="RenderComponent" type="MeshInstance3D" parent="Entity3D3" unique_id=353426731]
+skeleton = NodePath("../..")
+script = ExtResource("2_3yw86")
+mesh_name = "mountain.glb"
+metadata/_custom_type_script = "uid://c0wlt0qsxdika"
+
+[node name="mountain" parent="Entity3D3/RenderComponent" unique_id=1314942580 instance=ExtResource("3_0ds3f")]
+
+[node name="RigidBodyComponent" type="Node" parent="Entity3D3" unique_id=99315057]
+script = ExtResource("4_tn1l3")
+type = 1
+metadata/_custom_type_script = "uid://dgu5myf6wqmwa"
+
+[node name="ColliderComponent" type="CollisionShape3D" parent="Entity3D3" unique_id=1964459814]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10582733, 4.195038, -0.0663147)
+shape = SubResource("BoxShape3D_x3lde")
+script = ExtResource("5_2f001")
+active = true
+info = SubResource("BoxShape3D_x3lde")
+metadata/_custom_type_script = "uid://bewpcwg276ktv"
+
+[node name="Entity3D4" type="Node3D" parent="." unique_id=810127377]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.006145, 0, 0)
+script = ExtResource("1_gex45")
+metadata/_custom_type_script = "uid://dmak3mcg4w0h8"
+
+[node name="RenderComponent" type="MeshInstance3D" parent="Entity3D4" unique_id=195997680]
+script = ExtResource("2_3yw86")
+mesh_name = "mountain.glb"
+metadata/_custom_type_script = "uid://c0wlt0qsxdika"
+
+[node name="mountain" parent="Entity3D4/RenderComponent" unique_id=1820008476 instance=ExtResource("3_0ds3f")]
+
+[node name="RigidBodyComponent" type="Node" parent="Entity3D4" unique_id=1168993237]
+script = ExtResource("4_tn1l3")
+type = 1
+metadata/_custom_type_script = "uid://dgu5myf6wqmwa"
+
+[node name="ColliderComponent" type="CollisionShape3D" parent="Entity3D4" unique_id=1212809785]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10582733, 4.195038, -0.0663147)
+shape = SubResource("BoxShape3D_x3lde")
+script = ExtResource("5_2f001")
+active = true
+info = SubResource("BoxShape3D_x3lde")
+metadata/_custom_type_script = "uid://bewpcwg276ktv"
+
+[node name="Entity3D5" type="Node3D" parent="." unique_id=825921362]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.0298, 0, 0)
+script = ExtResource("1_gex45")
+metadata/_custom_type_script = "uid://dmak3mcg4w0h8"
+
+[node name="RenderComponent" type="MeshInstance3D" parent="Entity3D5" unique_id=2145893194]
+skeleton = NodePath("../..")
+script = ExtResource("2_3yw86")
+mesh_name = "mountain.glb"
+metadata/_custom_type_script = "uid://c0wlt0qsxdika"
+
+[node name="mountain" parent="Entity3D5/RenderComponent" unique_id=421115556 instance=ExtResource("3_0ds3f")]
+
+[node name="RigidBodyComponent" type="Node" parent="Entity3D5" unique_id=1352246171]
+script = ExtResource("4_tn1l3")
+type = 1
+metadata/_custom_type_script = "uid://dgu5myf6wqmwa"
+
+[node name="ColliderComponent" type="CollisionShape3D" parent="Entity3D5" unique_id=591427405]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10582733, 4.195038, -0.0663147)
+shape = SubResource("BoxShape3D_x3lde")
+script = ExtResource("5_2f001")
+active = true
+info = SubResource("BoxShape3D_x3lde")
+metadata/_custom_type_script = "uid://bewpcwg276ktv"
+
+[node name="Entity3D6" type="Node3D" parent="." unique_id=992556454]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.382843, 0, 0)
+script = ExtResource("1_gex45")
+metadata/_custom_type_script = "uid://dmak3mcg4w0h8"
+
+[node name="RenderComponent" type="MeshInstance3D" parent="Entity3D6" unique_id=1346483803]
+script = ExtResource("2_3yw86")
+mesh_name = "mountain.glb"
+metadata/_custom_type_script = "uid://c0wlt0qsxdika"
+
+[node name="mountain" parent="Entity3D6/RenderComponent" unique_id=1039858433 instance=ExtResource("3_0ds3f")]
+
+[node name="RigidBodyComponent" type="Node" parent="Entity3D6" unique_id=211239494]
+script = ExtResource("4_tn1l3")
+type = 1
+metadata/_custom_type_script = "uid://dgu5myf6wqmwa"
+
+[node name="ColliderComponent" type="CollisionShape3D" parent="Entity3D6" unique_id=1998119321]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10582733, 4.195038, -0.0663147)
+shape = SubResource("BoxShape3D_x3lde")
+script = ExtResource("5_2f001")
+active = true
+info = SubResource("BoxShape3D_x3lde")
+metadata/_custom_type_script = "uid://bewpcwg276ktv"
+
+[node name="Entity3D7" type="Node3D" parent="." unique_id=119634279]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.09119, 0, 0)
+script = ExtResource("1_gex45")
+metadata/_custom_type_script = "uid://dmak3mcg4w0h8"
+
+[node name="RenderComponent" type="MeshInstance3D" parent="Entity3D7" unique_id=1788986224]
+skeleton = NodePath("../..")
+script = ExtResource("2_3yw86")
+mesh_name = "mountain.glb"
+metadata/_custom_type_script = "uid://c0wlt0qsxdika"
+
+[node name="mountain" parent="Entity3D7/RenderComponent" unique_id=56361235 instance=ExtResource("3_0ds3f")]
+
+[node name="RigidBodyComponent" type="Node" parent="Entity3D7" unique_id=1573869567]
+script = ExtResource("4_tn1l3")
+type = 1
+metadata/_custom_type_script = "uid://dgu5myf6wqmwa"
+
+[node name="ColliderComponent" type="CollisionShape3D" parent="Entity3D7" unique_id=1592834924]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10582733, 4.195038, -0.0663147)
+shape = SubResource("BoxShape3D_x3lde")
+script = ExtResource("5_2f001")
+active = true
+info = SubResource("BoxShape3D_x3lde")
+metadata/_custom_type_script = "uid://bewpcwg276ktv"
+
+[node name="Entity3D8" type="Node3D" parent="." unique_id=1302620213]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.354397, 0, 0)
+script = ExtResource("1_gex45")
+metadata/_custom_type_script = "uid://dmak3mcg4w0h8"
+
+[node name="RenderComponent" type="MeshInstance3D" parent="Entity3D8" unique_id=91486450]
+script = ExtResource("2_3yw86")
+mesh_name = "mountain.glb"
+metadata/_custom_type_script = "uid://c0wlt0qsxdika"
+
+[node name="mountain" parent="Entity3D8/RenderComponent" unique_id=1968544750 instance=ExtResource("3_0ds3f")]
+
+[node name="RigidBodyComponent" type="Node" parent="Entity3D8" unique_id=70552155]
+script = ExtResource("4_tn1l3")
+type = 1
+metadata/_custom_type_script = "uid://dgu5myf6wqmwa"
+
+[node name="ColliderComponent" type="CollisionShape3D" parent="Entity3D8" unique_id=952511043]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10582733, 4.195038, -0.0663147)
+shape = SubResource("BoxShape3D_x3lde")
+script = ExtResource("5_2f001")
+active = true
+info = SubResource("BoxShape3D_x3lde")
+metadata/_custom_type_script = "uid://bewpcwg276ktv"
