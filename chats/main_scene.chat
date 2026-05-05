@@ -11,7 +11,7 @@ SYSTEM UISystem
 SYSTEM ConsoleSystem
 SYSTEM DamageSystem
 SYSTEM PlayerMovementSystem
-SYSTEM ChangeSceneSystem
+SYSTEM PauseSystem
 
 ENTITY Jordi 1
     COMPONENT TransformComponent
@@ -19,23 +19,24 @@ ENTITY Jordi 1
         QUATERNION rotation 0.0 0.0 0.0 1.0
         VECTOR_3 scale 1.0 1.0 1.0
     COMPONENT PlayerComponent
-        FLOAT jumpPower 500.0
+        FLOAT jumpPower 2000.0
         FLOAT xpPickupRange 5.0
         FLOAT objectPickupRange 1.0
         INT airJumps 0
     COMPONENT SpeedComponent
-        FLOAT speed 50.0
+        FLOAT speed 80.0
     COMPONENT ColliderComponent
         COLLIDER_INFO info CYLINDER_COLLIDER 0.2021484375 0.86639404296875 0.2021484375
         FLOAT restitution 0.0
-        FLOAT friction 0.5
+        FLOAT friction 1.0
         VECTOR_3 positionOffset 0.0 0.87217998504639 0.0
         QUATERNION rotationOffset 0.0 0.00000008940698 0.0 1.0
         BOOL active true
-        BOOL useGizmo true
+        BOOL useGizmo false
+        BOOL isTrigger false
     COMPONENT RigidBodyComponent
         FLOAT mass 5.0
-        FLOAT linearDamping 0.0
+        FLOAT linearDamping 0.1
         FLOAT angularDamping 0.0
         VECTOR_3 linearVelocity 0.0 0.0 0.0
         VECTOR_3 angularVelocity 0.0 0.0 0.0
@@ -46,6 +47,7 @@ ENTITY Jordi 1
     COMPONENT RenderComponent
         STRING meshName jordi.glb
         STRING materialName 
+    COMPONENT AnimationComponent
     START_CHILDREN
     END_CHILDREN
 END_ENTITY
@@ -87,11 +89,12 @@ ENTITY Floor 1
     COMPONENT ColliderComponent
         COLLIDER_INFO info BOX_COLLIDER 20.0 0.5 12.5
         FLOAT restitution 0.0
-        FLOAT friction 0.5
+        FLOAT friction 1.0
         VECTOR_3 positionOffset 0.0 0.0 0.0
         QUATERNION rotationOffset 0.0 0.0 0.0 1.0
         BOOL active true
         BOOL useGizmo false
+        BOOL isTrigger false
     COMPONENT RigidBodyComponent
         FLOAT mass 0.0
         FLOAT linearDamping 0.0
@@ -105,36 +108,6 @@ ENTITY Floor 1
     COMPONENT RenderComponent
         STRING meshName cube.mesh
         STRING materialName 
-    START_CHILDREN
-    END_CHILDREN
-END_ENTITY
-
-ENTITY Moai 1
-    COMPONENT TransformComponent
-        VECTOR_3 position -5.95470666885376 2.80180764198303 -1.34046363830566
-        QUATERNION rotation 0.0 0.0 0.0 1.0
-        VECTOR_3 scale 1.0 1.0 1.0
-    COMPONENT ColliderComponent
-        COLLIDER_INFO info CYLINDER_COLLIDER 1.646484375 4.21636962890625 1.646484375
-        FLOAT restitution 0.0
-        FLOAT friction 0.0
-        VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
-        QUATERNION rotationOffset 0.0 0.0 0.0 1.0
-        BOOL active false
-        BOOL useGizmo false
-    COMPONENT RenderComponent
-        STRING meshName jordi-moai.glb
-        STRING materialName 
-    COMPONENT RigidBodyComponent
-        FLOAT mass 0.0
-        FLOAT linearDamping 0.0
-        FLOAT angularDamping 0.0
-        VECTOR_3 linearVelocity 0.0 0.0 0.0
-        VECTOR_3 angularVelocity 0.0 0.0 0.0
-        FLOAT linearSleepingThreshold 0.0
-        FLOAT angularSleepingThreshold 0.0
-        INT type 1
-        BOOL dontRotateWithPhysicsOnDynamic false
     START_CHILDREN
     END_CHILDREN
 END_ENTITY
@@ -163,6 +136,37 @@ ENTITY Clock 1
         FLOAT left 0.45
         FLOAT top 0.06
         FLOAT maxWidth 0.0
+    START_CHILDREN
+    END_CHILDREN
+END_ENTITY
+
+ENTITY Moai 1
+    COMPONENT TransformComponent
+        VECTOR_3 position -2.88579273223877 2.60637402534485 4.36491394042969
+        QUATERNION rotation 0.28523674607277 0.0 0.0 0.95845711231232
+        VECTOR_3 scale 1.0 1.0 1.0
+    COMPONENT ColliderComponent
+        COLLIDER_INFO info CYLINDER_COLLIDER 1.646484375 4.21636962890625 1.646484375
+        FLOAT restitution 0.0
+        FLOAT friction 0.0
+        VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
+        QUATERNION rotationOffset 0.0 0.0 0.0 1.0
+        BOOL active false
+        BOOL useGizmo false
+        BOOL isTrigger false
+    COMPONENT RenderComponent
+        STRING meshName jordi-moai.glb
+        STRING materialName 
+    COMPONENT RigidBodyComponent
+        FLOAT mass 0.0
+        FLOAT linearDamping 0.0
+        FLOAT angularDamping 0.0
+        VECTOR_3 linearVelocity 0.0 0.0 0.0
+        VECTOR_3 angularVelocity 0.0 0.0 0.0
+        FLOAT linearSleepingThreshold 0.0
+        FLOAT angularSleepingThreshold 0.0
+        INT type 1
+        BOOL dontRotateWithPhysicsOnDynamic false
     START_CHILDREN
     END_CHILDREN
 END_ENTITY

@@ -11,6 +11,7 @@
 #include "CameraPivotTag.h"
 #include "CameraComponent.h"
 #include "EnemyTag.h"
+#include "AnimationComponent.h"
 
 
 void PlayerMovementSystem::init(){
@@ -36,6 +37,14 @@ void PlayerMovementSystem::init(){
 void PlayerMovementSystem::onLoad(){
     lastMousePosition = HUGO::Vector2(scene.getInput()->getMouseRelativePosition().x, 
                                       scene.getInput()->getMouseRelativePosition().y);
+
+    for(auto jordi: scene.query<PlayerComponent, AnimationComponent>()){
+        jordi.modify<AnimationComponent>([](AnimationComponent& cmp){
+            cmp.addAnimation("Idle", true);
+            cmp.addAnimation("Run", true);
+            cmp.addAnimation("Jump", true);
+        });
+    }
 }
 
 void PlayerMovementSystem::update(uint32_t){
@@ -89,7 +98,7 @@ void PlayerMovementSystem::fixedUpdate(uint32_t){
     // normalize
     velocity.normalize();
 
-    for(auto& item : scene.query<PlayerComponent, RigidBodyComponent, SpeedComponent, TransformComponent>()){
+    for(auto& item : scene.query<PlayerComponent, RigidBodyComponent, SpeedComponent, TransformComponent, AnimationComponent>()){
         item.modify<RigidBodyComponent>([&item, velocity, jumpDirection](RigidBodyComponent& rb){
 
             // horizontal movement
@@ -112,6 +121,25 @@ void PlayerMovementSystem::fixedUpdate(uint32_t){
             });
 
             rb.setAngularVelocity(HUGO::Vector3());
+
+            item.modify<AnimationComponent>([rb](AnimationComponent& cmp){
+            if(rb.linearVelocity.y >  0.5 || rb.linearVelocity.y < -0.5) {
+                cmp.setEnabled("Run", false);
+                cmp.setEnabled("Idle", false);
+                cmp.setEnabled("Jump", true);
+
+            }
+            else if (rb.linearVelocity.x > 0.5 || rb.linearVelocity.x < -0.5 || rb.linearVelocity.z > 0.5 || rb.linearVelocity.z < -0.5){
+                cmp.setEnabled("Run", true);
+                cmp.setEnabled("Idle", false);
+                cmp.setEnabled("Jump", false);
+            }
+            else{
+                cmp.setEnabled("Run", false);
+                cmp.setEnabled("Idle", true);
+                cmp.setEnabled("Jump", false);
+            }
+        });
         });
     }
 
