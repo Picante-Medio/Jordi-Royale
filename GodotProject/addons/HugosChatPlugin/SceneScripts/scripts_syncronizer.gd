@@ -21,7 +21,7 @@ static func sync():
 	enums_dictionary = {}
 	components_dictionary = {}
 	
-	parse_components(HugoConfig.COMPONENTS_PATH)
+	parse_components("../".path_join(HugoConfig.COMPONENTS_PATH))
 	create_prefabs(PREFABS_PATH)
 	write_components()
 	write_systems()
@@ -173,8 +173,7 @@ static func parse_hugo_types() -> void:
 
 static func parse_components(path: String) -> void:
 	var global_path:String = ProjectSettings.globalize_path("res://")
-	var project_path:String = global_path.path_join("../".path_join(path))
-	var dir := DirAccess.open(project_path)
+	var dir := DirAccess.open(path)
 
 	dir.list_dir_begin()
 
@@ -182,7 +181,7 @@ static func parse_components(path: String) -> void:
 	
 	while name != "":
 		if name != "." and name != "..":
-			var full_path := project_path.path_join(name)
+			var full_path := path.path_join(name)
 			print(full_path)
 
 			if dir.current_is_dir():
