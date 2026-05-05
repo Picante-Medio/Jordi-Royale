@@ -102,7 +102,7 @@ ENTITY Floor 1
         QUATERNION rotation 0.0 0.0 0.0 1.0
         VECTOR_3 scale 40.0 1.0 25.0
     COMPONENT ColliderComponent
-        COLLIDER_INFO info BOX_COLLIDER 50000.0 0.5 50000.0
+        COLLIDER_INFO info BOX_COLLIDER 250.0 0.5 250.0
         FLOAT restitution 0.0
         FLOAT friction 1.0
         VECTOR_3 positionOffset -2.81060791015625 0.0 1.84796476364136
@@ -2835,6 +2835,92 @@ ENTITY Mountain10 1
         END_CHILDREN
     END_ENTITY
 
+    END_CHILDREN
+END_ENTITY
+
+ENTITY Enemy 1
+    COMPONENT TransformComponent
+        VECTOR_3 position -17.7505798339844 21.2328300476074 32.5681648254395
+        QUATERNION rotation 0.0 -0.70710676908493 0.0 0.70710676908493
+        VECTOR_3 scale 0.32499998807907 0.32499998807907 0.32499998807907
+    COMPONENT ColliderComponent
+        COLLIDER_INFO info SPHERE_COLLIDER 0.68064975738525
+        FLOAT restitution 0.0
+        FLOAT friction 0.5
+        VECTOR_3 positionOffset -0.10348464548588 0.3441943526268 -0.0027465808671
+        QUATERNION rotationOffset 0.0 0.0 0.0 1.0
+        BOOL active true
+        BOOL useGizmo false
+        BOOL isTrigger false
+    COMPONENT RigidBodyComponent
+        FLOAT mass 5.0
+        FLOAT linearDamping 0.5
+        FLOAT angularDamping 0.0
+        VECTOR_3 linearVelocity 0.0 0.0 0.0
+        VECTOR_3 angularVelocity 0.0 0.0 0.0
+        FLOAT linearSleepingThreshold 0.8
+        FLOAT angularSleepingThreshold 1.0
+        INT type 0
+        BOOL dontRotateWithPhysicsOnDynamic true
+        VECTOR_3 gravity 0.0 0.0 0.0
+    COMPONENT RenderComponent
+        STRING meshName jordi-head.glb
+        STRING materialName 
+    COMPONENT DamageComponent
+        INT Damage 10
+    COMPONENT HPComponent
+        INT HPMax 50
+        INT CurrentHP 50
+    COMPONENT LevelComponent
+        INT level 1
+    COMPONENT SpeedComponent
+        FLOAT speed 15.0
+    COMPONENT EnemyTag
+    COMPONENT AnimationComponent
+    START_CHILDREN
+    END_CHILDREN
+END_ENTITY
+
+ENTITY Enemy2 1
+    COMPONENT TransformComponent
+        VECTOR_3 position -19.6560668945312 20.918571472168 32.9222946166992
+        QUATERNION rotation 0.0 -0.70710676908493 0.0 0.70710676908493
+        VECTOR_3 scale 0.32499998807907 0.32499998807907 0.32499998807907
+    COMPONENT ColliderComponent
+        COLLIDER_INFO info SPHERE_COLLIDER 0.68064975738525
+        FLOAT restitution 0.0
+        FLOAT friction 0.5
+        VECTOR_3 positionOffset -0.10348464548588 0.3441943526268 -0.0027465808671
+        QUATERNION rotationOffset 0.0 0.0 0.0 1.0
+        BOOL active true
+        BOOL useGizmo false
+        BOOL isTrigger false
+    COMPONENT RigidBodyComponent
+        FLOAT mass 5.0
+        FLOAT linearDamping 0.5
+        FLOAT angularDamping 0.0
+        VECTOR_3 linearVelocity 0.0 0.0 0.0
+        VECTOR_3 angularVelocity 0.0 0.0 0.0
+        FLOAT linearSleepingThreshold 0.8
+        FLOAT angularSleepingThreshold 1.0
+        INT type 0
+        BOOL dontRotateWithPhysicsOnDynamic true
+        VECTOR_3 gravity 0.0 0.0 0.0
+    COMPONENT RenderComponent
+        STRING meshName jordi-head.glb
+        STRING materialName 
+    COMPONENT DamageComponent
+        INT Damage 10
+    COMPONENT HPComponent
+        INT HPMax 50
+        INT CurrentHP 50
+    COMPONENT LevelComponent
+        INT level 1
+    COMPONENT SpeedComponent
+        FLOAT speed 15.0
+    COMPONENT EnemyTag
+    COMPONENT AnimationComponent
+    START_CHILDREN
     END_CHILDREN
 END_ENTITY
 
