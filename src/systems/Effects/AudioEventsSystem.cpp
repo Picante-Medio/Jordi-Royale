@@ -17,19 +17,22 @@ AudioEventsSystem::update(uint32_t dt) {
     DynamicTrackMessage message;
     message.action = TOGGLE;
 
-    if(scene.getInput()->isKeyPressed(HUGO::KeyCode::H)) {
+    if(scene.getInput()->wasKeyJustPressed(HUGO::KeyCode::H)) {
         message.trackName = "base";
     }
 
-    if(scene.getInput()->isKeyPressed(HUGO::KeyCode::J)) {
+    if(scene.getInput()->wasKeyJustPressed(HUGO::KeyCode::J)) {
         message.trackName = "main";
     }
 
-    if(scene.getInput()->isKeyPressed(HUGO::KeyCode::K)) {
+    if(scene.getInput()->wasKeyJustPressed(HUGO::KeyCode::K)) {
         message.trackName = "hi-hat";
     }
 
-    if(scene.getInput()->isKeyPressed(HUGO::KeyCode::L)) {
+    if(scene.getInput()->wasKeyJustPressed(HUGO::KeyCode::L)) {
         message.trackName = "kick-snare";
     }
+
+    if(message.trackName != "") 
+        scene.sendMessage(message);
 }

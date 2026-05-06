@@ -10,7 +10,7 @@ ENTITY Moai 1
         FLOAT friction 0.0
         VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
         QUATERNION rotationOffset 0.0 0.0 0.0 1.0
-        BOOL active false
+        BOOL active true
         BOOL useGizmo false
         BOOL isTrigger false
     COMPONENT RenderComponent

@@ -32,6 +32,7 @@ DynamicAudioSystem::onLoad() {
             ac.isPlaying = true;
             ac.loop = true;
             ac.volume = dyn.minVolume;
+            ac.type = HUGO::MUSIC;
         });
     }
 }
@@ -41,6 +42,7 @@ DynamicAudioSystem::activateTrack(HUGO::String trackName) {
     if (trackEntities[trackName].active)
         return;
 
+    std::cout << "Activated track " << trackName << "\n";
     trackEntities[trackName].active = true;
     activeCounter++;
 
@@ -52,6 +54,7 @@ DynamicAudioSystem::deactivateTrack(HUGO::String trackName) {
     if (!trackEntities[trackName].active)
         return;
 
+    std::cout << "Deactivated track " << trackName << "\n";
     trackEntities[trackName].active = false;
     activeCounter--;
 
