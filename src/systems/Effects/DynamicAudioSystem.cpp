@@ -1,79 +1,81 @@
 #include "DynamicAudioSystem.h"
 
+#include <cmath>
+#include <memory>
+
 #include "AudioComponent.h"
-#include "EcsTypes.h"
 #include "HugoEasings.h"
-#include "HugoInputCodes.h"
 #include "HugoTween.h"
 #include "HugoTypes.h"
 #include "TweenComponent.h"
 #include "DynamicAudioComponent.h"
-#include <cmath>
+#include <DynamicTrackMessage.h>
 
-void DynamicAudioSystem::init() {
-    musicNames = {
-        "base",
-        "main",
-        "kick-snare",
-        "hi-hat",
-    };
-
-    for (int i = 0; i < SIZE_OF_ID; ++i)
-        musicEntities[i] = {createTrackEntity((SongID)i), false};
-
-    activateTrack(BASE);
-}
-
-void DynamicAudioSystem::update(uint32_t dt) {
-    if (scene.getInput()->wasKeyJustPressed(HUGO::KeyCode::H))
-        toggleTrack(BASE);
-
-    if (scene.getInput()->wasKeyJustPressed(HUGO::KeyCode::J))
-        toggleTrack(MELODY);
-
-    if (scene.getInput()->wasKeyJustPressed(HUGO::KeyCode::K)) 
-        toggleTrack(HI_HAT);
-
-    if (scene.getInput()->wasKeyJustPressed(HUGO::KeyCode::L))
-        toggleTrack(DRUMS);
-}
-
-EntityID DynamicAudioSystem::createTrackEntity(SongID song) {
-    EntityID track = scene.createEntity();
-
-    scene.addComponent<DynamicAudioComponent>(track, [this, song](DynamicAudioComponent& dc){
-        dc.audioName = musicNames[song];
+void 
+DynamicAudioSystem::init() {
+    scene.subscribe<DynamicTrackMessage>([this](std::shared_ptr<HUGO::Message> m){
+        std::shared_ptr<DynamicTrackMessage> message = std::static_pointer_cast<DynamicTrackMessage>(m);
+        toggleTrack(message->trackName, message->action);
     });
 
-    const DynamicAudioComponent& dc = scene.getComponentConst<DynamicAudioComponent>(track);
-
-    scene.addComponent<AudioComponent>(track, [this,song,&dc](AudioComponent &ac) {
-        ac.loop = true;
-        ac.volume = dc.minVolume;
-        ac.isPlaying = true;
-        ac.type = HUGO::AudioTypes::MUSIC;
-        ac.audioName = dc.audioName;
-    });
-
-    scene.addComponent<TweenComponent>(track);
-
-    return track;
+    scene.onUpdateComponent<DynamicAudioComponent>().connect(this, &DynamicAudioSystem::onUpdateDyn);
 }
 
-void DynamicAudioSystem::activateTrack(SongID track) {
-    if (musicEntities[track].second)
+void 
+DynamicAudioSystem::onLoad() {
+    for(auto pack : scene.query<DynamicAudioComponent, AudioComponent>()) {
+        const DynamicAudioComponent& dyn = pack.getConst<DynamicAudioComponent>();
+
+        trackEntities[dyn.audioName] = TrackEntity{dyn.entity, false};
+        pack.modify<AudioComponent>([this, dyn](AudioComponent& ac){
+            ac.audioName = dyn.audioName;
+            ac.isPlaying = true;
+            ac.loop = true;
+            ac.volume = dyn.minVolume;
+        });
+    }
+}
+
+void 
+DynamicAudioSystem::activateTrack(HUGO::String trackName) {
+    if (trackEntities[trackName].active)
         return;
 
-    musicEntities[track].second = true;
+    trackEntities[trackName].active = true;
     activeCounter++;
 
-    for (auto [entity, active] : musicEntities) {
-        if (!active)
-            continue;
+    equalizeTracks();
+}
 
-        scene.modifyComponent<AudioComponent>(entity, [entity, this](AudioComponent &ac) {
-            scene.modifyComponent<TweenComponent>(entity, [this, entity, &ac](TweenComponent& tc) {
-                const DynamicAudioComponent& dc = scene.getComponentConst<DynamicAudioComponent>(entity);
+void 
+DynamicAudioSystem::deactivateTrack(HUGO::String trackName) {
+    if (!trackEntities[trackName].active)
+        return;
+
+    trackEntities[trackName].active = false;
+    activeCounter--;
+
+    equalizeTracks();
+}
+
+
+void 
+DynamicAudioSystem::equalizeTracks() {
+    for (auto [key, track] : trackEntities) {
+        const DynamicAudioComponent& dc = scene.getComponentConst<DynamicAudioComponent>(track.entity);
+        scene.modifyComponent<AudioComponent>(track.entity, [this, &track, &dc](AudioComponent &ac) {
+            if (!track.active || activeCounter == 0)
+            scene.modifyComponent<TweenComponent>(track.entity, [this, &track, &ac, &dc](TweenComponent& tc) {
+                tc.currentTweens.clear();
+                tc.currentTweens.push_back(HUGO::TweenFactory<LinearTween>::makeTween(
+                    ac,
+                    &AudioComponent::volume,
+                    ac.volume,
+                    dc.minVolume,
+                    dc.interpolationMiliseconds));
+                });
+            else
+            scene.modifyComponent<TweenComponent>(track.entity, [this, &ac, &dc](TweenComponent& tc) {
                 tc.currentTweens.clear();
                 tc.currentTweens.push_back(HUGO::TweenFactory<LinearTween>::makeTween(
                     ac, 
@@ -81,49 +83,59 @@ void DynamicAudioSystem::activateTrack(SongID track) {
                     ac.volume, 
                     dc.maxVolume / std::sqrtf(activeCounter), 
                     dc.interpolationMiliseconds));
-            });
-        });
-    }
-}
-
-void DynamicAudioSystem::deactivateTrack(SongID track) {
-    if (!musicEntities[track].second)
-        return;
-
-    musicEntities[track].second = false;
-    activeCounter--;
-
-    for (auto [entity, active] : musicEntities) {
-        const DynamicAudioComponent& dc = scene.getComponentConst<DynamicAudioComponent>(entity);
-        scene.modifyComponent<AudioComponent>(entity, [this, entity, active, &dc](AudioComponent &ac) {
-            if (!active || activeCounter == 0)
-                scene.modifyComponent<TweenComponent>(entity, [this, entity, &ac, &dc](TweenComponent& tc) {
-                    tc.currentTweens.clear();
-                    tc.currentTweens.push_back(HUGO::TweenFactory<LinearTween>::makeTween(
-                        ac,
-                        &AudioComponent::volume,
-                        ac.volume,
-                        dc.minVolume,
-                        dc.interpolationMiliseconds));
-            });
-            else
-                scene.modifyComponent<TweenComponent>(entity, [this, &ac, &dc](TweenComponent& tc) {
-                    tc.currentTweens.clear();
-                    tc.currentTweens.push_back(HUGO::TweenFactory<LinearTween>::makeTween(
-                        ac, 
-                        &AudioComponent::volume, 
-                        ac.volume, 
-                        dc.maxVolume / std::sqrtf(activeCounter), 
-                        dc.interpolationMiliseconds));
-            });
+                });
         });
     }
 }
 
 void 
-DynamicAudioSystem::toggleTrack(SongID track) {
-    if(musicEntities[track].second)
-        deactivateTrack(track);
-    else
-        activateTrack(track);
+DynamicAudioSystem::toggleTrack(HUGO::String trackName, Action action) {
+    switch(action) {
+        case ACTIVATE:
+            activateTrack(trackName);
+            break;
+        case DEACTIVATE:
+            deactivateTrack(trackName);
+            break;
+        case TOGGLE:
+            if(trackEntities[trackName].active)
+                deactivateTrack(trackName);
+            else
+                activateTrack(trackName);
+            break;
+    }
+}
+
+void
+DynamicAudioSystem::onUpdateDyn(DynamicAudioComponent& dyn) {
+    if(!scene.hasComponent<AudioComponent>(dyn.entity))
+        return;
+
+    if(trackEntities[dyn.audioName].active) {
+        scene.modifyComponent<AudioComponent>(dyn.entity, [this, &dyn](AudioComponent& ac) {
+           scene.modifyComponent<TweenComponent>(dyn.entity, [this, &ac, &dyn](TweenComponent& tc) {
+               tc.currentTweens.clear();
+               tc.currentTweens.push_back(HUGO::TweenFactory<LinearTween>::makeTween(
+                   ac, 
+                   &AudioComponent::volume, 
+                   ac.volume, 
+                   dyn.maxVolume / std::sqrtf(activeCounter), 
+                   dyn.interpolationMiliseconds));
+            });
+        });
+    }
+
+    else {
+        scene.modifyComponent<AudioComponent>(dyn.entity, [this, &dyn](AudioComponent& ac) {
+            scene.modifyComponent<TweenComponent>(dyn.entity, [this, &ac, &dyn](TweenComponent& tc) {
+                tc.currentTweens.clear();
+                tc.currentTweens.push_back(HUGO::TweenFactory<LinearTween>::makeTween(
+                    ac,
+                    &AudioComponent::volume,
+                    ac.volume,
+                    dyn.minVolume,
+                    dyn.interpolationMiliseconds));
+            });
+        });
+    }
 }
