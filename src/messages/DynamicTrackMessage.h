@@ -1,7 +1,6 @@
 #pragma once
 
-#include "HugoTypes.h"
-#include "Message.h"
+#include "HUGO.h"
 
 enum Action {
     TOGGLE,

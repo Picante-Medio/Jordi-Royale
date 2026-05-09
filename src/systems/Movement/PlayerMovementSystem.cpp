@@ -3,7 +3,6 @@
 #include <math.h>
 #include <cmath>
 
-#include "HugoMath.h"
 #include "TransformComponent.h"
 #include "RigidBodyComponent.h"
 #include "SpeedComponent.h"

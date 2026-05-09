@@ -1,6 +1,6 @@
 #pragma once
 
-#include "HugoComponentMacros.h"
+#include "HUGO.h"
 
 HCOMPONENT(LevelComponent)
 

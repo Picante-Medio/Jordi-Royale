@@ -1,7 +1,6 @@
 #pragma once
 
-#include "HugoSystemMacros.h"
-#include "HugoMath.h"
+#include "HUGO.h"
 
 struct TransformComponent;
 HSYSTEM(PlayerMovementSystem)

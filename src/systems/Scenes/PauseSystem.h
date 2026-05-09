@@ -1,6 +1,6 @@
 #pragma once
 
-#include "HugoSystemMacros.h"
+#include "HUGO.h"
 
 struct ResumeTag;
 struct ExitTag;

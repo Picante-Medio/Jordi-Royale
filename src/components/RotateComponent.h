@@ -1,5 +1,5 @@
 #pragma once
-#include "HugoComponentMacros.h"
+#include "HUGO.h"
 
 //Just a tag
 HCOMPONENT(RotateComponent)

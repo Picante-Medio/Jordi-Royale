@@ -4,7 +4,6 @@
 
 #include "ChangeSceneMessage.h"
 #include "PlayerDeadMessage.h"
-#include "HugoInputCodes.h"
 
 void 
 ChangeSceneSystem::init() {

@@ -2,7 +2,7 @@
 
 #include <cstdint>
 
-#include "HugoSystemMacros.h"
+#include "HUGO.h"
 #include "TransformComponent.h"
 
 HSYSTEM(PickupSystem)

@@ -1,7 +1,6 @@
 #pragma once
 
-#include "Message.h"
-#include "HugoTypes.h"
+#include "HUGO.h"
 
 struct HealPlayerMessage : public HUGO::Message {
     HUGO::Int healPoints;
