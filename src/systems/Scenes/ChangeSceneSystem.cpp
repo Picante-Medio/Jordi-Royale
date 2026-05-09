@@ -5,6 +5,8 @@
 #include "ChangeSceneMessage.h"
 #include "PlayerDeadMessage.h"
 #include "HugoInputCodes.h"
+#include "LeveledUpMessage.h"
+#include "ChestGrabMessage.h"
 
 void 
 ChangeSceneSystem::init() {
@@ -20,6 +22,22 @@ ChangeSceneSystem::init() {
         ChangeSceneMessage signal;
         signal.sceneName = "lose_scene";
         signal.destroyCurrent = true;
+
+        scene.sendMessage(signal);
+    });
+
+    scene.subscribe<LeveledUpMessage>([this](std::shared_ptr<HUGO::Message> message) {
+        ChangeSceneMessage signal;
+        signal.sceneName = "upgrades_scene";
+        signal.destroyCurrent = false;
+
+        scene.sendMessage(signal);
+    });
+
+    scene.subscribe<ChestGrabMessage>([this](std::shared_ptr<HUGO::Message> message) {
+        ChangeSceneMessage signal;
+        signal.sceneName = "upgrades_scene";
+        signal.destroyCurrent = false;
 
         scene.sendMessage(signal);
     });
