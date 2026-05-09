@@ -27,7 +27,7 @@ PauseSystem::initExit(ExitTag& exit){
 
         but.onClickCallback = [this](){
             ChangeSceneMessage message;
-            message.sceneName = "menu_scene";
+            message.sceneName = "main_menu";
             message.destroyCurrent = true;
             scene.sendMessage<ChangeSceneMessage>(message);
         };

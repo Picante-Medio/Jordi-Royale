@@ -9,10 +9,15 @@
 [ext_resource type="PackedScene" uid="uid://dhhopmfyxf4cv" path="res://Prefabs/moai.tscn" id="7_cp0ys"]
 [ext_resource type="PackedScene" uid="uid://bs66scu1xl2a6" path="res://Resources/jordi/moon_floor.glb" id="8_yhxw7"]
 [ext_resource type="PackedScene" uid="uid://du56fi1d3anqo" path="res://Resources/jordi/skybox.glb" id="9_trj04"]
+[ext_resource type="Script" uid="uid://cnmiha8rgpnhn" path="res://addons/HugosChatPlugin/Entities/entity.gd" id="10_vtepg"]
+[ext_resource type="Script" uid="uid://pcb3jv2yfyt7" path="res://addons/HugosChatPlugin/NativeComponents/PanelComponent.gd" id="11_8dnnj"]
+[ext_resource type="Script" uid="uid://xa5vy2f4cqcd" path="res://addons/HugosChatPlugin/NativeComponents/ButtonComponent.gd" id="12_m3bi6"]
+[ext_resource type="Script" uid="uid://c28cgq4w1hvd6" path="res://Components/ResumeTag.gd" id="13_wyh8j"]
+[ext_resource type="Script" uid="uid://cr4oouyu1olwy" path="res://Components/ExitTag.gd" id="14_ujyyl"]
 
 [node name="main_menu" type="Node3D" unique_id=1949461621]
 script = ExtResource("1_opfnp")
-systems = Array[int]([1, 3, 4, 5, 6, 7, 8, 9, 0, 19])
+systems = Array[int]([1, 3, 4, 5, 6, 7, 8, 9, 0])
 metadata/_custom_type_script = "uid://d3yq16mo85h5h"
 
 [node name="Camera" type="Node3D" parent="." unique_id=974168509]
@@ -66,6 +71,52 @@ mesh_name = "skybox.glb"
 
 [node name="skybox" parent="Skybox/RenderComponent" unique_id=129807196 instance=ExtResource("9_trj04")]
 transform = Transform3D(0.99957526, 0.009936266, 0.027396863, -0.008815205, 0.99913085, -0.0407412, -0.027777866, 0.040482387, 0.99879414, 0, 0, 0.08070057)
+
+[node name="Resume" type="Node3D" parent="." unique_id=312576625]
+script = ExtResource("10_vtepg")
+
+[node name="PanelComponent" type="Node" parent="Resume" unique_id=2029847817]
+script = ExtResource("11_8dnnj")
+overlayName = "JordiUI/JordiOverlay2"
+containerName = "JordiUI/JordiOverlay2/JordiContainer2"
+isVisible = true
+left = 0.6
+top = 0.4
+width = 0.25
+height = 0.1
+material = "JordiUI/Resume"
+
+[node name="ButtonComponent" type="Node" parent="Resume" unique_id=1429572065]
+script = ExtResource("12_m3bi6")
+normalMaterial = "JordiUI/Resume"
+hoverMaterial = "JordiUI/ResumeHover"
+pressedMaterial = "JordiUI/ResumePressed"
+
+[node name="ResumeTag" type="Node" parent="Resume" unique_id=928741226]
+script = ExtResource("13_wyh8j")
+
+[node name="Exit" type="Node3D" parent="." unique_id=378530144]
+script = ExtResource("10_vtepg")
+
+[node name="PanelComponent" type="Node" parent="Exit" unique_id=1712991318]
+script = ExtResource("11_8dnnj")
+overlayName = "JordiUI/JordiOverlay3"
+containerName = "JordiUI/JordiOverlay3/JordiContainer3"
+isVisible = true
+left = 0.6
+top = 0.6
+width = 0.25
+height = 0.1
+material = "JordiUI/Exit"
+
+[node name="ButtonComponent" type="Node" parent="Exit" unique_id=726794188]
+script = ExtResource("12_m3bi6")
+normalMaterial = "JordiUI/Exit"
+hoverMaterial = "JordiUI/ExitHover"
+pressedMaterial = "JordiUI/ExitPressed"
+
+[node name="ExitTag" type="Node" parent="Exit" unique_id=1359468196]
+script = ExtResource("14_ujyyl")
 
 [node name="Moais" type="Node3D" parent="." unique_id=1979775860]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -27, 0, -57)
