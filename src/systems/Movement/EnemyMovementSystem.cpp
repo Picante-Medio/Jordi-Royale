@@ -4,6 +4,7 @@
 
 #include "EcsTypes.h"
 #include "EnemyTag.h"
+#include "HugoMath.h"
 #include "RigidBodyComponent.h"
 #include "PlayerComponent.h"
 #include "SpeedComponent.h"

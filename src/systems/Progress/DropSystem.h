@@ -1,7 +1,8 @@
 #pragma once
 
-#include "HUGO.h"
+#include "HugoSystemMacros.h"
 #include "EcsTypes.h"
+#include "HugoMath.h"
 
 const int HP_FOR_SPAWN = 50;
 const float ROTATION_OFFSET = 5.0f;

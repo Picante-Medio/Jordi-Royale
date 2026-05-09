@@ -4,6 +4,9 @@
 #include <memory>
 
 #include "AudioComponent.h"
+#include "HugoEasings.h"
+#include "HugoTween.h"
+#include "HugoTypes.h"
 #include "TweenComponent.h"
 #include "DynamicAudioComponent.h"
 #include <DynamicTrackMessage.h>

@@ -1,6 +1,7 @@
 #include "EnemySpawnSystem.h"
 #include "SpawnPointTag.h"
 #include "TransformComponent.h"
+#include "HugoError.h"
 
 
 void 

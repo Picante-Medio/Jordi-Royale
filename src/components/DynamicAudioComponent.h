@@ -1,6 +1,7 @@
 # pragma once
 
-#include "HUGO.h"
+#include "HugoComponentMacros.h"
+#include "HugoTypes.h"
 
 HCOMPONENT(DynamicAudioComponent)
     DEFAULT_SERIALIZED_MEMBER(HUGO::Float, maxVolume, 1.0f);

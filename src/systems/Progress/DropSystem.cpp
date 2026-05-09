@@ -6,6 +6,7 @@
 #include "EnemyDeadMessage.h"
 #include "HPComponent.h"
 #include "BossTag.h"
+#include "HugoMath.h"
 #include "TransformComponent.h"
 #include "XPComponent.h"
 

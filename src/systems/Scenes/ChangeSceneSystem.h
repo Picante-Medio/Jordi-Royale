@@ -1,7 +1,7 @@
 #pragma once
 
 #include <cstdint>
-#include "HUGO.h"
+#include "HugoSystemMacros.h"
 
 HSYSTEM(ChangeSceneSystem)
 public:

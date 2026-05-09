@@ -1,7 +1,7 @@
 #pragma once
 
 #include <variant>
-#include "HUGO.h"
+#include "HugoComponentMacros.h"
 using namespace HUGO;
 
 struct MRU {

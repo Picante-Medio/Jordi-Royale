@@ -1,6 +1,6 @@
 #pragma once
 #include "EcsTypes.h"
-#include "HUGO.h"
+#include "HugoSystemMacros.h"
 
 HSYSTEM(DamageSystem)
 private:

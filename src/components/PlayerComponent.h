@@ -1,5 +1,6 @@
 #pragma once
-#include "HUGO.h"
+#include "HugoComponentMacros.h"
+#include "HugoTypes.h"
 
 HCOMPONENT(PlayerComponent)
     DEFAULT_SERIALIZED_MEMBER(HUGO::Float, jumpPower, 500.0f);

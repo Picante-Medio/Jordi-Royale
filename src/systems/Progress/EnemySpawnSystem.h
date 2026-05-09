@@ -1,5 +1,6 @@
 #pragma once
-#include "HUGO.h"
+#include "HugoSystemMacros.h"
+#include "HugoTypes.h"
 #include "JordiRandom.h"
 #include <vector>
 

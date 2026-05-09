@@ -5,7 +5,8 @@
 
 #include "DynamicAudioComponent.h"
 #include "EcsTypes.h"
-#include "HUGO.h"
+#include "HugoSystemMacros.h"
+#include "HugoTypes.h"
 #include "DynamicTrackMessage.h"
 
 HSYSTEM(DynamicAudioSystem)
