@@ -1,6 +1,12 @@
 #include "AudioEventsSystem.h"
+
+#include <algorithm>
+
 #include "DynamicTrackMessage.h"
+#include "EcsTypes.h"
 #include "HugoInputCodes.h"
+#include "DynamicAudioComponent.h"
+#include "AudioComponent.h"
 
 void 
 AudioEventsSystem::init() {

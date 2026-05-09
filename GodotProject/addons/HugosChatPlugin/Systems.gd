@@ -18,6 +18,7 @@ enum system {
 	RotateSystem,
 	AudioEventsSystem,
 	DynamicAudioSystem,
+	MainMenuSystem,
 	ChangeSceneSystem,
 	PauseSystem,
 	DamageSystem,

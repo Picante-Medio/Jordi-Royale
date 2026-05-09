@@ -1,0 +1,132 @@
+SCENE main_menu
+SYSTEM AudioSystem
+SYSTEM HierarchySystem
+SYSTEM ParticleSystem
+SYSTEM CameraSystem
+SYSTEM LightSystem
+SYSTEM RenderSystem
+SYSTEM TweenSystem
+SYSTEM UISystem
+SYSTEM ConsoleSystem
+SYSTEM MainMenuSystem
+
+ENTITY Camera 1
+    COMPONENT TransformComponent
+        VECTOR_3 position 0.0 1.70871496200562 3.61698341369629
+        QUATERNION rotation -0.13052615523338 0.0 0.0 0.99144488573074
+        VECTOR_3 scale 0.29999998211861 0.42172089219093 0.32932874560356
+    COMPONENT CameraComponent
+        INT projectionType 0
+        FLOAT fovY 60.0
+        FLOAT nearClip 1.0
+        FLOAT farClip 10000.0
+        FLOAT orthoWidth 10.0
+        FLOAT orthoHeight 10.0
+        BOOL autoAspectRatio true
+        BOOL mainCamera true
+        VECTOR_4 clearColor 0.0 0.0 0.0 1.0
+    START_CHILDREN
+    END_CHILDREN
+END_ENTITY
+
+ENTITY Jordi 1
+    COMPONENT TransformComponent
+        VECTOR_3 position -1.0 -0.00013160705566 1.00247883796692
+        QUATERNION rotation 0.0 0.38268345594406 0.0 0.92387956380844
+        VECTOR_3 scale 0.99999994039536 1.0 0.99999994039536
+    COMPONENT RenderComponent
+        STRING meshName jordi.glb
+        STRING materialName 
+    COMPONENT AnimationComponent
+    START_CHILDREN
+    END_CHILDREN
+END_ENTITY
+
+ENTITY Moai 1
+    COMPONENT TransformComponent
+        VECTOR_3 position 8.31255912780762 3.12154245376587 -16.9155158996582
+        QUATERNION rotation -0.03564293310046 -0.83469700813293 0.00931417010725 0.54947578907013
+        VECTOR_3 scale 1.00000011920929 1.0 0.99999982118607
+    COMPONENT ColliderComponent
+        COLLIDER_INFO info CYLINDER_COLLIDER 1.646484375 4.21636962890625 1.646484375
+        FLOAT restitution 0.0
+        FLOAT friction 0.0
+        VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
+        QUATERNION rotationOffset 0.0 0.0 0.0 1.0
+        BOOL active true
+        BOOL useGizmo false
+        BOOL isTrigger false
+    COMPONENT RenderComponent
+        STRING meshName jordi-moai.glb
+        STRING materialName 
+    COMPONENT RigidBodyComponent
+        FLOAT mass 0.0
+        FLOAT linearDamping 0.0
+        FLOAT angularDamping 0.0
+        VECTOR_3 linearVelocity 0.0 0.0 0.0
+        VECTOR_3 angularVelocity 0.0 0.0 0.0
+        FLOAT linearSleepingThreshold 0.0
+        FLOAT angularSleepingThreshold 0.0
+        INT type 1
+        BOOL dontRotateWithPhysicsOnDynamic false
+        VECTOR_3 gravity 0.0 0.0 0.0
+    START_CHILDREN
+    END_CHILDREN
+END_ENTITY
+
+ENTITY Floor 1
+    COMPONENT TransformComponent
+        VECTOR_3 position 0.0 -0.43083661794662 0.0
+        QUATERNION rotation 0.0 0.0 0.0 1.0
+        VECTOR_3 scale 4.0 4.0 4.0
+    COMPONENT RenderComponent
+        STRING meshName moon_floor.glb
+        STRING materialName 
+    START_CHILDREN
+    END_CHILDREN
+END_ENTITY
+
+ENTITY Skybox 1
+    COMPONENT TransformComponent
+        VECTOR_3 position 0.0 -0.43083661794662 0.0
+        QUATERNION rotation 0.0 0.0 0.0 1.0
+        VECTOR_3 scale 5.32000017166138 5.32000017166138 5.32000017166138
+    COMPONENT RenderComponent
+        STRING meshName skybox.glb
+        STRING materialName 
+    START_CHILDREN
+    END_CHILDREN
+END_ENTITY
+
+ENTITY Moai2 1
+    COMPONENT TransformComponent
+        VECTOR_3 position -10.6874408721924 3.12154245376587 -16.9155158996582
+        QUATERNION rotation 0.1922255307436 -0.32230114936829 -0.11707121133804 0.91949206590652
+        VECTOR_3 scale 1.00000011920929 0.99999994039536 0.99999976158142
+    COMPONENT ColliderComponent
+        COLLIDER_INFO info CYLINDER_COLLIDER 1.646484375 4.21636962890625 1.646484375
+        FLOAT restitution 0.0
+        FLOAT friction 0.0
+        VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
+        QUATERNION rotationOffset 0.0 0.0 0.0 1.0
+        BOOL active true
+        BOOL useGizmo false
+        BOOL isTrigger false
+    COMPONENT RenderComponent
+        STRING meshName jordi-moai.glb
+        STRING materialName 
+    COMPONENT RigidBodyComponent
+        FLOAT mass 0.0
+        FLOAT linearDamping 0.0
+        FLOAT angularDamping 0.0
+        VECTOR_3 linearVelocity 0.0 0.0 0.0
+        VECTOR_3 angularVelocity 0.0 0.0 0.0
+        FLOAT linearSleepingThreshold 0.0
+        FLOAT angularSleepingThreshold 0.0
+        INT type 1
+        BOOL dontRotateWithPhysicsOnDynamic false
+        VECTOR_3 gravity 0.0 0.0 0.0
+    START_CHILDREN
+    END_CHILDREN
+END_ENTITY
+
