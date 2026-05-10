@@ -24,10 +24,9 @@ EnemyMovementSystem::fixedUpdate(uint32_t dt) {
 
     // Move enemies towards Jordi
     for(auto pack : scene.query<EnemyTag, RigidBodyComponent, TransformComponent, SpeedComponent>()) {
-        
         pack.modify<RigidBodyComponent>([this, dt, jordi, &pack](RigidBodyComponent& rb) {
             const HUGO::Vector3 direction = scene.getComponentConst<TransformComponent>(jordi).getPosition() - pack.getConst<TransformComponent>().getPosition();
-            const HUGO::Vector3 desiredVel = direction * pack.getConst<SpeedComponent>().speed;
+            const HUGO::Vector3 desiredVel = direction.normalized() * pack.getConst<SpeedComponent>().speed;
             const HUGO::Vector3 velError = desiredVel - rb.getLinearVelocity();
 
             rb.applyForce(rb.mass * velError / dt); // I think this is the formula

@@ -1,23 +1,23 @@
 [gd_scene format=3 uid="uid://dq2fl1vp76r7r"]
 
-[ext_resource type="Script" uid="uid://dstqkjl1nichv" path="res://addons/HugosChatPlugin/Entities/scene_tracker.gd" id="1_865ah"]
-[ext_resource type="Script" uid="uid://d3fypo3sn4qu3" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="2_huasi"]
+[ext_resource type="Script" uid="uid://d3yq16mo85h5h" path="res://addons/HugosChatPlugin/Entities/scene_tracker.gd" id="1_865ah"]
+[ext_resource type="Script" uid="uid://dmak3mcg4w0h8" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="2_huasi"]
 [ext_resource type="Script" uid="uid://d10rufr7dnrt6" path="res://addons/HugosChatPlugin/NativeComponents/CameraComponent.gd" id="3_drdnd"]
-[ext_resource type="Script" uid="uid://bg5luietaqtrx" path="res://addons/HugosChatPlugin/NativeComponents/ColliderComponent.gd" id="3_m1efj"]
+[ext_resource type="Script" uid="uid://bewpcwg276ktv" path="res://addons/HugosChatPlugin/NativeComponents/ColliderComponent.gd" id="3_m1efj"]
 [ext_resource type="PackedScene" uid="uid://c462xqhte7va4" path="res://Resources/jordi/jordi.glb" id="4_m1efj"]
 [ext_resource type="Script" uid="uid://dgu5myf6wqmwa" path="res://addons/HugosChatPlugin/NativeComponents/RigidBodyComponent.gd" id="4_mai8y"]
 [ext_resource type="Script" uid="uid://bxtnhlmmus6l2" path="res://Components/SpeedComponent.gd" id="6_drdnd"]
 [ext_resource type="Script" uid="uid://ooxkdcy2pv63" path="res://addons/HugosChatPlugin/NativeComponents/AnimationComponent.gd" id="9_drdnd"]
 [ext_resource type="Script" uid="uid://d1ljapb1i86tc" path="res://Components/CameraPivotTag.gd" id="9_mai8y"]
 [ext_resource type="Script" uid="uid://b0nmxwhquuske" path="res://Components/PlayerComponent.gd" id="10_76v2p"]
-[ext_resource type="Script" uid="uid://430akguj0twj" path="res://addons/HugosChatPlugin/NativeComponents/RenderComponent.gd" id="10_mai8y"]
+[ext_resource type="Script" uid="uid://c0wlt0qsxdika" path="res://addons/HugosChatPlugin/NativeComponents/RenderComponent.gd" id="10_mai8y"]
 [ext_resource type="Script" uid="uid://cnmiha8rgpnhn" path="res://addons/HugosChatPlugin/Entities/entity.gd" id="12_lhp3t"]
 [ext_resource type="PackedScene" uid="uid://bs66scu1xl2a6" path="res://Resources/jordi/moon_floor.glb" id="12_psl12"]
 [ext_resource type="Script" uid="uid://b1n66dftn6a7i" path="res://Components/ClockTag.gd" id="13_gnsmo"]
 [ext_resource type="Script" uid="uid://pcb3jv2yfyt7" path="res://addons/HugosChatPlugin/NativeComponents/PanelComponent.gd" id="14_psl12"]
 [ext_resource type="Script" uid="uid://gxurxa2dpqpy" path="res://addons/HugosChatPlugin/NativeComponents/TextComponent.gd" id="15_2ebs2"]
 [ext_resource type="PackedScene" uid="uid://dhhopmfyxf4cv" path="res://Prefabs/moai.tscn" id="16_gnsmo"]
-[ext_resource type="PackedScene" uid="uid://dflq65k0gtdbd" path="res://Resources/jordi/skybox.glb" id="18_2ebs2"]
+[ext_resource type="PackedScene" uid="uid://du56fi1d3anqo" path="res://Resources/jordi/skybox.glb" id="18_2ebs2"]
 [ext_resource type="PackedScene" uid="uid://c4148ap0mlp3i" path="res://Prefabs/Enemy.tscn" id="20_jvnna"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_mai8y"]
@@ -29,7 +29,7 @@ size = Vector3(500, 0.6121826, 500)
 
 [node name="main_scene" type="Node3D" unique_id=1228723441]
 script = ExtResource("1_865ah")
-systems = Array[int]([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 10, 14, 20, 19, 13, 23])
+systems = Array[int]([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 10, 14, 20, 19, 13, 23, 24, 25])
 
 [node name="Skybox" type="Node3D" parent="." unique_id=1067618066]
 transform = Transform3D(1.33, 0, 0, 0, 1.33, 0, 0, 0, 1.33, 0, 0, 0)
@@ -158,7 +158,6 @@ top = 0.06
 
 [node name="Moais" type="Node3D" parent="." unique_id=382336233]
 script = ExtResource("2_huasi")
-metadata/_custom_type_script = "uid://d3fypo3sn4qu3"
 
 [node name="Moai3" parent="Moais" unique_id=658709960 instance=ExtResource("16_gnsmo")]
 transform = Transform3D(-0.48749852, 0.21193305, -0.8470117, -0.024764508, 0.9663472, 0.2560454, 0.87277216, 0.14579758, -0.46584466, 3.7778378, -0.26589537, -2.102272)
@@ -322,306 +321,5 @@ transform = Transform3D(0.35177308, 0.9031246, 0.24621412, 0.454114, 0.065358326
 [node name="Moai54" parent="Moais" unique_id=320054767 instance=ExtResource("16_gnsmo")]
 transform = Transform3D(-0.90880895, 0.40968382, -0.078897774, 0.38961217, 0.9010141, 0.1907258, 0.14922518, 0.14259385, -0.9784671, 22.091204, 0.6965518, -33.45588)
 
-[node name="Entity3D" type="Node3D" parent="." unique_id=2087217675]
-script = ExtResource("2_huasi")
-metadata/_custom_type_script = "uid://d3fypo3sn4qu3"
-
-[node name="Enemy" parent="Entity3D" unique_id=1370903902 instance=ExtResource("20_jvnna")]
-transform = Transform3D(3.875586e-09, 0, -0.325, 0, 0.325, 0, 0.325, 0, 3.875586e-09, -17.75058, 21.23283, 32.568165)
-
-[node name="Enemy2" parent="Entity3D" unique_id=55126882 instance=ExtResource("20_jvnna")]
-transform = Transform3D(3.875586e-09, 0, -0.325, 0, 0.325, 0, 0.325, 0, 3.875586e-09, -19.656067, 20.918571, 32.922295)
-
-[node name="Enemy3" parent="Entity3D" unique_id=947050089 instance=ExtResource("20_jvnna")]
-transform = Transform3D(-0.10562499, 0, -2.519131e-09, 0, 0.10562499, 0, 2.519131e-09, 0, -0.10562499, -28.335232, 28.1335, 26.799227)
-
-[node name="Enemy4" parent="Entity3D" unique_id=883777307 instance=ExtResource("20_jvnna")]
-transform = Transform3D(-0.10562499, 0, -2.519131e-09, 0, 0.10562499, 0, 2.519131e-09, 0, -0.10562499, -28.450325, 28.031364, 26.179943)
-
-[node name="Enemy5" parent="Entity3D" unique_id=1135052670 instance=ExtResource("20_jvnna")]
-transform = Transform3D(3.875586e-09, 0, -0.325, 0, 0.325, 0, 0.325, 0, 3.875586e-09, -21.387014, 21.23283, 32.568165)
-
-[node name="Enemy6" parent="Entity3D" unique_id=727117933 instance=ExtResource("20_jvnna")]
-transform = Transform3D(3.875586e-09, 0, -0.325, 0, 0.325, 0, 0.325, 0, 3.875586e-09, -23.292501, 20.918571, 32.922295)
-
-[node name="Enemy7" parent="Entity3D" unique_id=1361040792 instance=ExtResource("20_jvnna")]
-transform = Transform3D(-0.10562499, 0, -2.519131e-09, 0, 0.10562499, 0, 2.519131e-09, 0, -0.10562499, -31.971666, 28.1335, 26.799227)
-
-[node name="Enemy8" parent="Entity3D" unique_id=1855419722 instance=ExtResource("20_jvnna")]
-transform = Transform3D(-0.10562499, 0, -2.519131e-09, 0, 0.10562499, 0, 2.519131e-09, 0, -0.10562499, -32.08676, 28.031364, 26.179943)
-
-[node name="Enemy9" parent="Entity3D" unique_id=1829268636 instance=ExtResource("20_jvnna")]
-transform = Transform3D(0.24047932, 0, -0.21861996, 0, 0.325, 0, 0.21861996, 0, 0.24047932, -17.067768, 21.23283, 25.967188)
-
-[node name="Enemy10" parent="Entity3D" unique_id=921149862 instance=ExtResource("20_jvnna")]
-transform = Transform3D(0.24047932, 0, -0.21861996, 0, 0.325, 0, 0.21861996, 0, 0.24047932, -18.087513, 20.918571, 27.615343)
-
-[node name="Enemy11" parent="Entity3D" unique_id=781190318 instance=ExtResource("20_jvnna")]
-transform = Transform3D(-0.07105147, 0, -0.07815577, 0, 0.10562498, 0, 0.07815577, 0, -0.07105147, -28.456467, 28.1335, 29.918528)
-
-[node name="Enemy12" parent="Entity3D" unique_id=1262423718 instance=ExtResource("20_jvnna")]
-transform = Transform3D(-0.07105147, 0, -0.07815577, 0, 0.10562498, 0, 0.07815577, 0, -0.07105147, -28.992117, 28.031364, 29.58711)
-
-[node name="Enemy13" parent="Entity3D" unique_id=868950837 instance=ExtResource("20_jvnna")]
-transform = Transform3D(0.24047932, 0, -0.21861996, 0, 0.325, 0, 0.21861996, 0, 0.24047932, -19.513914, 21.23283, 28.657919)
-
-[node name="Enemy14" parent="Entity3D" unique_id=1371848364 instance=ExtResource("20_jvnna")]
-transform = Transform3D(0.24047932, 0, -0.21861996, 0, 0.325, 0, 0.21861996, 0, 0.24047932, -20.533657, 20.918571, 30.306072)
-
-[node name="Enemy15" parent="Entity3D" unique_id=1861297051 instance=ExtResource("20_jvnna")]
-transform = Transform3D(-0.07105147, 0, -0.07815577, 0, 0.10562498, 0, 0.07815577, 0, -0.07105147, -30.90261, 28.1335, 32.609257)
-
-[node name="Enemy16" parent="Entity3D" unique_id=248897412 instance=ExtResource("20_jvnna")]
-transform = Transform3D(-0.07105147, 0, -0.07815577, 0, 0.10562498, 0, 0.07815577, 0, -0.07105147, -31.438263, 28.031364, 32.277843)
-
-[node name="Enemy17" parent="Entity3D" unique_id=355914548 instance=ExtResource("20_jvnna")]
-transform = Transform3D(3.875586e-09, 0, -0.325, 0, 0.325, 0, 0.325, 0, 3.875586e-09, -17.75058, 18.092922, 44.48261)
-
-[node name="Enemy18" parent="Entity3D" unique_id=249959118 instance=ExtResource("20_jvnna")]
-transform = Transform3D(3.875586e-09, 0, -0.325, 0, 0.325, 0, 0.325, 0, 3.875586e-09, -19.656067, 17.778664, 44.83674)
-
-[node name="Enemy19" parent="Entity3D" unique_id=1893831853 instance=ExtResource("20_jvnna")]
-transform = Transform3D(-0.10562499, 0, -2.519131e-09, 0, 0.10562499, 0, 2.519131e-09, 0, -0.10562499, -28.335232, 24.993591, 38.71367)
-
-[node name="Enemy20" parent="Entity3D" unique_id=1878551929 instance=ExtResource("20_jvnna")]
-transform = Transform3D(-0.10562499, 0, -2.519131e-09, 0, 0.10562499, 0, 2.519131e-09, 0, -0.10562499, -28.450325, 24.891457, 38.094387)
-
-[node name="Enemy21" parent="Entity3D" unique_id=1264889835 instance=ExtResource("20_jvnna")]
-transform = Transform3D(3.875586e-09, 0, -0.325, 0, 0.325, 0, 0.325, 0, 3.875586e-09, -21.387014, 18.092922, 44.48261)
-
-[node name="Enemy22" parent="Entity3D" unique_id=173217722 instance=ExtResource("20_jvnna")]
-transform = Transform3D(3.875586e-09, 0, -0.325, 0, 0.325, 0, 0.325, 0, 3.875586e-09, -23.292501, 17.778664, 44.83674)
-
-[node name="Enemy23" parent="Entity3D" unique_id=345291405 instance=ExtResource("20_jvnna")]
-transform = Transform3D(-0.10562499, 0, -2.519131e-09, 0, 0.10562499, 0, 2.519131e-09, 0, -0.10562499, -31.971666, 24.993591, 38.71367)
-
-[node name="Enemy24" parent="Entity3D" unique_id=967967955 instance=ExtResource("20_jvnna")]
-transform = Transform3D(-0.10562499, 0, -2.519131e-09, 0, 0.10562499, 0, 2.519131e-09, 0, -0.10562499, -32.08676, 24.891457, 38.094387)
-
-[node name="Enemy25" parent="Entity3D" unique_id=900120166 instance=ExtResource("20_jvnna")]
-transform = Transform3D(0.24047932, 0, -0.21861996, 0, 0.325, 0, 0.21861996, 0, 0.24047932, -17.067768, 18.092922, 37.88163)
-
-[node name="Enemy26" parent="Entity3D" unique_id=1572018873 instance=ExtResource("20_jvnna")]
-transform = Transform3D(0.24047932, 0, -0.21861996, 0, 0.325, 0, 0.21861996, 0, 0.24047932, -18.087513, 17.778664, 39.529785)
-
-[node name="Enemy27" parent="Entity3D" unique_id=1176124336 instance=ExtResource("20_jvnna")]
-transform = Transform3D(-0.07105147, 0, -0.07815577, 0, 0.10562498, 0, 0.07815577, 0, -0.07105147, -28.456467, 24.993591, 41.83297)
-
-[node name="Enemy28" parent="Entity3D" unique_id=1672609033 instance=ExtResource("20_jvnna")]
-transform = Transform3D(-0.07105147, 0, -0.07815577, 0, 0.10562498, 0, 0.07815577, 0, -0.07105147, -28.992117, 24.891457, 41.501556)
-
-[node name="Enemy29" parent="Entity3D" unique_id=1860405652 instance=ExtResource("20_jvnna")]
-transform = Transform3D(0.24047932, 0, -0.21861996, 0, 0.325, 0, 0.21861996, 0, 0.24047932, -19.513914, 18.092922, 40.572365)
-
-[node name="Enemy30" parent="Entity3D" unique_id=1440632145 instance=ExtResource("20_jvnna")]
-transform = Transform3D(0.24047932, 0, -0.21861996, 0, 0.325, 0, 0.21861996, 0, 0.24047932, -20.533657, 17.778664, 42.220516)
-
-[node name="Enemy31" parent="Entity3D" unique_id=1186911710 instance=ExtResource("20_jvnna")]
-transform = Transform3D(-0.07105147, 0, -0.07815577, 0, 0.10562498, 0, 0.07815577, 0, -0.07105147, -30.90261, 24.993591, 44.5237)
-
-[node name="Enemy32" parent="Entity3D" unique_id=1490346870 instance=ExtResource("20_jvnna")]
-transform = Transform3D(-0.07105147, 0, -0.07815577, 0, 0.10562498, 0, 0.07815577, 0, -0.07105147, -31.438263, 24.891457, 44.192287)
-
-[node name="Enemy33" parent="Entity3D" unique_id=387882247 instance=ExtResource("20_jvnna")]
-transform = Transform3D(3.875586e-09, 0, -0.325, 0, 0.325, 0, 0.325, 0, 3.875586e-09, -17.75058, 25.499067, 32.568165)
-
-[node name="Enemy34" parent="Entity3D" unique_id=1096616978 instance=ExtResource("20_jvnna")]
-transform = Transform3D(3.875586e-09, 0, -0.325, 0, 0.325, 0, 0.325, 0, 3.875586e-09, -19.656067, 25.184809, 32.922295)
-
-[node name="Enemy35" parent="Entity3D" unique_id=766777212 instance=ExtResource("20_jvnna")]
-transform = Transform3D(-0.10562499, 0, -2.519131e-09, 0, 0.10562499, 0, 2.519131e-09, 0, -0.10562499, -28.335232, 32.399734, 26.799227)
-
-[node name="Enemy36" parent="Entity3D" unique_id=140772878 instance=ExtResource("20_jvnna")]
-transform = Transform3D(-0.10562499, 0, -2.519131e-09, 0, 0.10562499, 0, 2.519131e-09, 0, -0.10562499, -28.450325, 32.2976, 26.179943)
-
-[node name="Enemy37" parent="Entity3D" unique_id=1953819447 instance=ExtResource("20_jvnna")]
-transform = Transform3D(3.875586e-09, 0, -0.325, 0, 0.325, 0, 0.325, 0, 3.875586e-09, -21.387014, 25.499067, 32.568165)
-
-[node name="Enemy38" parent="Entity3D" unique_id=2112119322 instance=ExtResource("20_jvnna")]
-transform = Transform3D(3.875586e-09, 0, -0.325, 0, 0.325, 0, 0.325, 0, 3.875586e-09, -23.292501, 25.184809, 32.922295)
-
-[node name="Enemy39" parent="Entity3D" unique_id=753478026 instance=ExtResource("20_jvnna")]
-transform = Transform3D(-0.10562499, 0, -2.519131e-09, 0, 0.10562499, 0, 2.519131e-09, 0, -0.10562499, -31.971666, 32.399734, 26.799227)
-
-[node name="Enemy40" parent="Entity3D" unique_id=305638846 instance=ExtResource("20_jvnna")]
-transform = Transform3D(-0.10562499, 0, -2.519131e-09, 0, 0.10562499, 0, 2.519131e-09, 0, -0.10562499, -32.08676, 32.2976, 26.179943)
-
-[node name="Enemy41" parent="Entity3D" unique_id=740925034 instance=ExtResource("20_jvnna")]
-transform = Transform3D(0.24047932, 0, -0.21861996, 0, 0.325, 0, 0.21861996, 0, 0.24047932, -17.067768, 25.499067, 25.967188)
-
-[node name="Enemy42" parent="Entity3D" unique_id=711640882 instance=ExtResource("20_jvnna")]
-transform = Transform3D(0.24047932, 0, -0.21861996, 0, 0.325, 0, 0.21861996, 0, 0.24047932, -18.087513, 25.184809, 27.615343)
-
-[node name="Enemy43" parent="Entity3D" unique_id=1031820302 instance=ExtResource("20_jvnna")]
-transform = Transform3D(-0.07105147, 0, -0.07815577, 0, 0.10562498, 0, 0.07815577, 0, -0.07105147, -28.456467, 32.399734, 29.918528)
-
-[node name="Enemy44" parent="Entity3D" unique_id=2068815780 instance=ExtResource("20_jvnna")]
-transform = Transform3D(-0.07105147, 0, -0.07815577, 0, 0.10562498, 0, 0.07815577, 0, -0.07105147, -28.992117, 32.2976, 29.58711)
-
-[node name="Enemy45" parent="Entity3D" unique_id=1852970837 instance=ExtResource("20_jvnna")]
-transform = Transform3D(0.24047932, 0, -0.21861996, 0, 0.325, 0, 0.21861996, 0, 0.24047932, -19.513914, 25.499067, 28.657919)
-
-[node name="Enemy46" parent="Entity3D" unique_id=186104746 instance=ExtResource("20_jvnna")]
-transform = Transform3D(0.24047932, 0, -0.21861996, 0, 0.325, 0, 0.21861996, 0, 0.24047932, -20.533657, 25.184809, 30.306072)
-
-[node name="Enemy47" parent="Entity3D" unique_id=866995501 instance=ExtResource("20_jvnna")]
-transform = Transform3D(-0.07105147, 0, -0.07815577, 0, 0.10562498, 0, 0.07815577, 0, -0.07105147, -30.90261, 32.399734, 32.609257)
-
-[node name="Enemy48" parent="Entity3D" unique_id=1201098232 instance=ExtResource("20_jvnna")]
-transform = Transform3D(-0.07105147, 0, -0.07815577, 0, 0.10562498, 0, 0.07815577, 0, -0.07105147, -31.438263, 32.2976, 32.277843)
-
-[node name="Enemy49" parent="Entity3D" unique_id=648171600 instance=ExtResource("20_jvnna")]
-transform = Transform3D(3.875586e-09, 0, -0.325, 0, 0.325, 0, 0.325, 0, 3.875586e-09, -17.75058, 22.35916, 44.48261)
-
-[node name="Enemy50" parent="Entity3D" unique_id=978978677 instance=ExtResource("20_jvnna")]
-transform = Transform3D(3.875586e-09, 0, -0.325, 0, 0.325, 0, 0.325, 0, 3.875586e-09, -19.656067, 22.0449, 44.83674)
-
-[node name="Enemy51" parent="Entity3D" unique_id=1511776377 instance=ExtResource("20_jvnna")]
-transform = Transform3D(-0.10562499, 0, -2.519131e-09, 0, 0.10562499, 0, 2.519131e-09, 0, -0.10562499, -28.335232, 29.259829, 38.71367)
-
-[node name="Enemy52" parent="Entity3D" unique_id=1298451238 instance=ExtResource("20_jvnna")]
-transform = Transform3D(-0.10562499, 0, -2.519131e-09, 0, 0.10562499, 0, 2.519131e-09, 0, -0.10562499, -28.450325, 29.157694, 38.094387)
-
-[node name="Enemy53" parent="Entity3D" unique_id=1561287516 instance=ExtResource("20_jvnna")]
-transform = Transform3D(3.875586e-09, 0, -0.325, 0, 0.325, 0, 0.325, 0, 3.875586e-09, -21.387014, 22.35916, 44.48261)
-
-[node name="Enemy54" parent="Entity3D" unique_id=1280528972 instance=ExtResource("20_jvnna")]
-transform = Transform3D(3.875586e-09, 0, -0.325, 0, 0.325, 0, 0.325, 0, 3.875586e-09, -23.292501, 22.0449, 44.83674)
-
-[node name="Enemy55" parent="Entity3D" unique_id=2085894042 instance=ExtResource("20_jvnna")]
-transform = Transform3D(-0.10562499, 0, -2.519131e-09, 0, 0.10562499, 0, 2.519131e-09, 0, -0.10562499, -31.971666, 29.259829, 38.71367)
-
-[node name="Enemy56" parent="Entity3D" unique_id=1957974399 instance=ExtResource("20_jvnna")]
-transform = Transform3D(-0.10562499, 0, -2.519131e-09, 0, 0.10562499, 0, 2.519131e-09, 0, -0.10562499, -32.08676, 29.157694, 38.094387)
-
-[node name="Enemy57" parent="Entity3D" unique_id=1954046408 instance=ExtResource("20_jvnna")]
-transform = Transform3D(0.24047932, 0, -0.21861996, 0, 0.325, 0, 0.21861996, 0, 0.24047932, -17.067768, 22.35916, 37.88163)
-
-[node name="Enemy58" parent="Entity3D" unique_id=389686790 instance=ExtResource("20_jvnna")]
-transform = Transform3D(0.24047932, 0, -0.21861996, 0, 0.325, 0, 0.21861996, 0, 0.24047932, -18.087513, 22.0449, 39.529785)
-
-[node name="Enemy59" parent="Entity3D" unique_id=594555281 instance=ExtResource("20_jvnna")]
-transform = Transform3D(-0.07105147, 0, -0.07815577, 0, 0.10562498, 0, 0.07815577, 0, -0.07105147, -28.456467, 29.259829, 41.83297)
-
-[node name="Enemy60" parent="Entity3D" unique_id=98091759 instance=ExtResource("20_jvnna")]
-transform = Transform3D(-0.07105147, 0, -0.07815577, 0, 0.10562498, 0, 0.07815577, 0, -0.07105147, -28.992117, 29.157694, 41.501556)
-
-[node name="Enemy61" parent="Entity3D" unique_id=1228669163 instance=ExtResource("20_jvnna")]
-transform = Transform3D(0.24047932, 0, -0.21861996, 0, 0.325, 0, 0.21861996, 0, 0.24047932, -19.513914, 22.35916, 40.572365)
-
-[node name="Enemy62" parent="Entity3D" unique_id=2041309868 instance=ExtResource("20_jvnna")]
-transform = Transform3D(0.24047932, 0, -0.21861996, 0, 0.325, 0, 0.21861996, 0, 0.24047932, -20.533657, 22.0449, 42.220516)
-
-[node name="Enemy63" parent="Entity3D" unique_id=942644927 instance=ExtResource("20_jvnna")]
-transform = Transform3D(-0.07105147, 0, -0.07815577, 0, 0.10562498, 0, 0.07815577, 0, -0.07105147, -30.90261, 29.259829, 44.5237)
-
-[node name="Enemy64" parent="Entity3D" unique_id=19775441 instance=ExtResource("20_jvnna")]
-transform = Transform3D(-0.07105147, 0, -0.07815577, 0, 0.10562498, 0, 0.07815577, 0, -0.07105147, -31.438263, 29.157694, 44.192287)
-
-[node name="Enemy65" parent="Entity3D" unique_id=1095179813 instance=ExtResource("20_jvnna")]
-transform = Transform3D(3.875586e-09, 0, -0.325, 0, 0.325, 0, 0.325, 0, 3.875586e-09, -17.75058, 29.455956, 32.568165)
-
-[node name="Enemy66" parent="Entity3D" unique_id=1485377434 instance=ExtResource("20_jvnna")]
-transform = Transform3D(3.875586e-09, 0, -0.325, 0, 0.325, 0, 0.325, 0, 3.875586e-09, -19.656067, 29.141697, 32.922295)
-
-[node name="Enemy67" parent="Entity3D" unique_id=1860227219 instance=ExtResource("20_jvnna")]
-transform = Transform3D(-0.10562499, 0, -2.519131e-09, 0, 0.10562499, 0, 2.519131e-09, 0, -0.10562499, -28.335232, 36.356625, 26.799227)
-
-[node name="Enemy68" parent="Entity3D" unique_id=760274738 instance=ExtResource("20_jvnna")]
-transform = Transform3D(-0.10562499, 0, -2.519131e-09, 0, 0.10562499, 0, 2.519131e-09, 0, -0.10562499, -28.450325, 36.25449, 26.179943)
-
-[node name="Enemy69" parent="Entity3D" unique_id=814270677 instance=ExtResource("20_jvnna")]
-transform = Transform3D(3.875586e-09, 0, -0.325, 0, 0.325, 0, 0.325, 0, 3.875586e-09, -21.387014, 29.455956, 32.568165)
-
-[node name="Enemy70" parent="Entity3D" unique_id=367284377 instance=ExtResource("20_jvnna")]
-transform = Transform3D(3.875586e-09, 0, -0.325, 0, 0.325, 0, 0.325, 0, 3.875586e-09, -23.292501, 29.141697, 32.922295)
-
-[node name="Enemy71" parent="Entity3D" unique_id=1826227301 instance=ExtResource("20_jvnna")]
-transform = Transform3D(-0.10562499, 0, -2.519131e-09, 0, 0.10562499, 0, 2.519131e-09, 0, -0.10562499, -31.971666, 36.356625, 26.799227)
-
-[node name="Enemy72" parent="Entity3D" unique_id=496080657 instance=ExtResource("20_jvnna")]
-transform = Transform3D(-0.10562499, 0, -2.519131e-09, 0, 0.10562499, 0, 2.519131e-09, 0, -0.10562499, -32.08676, 36.25449, 26.179943)
-
-[node name="Enemy73" parent="Entity3D" unique_id=1073571461 instance=ExtResource("20_jvnna")]
-transform = Transform3D(0.24047932, 0, -0.21861996, 0, 0.325, 0, 0.21861996, 0, 0.24047932, -17.067768, 29.455956, 25.967188)
-
-[node name="Enemy74" parent="Entity3D" unique_id=102846560 instance=ExtResource("20_jvnna")]
-transform = Transform3D(0.24047932, 0, -0.21861996, 0, 0.325, 0, 0.21861996, 0, 0.24047932, -18.087513, 29.141697, 27.615343)
-
-[node name="Enemy75" parent="Entity3D" unique_id=1490434345 instance=ExtResource("20_jvnna")]
-transform = Transform3D(-0.07105147, 0, -0.07815577, 0, 0.10562498, 0, 0.07815577, 0, -0.07105147, -28.456467, 36.356625, 29.918528)
-
-[node name="Enemy76" parent="Entity3D" unique_id=1054049639 instance=ExtResource("20_jvnna")]
-transform = Transform3D(-0.07105147, 0, -0.07815577, 0, 0.10562498, 0, 0.07815577, 0, -0.07105147, -28.992117, 36.25449, 29.58711)
-
-[node name="Enemy77" parent="Entity3D" unique_id=1359406908 instance=ExtResource("20_jvnna")]
-transform = Transform3D(0.24047932, 0, -0.21861996, 0, 0.325, 0, 0.21861996, 0, 0.24047932, -19.513914, 29.455956, 28.657919)
-
-[node name="Enemy78" parent="Entity3D" unique_id=1082484082 instance=ExtResource("20_jvnna")]
-transform = Transform3D(0.24047932, 0, -0.21861996, 0, 0.325, 0, 0.21861996, 0, 0.24047932, -20.533657, 29.141697, 30.306072)
-
-[node name="Enemy79" parent="Entity3D" unique_id=182861253 instance=ExtResource("20_jvnna")]
-transform = Transform3D(-0.07105147, 0, -0.07815577, 0, 0.10562498, 0, 0.07815577, 0, -0.07105147, -30.90261, 36.356625, 32.609257)
-
-[node name="Enemy80" parent="Entity3D" unique_id=1214910041 instance=ExtResource("20_jvnna")]
-transform = Transform3D(-0.07105147, 0, -0.07815577, 0, 0.10562498, 0, 0.07815577, 0, -0.07105147, -31.438263, 36.25449, 32.277843)
-
-[node name="Enemy81" parent="Entity3D" unique_id=1073408406 instance=ExtResource("20_jvnna")]
-transform = Transform3D(3.875586e-09, 0, -0.325, 0, 0.325, 0, 0.325, 0, 3.875586e-09, -17.75058, 26.316048, 44.48261)
-
-[node name="Enemy82" parent="Entity3D" unique_id=1762714522 instance=ExtResource("20_jvnna")]
-transform = Transform3D(3.875586e-09, 0, -0.325, 0, 0.325, 0, 0.325, 0, 3.875586e-09, -19.656067, 26.00179, 44.83674)
-
-[node name="Enemy83" parent="Entity3D" unique_id=1182562757 instance=ExtResource("20_jvnna")]
-transform = Transform3D(-0.10562499, 0, -2.519131e-09, 0, 0.10562499, 0, 2.519131e-09, 0, -0.10562499, -28.335232, 33.216717, 38.71367)
-
-[node name="Enemy84" parent="Entity3D" unique_id=1560910656 instance=ExtResource("20_jvnna")]
-transform = Transform3D(-0.10562499, 0, -2.519131e-09, 0, 0.10562499, 0, 2.519131e-09, 0, -0.10562499, -28.450325, 33.114582, 38.094387)
-
-[node name="Enemy85" parent="Entity3D" unique_id=52693979 instance=ExtResource("20_jvnna")]
-transform = Transform3D(3.875586e-09, 0, -0.325, 0, 0.325, 0, 0.325, 0, 3.875586e-09, -21.387014, 26.316048, 44.48261)
-
-[node name="Enemy86" parent="Entity3D" unique_id=640318595 instance=ExtResource("20_jvnna")]
-transform = Transform3D(3.875586e-09, 0, -0.325, 0, 0.325, 0, 0.325, 0, 3.875586e-09, -23.292501, 26.00179, 44.83674)
-
-[node name="Enemy87" parent="Entity3D" unique_id=1004938863 instance=ExtResource("20_jvnna")]
-transform = Transform3D(-0.10562499, 0, -2.519131e-09, 0, 0.10562499, 0, 2.519131e-09, 0, -0.10562499, -31.971666, 33.216717, 38.71367)
-
-[node name="Enemy88" parent="Entity3D" unique_id=212630414 instance=ExtResource("20_jvnna")]
-transform = Transform3D(-0.10562499, 0, -2.519131e-09, 0, 0.10562499, 0, 2.519131e-09, 0, -0.10562499, -32.08676, 33.114582, 38.094387)
-
-[node name="Enemy89" parent="Entity3D" unique_id=1673993280 instance=ExtResource("20_jvnna")]
-transform = Transform3D(0.24047932, 0, -0.21861996, 0, 0.325, 0, 0.21861996, 0, 0.24047932, -17.067768, 26.316048, 37.88163)
-
-[node name="Enemy90" parent="Entity3D" unique_id=638820149 instance=ExtResource("20_jvnna")]
-transform = Transform3D(0.24047932, 0, -0.21861996, 0, 0.325, 0, 0.21861996, 0, 0.24047932, -18.087513, 26.00179, 39.529785)
-
-[node name="Enemy91" parent="Entity3D" unique_id=417654175 instance=ExtResource("20_jvnna")]
-transform = Transform3D(-0.07105147, 0, -0.07815577, 0, 0.10562498, 0, 0.07815577, 0, -0.07105147, -28.456467, 33.216717, 41.83297)
-
-[node name="Enemy92" parent="Entity3D" unique_id=2062990294 instance=ExtResource("20_jvnna")]
-transform = Transform3D(-0.07105147, 0, -0.07815577, 0, 0.10562498, 0, 0.07815577, 0, -0.07105147, -28.992117, 33.114582, 41.501556)
-
-[node name="Enemy93" parent="Entity3D" unique_id=2134368340 instance=ExtResource("20_jvnna")]
-transform = Transform3D(0.24047932, 0, -0.21861996, 0, 0.325, 0, 0.21861996, 0, 0.24047932, -19.513914, 26.316048, 40.572365)
-
-[node name="Enemy94" parent="Entity3D" unique_id=580355105 instance=ExtResource("20_jvnna")]
-transform = Transform3D(0.24047932, 0, -0.21861996, 0, 0.325, 0, 0.21861996, 0, 0.24047932, -20.533657, 26.00179, 42.220516)
-
-[node name="Enemy95" parent="Entity3D" unique_id=1704470148 instance=ExtResource("20_jvnna")]
-transform = Transform3D(-0.07105147, 0, -0.07815577, 0, 0.10562498, 0, 0.07815577, 0, -0.07105147, -30.90261, 33.216717, 44.5237)
-
-[node name="Enemy96" parent="Entity3D" unique_id=1483596105 instance=ExtResource("20_jvnna")]
-transform = Transform3D(-0.07105147, 0, -0.07815577, 0, 0.10562498, 0, 0.07815577, 0, -0.07105147, -31.438263, 33.114582, 44.192287)
-
-[node name="Enemy97" parent="Entity3D" unique_id=154335889 instance=ExtResource("20_jvnna")]
-transform = Transform3D(3.875586e-09, 0, -0.325, 0, 0.325, 0, 0.325, 0, 3.875586e-09, -17.75058, 36.748554, 32.568165)
-
-[node name="Enemy98" parent="Entity3D" unique_id=990218791 instance=ExtResource("20_jvnna")]
-transform = Transform3D(3.875586e-09, 0, -0.325, 0, 0.325, 0, 0.325, 0, 3.875586e-09, -19.656067, 36.434296, 32.922295)
-
-[node name="Enemy99" parent="Entity3D" unique_id=1012464906 instance=ExtResource("20_jvnna")]
-transform = Transform3D(-0.10562499, 0, -2.519131e-09, 0, 0.10562499, 0, 2.519131e-09, 0, -0.10562499, -28.335232, 43.649223, 26.799227)
-
-[node name="Enemy100" parent="Entity3D" unique_id=647190392 instance=ExtResource("20_jvnna")]
-transform = Transform3D(-0.10562499, 0, -2.519131e-09, 0, 0.10562499, 0, 2.519131e-09, 0, -0.10562499, -28.450325, 43.54709, 26.179943)
+[node name="Enemy" parent="." unique_id=1370903902 instance=ExtResource("20_jvnna")]
+transform = Transform3D(3.875586e-09, 0, -0.325, 0, 0.325, 0, 0.325, 0, 3.875586e-09, 0.7780037, 1.1376152, 12.426489)
