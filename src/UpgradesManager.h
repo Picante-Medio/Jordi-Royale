@@ -1,7 +1,7 @@
 #pragma once
 
 #include <variant>
-#include <string>ç
+#include <string>
 
 // Info containers to pass upgrade info from UpgradesScene to MainScene
 struct NewWeapon {
