@@ -19,11 +19,11 @@ JordiRandom::randomInRange(int minInclusive, int maxInclusive) {
 }
 
 double 
-JordiRandom::randomWithVariance(double value, double variance){
+JordiRandom::randomDoubleWithVariance(double value, double variance){
     return value + randomInRange(-variance, variance);
 }
 
 int 
-JordiRandom::randomWithVariance(int value, int variance){
+JordiRandom::randomIntWithVariance(int value, int variance){
     return value + randomInRange(-variance, variance);
 }

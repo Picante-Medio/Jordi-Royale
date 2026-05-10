@@ -3,7 +3,6 @@
 #include "TransformComponent.h"
 #include "HugoError.h"
 
-
 void 
 EnemySpawnSystem::init() {
     prefabs = std::vector<HUGO::String>();
@@ -21,7 +20,6 @@ EnemySpawnSystem::init() {
     for(auto it : scene.query<SpawnPointTag, TransformComponent>()){
         spawners.push_back(it.getConst<SpawnPointTag>().entity);
     }
-    
 }
 
 void 
@@ -30,12 +28,12 @@ EnemySpawnSystem::onLoad() {
 }
 
 void 
-EnemySpawnSystem::fixedUpdate(uint32_t dt) {
-
+EnemySpawnSystem::fixedUpdate(uint32_t) {
 }
 
 void 
 EnemySpawnSystem::update(uint32_t dt) {
+
     ms += dt;
     int i = 0;
     for(auto it : scene.query<SpawnPointTag, TransformComponent>()){
@@ -43,21 +41,24 @@ EnemySpawnSystem::update(uint32_t dt) {
         i++;
     }
 
-    /*
-    if(spawnTimeWithVariance <= ms){
+    if(spawners.size() > 0 && spawnTimeWithVariance <= ms){
+
         HUGO::ErrorOrType<EntityID> en = scene.instantiatePrefab(prefabs[actWave]);
         if(en.isError()){
             scene.log(en.getError().description());
         }
         else{
             EntityID enemyID = en.getValue();
-            TransformComponent actSpawner = scene.getComponent<TransformComponent>(rnd.randomInRange(0, spawners.size()-1));
+            TransformComponent actSpawner = scene.getComponent<TransformComponent>(spawners[rnd.randomInRange(0, spawners.size()-1)]);
+              
             scene.getComponent<TransformComponent>(enemyID).setWorldPosition(HUGO::Vector3(
-                rnd.randomWithVariance(actSpawner.getWorldPosition().x, spawnVariance),
-                0,
-                rnd.randomWithVariance(actSpawner.getWorldPosition().z, spawnVariance)));
+                rnd.randomDoubleWithVariance(actSpawner.getWorldPosition().x, spawnVariance),
+                0.f,
+                rnd.randomDoubleWithVariance(actSpawner.getWorldPosition().z, spawnVariance)));
         }
-
+      
+        ms = 0;
     }
-        */
+    
+    
 }
