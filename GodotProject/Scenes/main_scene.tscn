@@ -29,7 +29,7 @@ size = Vector3(500, 0.6121826, 500)
 
 [node name="main_scene" type="Node3D" unique_id=1228723441]
 script = ExtResource("1_865ah")
-systems = Array[int]([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 10, 14, 20, 19, 13, 23, 24, 25])
+systems = Array[int]([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 10, 14, 20, 19, 13, 23, 24, 25, 0, 12])
 
 [node name="Skybox" type="Node3D" parent="." unique_id=1067618066]
 transform = Transform3D(1.33, 0, 0, 0, 1.33, 0, 0, 0, 1.33, 0, 0, 0)
@@ -322,4 +322,6 @@ transform = Transform3D(0.35177308, 0.9031246, 0.24621412, 0.454114, 0.065358326
 transform = Transform3D(-0.90880895, 0.40968382, -0.078897774, 0.38961217, 0.9010141, 0.1907258, 0.14922518, 0.14259385, -0.9784671, 22.091204, 0.6965518, -33.45588)
 
 [node name="Enemy" parent="." unique_id=1370903902 instance=ExtResource("20_jvnna")]
-transform = Transform3D(3.875586e-09, 0, -0.325, 0, 0.325, 0, 0.325, 0, 3.875586e-09, 0.7780037, 1.1376152, 12.426489)
+transform = Transform3D(3.875586e-09, 0, -0.325, 0, 0.325, 0, 0.325, 0, 3.875586e-09, 1.3403206, 0.97898364, 3.6341286)
+
+[editable path="Enemy"]

@@ -28,8 +28,9 @@ EnemyMovementSystem::fixedUpdate(uint32_t dt) {
             const HUGO::Vector3 direction = scene.getComponentConst<TransformComponent>(jordi).getPosition() - pack.getConst<TransformComponent>().getPosition();
             const HUGO::Vector3 desiredVel = direction.normalized() * pack.getConst<SpeedComponent>().speed;
             const HUGO::Vector3 velError = desiredVel - rb.getLinearVelocity();
+            const float dtSeconds = dt / 1000.0f;
 
-            rb.applyForce(rb.mass * velError / dt); // I think this is the formula
+            rb.applyForce(rb.mass * velError / dtSeconds);
 
             pack.modify<TransformComponent>([rb, &direction](TransformComponent& trans){
                     if(direction == HUGO::Vector3()) return;

@@ -10,6 +10,7 @@ enum system {
 	RenderSystem,
 	TweenSystem,
 	UISystem,	ProgressionSystem,
+	UpgradeSystem,
 	PickupSystem,
 	EnemySpawnSystem,
 	LevelingSystem,

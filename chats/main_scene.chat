@@ -17,6 +17,8 @@ SYSTEM LevelingSystem
 SYSTEM ProjectileSystem
 SYSTEM EnemyMovementSystem
 SYSTEM PlayerMovementSystem
+SYSTEM ConsoleSystem
+SYSTEM EnemySpawnSystem
 
 ENTITY Skybox 1
     COMPONENT TransformComponent
@@ -1898,7 +1900,7 @@ END_ENTITY
 
 ENTITY Enemy 1
     COMPONENT TransformComponent
-        VECTOR_3 position 0.77800369262695 1.13761520385742 12.4264888763428
+        VECTOR_3 position 1.3403205871582 0.97898364067078 3.63412857055664
         QUATERNION rotation 0.0 -0.70710676908493 0.0 0.70710676908493
         VECTOR_3 scale 0.32499998807907 0.32499998807907 0.32499998807907
     COMPONENT ColliderComponent
@@ -1932,7 +1934,7 @@ ENTITY Enemy 1
     COMPONENT LevelComponent
         INT level 1
     COMPONENT SpeedComponent
-        FLOAT speed 15.0
+        FLOAT speed 3.0
     COMPONENT EnemyTag
     COMPONENT AnimationComponent
     START_CHILDREN

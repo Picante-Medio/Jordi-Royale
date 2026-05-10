@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://c4148ap0mlp3i"]
 
-[ext_resource type="Script" uid="uid://d3fypo3sn4qu3" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="1_jiv5b"]
-[ext_resource type="Script" uid="uid://bg5luietaqtrx" path="res://addons/HugosChatPlugin/NativeComponents/ColliderComponent.gd" id="2_jiv5b"]
+[ext_resource type="Script" uid="uid://dmak3mcg4w0h8" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="1_jiv5b"]
+[ext_resource type="Script" uid="uid://bewpcwg276ktv" path="res://addons/HugosChatPlugin/NativeComponents/ColliderComponent.gd" id="2_jiv5b"]
 [ext_resource type="Script" uid="uid://dgu5myf6wqmwa" path="res://addons/HugosChatPlugin/NativeComponents/RigidBodyComponent.gd" id="3_wkm8f"]
-[ext_resource type="Script" uid="uid://430akguj0twj" path="res://addons/HugosChatPlugin/NativeComponents/RenderComponent.gd" id="4_ypyg0"]
+[ext_resource type="Script" uid="uid://c0wlt0qsxdika" path="res://addons/HugosChatPlugin/NativeComponents/RenderComponent.gd" id="4_ypyg0"]
 [ext_resource type="Script" uid="uid://dvkcj1hifj6ui" path="res://Components/DamageComponent.gd" id="5_7r2yr"]
-[ext_resource type="PackedScene" uid="uid://bwqapp5sejmab" path="res://Resources/enemies/jordi-head.glb" id="5_wkm8f"]
+[ext_resource type="PackedScene" uid="uid://cutfkkcaarb7h" path="res://Resources/enemies/jordi-head.glb" id="5_wkm8f"]
 [ext_resource type="Script" uid="uid://dfj2qxmqtkj0s" path="res://Components/HPComponent.gd" id="6_gyj42"]
 [ext_resource type="Script" uid="uid://dk4nyrs1a6elm" path="res://Components/LevelComponent.gd" id="7_yepe2"]
 [ext_resource type="Script" uid="uid://bxtnhlmmus6l2" path="res://Components/SpeedComponent.gd" id="8_t1v36"]
@@ -55,7 +55,7 @@ script = ExtResource("7_yepe2")
 
 [node name="SpeedComponent" type="Node" parent="." unique_id=101251184]
 script = ExtResource("8_t1v36")
-speed = 15.0
+speed = 3.0
 
 [node name="EnemyTag" type="Node" parent="." unique_id=961059566]
 script = ExtResource("9_jiv5b")
