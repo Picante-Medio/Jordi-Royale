@@ -4,17 +4,6 @@
 
 HSYSTEM(UpgradeSystem)
 
-enum UpgradeType {
-    Weapon,
-    WeaponUpgrade
-};
-
-enum WeaponUpgradeType {
-    FiringRate,
-    Range,
-    Damage
-};
-
 public:
     void init() override;
     void onLoad() override;
