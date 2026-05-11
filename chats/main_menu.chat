@@ -8,6 +8,7 @@ SYSTEM RenderSystem
 SYSTEM TweenSystem
 SYSTEM UISystem
 SYSTEM ConsoleSystem
+SYSTEM DynamicAudioSystem
 SYSTEM MainMenuSystem
 SYSTEM ChangeSceneSystem
 
@@ -67,21 +68,36 @@ ENTITY Skybox 1
     END_CHILDREN
 END_ENTITY
 
-ENTITY Resume 1
+ENTITY Title 1
+    COMPONENT PanelComponent
+        STRING overlayName JordiUI/JordiOverlay1
+        STRING containerName JordiUI/JordiOverlay1/JordiContainer1
+        BOOL isVisible true
+        INT metricsMode 0
+        FLOAT left 0.55
+        FLOAT top 0.2
+        FLOAT width 0.35
+        FLOAT height 0.2
+        STRING material JordiUI/Title
+    START_CHILDREN
+    END_CHILDREN
+END_ENTITY
+
+ENTITY Start 1
     COMPONENT PanelComponent
         STRING overlayName JordiUI/JordiOverlay2
         STRING containerName JordiUI/JordiOverlay2/JordiContainer2
         BOOL isVisible true
         INT metricsMode 0
         FLOAT left 0.6
-        FLOAT top 0.4
+        FLOAT top 0.5
         FLOAT width 0.25
         FLOAT height 0.1
-        STRING material JordiUI/Resume
+        STRING material JordiUI/Start
     COMPONENT ButtonComponent
-        STRING normalMaterial JordiUI/Resume
-        STRING hoverMaterial JordiUI/ResumeHover
-        STRING pressedMaterial JordiUI/ResumePressed
+        STRING normalMaterial JordiUI/Start
+        STRING hoverMaterial JordiUI/StartHover
+        STRING pressedMaterial JordiUI/StartPressed
         STRING disabledMaterial 
     COMPONENT ResumeTag
     START_CHILDREN
@@ -95,7 +111,7 @@ ENTITY Exit 1
         BOOL isVisible true
         INT metricsMode 0
         FLOAT left 0.6
-        FLOAT top 0.6
+        FLOAT top 0.7
         FLOAT width 0.25
         FLOAT height 0.1
         STRING material JordiUI/Exit

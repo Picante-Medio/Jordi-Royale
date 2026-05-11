@@ -1,24 +1,23 @@
 [gd_scene format=3 uid="uid://dovrj8omkblii"]
 
-[ext_resource type="Script" uid="uid://d3yq16mo85h5h" path="res://addons/HugosChatPlugin/Entities/scene_tracker.gd" id="1_opfnp"]
-[ext_resource type="Script" uid="uid://dmak3mcg4w0h8" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="2_cp0ys"]
-[ext_resource type="Script" uid="uid://d10rufr7dnrt6" path="res://addons/HugosChatPlugin/NativeComponents/CameraComponent.gd" id="3_yhxw7"]
-[ext_resource type="Script" uid="uid://c0wlt0qsxdika" path="res://addons/HugosChatPlugin/NativeComponents/RenderComponent.gd" id="4_trj04"]
+[ext_resource type="Script" uid="uid://dsrxmoaefi1rn" path="res://addons/HugosChatPlugin/Entities/scene_tracker.gd" id="1_opfnp"]
+[ext_resource type="Script" uid="uid://d3gpbv1up76xn" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="2_cp0ys"]
+[ext_resource type="Script" uid="uid://bjwx87l5l8cjv" path="res://addons/HugosChatPlugin/NativeComponents/CameraComponent.gd" id="3_yhxw7"]
+[ext_resource type="Script" uid="uid://cmidua6v4bry" path="res://addons/HugosChatPlugin/NativeComponents/RenderComponent.gd" id="4_trj04"]
 [ext_resource type="PackedScene" uid="uid://c462xqhte7va4" path="res://Resources/jordi/jordi.glb" id="5_16hvj"]
-[ext_resource type="Script" uid="uid://ooxkdcy2pv63" path="res://addons/HugosChatPlugin/NativeComponents/AnimationComponent.gd" id="6_vr1f0"]
+[ext_resource type="Script" uid="uid://cwpkus4pc4c3r" path="res://addons/HugosChatPlugin/NativeComponents/AnimationComponent.gd" id="6_vr1f0"]
 [ext_resource type="PackedScene" uid="uid://dhhopmfyxf4cv" path="res://Prefabs/moai.tscn" id="7_cp0ys"]
 [ext_resource type="PackedScene" uid="uid://bs66scu1xl2a6" path="res://Resources/jordi/moon_floor.glb" id="8_yhxw7"]
 [ext_resource type="PackedScene" uid="uid://du56fi1d3anqo" path="res://Resources/jordi/skybox.glb" id="9_trj04"]
-[ext_resource type="Script" uid="uid://cnmiha8rgpnhn" path="res://addons/HugosChatPlugin/Entities/entity.gd" id="10_vtepg"]
-[ext_resource type="Script" uid="uid://pcb3jv2yfyt7" path="res://addons/HugosChatPlugin/NativeComponents/PanelComponent.gd" id="11_8dnnj"]
-[ext_resource type="Script" uid="uid://xa5vy2f4cqcd" path="res://addons/HugosChatPlugin/NativeComponents/ButtonComponent.gd" id="12_m3bi6"]
+[ext_resource type="Script" uid="uid://dvoket7v7vbwo" path="res://addons/HugosChatPlugin/Entities/entity.gd" id="10_vtepg"]
+[ext_resource type="Script" uid="uid://dk4tsyuerxuda" path="res://addons/HugosChatPlugin/NativeComponents/PanelComponent.gd" id="11_8dnnj"]
+[ext_resource type="Script" uid="uid://md4cctv0w84l" path="res://addons/HugosChatPlugin/NativeComponents/ButtonComponent.gd" id="12_m3bi6"]
 [ext_resource type="Script" uid="uid://c28cgq4w1hvd6" path="res://Components/ResumeTag.gd" id="13_wyh8j"]
 [ext_resource type="Script" uid="uid://cr4oouyu1olwy" path="res://Components/ExitTag.gd" id="14_ujyyl"]
 
 [node name="main_menu" type="Node3D" unique_id=1949461621]
 script = ExtResource("1_opfnp")
-systems = Array[int]([1, 3, 4, 5, 6, 7, 8, 9, 0, 19])
-metadata/_custom_type_script = "uid://d3yq16mo85h5h"
+systems = Array[int]([1, 3, 4, 5, 6, 7, 8, 9, 0, 19, 20, 21])
 
 [node name="Camera" type="Node3D" parent="." unique_id=974168509]
 transform = Transform3D(0.29999998, 0, 0, 0, 0.4073511, 0.08523656, 0, -0.10914939, 0.31810713, 0, 1.708715, 3.6169834)
@@ -48,7 +47,6 @@ mesh_name = "jordi.glb"
 
 [node name="AnimationComponent" type="Node" parent="Jordi" unique_id=870133970]
 script = ExtResource("6_vr1f0")
-metadata/_custom_type_script = "uid://ooxkdcy2pv63"
 
 [node name="Floor" type="Node3D" parent="." unique_id=928257121]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -0.43083662, 0)
@@ -72,27 +70,41 @@ mesh_name = "skybox.glb"
 [node name="skybox" parent="Skybox/RenderComponent" unique_id=129807196 instance=ExtResource("9_trj04")]
 transform = Transform3D(0.99957526, 0.009936266, 0.027396863, -0.008815205, 0.99913085, -0.0407412, -0.027777866, 0.040482387, 0.99879414, 0, 0, 0.08070057)
 
-[node name="Resume" type="Node3D" parent="." unique_id=312576625]
+[node name="Title" type="Node3D" parent="." unique_id=819654104]
 script = ExtResource("10_vtepg")
 
-[node name="PanelComponent" type="Node" parent="Resume" unique_id=2029847817]
+[node name="PanelComponent" type="Node" parent="Title" unique_id=182286877]
+script = ExtResource("11_8dnnj")
+overlayName = "JordiUI/JordiOverlay1"
+containerName = "JordiUI/JordiOverlay1/JordiContainer1"
+isVisible = true
+left = 0.55
+top = 0.2
+width = 0.35
+height = 0.2
+material = "JordiUI/Title"
+
+[node name="Start" type="Node3D" parent="." unique_id=312576625]
+script = ExtResource("10_vtepg")
+
+[node name="PanelComponent" type="Node" parent="Start" unique_id=2029847817]
 script = ExtResource("11_8dnnj")
 overlayName = "JordiUI/JordiOverlay2"
 containerName = "JordiUI/JordiOverlay2/JordiContainer2"
 isVisible = true
 left = 0.6
-top = 0.4
+top = 0.5
 width = 0.25
 height = 0.1
-material = "JordiUI/Resume"
+material = "JordiUI/Start"
 
-[node name="ButtonComponent" type="Node" parent="Resume" unique_id=1429572065]
+[node name="ButtonComponent" type="Node" parent="Start" unique_id=1429572065]
 script = ExtResource("12_m3bi6")
-normalMaterial = "JordiUI/Resume"
-hoverMaterial = "JordiUI/ResumeHover"
-pressedMaterial = "JordiUI/ResumePressed"
+normalMaterial = "JordiUI/Start"
+hoverMaterial = "JordiUI/StartHover"
+pressedMaterial = "JordiUI/StartPressed"
 
-[node name="ResumeTag" type="Node" parent="Resume" unique_id=928741226]
+[node name="ResumeTag" type="Node" parent="Start" unique_id=928741226]
 script = ExtResource("13_wyh8j")
 
 [node name="Exit" type="Node3D" parent="." unique_id=378530144]
@@ -104,7 +116,7 @@ overlayName = "JordiUI/JordiOverlay3"
 containerName = "JordiUI/JordiOverlay3/JordiContainer3"
 isVisible = true
 left = 0.6
-top = 0.6
+top = 0.7
 width = 0.25
 height = 0.1
 material = "JordiUI/Exit"
