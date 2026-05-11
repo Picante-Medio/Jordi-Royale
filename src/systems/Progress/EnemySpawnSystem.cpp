@@ -2,6 +2,8 @@
 #include "SpawnPointTag.h"
 #include "TransformComponent.h"
 #include "HugoError.h"
+#include "IncreaseEnemyLevelMessage.h"
+#include "SpawnBossMessage.h"
 
 void 
 EnemySpawnSystem::init() {
@@ -11,7 +13,7 @@ EnemySpawnSystem::init() {
     prefabs.push_back("Enemy");
     //prefabs.push_back("JordiHead");
 
-    prefabs.push_back("Boss");
+    bossPrefabs.push_back("Boss");
 
     rnd.Init();
     spawnTimeWithVariance = spawnTime + static_cast<HUGO::Int>(rnd.randomInRange(-spawnTime * timeVariance, spawnTime * timeVariance));
@@ -20,6 +22,14 @@ EnemySpawnSystem::init() {
     for(auto it : scene.query<SpawnPointTag, TransformComponent>()){
         spawners.push_back(it.getConst<SpawnPointTag>().entity);
     }
+
+    scene.subscribe<IncreaseEnemyLevelMessage>([this](std::shared_ptr<HUGO::Message> message){
+        enemiesLevel++;
+    });
+
+    scene.subscribe<SpawnBossMessage>([this](std::shared_ptr<HUGO::Message> message){
+        spawnEnemy(bossPrefabs[actWave]);
+    });
 }
 
 void 
@@ -42,23 +52,28 @@ EnemySpawnSystem::update(uint32_t dt) {
     }
 
     if(spawners.size() > 0 && spawnTimeWithVariance <= ms){
-
-        HUGO::ErrorOrType<EntityID> en = scene.instantiatePrefab(prefabs[actWave]);
-        if(en.isError()){
-            scene.log(en.getError().description());
-        }
-        else{
-            EntityID enemyID = en.getValue();
-            TransformComponent actSpawner = scene.getComponent<TransformComponent>(spawners[rnd.randomInRange(0, spawners.size()-1)]);
-              
-            scene.getComponent<TransformComponent>(enemyID).setWorldPosition(HUGO::Vector3(
-                rnd.randomDoubleWithVariance(actSpawner.getWorldPosition().x, spawnVariance),
-                0.f,
-                rnd.randomDoubleWithVariance(actSpawner.getWorldPosition().z, spawnVariance)));
-        }
-      
-        ms = 0;
+        spawnEnemy(prefabs[actWave]);
+        ms = ms - spawnTimeWithVariance;
+        spawnTimeWithVariance = spawnTime + static_cast<HUGO::Int>(rnd.randomInRange(-spawnTime * timeVariance, spawnTime * timeVariance));
     }
     
     
 }
+
+void
+EnemySpawnSystem::spawnEnemy(HUGO::String prefab){
+    ErrorOrType<EntityID> en = scene.instantiatePrefab(prefab);
+    if(en.isError()){
+        scene.log(en.getError().description());
+    }
+    else{
+        EntityID enemyID = en.getValue();
+        TransformComponent actSpawner = scene.getComponent<TransformComponent>(spawners[rnd.randomInRange(0, spawners.size()-1)]);
+          
+        scene.getComponent<TransformComponent>(enemyID).setWorldPosition(HUGO::Vector3(
+            rnd.randomDoubleWithVariance(actSpawner.getWorldPosition().x, spawnVariance),
+            0.f,
+            rnd.randomDoubleWithVariance(actSpawner.getWorldPosition().z, spawnVariance)));
+    }
+      
+    }

@@ -13,10 +13,13 @@ std::vector<EntityID> spawners;
 JordiRandom rnd;
 HUGO::Int spawnTime = 1000;    //in miliseconds
 HUGO::Int ms = 0;
+HUGO::Int enemiesLevel = 1;
 HUGO::Float timeVariance = 0.1;
 HUGO::Float spawnVariance = 3.0;
 HUGO::Int spawnTimeWithVariance;
 HUGO::Int actWave;
+
+void spawnEnemy(HUGO::String prefab);
 
 public:
 void init() override;
