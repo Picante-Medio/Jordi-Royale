@@ -35,7 +35,7 @@ ENTITY Enemy 1
     COMPONENT LevelComponent
         INT level 1
     COMPONENT SpeedComponent
-        FLOAT speed 0.0
+        FLOAT speed 3.0
     COMPONENT EnemyTag
     COMPONENT AnimationComponent
     START_CHILDREN

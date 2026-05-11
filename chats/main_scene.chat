@@ -9,16 +9,18 @@ SYSTEM RenderSystem
 SYSTEM TweenSystem
 SYSTEM UISystem
 SYSTEM ConsoleSystem
-SYSTEM ProgressionSystem
-SYSTEM DropSystem
-SYSTEM ChangeSceneSystem
-SYSTEM MainMenuSystem
-SYSTEM LevelingSystem
-SYSTEM ProjectileSystem
+SYSTEM EnemyAnimationSystem
 SYSTEM EnemyMovementSystem
-SYSTEM PlayerMovementSystem
-SYSTEM ConsoleSystem
+SYSTEM PickupSystem
+SYSTEM LevelingSystem
+SYSTEM AudioEventsSystem
+SYSTEM UpgradeSystem
+SYSTEM ChangeSceneSystem
 SYSTEM EnemySpawnSystem
+SYSTEM DamageSystem
+SYSTEM PlayerMovementSystem
+SYSTEM ProgressionSystem
+SYSTEM StatSystem
 
 ENTITY Skybox 1
     COMPONENT TransformComponent
@@ -1937,6 +1939,62 @@ ENTITY Enemy 1
         FLOAT speed 3.0
     COMPONENT EnemyTag
     COMPONENT AnimationComponent
+    START_CHILDREN
+    END_CHILDREN
+END_ENTITY
+
+ENTITY HPText 1
+    COMPONENT PanelComponent
+        STRING overlayName JordiUI/Overlay5
+        STRING containerName JordiUI/Overlay5/Container5
+        BOOL isVisible true
+        INT metricsMode 0
+        FLOAT left 0.8
+        FLOAT top 0.1
+        FLOAT width 0.25
+        FLOAT height 0.1
+        STRING material 
+    COMPONENT TextComponent
+        STRING textAreaName JordUI/Overlay5/Container5/Text5
+        STRING text HP: 
+        STRING textFont Roboto
+        FLOAT characterHeight 0.035
+        FLOAT spaceWidth 0.01
+        VECTOR_4 colour 1.0 1.0 1.0 1.0
+        VECTOR_4 colourTop 1.0 1.0 1.0 1.0
+        VECTOR_4 colourBottom 1.0 1.0 1.0 1.0
+        FLOAT left 0.0
+        FLOAT top 0.0
+        FLOAT maxWidth 0.0
+    COMPONENT HPTextTag
+    START_CHILDREN
+    END_CHILDREN
+END_ENTITY
+
+ENTITY XPText 1
+    COMPONENT PanelComponent
+        STRING overlayName JordiUI/Overlay6
+        STRING containerName JordiUI/Overlay6/Container6
+        BOOL isVisible true
+        INT metricsMode 0
+        FLOAT left 0.8
+        FLOAT top 0.2
+        FLOAT width 0.25
+        FLOAT height 0.1
+        STRING material 
+    COMPONENT TextComponent
+        STRING textAreaName JordUI/Overlay6/Container6/Text6
+        STRING text XP: 
+        STRING textFont Roboto
+        FLOAT characterHeight 0.035
+        FLOAT spaceWidth 0.01
+        VECTOR_4 colour 1.0 1.0 1.0 1.0
+        VECTOR_4 colourTop 1.0 1.0 1.0 1.0
+        VECTOR_4 colourBottom 1.0 1.0 1.0 1.0
+        FLOAT left 0.0
+        FLOAT top 0.0
+        FLOAT maxWidth 0.0
+    COMPONENT XPTextTag
     START_CHILDREN
     END_CHILDREN
 END_ENTITY
