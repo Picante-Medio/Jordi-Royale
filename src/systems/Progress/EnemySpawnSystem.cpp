@@ -4,6 +4,7 @@
 #include "HugoError.h"
 #include "IncreaseEnemyLevelMessage.h"
 #include "SpawnBossMessage.h"
+#include "ChangeEnemyDensityMessage.h"
 
 void 
 EnemySpawnSystem::init() {
@@ -29,6 +30,11 @@ EnemySpawnSystem::init() {
 
     scene.subscribe<SpawnBossMessage>([this](std::shared_ptr<HUGO::Message> message){
         spawnEnemy(bossPrefabs[actWave]);
+    });
+
+    scene.subscribe<ChangeEnemyDensityMessage>([this](std::shared_ptr<HUGO::Message> message){
+        std::shared_ptr<ChangeEnemyDensityMessage> m = std::static_pointer_cast<ChangeEnemyDensityMessage>(message);
+        spawnTime = m->milisecondsBetweenSpawns;
     });
 }
 

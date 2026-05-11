@@ -11,7 +11,7 @@ std::vector<HUGO::String> prefabs;
 std::vector<HUGO::String> bossPrefabs;
 std::vector<EntityID> spawners;
 JordiRandom rnd;
-HUGO::Int spawnTime = 1000;    //in miliseconds
+HUGO::Int spawnTime = 1500;    //in miliseconds
 HUGO::Int ms = 0;
 HUGO::Int enemiesLevel = 1;
 HUGO::Float timeVariance = 0.1;
