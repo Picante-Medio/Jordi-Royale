@@ -68,7 +68,7 @@ EnemySpawnSystem::update(uint32_t dt) {
 
 void
 EnemySpawnSystem::spawnEnemy(HUGO::String prefab){
-    ErrorOrType<EntityID> en = scene.instantiatePrefab(prefab);
+    HUGO::ErrorOrType<EntityID> en = scene.instantiatePrefab(prefab);
     if(en.isError()){
         scene.log(en.getError().description());
     }
