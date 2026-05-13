@@ -1,7 +1,9 @@
 #include "MainMenuSystem.h"
 #include "AnimationComponent.h"
 #include "ButtonComponent.h"
+#include "ChangeSceneMessage.h"
 #include "ChangeToNewInstanceOfSceneMessage.h"
+#include "ChangeSceneSystem.h"
 
 void 
 MainMenuSystem::init(){
@@ -25,11 +27,11 @@ MainMenuSystem::initResume(ResumeTag& resume){
     scene.modifyComponent<ButtonComponent>(resume.entity, [this](ButtonComponent& but){
 
         but.onClickCallback = [this](){
-            ChangeToNewInstanceOfSceneMessage message;
+            ChangeSceneMessage message;
             message.sceneName = "main_scene";
             message.destroyCurrent = true;
 
-            scene.sendMessage<ChangeToNewInstanceOfSceneMessage>(message);
+            scene.sendMessage<ChangeSceneMessage>(message);
         };
     });
 }

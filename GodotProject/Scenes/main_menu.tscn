@@ -17,12 +17,11 @@
 
 [node name="main_menu" type="Node3D" unique_id=1949461621]
 script = ExtResource("1_opfnp")
-systems = Array[int]([1, 3, 4, 5, 6, 7, 8, 9, 0, 19, 20, 21, 22])
+systems = Array[int]([1, 3, 4, 5, 6, 7, 8, 9, 0, 27, 25, 15])
 
 [node name="Camera" type="Node3D" parent="." unique_id=974168509]
 transform = Transform3D(0.29999998, 0, 0, 0, 0.4073511, 0.08523656, 0, -0.10914939, 0.31810713, 0, 1.708715, 3.6169834)
 script = ExtResource("2_cp0ys")
-systems = Array[int]([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 
 [node name="Camera3D" type="Camera3D" parent="Camera" unique_id=922850403]
 transform = Transform3D(3.3333335, 0, 0, 0, 2.3712366, 0, 0, 0, 3.036479, 0, 0, 0)
@@ -36,7 +35,6 @@ clearColor = Vector4(0, 0, 0, 1)
 [node name="Jordi" type="Node3D" parent="." unique_id=1332142370]
 transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -0.720781, -0.00013160706, 2.1616013)
 script = ExtResource("2_cp0ys")
-systems = Array[int]([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 
 [node name="RenderComponent" type="MeshInstance3D" parent="Jordi" unique_id=744377455]
 transform = Transform3D(1, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1, 0, 0, 0)
@@ -296,500 +294,326 @@ transform = Transform3D(0.35177308, 0.9031246, 0.24621412, 0.454114, 0.065358326
 [node name="Moai54" parent="Moais" unique_id=1493343113 instance=ExtResource("7_cp0ys")]
 transform = Transform3D(-0.90880895, 0.40968382, -0.078897774, 0.38961217, 0.9010141, 0.1907258, 0.14922518, 0.14259385, -0.9784671, 22.091204, 0.6965518, -33.45588)
 
-[node name="Moais2" type="Node3D" parent="." unique_id=209230493]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 26, 0, -38)
-script = ExtResource("2_cp0ys")
+[node name="Moai55" parent="Moais" unique_id=1622820046 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(0.48749846, -0.21193305, 0.8470117, -0.024764508, 0.9663472, 0.2560454, -0.87277216, -0.14579755, 0.4658446, 15.22216, -0.26589537, -50.897728)
 
-[node name="Moai3" parent="Moais2" unique_id=1622820046 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.48749852, 0.21193305, -0.8470117, -0.024764508, 0.9663472, 0.2560454, 0.87277216, 0.14579758, -0.46584466, 3.7778378, -0.26589537, -2.102272)
+[node name="Moai56" parent="Moais" unique_id=772917334 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.4888344, 0.049852613, 0.8709509, 0.30715218, 0.94427323, 0.11834425, -0.81651604, 0.32536525, -0.47690558, 24.771584, 3.1215425, -49.59471)
 
-[node name="Moai2" parent="Moais2" unique_id=772917334 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.48883435, -0.049852584, -0.8709509, 0.30715218, 0.94427323, 0.11834425, 0.81651604, -0.32536525, 0.47690552, -5.7715855, 3.1215425, -3.4052863)
+[node name="Moai57" parent="Moais" unique_id=443451327 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-1, -2.49894e-09, -8.738706e-08, 0, 0.9995914, -0.02858454, 8.742278e-08, -0.02858454, -0.9995914, 21.885792, 2.606374, -57.364914)
 
-[node name="Moai" parent="Moais2" unique_id=443451327 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(1, 0, 0, 0, 0.9995914, -0.02858454, 0, 0.02858454, 0.9995914, -2.8857927, 2.606374, 4.364914)
+[node name="Moai58" parent="Moais" unique_id=1123292718 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.99999994, -3.9755708e-08, -7.786029e-08, 0, 0.8906179, -0.4547523, 8.742277e-08, -0.4547523, -0.8906179, 25.673922, 1.6210661, -64.21387)
 
-[node name="Moai4" parent="Moais2" unique_id=1123292718 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.99999994, 0, 0, 0, 0.8906179, -0.4547523, 0, 0.4547523, 0.8906179, -6.6739244, 1.6210661, 11.213868)
+[node name="Moai59" parent="Moais" unique_id=1190255801 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.86567587, -8.187442e-08, -0.50060445, 0.5004586, -0.024135575, -0.8654237, -0.012082256, -0.9997088, 0.02089356, 11.94796, 0.48501423, -57.12953)
 
-[node name="Moai5" parent="Moais2" unique_id=1190255801 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.86567587, -5.5229026e-09, 0.50060445, 0.5004586, -0.024135575, -0.8654237, 0.012082333, 0.9997088, -0.020893516, 7.052042, 0.48501423, 4.1295347)
+[node name="Moai60" parent="Moais" unique_id=164930781 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(0.54357016, -4.461208e-08, -0.83936363, 0.42832962, 0.85999477, 0.2773853, 0.7218484, -0.5103027, 0.46746746, 13.490036, 1.7082521, -44.563747)
 
-[node name="Moai6" parent="Moais2" unique_id=164930781 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.54357004, 0, 0.83936363, 0.42832962, 0.85999477, 0.2773853, -0.7218484, 0.5103027, -0.4674674, 5.509964, 1.7082521, -8.436253)
+[node name="Moai61" parent="Moais" unique_id=863576295 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.014898027, -0.2564522, 0.96644145, 0.07858601, 0.9632589, 0.25681904, -0.9967955, 0.079775006, 0.0058030905, -5.396179, -0.61130404, -54.4094)
 
-[node name="Moai7" parent="Moais2" unique_id=863576295 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.01489794, 0.2564522, -0.96644145, 0.07858601, 0.9632589, 0.25681904, 0.9967955, -0.079774976, -0.0058031753, 24.39618, -0.61130404, 1.4093995)
+[node name="Moai62" parent="Moais" unique_id=1969426756 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.83192366, 0.20603551, 0.51522, 0.35322994, 0.9127178, 0.20536478, -0.4279381, 0.35283893, -0.83208925, 3.5228195, 3.1351871, -57.69258)
 
-[node name="Moai8" parent="Moais2" unique_id=1969426756 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.83192366, -0.20603548, -0.5152201, 0.35322994, 0.9127178, 0.20536478, 0.42793816, -0.35283893, 0.83208925, 15.4771805, 3.1351871, 4.6925793)
+[node name="Moai63" parent="Moais" unique_id=779071788 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.8656758, -0.014309528, -0.50039995, -0.051693097, 0.9968031, 0.060922563, 0.49792835, 0.07860641, -0.86364794, -2.865139, 3.168182, -62.999374)
 
-[node name="Moai9" parent="Moais2" unique_id=779071788 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.8656758, 0.014309536, 0.5003998, -0.051693097, 0.9968031, 0.060922563, -0.4979283, -0.07860641, 0.86364794, 21.865139, 3.168182, 9.999374)
+[node name="Moai64" parent="Moais" unique_id=880340903 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.86567605, -0.22765116, -0.44584748, -0.051693182, 0.9265077, -0.3727083, 0.49792835, -0.29959732, -0.81382334, -3.0144653, 2.9961958, -70.88461)
 
-[node name="Moai10" parent="Moais2" unique_id=880340903 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.86567605, 0.22765113, 0.44584742, -0.051693182, 0.9265077, -0.3727083, -0.4979283, 0.29959732, 0.81382334, 22.014462, 2.9961958, 17.884619)
+[node name="Moai65" parent="Moais" unique_id=1033890046 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.7554433, -0.50045884, -0.42290187, 0.45411393, 0.06535828, -0.888543, 0.47231916, -0.86328965, 0.17789072, -11.35025, 0.52340436, -58.06742)
 
-[node name="Moai11" parent="Moais2" unique_id=1033890046 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.7554433, 0.5004587, 0.42290187, 0.45411393, 0.06535828, -0.888543, -0.4723191, 0.86328965, -0.17789069, 30.35025, 0.52340436, 5.0674267)
+[node name="Moai66" parent="Moais" unique_id=1633797720 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(0.831916, -0.2554599, -0.49260056, 0.38961208, 0.901014, 0.1907258, 0.39511722, -0.35059106, 0.8490981, -3.724823, 0.6965518, -47.88921)
 
-[node name="Moai12" parent="Moais2" unique_id=1633797720 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.831916, 0.25545985, 0.49260062, 0.38961208, 0.901014, 0.1907258, -0.39511728, 0.35059106, -0.8490981, 22.724821, 0.6965518, -5.11079)
+[node name="Moai67" parent="Moais" unique_id=1683344482 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.9875974, 0.110348605, -0.11168463, 0.07858602, 0.9632589, 0.25681907, 0.13592105, 0.24485707, -0.95998406, 52.83394, -0.6113039, -57.593582)
 
-[node name="Moai13" parent="Moais2" unique_id=1683344482 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.9875974, -0.11034859, 0.11168454, 0.07858602, 0.9632589, 0.25681907, -0.13592096, -0.24485707, 0.95998406, -33.83394, -0.6113039, 4.5935802)
+[node name="Moai68" parent="Moais" unique_id=666649428 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.32366875, 0.3251859, -0.88853335, 0.35322997, 0.91271794, 0.2053648, 0.87776226, -0.24738649, -0.41028374, 48.491226, 3.1351871, -66.0475)
 
-[node name="Moai14" parent="Moais2" unique_id=666649428 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.3236688, -0.3251859, 0.88853335, 0.35322997, 0.91271794, 0.2053648, -0.87776226, 0.24738646, 0.4102838, -29.49123, 3.1351871, 13.047496)
+[node name="Moai69" parent="Moais" unique_id=321164743 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(0.5994374, 0.07976275, -0.79643714, -0.0516931, 0.9968032, 0.060922563, 0.7987504, 0.0046510035, 0.60164434, 44.00005, 3.168182, -59.06199)
 
-[node name="Moai15" parent="Moais2" unique_id=321164743 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.5994373, -0.07976275, 0.79643714, -0.0516931, 0.9968032, 0.060922563, -0.7987504, -0.00465101, -0.6016442, -25.00005, 3.168182, 6.061984)
+[node name="Moai70" parent="Moais" unique_id=331745712 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(0.5994375, -0.2697121, -0.7536112, -0.051693194, 0.9265077, -0.3727083, 0.7987506, 0.26237184, 0.5414413, 36.19139, 2.9961958, -57.955536)
 
-[node name="Moai16" parent="Moais2" unique_id=331745712 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.59943736, 0.2697121, 0.7536112, -0.051693194, 0.9265077, -0.3727083, -0.7987506, -0.26237184, -0.5414412, -17.191391, 2.9961958, 4.9555306)
+[node name="Moai71" parent="Moais" unique_id=1515060217 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(0.56062233, -0.79607433, 0.22796458, 0.45411396, 0.065358296, -0.888543, 0.6924468, 0.6016592, 0.39814982, 49.92658, 0.52340436, -51.239105)
 
-[node name="Moai17" parent="Moais2" unique_id=1515060217 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.5606222, 0.79607433, -0.22796455, 0.45411396, 0.065358296, -0.888543, -0.6924468, -0.60165906, -0.39814982, -30.926579, 0.52340436, -1.7608967)
+[node name="Moai72" parent="Moais" unique_id=1096748302 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(0.2910921, -0.3169485, 0.9026673, 0.38961217, 0.9010141, 0.19072582, -0.8737661, 0.29617137, 0.38576484, 59.1027, 0.6965518, -60.044907)
 
-[node name="Moai18" parent="Moais2" unique_id=1096748302 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.29109216, 0.3169485, -0.9026673, 0.38961217, 0.9010141, 0.19072582, 0.8737661, -0.29617137, -0.3857649, -40.1027, 0.6965518, 7.0449033)
+[node name="Moai73" parent="Moais" unique_id=551287419 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(0.60477644, -0.18945807, 0.77353114, -0.024764491, 0.9663472, 0.2560454, -0.79600966, -0.17400631, 0.5797323, 14.414124, -0.26589537, -78.71032)
 
-[node name="Moai19" parent="Moais2" unique_id=551287419 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.60477656, 0.18945804, -0.77353114, -0.024764491, 0.9663472, 0.2560454, 0.79600966, 0.17400634, -0.5797324, 4.5858707, -0.26589537, 25.710318)
+[node name="Moai74" parent="Moais" unique_id=1088711345 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.36982805, 0.0038556075, 0.92909205, 0.30715218, 0.94427335, 0.11834423, -0.87686086, 0.3291397, -0.35040283, 23.687435, 3.1215425, -76.08449)
 
-[node name="Moai20" parent="Moais2" unique_id=1088711345 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.369828, -0.0038555786, -0.92909205, 0.30715218, 0.94427335, 0.11834423, 0.87686086, -0.3291397, 0.35040277, -4.687441, 3.1215425, 23.084484)
+[node name="Moai75" parent="Moais" unique_id=1608124157 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.99017084, 0.003997954, 0.13980713, 6.548312e-11, 0.99959147, -0.02858454, -0.13986439, -0.028303575, -0.9897661, 21.916786, 2.606374, -84.18193)
 
-[node name="Moai21" parent="Moais2" unique_id=1608124157 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.99017084, -0.003997957, -0.13980722, 6.548312e-11, 0.99959147, -0.02858454, 0.13986447, 0.028303575, 0.9897661, -2.91679, 2.606374, 31.18193)
+[node name="Moai76" parent="Moais" unique_id=1676763222 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.99017066, 0.06360361, 0.12456569, -3.940364e-08, 0.89061797, -0.4547523, -0.1398642, -0.45028237, -0.8818637, 26.625607, 1.6210661, -90.43374)
 
-[node name="Moai22" parent="Moais2" unique_id=1676763222 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.99017066, -0.063603655, -0.124565765, -3.940364e-08, 0.89061797, -0.4547523, 0.1398643, 0.45028237, 0.8818637, -7.6256094, 1.6210661, 37.43374)
+[node name="Moai77" parent="Moais" unique_id=610116933 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.85547704, 0.13982362, -0.49860618, 0.50045866, -0.02413559, -0.8654238, -0.1330406, -0.98988247, -0.049328506, 12.043709, 0.4850142, -85.33881)
 
-[node name="Moai23" parent="Moais2" unique_id=610116933 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.85547704, -0.1398237, 0.49860618, 0.50045866, -0.02413559, -0.8654238, 0.1330407, 0.98988247, 0.04932855, 6.9562845, 0.4850142, 32.338814)
+[node name="Moai78" parent="Moais" unique_id=1610792323 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(0.4372663, 0.07137318, -0.8964953, 0.4283296, 0.85999477, 0.27738532, 0.7907792, -0.50528675, 0.34547552, 11.813126, 1.7082521, -72.680855)
 
-[node name="Moai24" parent="Moais2" unique_id=1610792323 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.43726623, -0.071373224, 0.8964953, 0.4283296, 0.85999477, 0.27738532, -0.7907792, 0.50528675, -0.34547547, 7.1868706, 1.7082521, 19.680857)
+[node name="Moai79" parent="Moais" unique_id=62741457 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(0.124664575, -0.26508915, 0.9561304, 0.07858601, 0.96325886, 0.25681904, -0.9890815, 0.043122377, 0.1409168, -5.510399, -0.6113039, -85.07124)
 
-[node name="Moai25" parent="Moais2" unique_id=62741457 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.124664664, 0.26508915, -0.9561304, 0.07858601, 0.96325886, 0.25681904, 0.9890815, -0.043122355, -0.14091688, 24.510393, -0.6113039, 32.071243)
+[node name="Moai80" parent="Moais" unique_id=57909777 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.7638932, 0.15466079, 0.62653553, 0.35323, 0.9127182, 0.20536485, -0.54008836, 0.37818787, -0.75184953, 3.7801323, 3.1351871, -87.0747)
 
-[node name="Moai26" parent="Moais2" unique_id=57909777 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.7638932, -0.15466076, -0.62653565, 0.35323, 0.9127182, 0.20536485, 0.5400885, -0.37818787, 0.75184953, 15.21986, 3.1351871, 34.074703)
+[node name="Moai81" parent="Moais" unique_id=217254616 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.9268095, -0.025163129, -0.3746877, -0.051693104, 0.99680334, 0.060922567, 0.371957, 0.07583237, -0.9251472, -1.8028069, 3.168182, -93.222786)
 
-[node name="Moai27" parent="Moais2" unique_id=217254616 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.9268095, 0.025163136, 0.37468764, -0.051693104, 0.99680334, 0.060922567, -0.37195694, -0.07583237, 0.9251472, 20.8028, 3.168182, 40.222786)
+[node name="Moai82" parent="Moais" unique_id=1039626040 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.9268095, -0.18351056, -0.32764018, -0.051693186, 0.92650795, -0.37270835, 0.3719567, -0.3284928, -0.8681823, -0.8477974, 2.9961958, -101.05141)
 
-[node name="Moai28" parent="Moais2" unique_id=1039626040 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.9268095, 0.18351053, 0.32764012, -0.051693186, 0.92650795, -0.37270835, -0.37195665, 0.3284928, 0.8681823, 19.84779, 2.9961958, 48.051407)
+[node name="Moai83" parent="Moais" unique_id=1146027665 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.8140784, -0.37479624, -0.44362566, 0.454114, 0.0653583, -0.8885431, 0.36201695, -0.9248005, 0.11699328, -10.89431, 0.52340436, -89.52608)
 
-[node name="Moai29" parent="Moais2" unique_id=1146027665 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.8140784, 0.37479618, 0.44362566, 0.454114, 0.0653583, -0.8885431, -0.3620169, 0.9248005, -0.11699323, 29.89431, 0.52340436, 36.526077)
+[node name="Moai84" parent="Moais" unique_id=2074763899 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(0.76847607, -0.20391372, -0.60651714, 0.38961214, 0.9010141, 0.19072579, 0.50758886, -0.38287473, 0.77185464, -4.7674103, 0.6965518, -78.38138)
 
-[node name="Moai30" parent="Moais2" unique_id=2074763899 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.76847607, 0.20391369, 0.60651726, 0.38961214, 0.9010141, 0.19072579, -0.507589, 0.38287473, -0.77185464, 23.767405, 0.6965518, 25.381378)
+[node name="Moai85" parent="Moais" unique_id=1090323956 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.99690044, 0.075017184, 0.02368075, 0.07858599, 0.9632587, 0.25681898, -0.0035445713, 0.25788411, -0.96616876, 52.592716, -0.6113039, -80.07981)
 
-[node name="Moai31" parent="Moais2" unique_id=1090323956 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.99690044, -0.075017154, -0.023680836, 0.07858599, 0.9632587, 0.25681898, 0.0035446584, -0.25788411, 0.96616876, -33.59272, -0.6113039, 27.079807)
+[node name="Moai86" parent="Moais" unique_id=950601686 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.44325495, 0.35659006, -0.8224156, 0.35322994, 0.912718, 0.20536482, 0.82386464, -0.19947296, -0.5305251, 49.47509, 3.1351871, -89.05802)
 
-[node name="Moai32" parent="Moais2" unique_id=950601686 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.443255, -0.35659006, 0.8224156, 0.35322994, 0.912718, 0.20536482, -0.82386464, 0.19947293, 0.5305252, -30.475096, 3.1351871, 36.058018)
+[node name="Moai87" parent="Moais" unique_id=1816400193 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(0.48182845, 0.07832821, -0.8727571, -0.051693086, 0.996803, 0.06092256, 0.8747391, 0.015761245, 0.4843374, 44.051033, 3.168182, -82.769325)
 
-[node name="Moai33" parent="Moais2" unique_id=1816400193 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.4818284, -0.07832821, 0.8727571, -0.051693086, 0.996803, 0.06092256, -0.8747391, -0.015761252, -0.48433733, -25.051039, 3.168182, 29.769325)
+[node name="Moai88" parent="Moais" unique_id=1116402013 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(0.4818287, -0.3037575, -0.82193214, -0.051693216, 0.9265078, -0.37270826, 0.8747395, 0.22206983, 0.43071598, 36.164375, 2.9961958, -82.7659)
 
-[node name="Moai34" parent="Moais2" unique_id=1116402013 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.48182863, 0.3037575, 0.82193214, -0.051693216, 0.9265078, -0.37270826, -0.8747395, -0.2220698, -0.43071592, -17.164381, 2.9961958, 29.7659)
+[node name="Moai89" parent="Moais" unique_id=814673300 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(0.45826316, -0.8724003, 0.17003691, 0.45411402, 0.065358326, -0.8885431, 0.7640517, 0.4844028, 0.42612034, 48.82517, 0.52340436, -74.19443)
 
-[node name="Moai35" parent="Moais2" unique_id=814673300 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.4582631, 0.8724003, -0.17003688, 0.45411402, 0.065358326, -0.8885431, -0.7640517, -0.48440275, -0.42612034, -29.82517, 0.52340436, 21.194427)
+[node name="Moai90" parent="Moais" unique_id=531326404 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(0.41043973, -0.35525697, 0.8398399, 0.3896123, 0.9010142, 0.1907258, -0.8244643, 0.24893042, 0.50822407, 59.14271, 0.6965518, -81.63026)
 
-[node name="Moai36" parent="Moais2" unique_id=531326404 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.4104398, 0.35525697, -0.8398399, 0.3896123, 0.9010142, 0.1907258, 0.8244643, -0.2489304, -0.5082242, -40.142715, 0.6965518, 28.630257)
+[node name="Moai91" parent="Moais" unique_id=1126353624 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(0.9993789, 0.03034997, -0.017885778, -0.024764514, 0.9663472, 0.2560454, 0.025054727, -0.2554436, 0.96649885, -31.617752, -0.26589537, -54.118797)
 
-[node name="Moai37" parent="Moais2" unique_id=1126353624 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.9993789, -0.030349992, 0.017885864, -0.024764514, 0.9663472, 0.2560454, -0.025054812, 0.2554436, -0.96649885, 50.617752, -0.26589537, 1.1187992)
+[node name="Moai92" parent="Moais" unique_id=358209873 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(0.49499816, -0.26473218, 0.82758284, 0.30715218, 0.94427323, 0.11834424, -0.812794, 0.19561371, 0.54872656, -28.324554, 3.1215425, -45.060974)
 
-[node name="Moai38" parent="Moais2" unique_id=358209873 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.49499822, 0.26473218, -0.82758284, 0.30715218, 0.94427323, 0.11834424, 0.812794, -0.19561368, -0.5487267, 47.324554, 3.1215425, -7.939024)
+[node name="Moai93" parent="Moais" unique_id=444924690 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.46561453, 0.025296966, 0.88462603, 0, 0.99959135, -0.028584538, -0.8849876, -0.013309376, -0.46542424, -22.791687, 2.606374, -51.23278)
 
-[node name="Moai39" parent="Moais2" unique_id=444924690 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.46561447, -0.025296966, -0.88462603, 0, 0.99959135, -0.028584538, 0.8849876, 0.013309374, 0.46542418, 41.79169, 2.606374, -1.7672157)
+[node name="Moai94" parent="Moais" unique_id=640196214 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.4656145, 0.40245017, 0.78818583, 0, 0.890618, -0.45475236, -0.8849877, -0.2117393, -0.41468468, -14.966644, 1.6210661, -51.069305)
 
-[node name="Moai40" parent="Moais2" unique_id=640196214 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.46561444, -0.40245017, -0.78818583, 0, 0.890618, -0.45475236, 0.8849877, 0.21173927, 0.41468462, 33.966644, 1.6210661, -1.9306927)
+[node name="Moai95" parent="Moais" unique_id=1684985825 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.39237854, 0.8847299, -0.25157923, 0.5004586, -0.024135573, -0.8654237, -0.7717382, -0.46547893, -0.43330047, -27.627197, 0.4850142, -59.918045)
 
-[node name="Moai41" parent="Moais2" unique_id=1684985825 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.39237848, -0.8847299, 0.25157917, 0.5004586, -0.024135573, -0.8654237, 0.7717382, 0.46547887, 0.43330047, 46.627197, 0.4850142, 6.918048)
+[node name="Moai96" parent="Moais" unique_id=885966577 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.3857328, 0.4516115, -0.80452263, 0.4283295, 0.85999465, 0.27738526, 0.81715584, -0.23760435, -0.52516675, -38.029755, 1.7082521, -52.70251)
 
-[node name="Moai42" parent="Moais2" unique_id=885966577 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.38573286, -0.4516115, 0.80452263, 0.4283295, 0.85999465, 0.27738526, -0.81715584, 0.23760432, 0.52516687, 57.029755, 1.7082521, -0.29748535)
+[node name="Moai97" parent="Moais" unique_id=1047331494 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(0.875215, -0.19000773, 0.44485343, 0.07858602, 0.9632589, 0.25681907, -0.47730693, -0.18981266, 0.8579908, -38.11017, -0.6113039, -74.000854)
 
-[node name="Moai43" parent="Moais2" unique_id=1047331494 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.875215, 0.1900077, -0.44485337, 0.07858602, 0.9632589, 0.25681907, 0.47730687, 0.18981269, -0.8579908, 57.110165, -0.6113039, 21.00086)
+[node name="Moai98" parent="Moais" unique_id=692330135 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.0086358115, -0.21632493, 0.97628266, 0.35322997, 0.91271794, 0.2053648, -0.9354964, 0.3466258, 0.06853056, -31.051773, 3.1351871, -67.63635)
 
-[node name="Moai44" parent="Moais2" unique_id=692330135 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.00863573, 0.21632496, -0.97628266, 0.35322997, 0.91271794, 0.2053648, 0.9354964, -0.3466258, -0.06853065, 50.051777, 3.1351871, 14.6363535)
+[node name="Moai99" parent="Moais" unique_id=1170545610 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.8437315, -0.076228425, 0.53132427, -0.0516931, 0.9968032, 0.060922563, -0.53426975, 0.023936525, -0.84497476, -29.32965, 3.168182, -75.76054)
 
-[node name="Moai45" parent="Moais2" unique_id=1170545610 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.8437315, 0.076228425, -0.5313244, -0.0516931, 0.9968032, 0.060922563, 0.53426987, -0.023936518, 0.84497476, 48.329655, 3.168182, 22.760538)
+[node name="Moai100" parent="Moais" unique_id=1296794278 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.84373164, 0.15914226, 0.51263046, -0.051693194, 0.9265077, -0.3727083, -0.5342699, -0.34096533, -0.77349734, -22.420837, 2.9961958, -79.56417)
 
-[node name="Moai46" parent="Moais2" unique_id=1296794278 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.84373164, -0.15914229, -0.5126306, -0.051693194, 0.9265077, -0.3727083, 0.53427005, 0.34096533, 0.77349734, 41.420837, 2.9961958, 26.564173)
+[node name="Moai101" parent="Moais" unique_id=1125550067 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.7697419, 0.53097975, -0.3543403, 0.45411396, 0.065358296, -0.888543, -0.44863927, -0.84485996, -0.29143438, -37.645157, 0.52340436, -80.973366)
 
-[node name="Moai47" parent="Moais2" unique_id=1125550067 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.7697419, -0.5309799, 0.3543403, 0.45411396, 0.065358296, -0.888543, 0.44863933, 0.84485996, 0.29143444, 56.645157, 0.52340436, 27.973372)
+[node name="Moai102" parent="Moais" unique_id=2012899180 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(0.037678234, 0.19132294, -0.98080325, 0.38961217, 0.9010141, 0.19072582, 0.92020774, -0.38931912, -0.04059297, -43.10225, 0.6965518, -69.48583)
 
-[node name="Moai48" parent="Moais2" unique_id=2012899180 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.037678152, -0.19132297, 0.98080325, 0.38961217, 0.9010141, 0.19072582, -0.92020774, 0.38931912, 0.040593058, 62.102245, 0.6965518, 16.485834)
+[node name="Moai103" parent="Moais" unique_id=222432851 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.58012813, -0.16531554, 0.7975721, 0.07858601, 0.96325886, 0.25681904, -0.81072474, 0.21166615, -0.545822, -8.179413, -0.6113039, -23.950523)
 
-[node name="Moai49" parent="Moais2" unique_id=222432851 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.580128, 0.16531557, -0.7975721, 0.07858601, 0.96325886, 0.25681904, 0.81072474, -0.21166615, 0.5458219, 27.179419, -0.6113039, -29.049475)
+[node name="Moai104" parent="Moais" unique_id=1073899854 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.9275136, 0.3703452, -0.050618015, 0.35322994, 0.9127179, 0.20536478, 0.122255966, 0.17259872, -0.97737515, -2.7198334, 3.1351871, -31.730036)
 
-[node name="Moai50" parent="Moais2" unique_id=1073899854 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.9275136, -0.3703452, 0.050617933, 0.35322994, 0.9127179, 0.20536478, -0.12225589, -0.17259875, 0.97737515, 21.719835, 3.1351871, -21.269964)
+[node name="Moai105" parent="Moais" unique_id=1859974044 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.42777744, 0.033022612, -0.90328026, -0.05169309, 0.9968031, 0.06092256, 0.9024042, 0.072754614, -0.42470267, -10.993088, 3.168182, -32.452118)
 
-[node name="Moai51" parent="Moais2" unique_id=1859974044 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.4277775, -0.033022605, 0.90328026, -0.05169309, 0.9968031, 0.06092256, -0.9024042, -0.072754614, 0.42470273, 29.993088, 3.168182, -20.54788)
+[node name="Moai106" parent="Moais" unique_id=1387890882 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.4277776, -0.3577777, -0.8300611, -0.05169319, 0.92650765, -0.37270826, 0.9024044, -0.116527684, -0.41483366, -15.6081085, 2.9961958, -38.847504)
 
-[node name="Moai52" parent="Moais2" unique_id=1387890882 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.42777765, 0.3577777, 0.8300611, -0.05169319, 0.92650765, -0.37270826, -0.9024044, 0.116527714, 0.41483372, 34.60811, 2.9961958, -14.152494)
+[node name="Moai107" parent="Moais" unique_id=1311035346 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.35177302, -0.9031246, -0.24621409, 0.454114, 0.065358326, -0.888543, 0.818557, -0.42437473, 0.38713005, -15.156761, 0.52340436, -23.564764)
 
-[node name="Moai53" parent="Moais2" unique_id=1311035346 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.35177308, 0.9031246, 0.24621412, 0.454114, 0.065358326, -0.888543, -0.818557, 0.4243748, -0.38713005, 34.15676, 0.52340436, -29.435232)
+[node name="Moai108" parent="Moais" unique_id=1046579136 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(0.90880895, -0.40968382, 0.07889786, 0.38961217, 0.9010141, 0.1907258, -0.14922526, -0.14259382, 0.9784671, -3.0912018, 0.6965518, -19.54412)
 
-[node name="Moai54" parent="Moais2" unique_id=1046579136 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.90880895, 0.40968382, -0.078897774, 0.38961217, 0.9010141, 0.1907258, 0.14922518, 0.14259385, -0.9784671, 22.091204, 0.6965518, -33.45588)
+[node name="Moai109" parent="Moais" unique_id=798655034 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(0.87277216, 0.14579757, -0.46584463, -0.024764508, 0.9663472, 0.2560454, 0.4874985, -0.21193305, 0.8470117, -90.102264, -0.26589537, -20.777834)
 
-[node name="Moais2" type="Node3D" parent="Moais2" unique_id=1177691725]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 160, 0, -16.999992)
-script = ExtResource("2_cp0ys")
+[node name="Moai110" parent="Moais" unique_id=444552590 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(0.81651604, -0.32536525, 0.47690555, 0.30715218, 0.94427323, 0.11834425, -0.48883438, 0.0498526, 0.8709509, -91.40529, 3.1215425, -11.22841)
 
-[node name="Moai3" parent="Moais2/Moais2" unique_id=233585145 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.48749852, 0.21193305, -0.8470117, -0.024764508, 0.9663472, 0.2560454, 0.87277216, 0.14579758, -0.46584466, 3.7778378, -0.26589537, -2.102272)
+[node name="Moai111" parent="Moais" unique_id=351778117 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-4.371139e-08, 0.02858454, 0.9995914, 0, 0.9995914, -0.02858454, -1, -1.24947e-09, -4.369353e-08, -83.635086, 2.606374, -14.114203)
 
-[node name="Moai2" parent="Moais2/Moais2" unique_id=434926275 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.48883435, -0.049852584, -0.8709509, 0.30715218, 0.94427323, 0.11834425, 0.81651604, -0.32536525, 0.47690552, -5.7715855, 3.1215425, -3.4052863)
+[node name="Moai112" parent="Moais" unique_id=1869383623 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-4.3711385e-08, 0.4547523, 0.8906179, 0, 0.8906179, -0.4547523, -0.99999994, -1.9877854e-08, -3.8930146e-08, -76.78613, 1.6210661, -10.326073)
 
-[node name="Moai" parent="Moais2/Moais2" unique_id=1699233672 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(1, 0, 0, 0, 0.9995914, -0.02858454, 0, 0.02858454, 0.9995914, -2.8857927, 2.606374, 4.364914)
+[node name="Moai113" parent="Moais" unique_id=1266611467 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(0.012082295, 0.9997088, -0.020893538, 0.5004586, -0.024135575, -0.8654237, -0.86567587, -3.8175756e-08, -0.50060445, -83.87047, 0.48501423, -24.052038)
 
-[node name="Moai4" parent="Moais2/Moais2" unique_id=2043580398 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.99999994, 0, 0, 0, 0.8906179, -0.4547523, 0, 0.4547523, 0.8906179, -6.6739244, 1.6210661, 11.213868)
+[node name="Moai114" parent="Moais" unique_id=2003187666 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.7218484, 0.5103027, -0.46746743, 0.42832962, 0.85999477, 0.2773853, 0.5435701, -2.230604e-08, -0.83936363, -96.43625, 1.7082521, -22.50996)
 
-[node name="Moai5" parent="Moais2/Moais2" unique_id=511472952 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.86567587, -5.5229026e-09, 0.50060445, 0.5004586, -0.024135575, -0.8654237, 0.012082333, 0.9997088, -0.020893516, 7.052042, 0.48501423, 4.1295347)
+[node name="Moai115" parent="Moais" unique_id=1036337558 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(0.9967955, -0.07977499, -0.005803133, 0.07858601, 0.9632589, 0.25681904, -0.0148979835, -0.2564522, 0.96644145, -86.59061, -0.61130404, -41.396175)
 
-[node name="Moai6" parent="Moais2/Moais2" unique_id=2030733082 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.54357004, 0, 0.83936363, 0.42832962, 0.85999477, 0.2773853, -0.7218484, 0.5103027, -0.4674674, 5.509964, 1.7082521, -8.436253)
+[node name="Moai116" parent="Moais" unique_id=747084718 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(0.42793813, -0.35283893, 0.83208925, 0.35322994, 0.9127178, 0.20536478, -0.83192366, 0.2060355, 0.51522005, -83.30742, 3.1351871, -32.477177)
 
-[node name="Moai7" parent="Moais2/Moais2" unique_id=1074244717 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.01489794, 0.2564522, -0.96644145, 0.07858601, 0.9632589, 0.25681904, 0.9967955, -0.079774976, -0.0058031753, 24.39618, -0.61130404, 1.4093995)
+[node name="Moai117" parent="Moais" unique_id=878719286 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.49792832, -0.07860641, 0.86364794, -0.051693097, 0.9968031, 0.060922563, -0.8656758, -0.014309532, -0.5003999, -78.000626, 3.168182, -38.865135)
 
-[node name="Moai8" parent="Moais2/Moais2" unique_id=1980105151 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.83192366, -0.20603548, -0.5152201, 0.35322994, 0.9127178, 0.20536478, 0.42793816, -0.35283893, 0.83208925, 15.4771805, 3.1351871, 4.6925793)
+[node name="Moai118" parent="Moais" unique_id=297164679 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.49792832, 0.29959732, 0.81382334, -0.051693182, 0.9265077, -0.3727083, -0.86567605, -0.22765115, -0.44584745, -70.11538, 2.9961958, -39.014458)
 
-[node name="Moai9" parent="Moais2/Moais2" unique_id=1257134027 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.8656758, 0.014309536, 0.5003998, -0.051693097, 0.9968031, 0.060922563, -0.4979283, -0.07860641, 0.86364794, 21.865139, 3.168182, 9.999374)
+[node name="Moai119" parent="Moais" unique_id=897655404 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.47231913, 0.86328965, -0.1778907, 0.45411393, 0.06535828, -0.888543, -0.7554433, -0.5004588, -0.42290187, -82.93257, 0.52340436, -47.350246)
 
-[node name="Moai10" parent="Moais2/Moais2" unique_id=477170050 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.86567605, 0.22765113, 0.44584742, -0.051693182, 0.9265077, -0.3727083, -0.4979283, 0.29959732, 0.81382334, 22.014462, 2.9961958, 17.884619)
+[node name="Moai120" parent="Moais" unique_id=1695082179 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.39511725, 0.35059106, -0.8490981, 0.38961208, 0.901014, 0.1907258, 0.831916, -0.25545987, -0.4926006, -93.110794, 0.6965518, -39.724815)
 
-[node name="Moai11" parent="Moais2/Moais2" unique_id=1545556915 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.7554433, 0.5004587, 0.42290187, 0.45411393, 0.06535828, -0.888543, -0.4723191, 0.86328965, -0.17789069, 30.35025, 0.52340436, 5.0674267)
+[node name="Moai121" parent="Moais" unique_id=1368743169 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.135921, -0.24485707, 0.95998406, 0.07858602, 0.9632589, 0.25681907, -0.9875974, 0.1103486, -0.11168458, -83.40642, -0.6113039, 16.833944)
 
-[node name="Moai12" parent="Moais2/Moais2" unique_id=1286085654 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.831916, 0.25545985, 0.49260062, 0.38961208, 0.901014, 0.1907258, -0.39511728, 0.35059106, -0.8490981, 22.724821, 0.6965518, -5.11079)
+[node name="Moai122" parent="Moais" unique_id=93213447 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.87776226, 0.24738647, 0.41028377, 0.35322997, 0.91271794, 0.2053648, -0.32366878, 0.3251859, -0.88853335, -74.9525, 3.1351871, 12.491236)
 
-[node name="Moai13" parent="Moais2/Moais2" unique_id=1540793978 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.9875974, -0.11034859, 0.11168454, 0.07858602, 0.9632589, 0.25681907, -0.13592096, -0.24485707, 0.95998406, -33.83394, -0.6113039, 4.5935802)
+[node name="Moai123" parent="Moais" unique_id=451081929 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.7987504, -0.004651007, -0.6016443, -0.0516931, 0.9968032, 0.060922563, 0.59943736, 0.07976275, -0.79643714, -81.93802, 3.168182, 8.000055)
 
-[node name="Moai14" parent="Moais2/Moais2" unique_id=1220322683 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.3236688, -0.3251859, 0.88853335, 0.35322997, 0.91271794, 0.2053648, -0.87776226, 0.24738646, 0.4102838, -29.49123, 3.1351871, 13.047496)
+[node name="Moai124" parent="Moais" unique_id=770009855 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.7987506, -0.26237184, -0.54144126, -0.051693194, 0.9265077, -0.3727083, 0.5994374, -0.2697121, -0.7536112, -83.044464, 2.9961958, 0.1913948)
 
-[node name="Moai15" parent="Moais2/Moais2" unique_id=1104270103 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.5994373, -0.07976275, 0.79643714, -0.0516931, 0.9968032, 0.060922563, -0.7987504, -0.00465101, -0.6016442, -25.00005, 3.168182, 6.061984)
+[node name="Moai125" parent="Moais" unique_id=915011390 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.6924468, -0.6016591, -0.39814982, 0.45411396, 0.065358296, -0.888543, 0.5606223, -0.79607433, 0.22796457, -89.760895, 0.52340436, 13.926584)
 
-[node name="Moai16" parent="Moais2/Moais2" unique_id=1622603548 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.59943736, 0.2697121, 0.7536112, -0.051693194, 0.9265077, -0.3727083, -0.7987506, -0.26237184, -0.5414412, -17.191391, 2.9961958, 4.9555306)
+[node name="Moai126" parent="Moais" unique_id=1062839399 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(0.8737661, -0.29617137, -0.38576487, 0.38961217, 0.9010141, 0.19072582, 0.29109213, -0.3169485, 0.9026673, -80.95509, 0.6965518, 23.102705)
 
-[node name="Moai17" parent="Moais2/Moais2" unique_id=1409231281 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.5606222, 0.79607433, -0.22796455, 0.45411396, 0.065358296, -0.888543, -0.6924468, -0.60165906, -0.39814982, -30.926579, 0.52340436, -1.7608967)
+[node name="Moai127" parent="Moais" unique_id=281833921 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(0.79600966, 0.17400633, -0.57973236, -0.024764491, 0.9663472, 0.2560454, 0.6047765, -0.18945806, 0.77353114, -62.28968, -0.26589537, -21.585867)
 
-[node name="Moai18" parent="Moais2/Moais2" unique_id=2086690566 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.29109216, 0.3169485, -0.9026673, 0.38961217, 0.9010141, 0.19072582, 0.8737661, -0.29617137, -0.3857649, -40.1027, 0.6965518, 7.0449033)
+[node name="Moai128" parent="Moais" unique_id=1368102275 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(0.87686086, -0.3291397, 0.3504028, 0.30715218, 0.94427335, 0.11834423, -0.36982802, 0.003855593, 0.92909205, -64.91551, 3.1215425, -12.312555)
 
-[node name="Moai19" parent="Moais2/Moais2" unique_id=1682813353 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.60477656, 0.18945804, -0.77353114, -0.024764491, 0.9663472, 0.2560454, 0.79600966, 0.17400634, -0.5797324, 4.5858707, -0.26589537, 25.710318)
+[node name="Moai129" parent="Moais" unique_id=1812006838 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(0.13986443, 0.028303575, 0.9897661, 6.548312e-11, 0.99959147, -0.02858454, -0.99017084, 0.0039979555, 0.13980718, -56.81807, 2.606374, -14.083207)
 
-[node name="Moai20" parent="Moais2/Moais2" unique_id=564367211 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.369828, -0.0038555786, -0.92909205, 0.30715218, 0.94427335, 0.11834423, 0.87686086, -0.3291397, 0.35040277, -4.687441, 3.1215425, 23.084484)
+[node name="Moai130" parent="Moais" unique_id=499656163 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(0.13986425, 0.45028237, 0.8818637, -3.940364e-08, 0.89061797, -0.4547523, -0.99017066, 0.06360363, 0.12456573, -50.56626, 1.6210661, -9.374388)
 
-[node name="Moai21" parent="Moais2/Moais2" unique_id=960834092 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.99017084, -0.003997957, -0.13980722, 6.548312e-11, 0.99959147, -0.02858454, 0.13986447, 0.028303575, 0.9897661, -2.91679, 2.606374, 31.18193)
+[node name="Moai131" parent="Moais" unique_id=833004124 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(0.13304065, 0.98988247, 0.04932853, 0.50045866, -0.02413559, -0.8654238, -0.85547704, 0.13982366, -0.49860618, -55.661186, 0.4850142, -23.956282)
 
-[node name="Moai22" parent="Moais2/Moais2" unique_id=1548151328 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.99017066, -0.063603655, -0.124565765, -3.940364e-08, 0.89061797, -0.4547523, 0.1398643, 0.45028237, 0.8818637, -7.6256094, 1.6210661, 37.43374)
+[node name="Moai132" parent="Moais" unique_id=1443675549 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.7907792, 0.50528675, -0.3454755, 0.4283296, 0.85999477, 0.27738532, 0.43726626, 0.0713732, -0.8964953, -68.319145, 1.7082521, -24.186867)
 
-[node name="Moai23" parent="Moais2/Moais2" unique_id=1623045317 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.85547704, -0.1398237, 0.49860618, 0.50045866, -0.02413559, -0.8654238, 0.1330407, 0.98988247, 0.04932855, 6.9562845, 0.4850142, 32.338814)
+[node name="Moai133" parent="Moais" unique_id=158872059 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(0.9890815, -0.043122366, -0.14091684, 0.07858601, 0.96325886, 0.25681904, 0.12466462, -0.26508915, 0.9561304, -55.928757, -0.6113039, -41.51039)
 
-[node name="Moai24" parent="Moais2/Moais2" unique_id=1278908670 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.43726623, -0.071373224, 0.8964953, 0.4283296, 0.85999477, 0.27738532, -0.7907792, 0.50528675, -0.34547547, 7.1868706, 1.7082521, 19.680857)
+[node name="Moai134" parent="Moais" unique_id=1463587188 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(0.5400884, -0.37818787, 0.75184953, 0.35323, 0.9127182, 0.20536485, -0.7638932, 0.15466078, 0.6265356, -53.925293, 3.1351871, -32.219856)
 
-[node name="Moai25" parent="Moais2/Moais2" unique_id=1851380703 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.124664664, 0.26508915, -0.9561304, 0.07858601, 0.96325886, 0.25681904, 0.9890815, -0.043122355, -0.14091688, 24.510393, -0.6113039, 32.071243)
+[node name="Moai135" parent="Moais" unique_id=1580783004 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.37195697, -0.07583237, 0.9251472, -0.051693104, 0.99680334, 0.060922567, -0.9268095, -0.025163133, -0.37468767, -47.777214, 3.168182, -37.802795)
 
-[node name="Moai26" parent="Moais2/Moais2" unique_id=578284974 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.7638932, -0.15466076, -0.62653565, 0.35323, 0.9127182, 0.20536485, 0.5400885, -0.37818787, 0.75184953, 15.21986, 3.1351871, 34.074703)
+[node name="Moai136" parent="Moais" unique_id=935311499 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.37195668, 0.3284928, 0.8681823, -0.051693186, 0.92650795, -0.37270835, -0.9268095, -0.18351054, -0.32764015, -39.948593, 2.9961958, -36.847786)
 
-[node name="Moai27" parent="Moais2/Moais2" unique_id=2146707086 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.9268095, 0.025163136, 0.37468764, -0.051693104, 0.99680334, 0.060922567, -0.37195694, -0.07583237, 0.9251472, 20.8028, 3.168182, 40.222786)
+[node name="Moai137" parent="Moais" unique_id=1935387505 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.36201692, 0.9248005, -0.116993256, 0.454114, 0.0653583, -0.8885431, -0.8140784, -0.3747962, -0.44362566, -51.473923, 0.52340436, -46.89431)
 
-[node name="Moai28" parent="Moais2/Moais2" unique_id=1139678557 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.9268095, 0.18351053, 0.32764012, -0.051693186, 0.92650795, -0.37270835, -0.37195665, 0.3284928, 0.8681823, 19.84779, 2.9961958, 48.051407)
+[node name="Moai138" parent="Moais" unique_id=1179466703 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.5075889, 0.38287473, -0.77185464, 0.38961214, 0.9010141, 0.19072579, 0.76847607, -0.2039137, -0.6065172, -62.61862, 0.6965518, -40.767403)
 
-[node name="Moai29" parent="Moais2/Moais2" unique_id=1218969821 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.8140784, 0.37479618, 0.44362566, 0.454114, 0.0653583, -0.8885431, -0.3620169, 0.9248005, -0.11699323, 29.89431, 0.52340436, 36.526077)
+[node name="Moai139" parent="Moais" unique_id=1289590519 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(0.0035446149, -0.25788411, 0.96616876, 0.07858599, 0.9632587, 0.25681898, -0.99690044, 0.07501717, 0.023680793, -60.920197, -0.6113039, 16.592722)
 
-[node name="Moai30" parent="Moais2/Moais2" unique_id=1281073391 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.76847607, 0.20391369, 0.60651726, 0.38961214, 0.9010141, 0.19072579, -0.507589, 0.38287473, -0.77185464, 23.767405, 0.6965518, 25.381378)
+[node name="Moai140" parent="Moais" unique_id=858649639 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.82386464, 0.19947295, 0.53052515, 0.35322994, 0.912718, 0.20536482, -0.44325498, 0.35659006, -0.8224156, -51.941986, 3.1351871, 13.4751)
 
-[node name="Moai31" parent="Moais2/Moais2" unique_id=2043151893 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.99690044, -0.075017154, -0.023680836, 0.07858599, 0.9632587, 0.25681898, 0.0035446584, -0.25788411, 0.96616876, -33.59272, -0.6113039, 27.079807)
+[node name="Moai141" parent="Moais" unique_id=116296092 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.8747391, -0.015761249, -0.48433736, -0.051693086, 0.996803, 0.06092256, 0.48182842, 0.07832821, -0.8727571, -58.230675, 3.168182, 8.051043)
 
-[node name="Moai32" parent="Moais2/Moais2" unique_id=954619188 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.443255, -0.35659006, 0.8224156, 0.35322994, 0.912718, 0.20536482, -0.82386464, 0.19947293, 0.5305252, -30.475096, 3.1351871, 36.058018)
+[node name="Moai142" parent="Moais" unique_id=325721792 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.8747395, -0.22206981, -0.43071595, -0.051693216, 0.9265078, -0.37270826, 0.48182866, -0.3037575, -0.82193214, -58.2341, 2.9961958, 0.16438484)
 
-[node name="Moai33" parent="Moais2/Moais2" unique_id=67904900 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.4818284, -0.07832821, 0.8727571, -0.051693086, 0.996803, 0.06092256, -0.8747391, -0.015761252, -0.48433733, -25.051039, 3.168182, 29.769325)
+[node name="Moai143" parent="Moais" unique_id=1067075756 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.7640517, -0.48440278, -0.42612034, 0.45411402, 0.065358326, -0.8885431, 0.45826313, -0.8724003, 0.1700369, -66.80557, 0.52340436, 12.825174)
 
-[node name="Moai34" parent="Moais2/Moais2" unique_id=1950408659 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.48182863, 0.3037575, 0.82193214, -0.051693216, 0.9265078, -0.37270826, -0.8747395, -0.2220698, -0.43071592, -17.164381, 2.9961958, 29.7659)
+[node name="Moai144" parent="Moais" unique_id=769449758 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(0.8244643, -0.24893041, -0.5082241, 0.3896123, 0.9010142, 0.1907258, 0.41043976, -0.35525697, 0.8398399, -59.369743, 0.6965518, 23.142717)
 
-[node name="Moai35" parent="Moais2/Moais2" unique_id=1428263524 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.4582631, 0.8724003, -0.17003688, 0.45411402, 0.065358326, -0.8885431, -0.7640517, -0.48440275, -0.42612034, -29.82517, 0.52340436, 21.194427)
+[node name="Moai145" parent="Moais" unique_id=2066303672 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.02505477, 0.2554436, -0.96649885, -0.024764514, 0.9663472, 0.2560454, 0.9993789, 0.030349981, -0.017885821, -86.881195, -0.26589537, -67.617744)
 
-[node name="Moai36" parent="Moais2/Moais2" unique_id=1939884426 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.4104398, 0.35525697, -0.8398399, 0.3896123, 0.9010142, 0.1907258, 0.8244643, -0.2489304, -0.5082242, -40.142715, 0.6965518, 28.630257)
+[node name="Moai146" parent="Moais" unique_id=982101590 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(0.812794, -0.1956137, -0.5487266, 0.30715218, 0.94427323, 0.11834424, 0.4949982, -0.26473218, 0.82758284, -95.939026, 3.1215425, -64.32455)
 
-[node name="Moai37" parent="Moais2/Moais2" unique_id=1168928862 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.9993789, -0.030349992, 0.017885864, -0.024764514, 0.9663472, 0.2560454, -0.025054812, 0.2554436, -0.96649885, 50.617752, -0.26589537, 1.1187992)
+[node name="Moai147" parent="Moais" unique_id=1136974944 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(0.8849876, 0.013309375, 0.4654242, 0, 0.99959135, -0.028584538, -0.4656145, 0.025296966, 0.88462603, -89.76721, 2.606374, -58.791687)
 
-[node name="Moai38" parent="Moais2/Moais2" unique_id=170162255 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.49499822, 0.26473218, -0.82758284, 0.30715218, 0.94427323, 0.11834424, 0.812794, -0.19561368, -0.5487267, 47.324554, 3.1215425, -7.939024)
+[node name="Moai148" parent="Moais" unique_id=1268300412 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(0.8849877, 0.21173929, 0.41468465, 0, 0.890618, -0.45475236, -0.46561447, 0.40245017, 0.78818583, -89.930695, 1.6210661, -50.96664)
 
-[node name="Moai39" parent="Moais2/Moais2" unique_id=831153224 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.46561447, -0.025296966, -0.88462603, 0, 0.99959135, -0.028584538, 0.8849876, 0.013309374, 0.46542418, 41.79169, 2.606374, -1.7672157)
+[node name="Moai149" parent="Moais" unique_id=1726775410 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(0.7717382, 0.4654789, 0.43330047, 0.5004586, -0.024135573, -0.8654237, -0.3923785, 0.8847299, -0.2515792, -81.081955, 0.4850142, -63.62719)
 
-[node name="Moai40" parent="Moais2/Moais2" unique_id=1902500375 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.46561444, -0.40245017, -0.78818583, 0, 0.890618, -0.45475236, 0.8849877, 0.21173927, 0.41468462, 33.966644, 1.6210661, -1.9306927)
+[node name="Moai150" parent="Moais" unique_id=377988001 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.81715584, 0.23760433, 0.5251668, 0.4283295, 0.85999465, 0.27738526, -0.38573283, 0.4516115, -0.80452263, -88.297485, 1.7082521, -74.02975)
 
-[node name="Moai41" parent="Moais2/Moais2" unique_id=2008556224 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.39237848, -0.8847299, 0.25157917, 0.5004586, -0.024135573, -0.8654237, 0.7717382, 0.46547887, 0.43330047, 46.627197, 0.4850142, 6.918048)
+[node name="Moai151" parent="Moais" unique_id=852076964 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(0.4773069, 0.18981268, -0.8579908, 0.07858602, 0.9632589, 0.25681907, 0.875215, -0.19000772, 0.4448534, -66.99914, -0.6113039, -74.11016)
 
-[node name="Moai42" parent="Moais2/Moais2" unique_id=2125269771 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.38573286, -0.4516115, 0.80452263, 0.4283295, 0.85999465, 0.27738526, -0.81715584, 0.23760432, 0.52516687, 57.029755, 1.7082521, -0.29748535)
+[node name="Moai152" parent="Moais" unique_id=1862008401 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(0.9354964, -0.3466258, -0.068530604, 0.35322997, 0.91271794, 0.2053648, -0.0086357705, -0.21632494, 0.97628266, -73.36365, 3.1351871, -67.05177)
 
-[node name="Moai43" parent="Moais2/Moais2" unique_id=36389774 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.875215, 0.1900077, -0.44485337, 0.07858602, 0.9632589, 0.25681907, 0.47730687, 0.18981269, -0.8579908, 57.110165, -0.6113039, 21.00086)
+[node name="Moai153" parent="Moais" unique_id=1282044042 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(0.5342698, -0.023936521, 0.84497476, -0.0516931, 0.9968032, 0.060922563, -0.8437315, -0.076228425, 0.5313243, -65.23946, 3.168182, -65.32965)
 
-[node name="Moai44" parent="Moais2/Moais2" unique_id=1407926692 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.00863573, 0.21632496, -0.97628266, 0.35322997, 0.91271794, 0.2053648, 0.9354964, -0.3466258, -0.06853065, 50.051777, 3.1351871, 14.6363535)
+[node name="Moai154" parent="Moais" unique_id=1343330913 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(0.53427, 0.34096533, 0.77349734, -0.051693194, 0.9265077, -0.3727083, -0.84373164, 0.15914227, 0.5126305, -61.43583, 2.9961958, -58.420834)
 
-[node name="Moai45" parent="Moais2/Moais2" unique_id=23887495 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.8437315, 0.076228425, -0.5313244, -0.0516931, 0.9968032, 0.060922563, 0.53426987, -0.023936518, 0.84497476, 48.329655, 3.168182, 22.760538)
+[node name="Moai155" parent="Moais" unique_id=101454570 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(0.4486393, 0.84485996, 0.2914344, 0.45411396, 0.065358296, -0.888543, -0.7697419, 0.5309798, -0.3543403, -60.026627, 0.52340436, -73.64516)
 
-[node name="Moai46" parent="Moais2/Moais2" unique_id=1144801981 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.84373164, -0.15914229, -0.5126306, -0.051693194, 0.9265077, -0.3727083, 0.53427005, 0.34096533, 0.77349734, 41.420837, 2.9961958, 26.564173)
+[node name="Moai156" parent="Moais" unique_id=119684449 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.92020774, 0.38931912, 0.040593013, 0.38961217, 0.9010141, 0.19072582, 0.037678193, 0.19132295, -0.98080325, -71.51416, 0.6965518, -79.10224)
 
-[node name="Moai47" parent="Moais2/Moais2" unique_id=1961800173 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.7697419, -0.5309799, 0.3543403, 0.45411396, 0.065358296, -0.888543, 0.44863933, 0.84485996, 0.29143444, 56.645157, 0.52340436, 27.973372)
+[node name="Moai157" parent="Moais" unique_id=410282277 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(0.81072474, -0.21166615, 0.54582196, 0.07858601, 0.96325886, 0.25681904, -0.5801281, -0.16531555, 0.7975721, -117.04947, -0.6113039, -44.179413)
 
-[node name="Moai48" parent="Moais2/Moais2" unique_id=640948818 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.037678152, -0.19132297, 0.98080325, 0.38961217, 0.9010141, 0.19072582, -0.92020774, 0.38931912, 0.040593058, 62.102245, 0.6965518, 16.485834)
+[node name="Moai158" parent="Moais" unique_id=2023228753 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.12225593, -0.17259873, 0.97737515, 0.35322994, 0.9127179, 0.20536478, -0.9275136, 0.3703452, -0.050617974, -109.26996, 3.1351871, -38.71983)
 
-[node name="Moai49" parent="Moais2/Moais2" unique_id=1524523843 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.580128, 0.16531557, -0.7975721, 0.07858601, 0.96325886, 0.25681904, 0.81072474, -0.21166615, 0.5458219, 27.179419, -0.6113039, -29.049475)
+[node name="Moai159" parent="Moais" unique_id=659336731 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.9024042, -0.072754614, 0.4247027, -0.05169309, 0.9968031, 0.06092256, -0.42777747, 0.03302261, -0.90328026, -108.54788, 3.168182, -46.99308)
 
-[node name="Moai50" parent="Moais2/Moais2" unique_id=753354126 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.9275136, -0.3703452, 0.050617933, 0.35322994, 0.9127179, 0.20536478, -0.12225589, -0.17259875, 0.97737515, 21.719835, 3.1351871, -21.269964)
+[node name="Moai160" parent="Moais" unique_id=1353326124 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.9024044, 0.1165277, 0.4148337, -0.05169319, 0.92650765, -0.37270826, -0.42777762, -0.3577777, -0.8300611, -102.1525, 2.9961958, -51.6081)
 
-[node name="Moai51" parent="Moais2/Moais2" unique_id=941193701 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.4277775, -0.033022605, 0.90328026, -0.05169309, 0.9968031, 0.06092256, -0.9024042, -0.072754614, 0.42470273, 29.993088, 3.168182, -20.54788)
+[node name="Moai161" parent="Moais" unique_id=1400584956 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(-0.818557, 0.42437476, -0.38713005, 0.454114, 0.065358326, -0.888543, -0.35177305, -0.9031246, -0.2462141, -117.43523, 0.52340436, -51.156754)
 
-[node name="Moai52" parent="Moais2/Moais2" unique_id=532989710 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.42777765, 0.3577777, 0.8300611, -0.05169319, 0.92650765, -0.37270826, -0.9024044, 0.116527714, 0.41483372, 34.60811, 2.9961958, -14.152494)
-
-[node name="Moai53" parent="Moais2/Moais2" unique_id=1486262694 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.35177308, 0.9031246, 0.24621412, 0.454114, 0.065358326, -0.888543, -0.818557, 0.4243748, -0.38713005, 34.15676, 0.52340436, -29.435232)
-
-[node name="Moai54" parent="Moais2/Moais2" unique_id=2134554390 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.90880895, 0.40968382, -0.078897774, 0.38961217, 0.9010141, 0.1907258, 0.14922518, 0.14259385, -0.9784671, 22.091204, 0.6965518, -33.45588)
-
-[node name="Moais3" type="Node3D" parent="." unique_id=368528939]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -145)
-script = ExtResource("2_cp0ys")
-
-[node name="Moai3" parent="Moais3" unique_id=798655034 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.48749852, 0.21193305, -0.8470117, -0.024764508, 0.9663472, 0.2560454, 0.87277216, 0.14579758, -0.46584466, 3.7778378, -0.26589537, -2.102272)
-
-[node name="Moai2" parent="Moais3" unique_id=444552590 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.48883435, -0.049852584, -0.8709509, 0.30715218, 0.94427323, 0.11834425, 0.81651604, -0.32536525, 0.47690552, -5.7715855, 3.1215425, -3.4052863)
-
-[node name="Moai" parent="Moais3" unique_id=351778117 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(1, 0, 0, 0, 0.9995914, -0.02858454, 0, 0.02858454, 0.9995914, -2.8857927, 2.606374, 4.364914)
-
-[node name="Moai4" parent="Moais3" unique_id=1869383623 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.99999994, 0, 0, 0, 0.8906179, -0.4547523, 0, 0.4547523, 0.8906179, -6.6739244, 1.6210661, 11.213868)
-
-[node name="Moai5" parent="Moais3" unique_id=1266611467 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.86567587, -5.5229026e-09, 0.50060445, 0.5004586, -0.024135575, -0.8654237, 0.012082333, 0.9997088, -0.020893516, 7.052042, 0.48501423, 4.1295347)
-
-[node name="Moai6" parent="Moais3" unique_id=2003187666 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.54357004, 0, 0.83936363, 0.42832962, 0.85999477, 0.2773853, -0.7218484, 0.5103027, -0.4674674, 5.509964, 1.7082521, -8.436253)
-
-[node name="Moai7" parent="Moais3" unique_id=1036337558 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.01489794, 0.2564522, -0.96644145, 0.07858601, 0.9632589, 0.25681904, 0.9967955, -0.079774976, -0.0058031753, 24.39618, -0.61130404, 1.4093995)
-
-[node name="Moai8" parent="Moais3" unique_id=747084718 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.83192366, -0.20603548, -0.5152201, 0.35322994, 0.9127178, 0.20536478, 0.42793816, -0.35283893, 0.83208925, 15.4771805, 3.1351871, 4.6925793)
-
-[node name="Moai9" parent="Moais3" unique_id=878719286 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.8656758, 0.014309536, 0.5003998, -0.051693097, 0.9968031, 0.060922563, -0.4979283, -0.07860641, 0.86364794, 21.865139, 3.168182, 9.999374)
-
-[node name="Moai10" parent="Moais3" unique_id=297164679 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.86567605, 0.22765113, 0.44584742, -0.051693182, 0.9265077, -0.3727083, -0.4979283, 0.29959732, 0.81382334, 22.014462, 2.9961958, 17.884619)
-
-[node name="Moai11" parent="Moais3" unique_id=897655404 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.7554433, 0.5004587, 0.42290187, 0.45411393, 0.06535828, -0.888543, -0.4723191, 0.86328965, -0.17789069, 30.35025, 0.52340436, 5.0674267)
-
-[node name="Moai12" parent="Moais3" unique_id=1695082179 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.831916, 0.25545985, 0.49260062, 0.38961208, 0.901014, 0.1907258, -0.39511728, 0.35059106, -0.8490981, 22.724821, 0.6965518, -5.11079)
-
-[node name="Moai13" parent="Moais3" unique_id=1368743169 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.9875974, -0.11034859, 0.11168454, 0.07858602, 0.9632589, 0.25681907, -0.13592096, -0.24485707, 0.95998406, -33.83394, -0.6113039, 4.5935802)
-
-[node name="Moai14" parent="Moais3" unique_id=93213447 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.3236688, -0.3251859, 0.88853335, 0.35322997, 0.91271794, 0.2053648, -0.87776226, 0.24738646, 0.4102838, -29.49123, 3.1351871, 13.047496)
-
-[node name="Moai15" parent="Moais3" unique_id=451081929 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.5994373, -0.07976275, 0.79643714, -0.0516931, 0.9968032, 0.060922563, -0.7987504, -0.00465101, -0.6016442, -25.00005, 3.168182, 6.061984)
-
-[node name="Moai16" parent="Moais3" unique_id=770009855 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.59943736, 0.2697121, 0.7536112, -0.051693194, 0.9265077, -0.3727083, -0.7987506, -0.26237184, -0.5414412, -17.191391, 2.9961958, 4.9555306)
-
-[node name="Moai17" parent="Moais3" unique_id=915011390 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.5606222, 0.79607433, -0.22796455, 0.45411396, 0.065358296, -0.888543, -0.6924468, -0.60165906, -0.39814982, -30.926579, 0.52340436, -1.7608967)
-
-[node name="Moai18" parent="Moais3" unique_id=1062839399 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.29109216, 0.3169485, -0.9026673, 0.38961217, 0.9010141, 0.19072582, 0.8737661, -0.29617137, -0.3857649, -40.1027, 0.6965518, 7.0449033)
-
-[node name="Moai19" parent="Moais3" unique_id=281833921 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.60477656, 0.18945804, -0.77353114, -0.024764491, 0.9663472, 0.2560454, 0.79600966, 0.17400634, -0.5797324, 4.5858707, -0.26589537, 25.710318)
-
-[node name="Moai20" parent="Moais3" unique_id=1368102275 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.369828, -0.0038555786, -0.92909205, 0.30715218, 0.94427335, 0.11834423, 0.87686086, -0.3291397, 0.35040277, -4.687441, 3.1215425, 23.084484)
-
-[node name="Moai21" parent="Moais3" unique_id=1812006838 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.99017084, -0.003997957, -0.13980722, 6.548312e-11, 0.99959147, -0.02858454, 0.13986447, 0.028303575, 0.9897661, -2.91679, 2.606374, 31.18193)
-
-[node name="Moai22" parent="Moais3" unique_id=499656163 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.99017066, -0.063603655, -0.124565765, -3.940364e-08, 0.89061797, -0.4547523, 0.1398643, 0.45028237, 0.8818637, -7.6256094, 1.6210661, 37.43374)
-
-[node name="Moai23" parent="Moais3" unique_id=833004124 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.85547704, -0.1398237, 0.49860618, 0.50045866, -0.02413559, -0.8654238, 0.1330407, 0.98988247, 0.04932855, 6.9562845, 0.4850142, 32.338814)
-
-[node name="Moai24" parent="Moais3" unique_id=1443675549 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.43726623, -0.071373224, 0.8964953, 0.4283296, 0.85999477, 0.27738532, -0.7907792, 0.50528675, -0.34547547, 7.1868706, 1.7082521, 19.680857)
-
-[node name="Moai25" parent="Moais3" unique_id=158872059 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.124664664, 0.26508915, -0.9561304, 0.07858601, 0.96325886, 0.25681904, 0.9890815, -0.043122355, -0.14091688, 24.510393, -0.6113039, 32.071243)
-
-[node name="Moai26" parent="Moais3" unique_id=1463587188 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.7638932, -0.15466076, -0.62653565, 0.35323, 0.9127182, 0.20536485, 0.5400885, -0.37818787, 0.75184953, 15.21986, 3.1351871, 34.074703)
-
-[node name="Moai27" parent="Moais3" unique_id=1580783004 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.9268095, 0.025163136, 0.37468764, -0.051693104, 0.99680334, 0.060922567, -0.37195694, -0.07583237, 0.9251472, 20.8028, 3.168182, 40.222786)
-
-[node name="Moai28" parent="Moais3" unique_id=935311499 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.9268095, 0.18351053, 0.32764012, -0.051693186, 0.92650795, -0.37270835, -0.37195665, 0.3284928, 0.8681823, 19.84779, 2.9961958, 48.051407)
-
-[node name="Moai29" parent="Moais3" unique_id=1935387505 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.8140784, 0.37479618, 0.44362566, 0.454114, 0.0653583, -0.8885431, -0.3620169, 0.9248005, -0.11699323, 29.89431, 0.52340436, 36.526077)
-
-[node name="Moai30" parent="Moais3" unique_id=1179466703 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.76847607, 0.20391369, 0.60651726, 0.38961214, 0.9010141, 0.19072579, -0.507589, 0.38287473, -0.77185464, 23.767405, 0.6965518, 25.381378)
-
-[node name="Moai31" parent="Moais3" unique_id=1289590519 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.99690044, -0.075017154, -0.023680836, 0.07858599, 0.9632587, 0.25681898, 0.0035446584, -0.25788411, 0.96616876, -33.59272, -0.6113039, 27.079807)
-
-[node name="Moai32" parent="Moais3" unique_id=858649639 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.443255, -0.35659006, 0.8224156, 0.35322994, 0.912718, 0.20536482, -0.82386464, 0.19947293, 0.5305252, -30.475096, 3.1351871, 36.058018)
-
-[node name="Moai33" parent="Moais3" unique_id=116296092 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.4818284, -0.07832821, 0.8727571, -0.051693086, 0.996803, 0.06092256, -0.8747391, -0.015761252, -0.48433733, -25.051039, 3.168182, 29.769325)
-
-[node name="Moai34" parent="Moais3" unique_id=325721792 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.48182863, 0.3037575, 0.82193214, -0.051693216, 0.9265078, -0.37270826, -0.8747395, -0.2220698, -0.43071592, -17.164381, 2.9961958, 29.7659)
-
-[node name="Moai35" parent="Moais3" unique_id=1067075756 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.4582631, 0.8724003, -0.17003688, 0.45411402, 0.065358326, -0.8885431, -0.7640517, -0.48440275, -0.42612034, -29.82517, 0.52340436, 21.194427)
-
-[node name="Moai36" parent="Moais3" unique_id=769449758 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.4104398, 0.35525697, -0.8398399, 0.3896123, 0.9010142, 0.1907258, 0.8244643, -0.2489304, -0.5082242, -40.142715, 0.6965518, 28.630257)
-
-[node name="Moai37" parent="Moais3" unique_id=2066303672 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.9993789, -0.030349992, 0.017885864, -0.024764514, 0.9663472, 0.2560454, -0.025054812, 0.2554436, -0.96649885, 50.617752, -0.26589537, 1.1187992)
-
-[node name="Moai38" parent="Moais3" unique_id=982101590 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.49499822, 0.26473218, -0.82758284, 0.30715218, 0.94427323, 0.11834424, 0.812794, -0.19561368, -0.5487267, 47.324554, 3.1215425, -7.939024)
-
-[node name="Moai39" parent="Moais3" unique_id=1136974944 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.46561447, -0.025296966, -0.88462603, 0, 0.99959135, -0.028584538, 0.8849876, 0.013309374, 0.46542418, 41.79169, 2.606374, -1.7672157)
-
-[node name="Moai40" parent="Moais3" unique_id=1268300412 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.46561444, -0.40245017, -0.78818583, 0, 0.890618, -0.45475236, 0.8849877, 0.21173927, 0.41468462, 33.966644, 1.6210661, -1.9306927)
-
-[node name="Moai41" parent="Moais3" unique_id=1726775410 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.39237848, -0.8847299, 0.25157917, 0.5004586, -0.024135573, -0.8654237, 0.7717382, 0.46547887, 0.43330047, 46.627197, 0.4850142, 6.918048)
-
-[node name="Moai42" parent="Moais3" unique_id=377988001 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.38573286, -0.4516115, 0.80452263, 0.4283295, 0.85999465, 0.27738526, -0.81715584, 0.23760432, 0.52516687, 57.029755, 1.7082521, -0.29748535)
-
-[node name="Moai43" parent="Moais3" unique_id=852076964 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.875215, 0.1900077, -0.44485337, 0.07858602, 0.9632589, 0.25681907, 0.47730687, 0.18981269, -0.8579908, 57.110165, -0.6113039, 21.00086)
-
-[node name="Moai44" parent="Moais3" unique_id=1862008401 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.00863573, 0.21632496, -0.97628266, 0.35322997, 0.91271794, 0.2053648, 0.9354964, -0.3466258, -0.06853065, 50.051777, 3.1351871, 14.6363535)
-
-[node name="Moai45" parent="Moais3" unique_id=1282044042 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.8437315, 0.076228425, -0.5313244, -0.0516931, 0.9968032, 0.060922563, 0.53426987, -0.023936518, 0.84497476, 48.329655, 3.168182, 22.760538)
-
-[node name="Moai46" parent="Moais3" unique_id=1343330913 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.84373164, -0.15914229, -0.5126306, -0.051693194, 0.9265077, -0.3727083, 0.53427005, 0.34096533, 0.77349734, 41.420837, 2.9961958, 26.564173)
-
-[node name="Moai47" parent="Moais3" unique_id=101454570 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.7697419, -0.5309799, 0.3543403, 0.45411396, 0.065358296, -0.888543, 0.44863933, 0.84485996, 0.29143444, 56.645157, 0.52340436, 27.973372)
-
-[node name="Moai48" parent="Moais3" unique_id=119684449 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.037678152, -0.19132297, 0.98080325, 0.38961217, 0.9010141, 0.19072582, -0.92020774, 0.38931912, 0.040593058, 62.102245, 0.6965518, 16.485834)
-
-[node name="Moai49" parent="Moais3" unique_id=410282277 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.580128, 0.16531557, -0.7975721, 0.07858601, 0.96325886, 0.25681904, 0.81072474, -0.21166615, 0.5458219, 27.179419, -0.6113039, -29.049475)
-
-[node name="Moai50" parent="Moais3" unique_id=2023228753 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.9275136, -0.3703452, 0.050617933, 0.35322994, 0.9127179, 0.20536478, -0.12225589, -0.17259875, 0.97737515, 21.719835, 3.1351871, -21.269964)
-
-[node name="Moai51" parent="Moais3" unique_id=659336731 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.4277775, -0.033022605, 0.90328026, -0.05169309, 0.9968031, 0.06092256, -0.9024042, -0.072754614, 0.42470273, 29.993088, 3.168182, -20.54788)
-
-[node name="Moai52" parent="Moais3" unique_id=1353326124 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.42777765, 0.3577777, 0.8300611, -0.05169319, 0.92650765, -0.37270826, -0.9024044, 0.116527714, 0.41483372, 34.60811, 2.9961958, -14.152494)
-
-[node name="Moai53" parent="Moais3" unique_id=1400584956 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(0.35177308, 0.9031246, 0.24621412, 0.454114, 0.065358326, -0.888543, -0.818557, 0.4243748, -0.38713005, 34.15676, 0.52340436, -29.435232)
-
-[node name="Moai54" parent="Moais3" unique_id=387095583 instance=ExtResource("7_cp0ys")]
-transform = Transform3D(-0.90880895, 0.40968382, -0.078897774, 0.38961217, 0.9010141, 0.1907258, 0.14922518, 0.14259385, -0.9784671, 22.091204, 0.6965518, -33.45588)
+[node name="Moai162" parent="Moais" unique_id=387095583 instance=ExtResource("7_cp0ys")]
+transform = Transform3D(0.14922522, 0.14259383, -0.9784671, 0.38961217, 0.9010141, 0.1907258, 0.90880895, -0.40968382, 0.07889782, -121.45587, 0.6965518, -39.091198)

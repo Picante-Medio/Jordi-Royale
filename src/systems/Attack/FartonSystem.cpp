@@ -1,3 +1,4 @@
+#include <cfloat>
 #include <exception>
 #include <limits>
 
@@ -13,7 +14,7 @@ void FartonSystem::init() {
 }
 
 void FartonSystem::onLoad() {
-    auto& q = scene.query<PlayerComponent>();
+    auto q = scene.query<PlayerComponent>();
     if(q.size() > 0)
         playerID = q[0].getConst<PlayerComponent>().entity;
     else throw std::runtime_error("Player entity does not exist");

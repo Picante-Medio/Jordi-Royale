@@ -3,7 +3,7 @@ enum system {
 	ConsoleSystem,
 	AudioSystem,
 	PhysicsGizmoSystem,
-	HierarchySystem,
+	TransformSystem,
 	ParticleSystem,
 	CameraSystem,
 	LightSystem,
