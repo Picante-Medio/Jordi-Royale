@@ -11,9 +11,11 @@
 [ext_resource type="Script" uid="uid://c28cgq4w1hvd6" path="res://Components/ResumeTag.gd" id="9_l36va"]
 [ext_resource type="Script" uid="uid://cr4oouyu1olwy" path="res://Components/ExitTag.gd" id="10_b6qs2"]
 [ext_resource type="PackedScene" uid="uid://bwqapp5sejmab" path="res://Resources/enemies/jordi-head.glb" id="11_7rhoi"]
+[ext_resource type="Script" uid="uid://cwpkus4pc4c3r" path="res://addons/HugosChatPlugin/NativeComponents/AnimationComponent.gd" id="12_w4o7h"]
 
 [node name="lose_scene" type="Node3D" unique_id=425554917]
 script = ExtResource("1_bjqob")
+systems = Array[int]([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 25, 24])
 metadata/_custom_type_script = "uid://dsrxmoaefi1rn"
 
 [node name="Camera" type="Node3D" parent="." unique_id=496740346]
@@ -41,18 +43,18 @@ mesh_name = "skybox.glb"
 [node name="skybox" parent="Skybox/RenderComponent" unique_id=1833941159 instance=ExtResource("5_uf5po")]
 transform = Transform3D(0.99957526, 0.009936266, 0.027396863, -0.008815205, 0.99913085, -0.0407412, -0.027777866, 0.040482387, 0.99879414, 0, 0, 0.08070057)
 
-[node name="Title" type="Node3D" parent="." unique_id=89289831]
+[node name="YouLose" type="Node3D" parent="." unique_id=89289831]
 script = ExtResource("6_i5gd0")
 
-[node name="PanelComponent" type="Node" parent="Title" unique_id=1912993134]
+[node name="PanelComponent" type="Node" parent="YouLose" unique_id=1912993134]
 script = ExtResource("7_aaa2f")
 overlayName = "JordiUI/JordiOverlay10"
 containerName = "JordiUI/JordiOverlay10/JordiContainer10"
 isVisible = true
-left = 0.55
+left = 0.1
 top = 0.2
-width = 0.35
-height = 0.2
+width = 0.8
+height = 0.5
 material = "JordiUI/YouLose"
 
 [node name="Retry" type="Node3D" parent="." unique_id=991009414]
@@ -63,17 +65,17 @@ script = ExtResource("7_aaa2f")
 overlayName = "JordiUI/JordiOverlay11"
 containerName = "JordiUI/JordiOverlay11/JordiContainer11"
 isVisible = true
-left = 0.6
-top = 0.5
+left = 0.36
+top = 0.55
 width = 0.25
 height = 0.1
-material = "JordiUI/Start"
+material = "JordiUI/Retry"
 
 [node name="ButtonComponent" type="Node" parent="Retry" unique_id=426243314]
 script = ExtResource("8_80pwb")
-normalMaterial = "JordiUI/Start"
-hoverMaterial = "JordiUI/StartHover"
-pressedMaterial = "JordiUI/StartPressed"
+normalMaterial = "JordiUI/Retry"
+hoverMaterial = "JordiUI/RetryHover"
+pressedMaterial = "JordiUI/RetryPressed"
 
 [node name="ResumeTag" type="Node" parent="Retry" unique_id=492997336]
 script = ExtResource("9_l36va")
@@ -86,7 +88,7 @@ script = ExtResource("7_aaa2f")
 overlayName = "JordiUI/JordiOverlay12"
 containerName = "JordiUI/JordiOverlay12/JordiContainer12"
 isVisible = true
-left = 0.6
+left = 0.36
 top = 0.7
 width = 0.25
 height = 0.1
@@ -102,7 +104,7 @@ pressedMaterial = "JordiUI/ExitPressed"
 script = ExtResource("10_b6qs2")
 
 [node name="Enemy" type="Node3D" parent="." unique_id=1421178535]
-transform = Transform3D(-1.3987646e-08, -5.443141e-16, -0.32, -0.08237424, 0.30921596, 3.6006924e-09, 0.30921596, 0.08237424, -1.351626e-08, 0, 0.84372556, 1.6526692)
+transform = Transform3D(-1.3987646e-08, -5.443141e-16, -0.32, -0.08237424, 0.30921596, 3.6006924e-09, 0.30921596, 0.08237424, -1.351626e-08, 0, 0.938689, 1.7925022)
 script = ExtResource("2_ncd1c")
 metadata/_custom_type_script = "uid://d3gpbv1up76xn"
 
@@ -112,3 +114,8 @@ mesh_name = "jordi-head.glb"
 metadata/_custom_type_script = "uid://cmidua6v4bry"
 
 [node name="jordi-head" parent="Enemy/RenderComponent" unique_id=2009954866 instance=ExtResource("11_7rhoi")]
+transform = Transform3D(1, 0, 7.1054274e-15, 0, 1, -2.6645353e-15, 0, 0, 1, 0, 0, 0)
+
+[node name="AnimationComponent" type="Node" parent="Enemy" unique_id=635498957]
+script = ExtResource("12_w4o7h")
+metadata/_custom_type_script = "uid://cwpkus4pc4c3r"
