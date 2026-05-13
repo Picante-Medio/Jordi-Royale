@@ -8,6 +8,7 @@
 #include "ChangeSceneMessage.h"
 #include "PanelComponent.h"
 #include "TransformComponent.h"
+#include "UpgradesManager.h"
 
 void 
 ProgressionSystem::onLoad(){
@@ -26,6 +27,8 @@ ProgressionSystem::init(){
             panel.isVisible = false;
         });
     });
+
+    UpgradesManager::Instance().resetTime();
 }
 
 void 
@@ -52,6 +55,12 @@ ProgressionSystem::update(uint32_t dt){
         hours++;
         minutes -= 60;
     }
+
+    // Update singleton
+    UpgradesManager::Instance().setMiliseconds(miliseconds);
+    UpgradesManager::Instance().setSeconds(seconds);
+    UpgradesManager::Instance().setMinutes(minutes);
+    UpgradesManager::Instance().setHours(hours);
 
     //------Clock UI update------
     

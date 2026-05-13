@@ -8,6 +8,7 @@
 #include "EnemyDeadMessage.h"
 #include "PlayerDeadMessage.h"
 #include "HealPlayerMessage.h"
+#include "UpgradesManager.h"
 
 void DamageSystem::init() {
     scene.subscribe<HealPlayerMessage>([this](std::shared_ptr<HUGO::Message> message){
@@ -15,6 +16,7 @@ void DamageSystem::init() {
         changeHP(playerID, m->healPoints);
     });
 
+    UpgradesManager::Instance().setEnemies(0);
 }
 
 void DamageSystem::onLoad() {
@@ -54,6 +56,7 @@ void DamageSystem::update(uint32_t dt) {
                     EnemyDeadMessage m;
                     m.enemy = hp.entity;
                     scene.sendMessage<EnemyDeadMessage>(m);
+                    UpgradesManager::Instance().setEnemies(UpgradesManager::Instance().getEnemies() + 1);
                 }
             }
         }
