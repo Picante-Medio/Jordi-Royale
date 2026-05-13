@@ -1,7 +1,7 @@
 SCENE main_scene
 SYSTEM AudioSystem
 SYSTEM PhysicsGizmoSystem
-SYSTEM HierarchySystem
+SYSTEM TransformSystem
 SYSTEM ParticleSystem
 SYSTEM CameraSystem
 SYSTEM LightSystem
@@ -9,18 +9,18 @@ SYSTEM RenderSystem
 SYSTEM TweenSystem
 SYSTEM UISystem
 SYSTEM ConsoleSystem
-SYSTEM EnemyAnimationSystem
-SYSTEM EnemyMovementSystem
-SYSTEM PickupSystem
-SYSTEM LevelingSystem
-SYSTEM AudioEventsSystem
-SYSTEM UpgradeSystem
+SYSTEM DynamicAudioSystem
 SYSTEM ChangeSceneSystem
 SYSTEM EnemySpawnSystem
-SYSTEM DamageSystem
+SYSTEM EnemyAnimationSystem
+SYSTEM EnemyMovementSystem
 SYSTEM PlayerMovementSystem
-SYSTEM ProgressionSystem
+SYSTEM DropSystem
+SYSTEM LevelingSystem
 SYSTEM StatSystem
+SYSTEM ProgressionSystem
+SYSTEM PickupSystem
+SYSTEM ProjectileSystem
 
 ENTITY Skybox 1
     COMPONENT TransformComponent
@@ -1933,9 +1933,6 @@ ENTITY Enemy 1
     COMPONENT RenderComponent
         STRING meshName jordi-head.glb
         STRING materialName 
-    COMPONENT DamageComponent
-        INT Damage 10
-        INT DamType 0
     COMPONENT HPComponent
         INT HPMax 50
         INT CurrentHP 50

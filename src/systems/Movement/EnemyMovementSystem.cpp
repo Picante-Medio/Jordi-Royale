@@ -25,7 +25,7 @@ EnemyMovementSystem::fixedUpdate(uint32_t dt) {
     // Move enemies towards Jordi
     for(auto pack : scene.query<EnemyTag, RigidBodyComponent, TransformComponent, SpeedComponent>()) {
         pack.modify<RigidBodyComponent>([this, dt, jordi, &pack](RigidBodyComponent& rb) {
-            const HUGO::Vector3 direction = scene.getComponentConst<TransformComponent>(jordi).getPosition() - pack.getConst<TransformComponent>().getPosition();
+            const HUGO::Vector3 direction = scene.getComponentConst<TransformComponent>(jordi).position - pack.getConst<TransformComponent>().position;
             const HUGO::Vector3 desiredVel = direction.normalized() * pack.getConst<SpeedComponent>().speed;
             const HUGO::Vector3 velError = desiredVel - rb.getLinearVelocity();
             const float dtSeconds = dt / 1000.0f;
@@ -37,11 +37,11 @@ EnemyMovementSystem::fixedUpdate(uint32_t dt) {
                     HUGO::Vector3 rotDirection = HUGO::Vector3(direction.x, 0, direction.z);
                     HUGO::Vector3 rotation = HUGO::Vector3(0, 0, 1).cross(rotDirection);
                     HUGO::Float wValue = sqrt(pow(HUGO::Vector3(0, 0, 1).length(), 2) * pow(rotDirection.length(), 2)) + rotDirection.z;
-                    trans.setRotation(HUGO::Quaternion(wValue, rotation.x, rotation.y, rotation.z) * HUGO::Quaternion(HUGO::Degree(270), HUGO::Vector3(0,1,0)));
+                    trans.rotation = (HUGO::Quaternion(wValue, rotation.x, rotation.y, rotation.z) * HUGO::Quaternion(HUGO::Degree(270), HUGO::Vector3(0,1,0)));
     
                     // Needed because previous calculations doesn't work properly when going forward and I don't know math
-                    if(trans.getRotation() == HUGO::Quaternion(0, 0, 0, 0))
-                        trans.setRotation(HUGO::Quaternion(HUGO::Degree(180), HUGO::Vector3(0, 1, 0)) * HUGO::Quaternion(HUGO::Degree(270), HUGO::Vector3(0,1,0)));
+                    if(trans.rotation == HUGO::Quaternion(0, 0, 0, 0))
+                        trans.rotation = (HUGO::Quaternion(HUGO::Degree(180), HUGO::Vector3(0, 1, 0)) * HUGO::Quaternion(HUGO::Degree(270), HUGO::Vector3(0,1,0)));
                 });
 
         });

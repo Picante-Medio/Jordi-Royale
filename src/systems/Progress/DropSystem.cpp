@@ -23,7 +23,7 @@ DropSystem::update(uint32_t dt) {
     //Rotate spawned xp on update
     for(auto pack : scene.query<XPComponent, TransformComponent>()) {
         pack.modify<TransformComponent>([](TransformComponent& tc){
-            tc.setRotation(tc.getRotation() + HUGO::Quaternion(HUGO::Degree(ROTATION_OFFSET), HUGO::Vector3(0, 1, 0)));
+            tc.rotation *= HUGO::Quaternion(HUGO::Degree(ROTATION_OFFSET), HUGO::Vector3(0, 1, 0));
         });
     }
 }
@@ -35,13 +35,13 @@ DropSystem::killEnemy(EntityID enemy) {
 
     // If enemy is a boss, spawn a chest
     if(scene.hasComponent<BossTag>(enemy)) {
-        spawnChest(tr.getWorldPosition());
+        spawnChest(tr.position);
     }
 
     //Otherwise, spawn xp depending on max health
     else {
         const HPComponent& hp = scene.getComponentConst<HPComponent>(enemy);
-        spawnXP(tr.getWorldPosition(), (hp.HPMax / HP_FOR_SPAWN) + 1);
+        spawnXP(tr.position, (hp.HPMax / HP_FOR_SPAWN) + 1);
     }
 
     // Play audio of dead enemy
@@ -64,7 +64,7 @@ DropSystem::spawnChest(HUGO::Vector3 position) {
     EntityID chest = chestPrefab.getValue();
 
     scene.modifyComponent<TransformComponent>(chest, [position](TransformComponent& tr) {
-        tr.setWorldPosition(position);
+        tr.position = position;
     });
 }
 
@@ -82,7 +82,7 @@ DropSystem::spawnXP(HUGO::Vector3 position, int amount) {
         EntityID XP = xpPrefab.getValue();
 
         scene.modifyComponent<TransformComponent>(XP, [position](TransformComponent& tr) {
-            tr.setWorldPosition(position);
+            tr.position = position;
         });
     }
 }

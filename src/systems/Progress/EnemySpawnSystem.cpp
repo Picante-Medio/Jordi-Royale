@@ -77,11 +77,11 @@ EnemySpawnSystem::spawnEnemy(HUGO::String prefab){
         TransformComponent actSpawner = scene.getComponentConst<TransformComponent>(spawners[rnd.randomInRange(0, spawners.size()-1)]);
           
         scene.modifyComponent<TransformComponent>(enemyID, [this, actSpawner](TransformComponent& trans){
-            trans.setWorldPosition(HUGO::Vector3(
-            rnd.randomDoubleWithVariance(actSpawner.getWorldPosition().x, spawnVariance),
+            trans.position = HUGO::Vector3(
+            rnd.randomDoubleWithVariance(actSpawner.position.x, spawnVariance),
             0.f,
-            rnd.randomDoubleWithVariance(actSpawner.getWorldPosition().z, spawnVariance)));
+            rnd.randomDoubleWithVariance(actSpawner.position.z, spawnVariance));
         });
     }
       
-    }
+}

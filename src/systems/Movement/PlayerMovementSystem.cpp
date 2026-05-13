@@ -43,22 +43,16 @@ void PlayerMovementSystem::update(uint32_t){
     HUGO::Vector2 currentMousePosition = HUGO::Vector2(scene.getInput()->getMouseRelativePosition().x, 
                                                        scene.getInput()->getMouseRelativePosition().y);
 
-    HUGO::Vector3 playerUp = scene.query<PlayerComponent, TransformComponent>().begin()->getConst<TransformComponent>().getWorldRotation().up();
-    HUGO::Vector3 camPos = scene.query<CameraComponent, TransformComponent>().begin()->getConst<TransformComponent>().getWorldPosition();
-    HUGO::Vector3 playerPos = scene.query<PlayerComponent, TransformComponent>().begin()->getConst<TransformComponent>().getWorldPosition();
-
-    diffVectorxz = HUGO::Vector3((playerPos - camPos).x, 0, (playerPos - camPos).z);
-    HUGO::Vector3 normalVector = diffVectorxz.normalized().cross(HUGO::Vector3(0, 1, 0)).normalized();
+    HUGO::Vector3 playerUp = scene.query<PlayerComponent, TransformComponent>().begin()->getConst<TransformComponent>().rotation.up();
+    HUGO::Vector3 playerPos = scene.query<PlayerComponent, TransformComponent>().begin()->getConst<TransformComponent>().position;
 
     HUGO::Vector2 diff = currentMousePosition - lastMousePosition;
     HUGO::Quaternion rotation = HUGO::Quaternion(HUGO::Radian(HUGO::Degree(-diff.x * 360 * SENSIBILITY)), playerUp);
-    //                        ! I can't figure out why this isn't working
-    //                        * HUGO::Quaternion(HUGO::Radian(HUGO::Degree(diff.y * 360 * SENSIBILITY)), normalVector);
 
     // rigidboy is a cylinder, rotation is not needed
     for(auto& item : scene.query<TransformComponent, CameraPivotTag>()){
         item.modify<TransformComponent>([rotation](TransformComponent& trans){
-            trans.setWorldRotation(trans.getWorldRotation() * rotation);
+            trans.rotation *= rotation;
         });
     }
 
@@ -100,11 +94,11 @@ void PlayerMovementSystem::fixedUpdate(uint32_t){
                 if(velocity == HUGO::Vector3()) return;
                 HUGO::Vector3 rotation = HUGO::Vector3(0, 0, 1).cross(velocity);
                 HUGO::Float wValue = sqrt(pow(HUGO::Vector3(0, 0, 1).length(), 2) * pow(velocity.length(), 2)) + velocity.z;
-                trans.setRotation(HUGO::Quaternion(wValue, rotation.x, rotation.y, rotation.z));
+                trans.rotation = HUGO::Quaternion(wValue, rotation.x, rotation.y, rotation.z);
 
                 // Needed because previous calculations doesn't work properly when going forward and I don't know math
-                if(trans.getRotation() == HUGO::Quaternion(0, 0, 0, 0))
-                    trans.setRotation(HUGO::Quaternion(HUGO::Degree(180), HUGO::Vector3(0, 1, 0)));
+                if(trans.rotation == HUGO::Quaternion(0, 0, 0, 0))
+                    trans.rotation = (HUGO::Quaternion(HUGO::Degree(180), HUGO::Vector3(0, 1, 0)));
             });
 
             rb.setAngularVelocity(HUGO::Vector3());

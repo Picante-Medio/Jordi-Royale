@@ -1,17 +1,17 @@
 [gd_scene format=3 uid="uid://cuhcdooqpfe0h"]
 
-[ext_resource type="Script" uid="uid://dsrxmoaefi1rn" path="res://addons/HugosChatPlugin/Entities/scene_tracker.gd" id="1_6pvow"]
-[ext_resource type="Script" uid="uid://d3gpbv1up76xn" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="2_p5iuk"]
-[ext_resource type="Script" uid="uid://bjwx87l5l8cjv" path="res://addons/HugosChatPlugin/NativeComponents/CameraComponent.gd" id="3_iqreg"]
-[ext_resource type="Script" uid="uid://dvoket7v7vbwo" path="res://addons/HugosChatPlugin/Entities/entity.gd" id="4_cgulc"]
-[ext_resource type="Script" uid="uid://dk4tsyuerxuda" path="res://addons/HugosChatPlugin/NativeComponents/PanelComponent.gd" id="5_p5iuk"]
-[ext_resource type="Script" uid="uid://md4cctv0w84l" path="res://addons/HugosChatPlugin/NativeComponents/ButtonComponent.gd" id="6_iqreg"]
+[ext_resource type="Script" uid="uid://d3yq16mo85h5h" path="res://addons/HugosChatPlugin/Entities/scene_tracker.gd" id="1_6pvow"]
+[ext_resource type="Script" uid="uid://dmak3mcg4w0h8" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="2_p5iuk"]
+[ext_resource type="Script" uid="uid://d10rufr7dnrt6" path="res://addons/HugosChatPlugin/NativeComponents/CameraComponent.gd" id="3_iqreg"]
+[ext_resource type="Script" uid="uid://cnmiha8rgpnhn" path="res://addons/HugosChatPlugin/Entities/entity.gd" id="4_cgulc"]
+[ext_resource type="Script" uid="uid://pcb3jv2yfyt7" path="res://addons/HugosChatPlugin/NativeComponents/PanelComponent.gd" id="5_p5iuk"]
+[ext_resource type="Script" uid="uid://xa5vy2f4cqcd" path="res://addons/HugosChatPlugin/NativeComponents/ButtonComponent.gd" id="6_iqreg"]
 [ext_resource type="Script" uid="uid://c28cgq4w1hvd6" path="res://Components/ResumeTag.gd" id="7_3w0xi"]
 [ext_resource type="Script" uid="uid://cr4oouyu1olwy" path="res://Components/ExitTag.gd" id="8_vwxkp"]
 
 [node name="pause_scene" type="Node3D" unique_id=1752521391]
 script = ExtResource("1_6pvow")
-systems = Array[int]([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 20, 19])
+systems = Array[int]([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 23, 22, 20])
 
 [node name="Camera" type="Node3D" parent="." unique_id=534693418]
 script = ExtResource("2_p5iuk")
@@ -20,11 +20,9 @@ script = ExtResource("2_p5iuk")
 script = ExtResource("3_iqreg")
 mainCamera = true
 clearColor = Vector4(0, 0, 0, 1)
-metadata/_custom_type_script = "uid://bjwx87l5l8cjv"
 
 [node name="Pause" type="Node3D" parent="." unique_id=414518703]
 script = ExtResource("4_cgulc")
-metadata/_custom_type_script = "uid://dvoket7v7vbwo"
 
 [node name="PanelComponent" type="Node" parent="Pause" unique_id=1600319735]
 script = ExtResource("5_p5iuk")
@@ -36,11 +34,9 @@ top = 0.3
 width = 0.5
 height = 0.2
 material = "JordiUI/Pause"
-metadata/_custom_type_script = "uid://dk4tsyuerxuda"
 
 [node name="Resume" type="Node3D" parent="." unique_id=460957517]
 script = ExtResource("4_cgulc")
-metadata/_custom_type_script = "uid://dvoket7v7vbwo"
 
 [node name="PanelComponent" type="Node" parent="Resume" unique_id=1335069082]
 script = ExtResource("5_p5iuk")
@@ -52,21 +48,18 @@ top = 0.6
 width = 0.25
 height = 0.1
 material = "JordiUI/Resume"
-metadata/_custom_type_script = "uid://dk4tsyuerxuda"
 
 [node name="ButtonComponent" type="Node" parent="Resume" unique_id=2057184874]
 script = ExtResource("6_iqreg")
 normalMaterial = "JordiUI/Resume"
 hoverMaterial = "JordiUI/ResumeHover"
 pressedMaterial = "JordiUI/ResumePressed"
-metadata/_custom_type_script = "uid://md4cctv0w84l"
 
 [node name="ResumeTag" type="Node" parent="Resume" unique_id=2147394114]
 script = ExtResource("7_3w0xi")
 
 [node name="Exit" type="Node3D" parent="." unique_id=2103504871]
 script = ExtResource("4_cgulc")
-metadata/_custom_type_script = "uid://dvoket7v7vbwo"
 
 [node name="PanelComponent" type="Node" parent="Exit" unique_id=1207500591]
 script = ExtResource("5_p5iuk")
@@ -78,14 +71,12 @@ top = 0.6
 width = 0.25
 height = 0.1
 material = "JordiUI/Exit"
-metadata/_custom_type_script = "uid://dk4tsyuerxuda"
 
 [node name="ButtonComponent" type="Node" parent="Exit" unique_id=1212528125]
 script = ExtResource("6_iqreg")
 normalMaterial = "JordiUI/Exit"
 hoverMaterial = "JordiUI/ExitHover"
 pressedMaterial = "JordiUI/ExitPressed"
-metadata/_custom_type_script = "uid://md4cctv0w84l"
 
 [node name="ExitTag" type="Node" parent="Exit" unique_id=526489110]
 script = ExtResource("8_vwxkp")

@@ -6,7 +6,7 @@ class_name SCENE_TRACKER
 @export var systems:Array[SYSTEMS.system] = [
 	SYSTEMS.system.AudioSystem,
 	SYSTEMS.system.PhysicsGizmoSystem,
-	SYSTEMS.system.HierarchySystem,
+	SYSTEMS.system.TransformSystem,
 	SYSTEMS.system.ParticleSystem,
 	SYSTEMS.system.CameraSystem,
 	SYSTEMS.system.LightSystem,

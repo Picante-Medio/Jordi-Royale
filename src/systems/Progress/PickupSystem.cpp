@@ -54,7 +54,7 @@ PickupSystem::update(uint32_t dt) {
 
 bool
 PickupSystem::pickup(const TransformComponent& playerTransform, const TransformComponent& pickupTransform, float pickupRange) {
-    HUGO::Vector3 distance = pickupTransform.getPosition() - playerTransform.getPosition();
+    HUGO::Vector3 distance = pickupTransform.position - playerTransform.position;
     float distanceModule = distance.length();
 
     return distanceModule < pickupRange;

@@ -46,7 +46,7 @@ void ProjectileSystem::updateProjectiles(uint32_t dt) {
             });
         }
 
-        HUGO::Vector3 deltaRight = transform.getRotation().right() * dx.second;
+        HUGO::Vector3 deltaRight = transform.rotation.right() * dx.second;
         
         // Up delta position
         std::pair<int,float> dy = getDeltaPosition(projectileComp.pathY, dt);
@@ -58,7 +58,7 @@ void ProjectileSystem::updateProjectiles(uint32_t dt) {
             });
         }
         
-        HUGO::Vector3 deltaUp = transform.getRotation().up() * dy.second;
+        HUGO::Vector3 deltaUp = transform.rotation.up() * dy.second;
         
         // Forward delta position
         std::pair<int,float> dz = getDeltaPosition(projectileComp.pathZ, dt);
@@ -70,12 +70,12 @@ void ProjectileSystem::updateProjectiles(uint32_t dt) {
             });
         }
         
-        HUGO::Vector3 deltaForward = transform.getRotation().forward() * dz.second;
+        HUGO::Vector3 deltaForward = transform.rotation.forward() * dz.second;
               
         // Apply position to transform
         HUGO::Vector3 deltaPosition = deltaRight + deltaUp + deltaForward;
         pack.modify<TransformComponent>([deltaPosition](TransformComponent& tr) {
-            tr.setWorldPosition(tr.getWorldPosition() + deltaPosition);
+            tr.position += deltaPosition;
         });
     }
 }
@@ -102,7 +102,7 @@ void ProjectileSystem::createProjectiles(uint32_t dt) {
 
                 // Set forward direction
                 TransformComponent& tr = scene.getComponent<TransformComponent>(id.getValue());
-                tr.setWorldRotation(HUGO::lookAt(tr.getRotation().forward(), tr.getRotation().up(), weaponInfo.initialDirection(dt)));
+                tr.rotation = (HUGO::lookAt(tr.rotation.forward(), tr.rotation.up(), weaponInfo.initialDirection(dt)));
             }
         }
     }
