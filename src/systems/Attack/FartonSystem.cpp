@@ -1,10 +1,12 @@
 #include <exception>
+#include <limits>
 
 #include "FartonSystem.h"
 #include "FartonComponent.h"
 #include "TransformComponent.h"
 #include "PlayerComponent.h"
 #include "ColliderComponent.h"
+#include "EnemyTag.h"
 
 void FartonSystem::init() {
     auto& q = scene.query<PlayerComponent>();
@@ -22,8 +24,8 @@ void FartonSystem::fixedUpdate(uint32_t dt) {
 
     // Update existing attack(s)
     for(auto pack : scene.query<FartonComponent, TransformComponent>()) {
-        const FartonComponent& farton = pack.getConst<FartonComponent&>();
-        const TransformComponent& tr = pack.getConst<TransformComponent&>();
+        const FartonComponent farton = pack.getConst<FartonComponent>();
+        const TransformComponent tr = pack.getConst<TransformComponent>();
 
         HUGO::Vector3 dist = tr.rotation.forward() * farton.speed * dt;
         
@@ -38,7 +40,7 @@ void FartonSystem::fixedUpdate(uint32_t dt) {
     // Remove overdue attacks
     // Collided with anything
     for(auto pack : scene.query<FartonComponent, ColliderComponent>()) {
-        const ColliderComponent& collider = pack.getConst<ColliderComponent&>();
+        const ColliderComponent collider = pack.getConst<ColliderComponent>();
         if(!collider.getCollisionInfo().empty())
             scene.removeEntity(collider.entity);
 
@@ -54,7 +56,7 @@ void FartonSystem::fixedUpdate(uint32_t dt) {
 
     // Exceeded max distance
     for(auto pack : scene.query<FartonComponent>()) {
-        const FartonComponent& farton = pack.getConst<FartonComponent&>();
+        const FartonComponent farton = pack.getConst<FartonComponent>();
         if(farton.distance > farton.maxDist)
             scene.removeEntity(farton.entity);
     }
@@ -64,12 +66,12 @@ void FartonSystem::fixedUpdate(uint32_t dt) {
         t = 0;
         HUGO::ErrorOrType<EntityID> res = scene.instantiatePrefab(prefab);
         if(!res.isError()) {
-            TransformComponent& tr = scene.getComponent<TransformComponent&>(res.getValue());
+            TransformComponent& tr = scene.getComponent<TransformComponent>(res.getValue());
             
             HUGO::Vector3 target = findClosestEnemy(tr.position);
             tr.rotation = HUGO::lookAt(tr.rotation.forward(), HUGO::Vector3(0,1,0), (target - tr.position)); // no need to normalize
 
-            TransformComponent& playerTr = scene.getComponentConst<TransformComponent&>(playerID);
+            const TransformComponent& playerTr = scene.getComponentConst<TransformComponent>(playerID);
             tr.position = playerTr.position + instantiateRadius * tr.rotation.forward();
         }
     }
@@ -78,4 +80,14 @@ void FartonSystem::fixedUpdate(uint32_t dt) {
 
 void FartonSystem::update(uint32_t) {
 
+}
+
+HUGO::Vector3 FartonSystem::findClosestEnemy(HUGO::Vector3 pos) {
+    float closestDist = FLT_MAX;
+    HUGO::Vector3 closestPos = (FLT_MIN);
+    for(auto pack : scene.query<EnemyTag, TransformComponent>()) {
+        if((pack.getConst<TransformComponent>().position - pos).length() < closestDist)
+            closestPos = pack.getConst<TransformComponent>().position;
+    }
+    return closestPos;
 }

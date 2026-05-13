@@ -19,7 +19,7 @@ private:
 
     float instantiateRadius = 0.3f;
 
-    std::string prefab;
+    std::string prefab = "farton";
 
     HUGO::Vector3 findClosestEnemy(HUGO::Vector3 pos);
 END_HSYSTEM()
