@@ -348,7 +348,7 @@ metadata/_custom_type_script = "uid://dk4tsyuerxuda"
 [node name="TextComponent" type="Node" parent="HPText" unique_id=2142866126]
 script = ExtResource("15_2ebs2")
 textAreaName = "JordUI/Overlay5/Container5/Text5"
-text = "HP: "
+text = "HP: 100 / 100"
 textFont = "Roboto"
 characterHeight = 0.035
 spaceWidth = 0.01
@@ -379,7 +379,7 @@ metadata/_custom_type_script = "uid://dk4tsyuerxuda"
 [node name="TextComponent" type="Node" parent="XPText" unique_id=1841147408]
 script = ExtResource("15_2ebs2")
 textAreaName = "JordUI/Overlay6/Container6/Text6"
-text = "XP: "
+text = "XP: 0 / 100"
 textFont = "Roboto"
 characterHeight = 0.035
 spaceWidth = 0.01

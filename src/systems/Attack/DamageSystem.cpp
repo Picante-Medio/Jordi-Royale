@@ -30,9 +30,9 @@ void DamageSystem::update(uint32_t dt) {
         if(timeSinceCooldown < msCooldown) continue;
         if(scene.hasComponent<DamageComponent>(id) && scene.getComponentConst<DamageComponent>(id).DamType == DamageComponent::Enemy){
             const DamageComponent damage = scene.getComponentConst<DamageComponent>(id);
-            HPComponent playerHP = scene.getComponentConst<HPComponent>(playerID);
             changeHP(playerID, -damage.Damage);
             timeSinceCooldown = 0;
+            HPComponent playerHP = scene.getComponentConst<HPComponent>(playerID);
             if(playerHP.CurrentHP <= 0){
                 PlayerDeadMessage m;
                 m.player = playerID;
@@ -48,8 +48,8 @@ void DamageSystem::update(uint32_t dt) {
         for(EntityID id : collider.getCollisionInfo()){
             if(scene.hasComponent<DamageComponent>(id) && scene.getComponentConst<DamageComponent>(id).DamType == DamageComponent::Player){
                 const DamageComponent& damage = scene.getComponentConst<DamageComponent>(id);
+                changeHP(collider.entity, -damage.Damage);
                 HPComponent hp = enemy.getConst<HPComponent>();
-                changeHP(hp.entity, -damage.Damage);
                 if(hp.CurrentHP <= 0){
                     EnemyDeadMessage m;
                     m.enemy = hp.entity;

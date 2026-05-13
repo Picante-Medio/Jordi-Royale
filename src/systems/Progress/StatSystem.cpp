@@ -35,6 +35,7 @@ StatSystem::init(){
             panel.isVisible = false;
         });
     });
+
 }
 
 void 

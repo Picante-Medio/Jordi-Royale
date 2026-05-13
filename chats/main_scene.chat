@@ -184,11 +184,8 @@ ENTITY Moais 1
             VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
             QUATERNION rotationOffset 0.0 0.0 0.0 1.0
             BOOL active true
-            BOOL useGizmo false
+            BOOL useGizmo true
             BOOL isTrigger false
-        COMPONENT RenderComponent
-            STRING meshName jordi-moai.glb
-            STRING materialName 
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -200,6 +197,9 @@ ENTITY Moais 1
             INT type 1
             BOOL dontRotateWithPhysicsOnDynamic false
             VECTOR_3 gravity 0.0 0.0 0.0
+        COMPONENT RenderComponent
+            STRING meshName jordi-moai.glb
+            STRING materialName 
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -216,11 +216,8 @@ ENTITY Moais 1
             VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
             QUATERNION rotationOffset 0.0 0.0 0.0 1.0
             BOOL active true
-            BOOL useGizmo false
+            BOOL useGizmo true
             BOOL isTrigger false
-        COMPONENT RenderComponent
-            STRING meshName jordi-moai.glb
-            STRING materialName 
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -232,6 +229,9 @@ ENTITY Moais 1
             INT type 1
             BOOL dontRotateWithPhysicsOnDynamic false
             VECTOR_3 gravity 0.0 0.0 0.0
+        COMPONENT RenderComponent
+            STRING meshName jordi-moai.glb
+            STRING materialName 
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -248,11 +248,8 @@ ENTITY Moais 1
             VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
             QUATERNION rotationOffset 0.0 0.0 0.0 1.0
             BOOL active true
-            BOOL useGizmo false
+            BOOL useGizmo true
             BOOL isTrigger false
-        COMPONENT RenderComponent
-            STRING meshName jordi-moai.glb
-            STRING materialName 
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -264,6 +261,9 @@ ENTITY Moais 1
             INT type 1
             BOOL dontRotateWithPhysicsOnDynamic false
             VECTOR_3 gravity 0.0 0.0 0.0
+        COMPONENT RenderComponent
+            STRING meshName jordi-moai.glb
+            STRING materialName 
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -280,11 +280,8 @@ ENTITY Moais 1
             VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
             QUATERNION rotationOffset 0.0 0.0 0.0 1.0
             BOOL active true
-            BOOL useGizmo false
+            BOOL useGizmo true
             BOOL isTrigger false
-        COMPONENT RenderComponent
-            STRING meshName jordi-moai.glb
-            STRING materialName 
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -296,6 +293,9 @@ ENTITY Moais 1
             INT type 1
             BOOL dontRotateWithPhysicsOnDynamic false
             VECTOR_3 gravity 0.0 0.0 0.0
+        COMPONENT RenderComponent
+            STRING meshName jordi-moai.glb
+            STRING materialName 
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -312,11 +312,8 @@ ENTITY Moais 1
             VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
             QUATERNION rotationOffset 0.0 0.0 0.0 1.0
             BOOL active true
-            BOOL useGizmo false
+            BOOL useGizmo true
             BOOL isTrigger false
-        COMPONENT RenderComponent
-            STRING meshName jordi-moai.glb
-            STRING materialName 
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -328,6 +325,9 @@ ENTITY Moais 1
             INT type 1
             BOOL dontRotateWithPhysicsOnDynamic false
             VECTOR_3 gravity 0.0 0.0 0.0
+        COMPONENT RenderComponent
+            STRING meshName jordi-moai.glb
+            STRING materialName 
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -344,11 +344,8 @@ ENTITY Moais 1
             VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
             QUATERNION rotationOffset 0.0 0.0 0.0 1.0
             BOOL active true
-            BOOL useGizmo false
+            BOOL useGizmo true
             BOOL isTrigger false
-        COMPONENT RenderComponent
-            STRING meshName jordi-moai.glb
-            STRING materialName 
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -360,6 +357,9 @@ ENTITY Moais 1
             INT type 1
             BOOL dontRotateWithPhysicsOnDynamic false
             VECTOR_3 gravity 0.0 0.0 0.0
+        COMPONENT RenderComponent
+            STRING meshName jordi-moai.glb
+            STRING materialName 
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -376,11 +376,8 @@ ENTITY Moais 1
             VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
             QUATERNION rotationOffset 0.0 0.0 0.0 1.0
             BOOL active true
-            BOOL useGizmo false
+            BOOL useGizmo true
             BOOL isTrigger false
-        COMPONENT RenderComponent
-            STRING meshName jordi-moai.glb
-            STRING materialName 
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -392,6 +389,9 @@ ENTITY Moais 1
             INT type 1
             BOOL dontRotateWithPhysicsOnDynamic false
             VECTOR_3 gravity 0.0 0.0 0.0
+        COMPONENT RenderComponent
+            STRING meshName jordi-moai.glb
+            STRING materialName 
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -408,11 +408,8 @@ ENTITY Moais 1
             VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
             QUATERNION rotationOffset 0.0 0.0 0.0 1.0
             BOOL active true
-            BOOL useGizmo false
+            BOOL useGizmo true
             BOOL isTrigger false
-        COMPONENT RenderComponent
-            STRING meshName jordi-moai.glb
-            STRING materialName 
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -424,6 +421,9 @@ ENTITY Moais 1
             INT type 1
             BOOL dontRotateWithPhysicsOnDynamic false
             VECTOR_3 gravity 0.0 0.0 0.0
+        COMPONENT RenderComponent
+            STRING meshName jordi-moai.glb
+            STRING materialName 
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -440,11 +440,8 @@ ENTITY Moais 1
             VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
             QUATERNION rotationOffset 0.0 0.0 0.0 1.0
             BOOL active true
-            BOOL useGizmo false
+            BOOL useGizmo true
             BOOL isTrigger false
-        COMPONENT RenderComponent
-            STRING meshName jordi-moai.glb
-            STRING materialName 
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -456,6 +453,9 @@ ENTITY Moais 1
             INT type 1
             BOOL dontRotateWithPhysicsOnDynamic false
             VECTOR_3 gravity 0.0 0.0 0.0
+        COMPONENT RenderComponent
+            STRING meshName jordi-moai.glb
+            STRING materialName 
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -472,11 +472,8 @@ ENTITY Moais 1
             VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
             QUATERNION rotationOffset 0.0 0.0 0.0 1.0
             BOOL active true
-            BOOL useGizmo false
+            BOOL useGizmo true
             BOOL isTrigger false
-        COMPONENT RenderComponent
-            STRING meshName jordi-moai.glb
-            STRING materialName 
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -488,6 +485,9 @@ ENTITY Moais 1
             INT type 1
             BOOL dontRotateWithPhysicsOnDynamic false
             VECTOR_3 gravity 0.0 0.0 0.0
+        COMPONENT RenderComponent
+            STRING meshName jordi-moai.glb
+            STRING materialName 
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -504,11 +504,8 @@ ENTITY Moais 1
             VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
             QUATERNION rotationOffset 0.0 0.0 0.0 1.0
             BOOL active true
-            BOOL useGizmo false
+            BOOL useGizmo true
             BOOL isTrigger false
-        COMPONENT RenderComponent
-            STRING meshName jordi-moai.glb
-            STRING materialName 
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -520,6 +517,9 @@ ENTITY Moais 1
             INT type 1
             BOOL dontRotateWithPhysicsOnDynamic false
             VECTOR_3 gravity 0.0 0.0 0.0
+        COMPONENT RenderComponent
+            STRING meshName jordi-moai.glb
+            STRING materialName 
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -536,11 +536,8 @@ ENTITY Moais 1
             VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
             QUATERNION rotationOffset 0.0 0.0 0.0 1.0
             BOOL active true
-            BOOL useGizmo false
+            BOOL useGizmo true
             BOOL isTrigger false
-        COMPONENT RenderComponent
-            STRING meshName jordi-moai.glb
-            STRING materialName 
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -552,6 +549,9 @@ ENTITY Moais 1
             INT type 1
             BOOL dontRotateWithPhysicsOnDynamic false
             VECTOR_3 gravity 0.0 0.0 0.0
+        COMPONENT RenderComponent
+            STRING meshName jordi-moai.glb
+            STRING materialName 
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -568,11 +568,8 @@ ENTITY Moais 1
             VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
             QUATERNION rotationOffset 0.0 0.0 0.0 1.0
             BOOL active true
-            BOOL useGizmo false
+            BOOL useGizmo true
             BOOL isTrigger false
-        COMPONENT RenderComponent
-            STRING meshName jordi-moai.glb
-            STRING materialName 
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -584,6 +581,9 @@ ENTITY Moais 1
             INT type 1
             BOOL dontRotateWithPhysicsOnDynamic false
             VECTOR_3 gravity 0.0 0.0 0.0
+        COMPONENT RenderComponent
+            STRING meshName jordi-moai.glb
+            STRING materialName 
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -600,11 +600,8 @@ ENTITY Moais 1
             VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
             QUATERNION rotationOffset 0.0 0.0 0.0 1.0
             BOOL active true
-            BOOL useGizmo false
+            BOOL useGizmo true
             BOOL isTrigger false
-        COMPONENT RenderComponent
-            STRING meshName jordi-moai.glb
-            STRING materialName 
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -616,6 +613,9 @@ ENTITY Moais 1
             INT type 1
             BOOL dontRotateWithPhysicsOnDynamic false
             VECTOR_3 gravity 0.0 0.0 0.0
+        COMPONENT RenderComponent
+            STRING meshName jordi-moai.glb
+            STRING materialName 
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -632,11 +632,8 @@ ENTITY Moais 1
             VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
             QUATERNION rotationOffset 0.0 0.0 0.0 1.0
             BOOL active true
-            BOOL useGizmo false
+            BOOL useGizmo true
             BOOL isTrigger false
-        COMPONENT RenderComponent
-            STRING meshName jordi-moai.glb
-            STRING materialName 
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -648,6 +645,9 @@ ENTITY Moais 1
             INT type 1
             BOOL dontRotateWithPhysicsOnDynamic false
             VECTOR_3 gravity 0.0 0.0 0.0
+        COMPONENT RenderComponent
+            STRING meshName jordi-moai.glb
+            STRING materialName 
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -664,11 +664,8 @@ ENTITY Moais 1
             VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
             QUATERNION rotationOffset 0.0 0.0 0.0 1.0
             BOOL active true
-            BOOL useGizmo false
+            BOOL useGizmo true
             BOOL isTrigger false
-        COMPONENT RenderComponent
-            STRING meshName jordi-moai.glb
-            STRING materialName 
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -680,6 +677,9 @@ ENTITY Moais 1
             INT type 1
             BOOL dontRotateWithPhysicsOnDynamic false
             VECTOR_3 gravity 0.0 0.0 0.0
+        COMPONENT RenderComponent
+            STRING meshName jordi-moai.glb
+            STRING materialName 
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -696,11 +696,8 @@ ENTITY Moais 1
             VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
             QUATERNION rotationOffset 0.0 0.0 0.0 1.0
             BOOL active true
-            BOOL useGizmo false
+            BOOL useGizmo true
             BOOL isTrigger false
-        COMPONENT RenderComponent
-            STRING meshName jordi-moai.glb
-            STRING materialName 
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -712,6 +709,9 @@ ENTITY Moais 1
             INT type 1
             BOOL dontRotateWithPhysicsOnDynamic false
             VECTOR_3 gravity 0.0 0.0 0.0
+        COMPONENT RenderComponent
+            STRING meshName jordi-moai.glb
+            STRING materialName 
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -728,11 +728,8 @@ ENTITY Moais 1
             VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
             QUATERNION rotationOffset 0.0 0.0 0.0 1.0
             BOOL active true
-            BOOL useGizmo false
+            BOOL useGizmo true
             BOOL isTrigger false
-        COMPONENT RenderComponent
-            STRING meshName jordi-moai.glb
-            STRING materialName 
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -744,6 +741,9 @@ ENTITY Moais 1
             INT type 1
             BOOL dontRotateWithPhysicsOnDynamic false
             VECTOR_3 gravity 0.0 0.0 0.0
+        COMPONENT RenderComponent
+            STRING meshName jordi-moai.glb
+            STRING materialName 
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -760,11 +760,8 @@ ENTITY Moais 1
             VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
             QUATERNION rotationOffset 0.0 0.0 0.0 1.0
             BOOL active true
-            BOOL useGizmo false
+            BOOL useGizmo true
             BOOL isTrigger false
-        COMPONENT RenderComponent
-            STRING meshName jordi-moai.glb
-            STRING materialName 
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -776,6 +773,9 @@ ENTITY Moais 1
             INT type 1
             BOOL dontRotateWithPhysicsOnDynamic false
             VECTOR_3 gravity 0.0 0.0 0.0
+        COMPONENT RenderComponent
+            STRING meshName jordi-moai.glb
+            STRING materialName 
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -792,11 +792,8 @@ ENTITY Moais 1
             VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
             QUATERNION rotationOffset 0.0 0.0 0.0 1.0
             BOOL active true
-            BOOL useGizmo false
+            BOOL useGizmo true
             BOOL isTrigger false
-        COMPONENT RenderComponent
-            STRING meshName jordi-moai.glb
-            STRING materialName 
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -808,6 +805,9 @@ ENTITY Moais 1
             INT type 1
             BOOL dontRotateWithPhysicsOnDynamic false
             VECTOR_3 gravity 0.0 0.0 0.0
+        COMPONENT RenderComponent
+            STRING meshName jordi-moai.glb
+            STRING materialName 
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -824,11 +824,8 @@ ENTITY Moais 1
             VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
             QUATERNION rotationOffset 0.0 0.0 0.0 1.0
             BOOL active true
-            BOOL useGizmo false
+            BOOL useGizmo true
             BOOL isTrigger false
-        COMPONENT RenderComponent
-            STRING meshName jordi-moai.glb
-            STRING materialName 
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -840,6 +837,9 @@ ENTITY Moais 1
             INT type 1
             BOOL dontRotateWithPhysicsOnDynamic false
             VECTOR_3 gravity 0.0 0.0 0.0
+        COMPONENT RenderComponent
+            STRING meshName jordi-moai.glb
+            STRING materialName 
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -856,11 +856,8 @@ ENTITY Moais 1
             VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
             QUATERNION rotationOffset 0.0 0.0 0.0 1.0
             BOOL active true
-            BOOL useGizmo false
+            BOOL useGizmo true
             BOOL isTrigger false
-        COMPONENT RenderComponent
-            STRING meshName jordi-moai.glb
-            STRING materialName 
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -872,6 +869,9 @@ ENTITY Moais 1
             INT type 1
             BOOL dontRotateWithPhysicsOnDynamic false
             VECTOR_3 gravity 0.0 0.0 0.0
+        COMPONENT RenderComponent
+            STRING meshName jordi-moai.glb
+            STRING materialName 
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -888,11 +888,8 @@ ENTITY Moais 1
             VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
             QUATERNION rotationOffset 0.0 0.0 0.0 1.0
             BOOL active true
-            BOOL useGizmo false
+            BOOL useGizmo true
             BOOL isTrigger false
-        COMPONENT RenderComponent
-            STRING meshName jordi-moai.glb
-            STRING materialName 
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -904,6 +901,9 @@ ENTITY Moais 1
             INT type 1
             BOOL dontRotateWithPhysicsOnDynamic false
             VECTOR_3 gravity 0.0 0.0 0.0
+        COMPONENT RenderComponent
+            STRING meshName jordi-moai.glb
+            STRING materialName 
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -920,11 +920,8 @@ ENTITY Moais 1
             VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
             QUATERNION rotationOffset 0.0 0.0 0.0 1.0
             BOOL active true
-            BOOL useGizmo false
+            BOOL useGizmo true
             BOOL isTrigger false
-        COMPONENT RenderComponent
-            STRING meshName jordi-moai.glb
-            STRING materialName 
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -936,6 +933,9 @@ ENTITY Moais 1
             INT type 1
             BOOL dontRotateWithPhysicsOnDynamic false
             VECTOR_3 gravity 0.0 0.0 0.0
+        COMPONENT RenderComponent
+            STRING meshName jordi-moai.glb
+            STRING materialName 
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -952,11 +952,8 @@ ENTITY Moais 1
             VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
             QUATERNION rotationOffset 0.0 0.0 0.0 1.0
             BOOL active true
-            BOOL useGizmo false
+            BOOL useGizmo true
             BOOL isTrigger false
-        COMPONENT RenderComponent
-            STRING meshName jordi-moai.glb
-            STRING materialName 
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -968,6 +965,9 @@ ENTITY Moais 1
             INT type 1
             BOOL dontRotateWithPhysicsOnDynamic false
             VECTOR_3 gravity 0.0 0.0 0.0
+        COMPONENT RenderComponent
+            STRING meshName jordi-moai.glb
+            STRING materialName 
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -984,11 +984,8 @@ ENTITY Moais 1
             VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
             QUATERNION rotationOffset 0.0 0.0 0.0 1.0
             BOOL active true
-            BOOL useGizmo false
+            BOOL useGizmo true
             BOOL isTrigger false
-        COMPONENT RenderComponent
-            STRING meshName jordi-moai.glb
-            STRING materialName 
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -1000,6 +997,9 @@ ENTITY Moais 1
             INT type 1
             BOOL dontRotateWithPhysicsOnDynamic false
             VECTOR_3 gravity 0.0 0.0 0.0
+        COMPONENT RenderComponent
+            STRING meshName jordi-moai.glb
+            STRING materialName 
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1016,11 +1016,8 @@ ENTITY Moais 1
             VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
             QUATERNION rotationOffset 0.0 0.0 0.0 1.0
             BOOL active true
-            BOOL useGizmo false
+            BOOL useGizmo true
             BOOL isTrigger false
-        COMPONENT RenderComponent
-            STRING meshName jordi-moai.glb
-            STRING materialName 
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -1032,6 +1029,9 @@ ENTITY Moais 1
             INT type 1
             BOOL dontRotateWithPhysicsOnDynamic false
             VECTOR_3 gravity 0.0 0.0 0.0
+        COMPONENT RenderComponent
+            STRING meshName jordi-moai.glb
+            STRING materialName 
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1048,11 +1048,8 @@ ENTITY Moais 1
             VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
             QUATERNION rotationOffset 0.0 0.0 0.0 1.0
             BOOL active true
-            BOOL useGizmo false
+            BOOL useGizmo true
             BOOL isTrigger false
-        COMPONENT RenderComponent
-            STRING meshName jordi-moai.glb
-            STRING materialName 
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -1064,6 +1061,9 @@ ENTITY Moais 1
             INT type 1
             BOOL dontRotateWithPhysicsOnDynamic false
             VECTOR_3 gravity 0.0 0.0 0.0
+        COMPONENT RenderComponent
+            STRING meshName jordi-moai.glb
+            STRING materialName 
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1080,11 +1080,8 @@ ENTITY Moais 1
             VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
             QUATERNION rotationOffset 0.0 0.0 0.0 1.0
             BOOL active true
-            BOOL useGizmo false
+            BOOL useGizmo true
             BOOL isTrigger false
-        COMPONENT RenderComponent
-            STRING meshName jordi-moai.glb
-            STRING materialName 
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -1096,6 +1093,9 @@ ENTITY Moais 1
             INT type 1
             BOOL dontRotateWithPhysicsOnDynamic false
             VECTOR_3 gravity 0.0 0.0 0.0
+        COMPONENT RenderComponent
+            STRING meshName jordi-moai.glb
+            STRING materialName 
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1112,11 +1112,8 @@ ENTITY Moais 1
             VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
             QUATERNION rotationOffset 0.0 0.0 0.0 1.0
             BOOL active true
-            BOOL useGizmo false
+            BOOL useGizmo true
             BOOL isTrigger false
-        COMPONENT RenderComponent
-            STRING meshName jordi-moai.glb
-            STRING materialName 
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -1128,6 +1125,9 @@ ENTITY Moais 1
             INT type 1
             BOOL dontRotateWithPhysicsOnDynamic false
             VECTOR_3 gravity 0.0 0.0 0.0
+        COMPONENT RenderComponent
+            STRING meshName jordi-moai.glb
+            STRING materialName 
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1144,11 +1144,8 @@ ENTITY Moais 1
             VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
             QUATERNION rotationOffset 0.0 0.0 0.0 1.0
             BOOL active true
-            BOOL useGizmo false
+            BOOL useGizmo true
             BOOL isTrigger false
-        COMPONENT RenderComponent
-            STRING meshName jordi-moai.glb
-            STRING materialName 
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -1160,6 +1157,9 @@ ENTITY Moais 1
             INT type 1
             BOOL dontRotateWithPhysicsOnDynamic false
             VECTOR_3 gravity 0.0 0.0 0.0
+        COMPONENT RenderComponent
+            STRING meshName jordi-moai.glb
+            STRING materialName 
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1176,11 +1176,8 @@ ENTITY Moais 1
             VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
             QUATERNION rotationOffset 0.0 0.0 0.0 1.0
             BOOL active true
-            BOOL useGizmo false
+            BOOL useGizmo true
             BOOL isTrigger false
-        COMPONENT RenderComponent
-            STRING meshName jordi-moai.glb
-            STRING materialName 
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -1192,6 +1189,9 @@ ENTITY Moais 1
             INT type 1
             BOOL dontRotateWithPhysicsOnDynamic false
             VECTOR_3 gravity 0.0 0.0 0.0
+        COMPONENT RenderComponent
+            STRING meshName jordi-moai.glb
+            STRING materialName 
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1208,11 +1208,8 @@ ENTITY Moais 1
             VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
             QUATERNION rotationOffset 0.0 0.0 0.0 1.0
             BOOL active true
-            BOOL useGizmo false
+            BOOL useGizmo true
             BOOL isTrigger false
-        COMPONENT RenderComponent
-            STRING meshName jordi-moai.glb
-            STRING materialName 
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -1224,6 +1221,9 @@ ENTITY Moais 1
             INT type 1
             BOOL dontRotateWithPhysicsOnDynamic false
             VECTOR_3 gravity 0.0 0.0 0.0
+        COMPONENT RenderComponent
+            STRING meshName jordi-moai.glb
+            STRING materialName 
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1240,11 +1240,8 @@ ENTITY Moais 1
             VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
             QUATERNION rotationOffset 0.0 0.0 0.0 1.0
             BOOL active true
-            BOOL useGizmo false
+            BOOL useGizmo true
             BOOL isTrigger false
-        COMPONENT RenderComponent
-            STRING meshName jordi-moai.glb
-            STRING materialName 
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -1256,6 +1253,9 @@ ENTITY Moais 1
             INT type 1
             BOOL dontRotateWithPhysicsOnDynamic false
             VECTOR_3 gravity 0.0 0.0 0.0
+        COMPONENT RenderComponent
+            STRING meshName jordi-moai.glb
+            STRING materialName 
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1272,11 +1272,8 @@ ENTITY Moais 1
             VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
             QUATERNION rotationOffset 0.0 0.0 0.0 1.0
             BOOL active true
-            BOOL useGizmo false
+            BOOL useGizmo true
             BOOL isTrigger false
-        COMPONENT RenderComponent
-            STRING meshName jordi-moai.glb
-            STRING materialName 
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -1288,6 +1285,9 @@ ENTITY Moais 1
             INT type 1
             BOOL dontRotateWithPhysicsOnDynamic false
             VECTOR_3 gravity 0.0 0.0 0.0
+        COMPONENT RenderComponent
+            STRING meshName jordi-moai.glb
+            STRING materialName 
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1304,11 +1304,8 @@ ENTITY Moais 1
             VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
             QUATERNION rotationOffset 0.0 0.0 0.0 1.0
             BOOL active true
-            BOOL useGizmo false
+            BOOL useGizmo true
             BOOL isTrigger false
-        COMPONENT RenderComponent
-            STRING meshName jordi-moai.glb
-            STRING materialName 
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -1320,6 +1317,9 @@ ENTITY Moais 1
             INT type 1
             BOOL dontRotateWithPhysicsOnDynamic false
             VECTOR_3 gravity 0.0 0.0 0.0
+        COMPONENT RenderComponent
+            STRING meshName jordi-moai.glb
+            STRING materialName 
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1336,11 +1336,8 @@ ENTITY Moais 1
             VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
             QUATERNION rotationOffset 0.0 0.0 0.0 1.0
             BOOL active true
-            BOOL useGizmo false
+            BOOL useGizmo true
             BOOL isTrigger false
-        COMPONENT RenderComponent
-            STRING meshName jordi-moai.glb
-            STRING materialName 
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -1352,6 +1349,9 @@ ENTITY Moais 1
             INT type 1
             BOOL dontRotateWithPhysicsOnDynamic false
             VECTOR_3 gravity 0.0 0.0 0.0
+        COMPONENT RenderComponent
+            STRING meshName jordi-moai.glb
+            STRING materialName 
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1368,11 +1368,8 @@ ENTITY Moais 1
             VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
             QUATERNION rotationOffset 0.0 0.0 0.0 1.0
             BOOL active true
-            BOOL useGizmo false
+            BOOL useGizmo true
             BOOL isTrigger false
-        COMPONENT RenderComponent
-            STRING meshName jordi-moai.glb
-            STRING materialName 
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -1384,6 +1381,9 @@ ENTITY Moais 1
             INT type 1
             BOOL dontRotateWithPhysicsOnDynamic false
             VECTOR_3 gravity 0.0 0.0 0.0
+        COMPONENT RenderComponent
+            STRING meshName jordi-moai.glb
+            STRING materialName 
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1400,11 +1400,8 @@ ENTITY Moais 1
             VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
             QUATERNION rotationOffset 0.0 0.0 0.0 1.0
             BOOL active true
-            BOOL useGizmo false
+            BOOL useGizmo true
             BOOL isTrigger false
-        COMPONENT RenderComponent
-            STRING meshName jordi-moai.glb
-            STRING materialName 
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -1416,6 +1413,9 @@ ENTITY Moais 1
             INT type 1
             BOOL dontRotateWithPhysicsOnDynamic false
             VECTOR_3 gravity 0.0 0.0 0.0
+        COMPONENT RenderComponent
+            STRING meshName jordi-moai.glb
+            STRING materialName 
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1432,11 +1432,8 @@ ENTITY Moais 1
             VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
             QUATERNION rotationOffset 0.0 0.0 0.0 1.0
             BOOL active true
-            BOOL useGizmo false
+            BOOL useGizmo true
             BOOL isTrigger false
-        COMPONENT RenderComponent
-            STRING meshName jordi-moai.glb
-            STRING materialName 
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -1448,6 +1445,9 @@ ENTITY Moais 1
             INT type 1
             BOOL dontRotateWithPhysicsOnDynamic false
             VECTOR_3 gravity 0.0 0.0 0.0
+        COMPONENT RenderComponent
+            STRING meshName jordi-moai.glb
+            STRING materialName 
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1464,11 +1464,8 @@ ENTITY Moais 1
             VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
             QUATERNION rotationOffset 0.0 0.0 0.0 1.0
             BOOL active true
-            BOOL useGizmo false
+            BOOL useGizmo true
             BOOL isTrigger false
-        COMPONENT RenderComponent
-            STRING meshName jordi-moai.glb
-            STRING materialName 
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -1480,6 +1477,9 @@ ENTITY Moais 1
             INT type 1
             BOOL dontRotateWithPhysicsOnDynamic false
             VECTOR_3 gravity 0.0 0.0 0.0
+        COMPONENT RenderComponent
+            STRING meshName jordi-moai.glb
+            STRING materialName 
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1496,11 +1496,8 @@ ENTITY Moais 1
             VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
             QUATERNION rotationOffset 0.0 0.0 0.0 1.0
             BOOL active true
-            BOOL useGizmo false
+            BOOL useGizmo true
             BOOL isTrigger false
-        COMPONENT RenderComponent
-            STRING meshName jordi-moai.glb
-            STRING materialName 
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -1512,6 +1509,9 @@ ENTITY Moais 1
             INT type 1
             BOOL dontRotateWithPhysicsOnDynamic false
             VECTOR_3 gravity 0.0 0.0 0.0
+        COMPONENT RenderComponent
+            STRING meshName jordi-moai.glb
+            STRING materialName 
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1528,11 +1528,8 @@ ENTITY Moais 1
             VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
             QUATERNION rotationOffset 0.0 0.0 0.0 1.0
             BOOL active true
-            BOOL useGizmo false
+            BOOL useGizmo true
             BOOL isTrigger false
-        COMPONENT RenderComponent
-            STRING meshName jordi-moai.glb
-            STRING materialName 
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -1544,6 +1541,9 @@ ENTITY Moais 1
             INT type 1
             BOOL dontRotateWithPhysicsOnDynamic false
             VECTOR_3 gravity 0.0 0.0 0.0
+        COMPONENT RenderComponent
+            STRING meshName jordi-moai.glb
+            STRING materialName 
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1560,11 +1560,8 @@ ENTITY Moais 1
             VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
             QUATERNION rotationOffset 0.0 0.0 0.0 1.0
             BOOL active true
-            BOOL useGizmo false
+            BOOL useGizmo true
             BOOL isTrigger false
-        COMPONENT RenderComponent
-            STRING meshName jordi-moai.glb
-            STRING materialName 
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -1576,6 +1573,9 @@ ENTITY Moais 1
             INT type 1
             BOOL dontRotateWithPhysicsOnDynamic false
             VECTOR_3 gravity 0.0 0.0 0.0
+        COMPONENT RenderComponent
+            STRING meshName jordi-moai.glb
+            STRING materialName 
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1592,11 +1592,8 @@ ENTITY Moais 1
             VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
             QUATERNION rotationOffset 0.0 0.0 0.0 1.0
             BOOL active true
-            BOOL useGizmo false
+            BOOL useGizmo true
             BOOL isTrigger false
-        COMPONENT RenderComponent
-            STRING meshName jordi-moai.glb
-            STRING materialName 
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -1608,6 +1605,9 @@ ENTITY Moais 1
             INT type 1
             BOOL dontRotateWithPhysicsOnDynamic false
             VECTOR_3 gravity 0.0 0.0 0.0
+        COMPONENT RenderComponent
+            STRING meshName jordi-moai.glb
+            STRING materialName 
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1624,11 +1624,8 @@ ENTITY Moais 1
             VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
             QUATERNION rotationOffset 0.0 0.0 0.0 1.0
             BOOL active true
-            BOOL useGizmo false
+            BOOL useGizmo true
             BOOL isTrigger false
-        COMPONENT RenderComponent
-            STRING meshName jordi-moai.glb
-            STRING materialName 
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -1640,6 +1637,9 @@ ENTITY Moais 1
             INT type 1
             BOOL dontRotateWithPhysicsOnDynamic false
             VECTOR_3 gravity 0.0 0.0 0.0
+        COMPONENT RenderComponent
+            STRING meshName jordi-moai.glb
+            STRING materialName 
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1656,11 +1656,8 @@ ENTITY Moais 1
             VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
             QUATERNION rotationOffset 0.0 0.0 0.0 1.0
             BOOL active true
-            BOOL useGizmo false
+            BOOL useGizmo true
             BOOL isTrigger false
-        COMPONENT RenderComponent
-            STRING meshName jordi-moai.glb
-            STRING materialName 
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -1672,6 +1669,9 @@ ENTITY Moais 1
             INT type 1
             BOOL dontRotateWithPhysicsOnDynamic false
             VECTOR_3 gravity 0.0 0.0 0.0
+        COMPONENT RenderComponent
+            STRING meshName jordi-moai.glb
+            STRING materialName 
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1688,11 +1688,8 @@ ENTITY Moais 1
             VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
             QUATERNION rotationOffset 0.0 0.0 0.0 1.0
             BOOL active true
-            BOOL useGizmo false
+            BOOL useGizmo true
             BOOL isTrigger false
-        COMPONENT RenderComponent
-            STRING meshName jordi-moai.glb
-            STRING materialName 
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -1704,6 +1701,9 @@ ENTITY Moais 1
             INT type 1
             BOOL dontRotateWithPhysicsOnDynamic false
             VECTOR_3 gravity 0.0 0.0 0.0
+        COMPONENT RenderComponent
+            STRING meshName jordi-moai.glb
+            STRING materialName 
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1720,11 +1720,8 @@ ENTITY Moais 1
             VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
             QUATERNION rotationOffset 0.0 0.0 0.0 1.0
             BOOL active true
-            BOOL useGizmo false
+            BOOL useGizmo true
             BOOL isTrigger false
-        COMPONENT RenderComponent
-            STRING meshName jordi-moai.glb
-            STRING materialName 
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -1736,6 +1733,9 @@ ENTITY Moais 1
             INT type 1
             BOOL dontRotateWithPhysicsOnDynamic false
             VECTOR_3 gravity 0.0 0.0 0.0
+        COMPONENT RenderComponent
+            STRING meshName jordi-moai.glb
+            STRING materialName 
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1752,11 +1752,8 @@ ENTITY Moais 1
             VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
             QUATERNION rotationOffset 0.0 0.0 0.0 1.0
             BOOL active true
-            BOOL useGizmo false
+            BOOL useGizmo true
             BOOL isTrigger false
-        COMPONENT RenderComponent
-            STRING meshName jordi-moai.glb
-            STRING materialName 
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -1768,6 +1765,9 @@ ENTITY Moais 1
             INT type 1
             BOOL dontRotateWithPhysicsOnDynamic false
             VECTOR_3 gravity 0.0 0.0 0.0
+        COMPONENT RenderComponent
+            STRING meshName jordi-moai.glb
+            STRING materialName 
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1784,11 +1784,8 @@ ENTITY Moais 1
             VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
             QUATERNION rotationOffset 0.0 0.0 0.0 1.0
             BOOL active true
-            BOOL useGizmo false
+            BOOL useGizmo true
             BOOL isTrigger false
-        COMPONENT RenderComponent
-            STRING meshName jordi-moai.glb
-            STRING materialName 
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -1800,6 +1797,9 @@ ENTITY Moais 1
             INT type 1
             BOOL dontRotateWithPhysicsOnDynamic false
             VECTOR_3 gravity 0.0 0.0 0.0
+        COMPONENT RenderComponent
+            STRING meshName jordi-moai.glb
+            STRING materialName 
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1816,11 +1816,8 @@ ENTITY Moais 1
             VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
             QUATERNION rotationOffset 0.0 0.0 0.0 1.0
             BOOL active true
-            BOOL useGizmo false
+            BOOL useGizmo true
             BOOL isTrigger false
-        COMPONENT RenderComponent
-            STRING meshName jordi-moai.glb
-            STRING materialName 
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -1832,6 +1829,9 @@ ENTITY Moais 1
             INT type 1
             BOOL dontRotateWithPhysicsOnDynamic false
             VECTOR_3 gravity 0.0 0.0 0.0
+        COMPONENT RenderComponent
+            STRING meshName jordi-moai.glb
+            STRING materialName 
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1848,11 +1848,8 @@ ENTITY Moais 1
             VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
             QUATERNION rotationOffset 0.0 0.0 0.0 1.0
             BOOL active true
-            BOOL useGizmo false
+            BOOL useGizmo true
             BOOL isTrigger false
-        COMPONENT RenderComponent
-            STRING meshName jordi-moai.glb
-            STRING materialName 
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -1864,6 +1861,9 @@ ENTITY Moais 1
             INT type 1
             BOOL dontRotateWithPhysicsOnDynamic false
             VECTOR_3 gravity 0.0 0.0 0.0
+        COMPONENT RenderComponent
+            STRING meshName jordi-moai.glb
+            STRING materialName 
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1880,11 +1880,8 @@ ENTITY Moais 1
             VECTOR_3 positionOffset 0.0 0.10321044921875 0.0
             QUATERNION rotationOffset 0.0 0.0 0.0 1.0
             BOOL active true
-            BOOL useGizmo false
+            BOOL useGizmo true
             BOOL isTrigger false
-        COMPONENT RenderComponent
-            STRING meshName jordi-moai.glb
-            STRING materialName 
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -1896,6 +1893,9 @@ ENTITY Moais 1
             INT type 1
             BOOL dontRotateWithPhysicsOnDynamic false
             VECTOR_3 gravity 0.0 0.0 0.0
+        COMPONENT RenderComponent
+            STRING meshName jordi-moai.glb
+            STRING materialName 
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1960,7 +1960,7 @@ ENTITY HPText 1
         STRING material 
     COMPONENT TextComponent
         STRING textAreaName JordUI/Overlay5/Container5/Text5
-        STRING text HP: 
+        STRING text HP: 100 / 100
         STRING textFont Roboto
         FLOAT characterHeight 0.035
         FLOAT spaceWidth 0.01
@@ -1988,7 +1988,7 @@ ENTITY XPText 1
         STRING material 
     COMPONENT TextComponent
         STRING textAreaName JordUI/Overlay6/Container6/Text6
-        STRING text XP: 
+        STRING text XP: 0 / 100
         STRING textFont Roboto
         FLOAT characterHeight 0.035
         FLOAT spaceWidth 0.01
