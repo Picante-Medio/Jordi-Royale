@@ -9,15 +9,19 @@ SYSTEM RenderSystem
 SYSTEM TweenSystem
 SYSTEM UISystem
 SYSTEM ConsoleSystem
-SYSTEM LevelingSystem
-SYSTEM ProgressionSystem
-SYSTEM ProjectileSystem
-SYSTEM PlayerMovementSystem
 SYSTEM DynamicAudioSystem
-SYSTEM AudioEventsSystem
-SYSTEM EnemyMovementSystem
+SYSTEM PlayerMovementSystem
+SYSTEM EnemySpawnSystem
 SYSTEM EnemyAnimationSystem
+SYSTEM DropSystem
+SYSTEM LevelingSystem
+SYSTEM StatSystem
+SYSTEM ProgressionSystem
+SYSTEM PauseSystem
+SYSTEM PauseEventSystem
+SYSTEM EnemyMovementSystem
 SYSTEM ChangeSceneSystem
+SYSTEM AudioEventsSystem
 
 ENTITY Skybox 1
     COMPONENT TransformComponent

@@ -54,12 +54,4 @@ ChangeSceneSystem::init() {
 
 void
 ChangeSceneSystem::update(uint32_t) {
-    // Pause handling
-    if(scene.getInput()->isKeyPressed(HUGO::KeyCode::ESC)) {
-        ChangeSceneMessage message;
-        message.sceneName = "pause_scene";
-        message.destroyCurrent = false;
-
-        scene.sendMessage<ChangeSceneMessage>(message);
-    }
 }

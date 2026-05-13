@@ -117,7 +117,7 @@ static func write_systems():
 	var native_systems := '	ConsoleSystem,
 	AudioSystem,
 	PhysicsGizmoSystem,
-	HierarchySystem,
+	TransformSystem,
 	ParticleSystem,
 	CameraSystem,
 	LightSystem,
