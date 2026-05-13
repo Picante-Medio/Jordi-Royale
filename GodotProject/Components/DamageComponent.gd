@@ -3,7 +3,7 @@ extends Component
 class_name DamageComponent
 
 @export var Damage:int = 10
-@export var DamType:int = Player
+@export var DamType:int = 1
 
 func get_component() -> Dictionary[String, Variant]:
 	return {
