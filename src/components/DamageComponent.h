@@ -10,6 +10,6 @@ enum DamageType{
 };
 
 DEFAULT_SERIALIZED_MEMBER(HUGO::Int, Damage, 10);
-DamageType DamType = Player;
+DEFAULT_SERIALIZED_MEMBER(HUGO::Int, DamType, Player);
 
 END_HCOMPONENT()

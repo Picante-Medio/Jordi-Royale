@@ -21,14 +21,18 @@ void DamageSystem::onLoad() {
 
 }
 
-void DamageSystem::update(uint32_t) {
+void DamageSystem::update(uint32_t dt) {
     playerID = scene.query<PlayerComponent>().begin()->getConst<PlayerComponent>().entity;
+    timeSinceCooldown += dt;
 
     for(EntityID id : scene.getComponent<ColliderComponent>(playerID).getCollisionInfo()){
-        if(scene.hasComponent<DamageComponent>(id) && scene.getComponent<DamageComponent>(id).DamType == DamageComponent::Enemy){
-            const DamageComponent& damage = scene.getComponent<DamageComponent>(id);
-            HPComponent& playerHP = scene.getComponent<HPComponent>(playerID);
+
+        if(timeSinceCooldown < msCooldown) continue;
+        if(scene.hasComponent<DamageComponent>(id) && scene.getComponentConst<DamageComponent>(id).DamType == DamageComponent::Enemy){
+            const DamageComponent damage = scene.getComponentConst<DamageComponent>(id);
+            HPComponent playerHP = scene.getComponentConst<HPComponent>(playerID);
             changeHP(playerID, -damage.Damage);
+            timeSinceCooldown = 0;
             if(playerHP.CurrentHP <= 0){
                 PlayerDeadMessage m;
                 m.player = playerID;
@@ -36,31 +40,31 @@ void DamageSystem::update(uint32_t) {
             }
         }
     }
-        
+
     for(auto enemy : scene.query<HPComponent, ColliderComponent, EnemyTag>()){
         const ColliderComponent& collider = enemy.getConst<ColliderComponent>();
         if(collider.collisionInfo.empty()) continue;
         
         for(EntityID id : collider.getCollisionInfo()){
-            if(scene.hasComponent<DamageComponent>(id) && scene.getComponent<DamageComponent>(id).DamType == DamageComponent::Player){
-                const DamageComponent& damage = scene.getComponent<DamageComponent>(id);
-                enemy.modify<HPComponent>([&damage, this] (HPComponent& hp){
-                    changeHP(hp.entity, -damage.Damage);
-                    if(hp.CurrentHP <= 0){
-                        EnemyDeadMessage m;
-                        m.enemy = hp.entity;
-                        scene.sendMessage<EnemyDeadMessage>(m);
-                    }
-                });
+            if(scene.hasComponent<DamageComponent>(id) && scene.getComponentConst<DamageComponent>(id).DamType == DamageComponent::Player){
+                const DamageComponent& damage = scene.getComponentConst<DamageComponent>(id);
+                HPComponent hp = enemy.getConst<HPComponent>();
+                changeHP(hp.entity, -damage.Damage);
+                if(hp.CurrentHP <= 0){
+                    EnemyDeadMessage m;
+                    m.enemy = hp.entity;
+                    scene.sendMessage<EnemyDeadMessage>(m);
+                }
             }
         }
     }
     
 }
 void DamageSystem::changeHP(EntityID id, HUGO::Int hp){
-    HPComponent& entity = scene.getComponent<HPComponent>(id);
-    entity.CurrentHP += hp;
-    if(entity.CurrentHP > entity.HPMax) entity.CurrentHP = entity.HPMax;
+    scene.modifyComponent<HPComponent>(id, [hp](HPComponent& entHp){
+        entHp.CurrentHP += hp;
+        if(entHp.CurrentHP > entHp.HPMax) entHp.CurrentHP = entHp.HPMax;
+    });
 }
 
 void DamageSystem::fixedUpdate(uint32_t) {

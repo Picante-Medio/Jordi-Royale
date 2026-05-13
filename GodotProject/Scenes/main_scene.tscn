@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c462xqhte7va4" path="res://Resources/jordi/jordi.glb" id="4_m1efj"]
 [ext_resource type="Script" uid="uid://b4cohkcfhgq44" path="res://addons/HugosChatPlugin/NativeComponents/RigidBodyComponent.gd" id="4_mai8y"]
 [ext_resource type="Script" uid="uid://dgscgud8jyhsm" path="res://Components/SpeedComponent.gd" id="6_drdnd"]
+[ext_resource type="Script" uid="uid://yr66mrh8xaa8" path="res://Components/HPComponent.gd" id="9_8edxt"]
 [ext_resource type="Script" uid="uid://cwpkus4pc4c3r" path="res://addons/HugosChatPlugin/NativeComponents/AnimationComponent.gd" id="9_drdnd"]
 [ext_resource type="Script" uid="uid://cauioprn35hgk" path="res://Components/CameraPivotTag.gd" id="9_mai8y"]
 [ext_resource type="Script" uid="uid://dbu2e7vd80ife" path="res://Components/PlayerComponent.gd" id="10_76v2p"]
@@ -73,6 +74,10 @@ linearDamping = 0.1
 linearSleepingThreshold = 0.8
 angularSleepingThreshold = 1.0
 dontRotateWithPhysicsOnDynamic = true
+
+[node name="HPComponent" type="Node" parent="Jordi" unique_id=414192842]
+script = ExtResource("9_8edxt")
+metadata/_custom_type_script = "uid://yr66mrh8xaa8"
 
 [node name="RenderComponent" type="MeshInstance3D" parent="Jordi" unique_id=1294126534]
 transform = Transform3D(1, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1, 0, 0, 0)

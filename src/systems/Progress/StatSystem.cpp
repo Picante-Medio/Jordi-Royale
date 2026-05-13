@@ -52,9 +52,9 @@ StatSystem::updateHPText(HPComponent& hp){
     if(scene.hasComponent<PlayerComponent>(hp.entity)){
         scene.query<HPTextTag, TextComponent>().begin()->modify<TextComponent>([hp](TextComponent& text){
             HUGO::String result = "HP: ";
-            result += hp.CurrentHP;
+            result += std::to_string(hp.CurrentHP);
             result += " / ";
-            result += hp.HPMax;
+            result += std::to_string(hp.HPMax);
 
             text.text = result;
         });
