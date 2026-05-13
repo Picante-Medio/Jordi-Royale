@@ -28,7 +28,10 @@ ProgressionSystem::init(){
         });
     });
 
-    UpgradesManager::Instance().resetTime();
+    UpgradesManager::Instance().setMiliseconds(0);
+    UpgradesManager::Instance().setSeconds(0);
+    UpgradesManager::Instance().setMinutes(0);
+    UpgradesManager::Instance().setHours(0);
 }
 
 void 
