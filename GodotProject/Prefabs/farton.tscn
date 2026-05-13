@@ -15,8 +15,9 @@ radius = 0.1
 height = 0.5
 
 [node name="Farton" type="Node3D" unique_id=1435140913]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 script = ExtResource("1_21eum")
-systems = []
+systems = Array[int]([])
 metadata/_custom_type_script = "uid://d3gpbv1up76xn"
 
 [node name="ColliderComponent" type="CollisionShape3D" parent="." unique_id=2002130713]
@@ -28,6 +29,7 @@ metadata/_custom_type_script = "uid://5ysnehctvx5b"
 
 [node name="RigidBodyComponent" type="Node" parent="." unique_id=1523095685]
 script = ExtResource("3_8qf41")
+type = 2
 metadata/_custom_type_script = "uid://dpjupwgyydq3o"
 
 [node name="RenderComponent" type="MeshInstance3D" parent="." unique_id=132340521]

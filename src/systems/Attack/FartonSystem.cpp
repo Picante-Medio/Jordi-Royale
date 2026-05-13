@@ -74,7 +74,9 @@ void FartonSystem::fixedUpdate(uint32_t dt) {
 
             const TransformComponent& playerTr = scene.getComponentConst<TransformComponent>(playerID);
             tr.position = playerTr.position + instantiateRadius * tr.rotation.forward();
-            std::cout << "AAAAAAAA farton\n";
+            tr.position.y = 0.5f;
+            std::cout << "Farton instanciado en" << tr.position.x << " " << tr.position.y << " " << tr.position.z << "\n";
+            std::cout << "Escala del farton " << tr.scale.x << " " << tr.scale.y << " " << tr.scale.z << "\n";
         }
     }
 

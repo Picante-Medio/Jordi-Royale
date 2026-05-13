@@ -15,7 +15,7 @@ private:
     EntityID playerID;
 
     uint32_t t = 0;
-    uint32_t firingRate = 5000;
+    uint32_t firingRate = 2000;
 
     float instantiateRadius = 0.3f;
 
