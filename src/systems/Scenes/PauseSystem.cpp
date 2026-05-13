@@ -26,7 +26,6 @@ PauseSystem::initExit(ExitTag& exit){
     scene.modifyComponent<ButtonComponent>(exit.entity, [this](ButtonComponent& but){
 
         but.onClickCallback = [this](){
-            scene.unloadScene("main_scene");
             ChangeSceneMessage message;
             message.sceneName = "main_menu";
             message.destroyCurrent = true;

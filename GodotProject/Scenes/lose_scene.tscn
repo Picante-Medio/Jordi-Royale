@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://cr4oouyu1olwy" path="res://Components/ExitTag.gd" id="10_b6qs2"]
 [ext_resource type="PackedScene" uid="uid://bwqapp5sejmab" path="res://Resources/enemies/jordi-head.glb" id="11_7rhoi"]
 [ext_resource type="Script" uid="uid://cwpkus4pc4c3r" path="res://addons/HugosChatPlugin/NativeComponents/AnimationComponent.gd" id="12_w4o7h"]
+[ext_resource type="Script" uid="uid://esoqdkwkniof" path="res://addons/HugosChatPlugin/NativeComponents/TextComponent.gd" id="13_xr5qg"]
 
 [node name="lose_scene" type="Node3D" unique_id=425554917]
 script = ExtResource("1_bjqob")
@@ -21,7 +22,6 @@ metadata/_custom_type_script = "uid://dsrxmoaefi1rn"
 [node name="Camera" type="Node3D" parent="." unique_id=496740346]
 transform = Transform3D(0.29999998, 0, 0, 0, 0.4073511, 0.08523656, 0, -0.10914939, 0.31810713, 0, 1.708715, 3.6169834)
 script = ExtResource("2_ncd1c")
-systems = Array[int]([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 
 [node name="Camera3D" type="Camera3D" parent="Camera" unique_id=1650988971]
 transform = Transform3D(3.3333335, 0, 0, 0, 2.3712366, 0, 0, 0, 3.036479, 0, 0, 0)
@@ -45,6 +45,7 @@ transform = Transform3D(0.99957526, 0.009936266, 0.027396863, -0.008815205, 0.99
 
 [node name="YouLose" type="Node3D" parent="." unique_id=89289831]
 script = ExtResource("6_i5gd0")
+systems = null
 
 [node name="PanelComponent" type="Node" parent="YouLose" unique_id=1912993134]
 script = ExtResource("7_aaa2f")
@@ -59,6 +60,7 @@ material = "JordiUI/YouLose"
 
 [node name="Retry" type="Node3D" parent="." unique_id=991009414]
 script = ExtResource("6_i5gd0")
+systems = null
 
 [node name="PanelComponent" type="Node" parent="Retry" unique_id=1037937464]
 script = ExtResource("7_aaa2f")
@@ -82,6 +84,7 @@ script = ExtResource("9_l36va")
 
 [node name="Exit" type="Node3D" parent="." unique_id=1031394160]
 script = ExtResource("6_i5gd0")
+systems = null
 
 [node name="PanelComponent" type="Node" parent="Exit" unique_id=510435356]
 script = ExtResource("7_aaa2f")
@@ -119,3 +122,55 @@ transform = Transform3D(1, 0, 7.1054274e-15, 0, 1, -2.6645353e-15, 0, 0, 1, 0, 0
 [node name="AnimationComponent" type="Node" parent="Enemy" unique_id=635498957]
 script = ExtResource("12_w4o7h")
 metadata/_custom_type_script = "uid://cwpkus4pc4c3r"
+
+[node name="EnemiesDefeated" type="Node3D" parent="." unique_id=1107066858]
+script = ExtResource("6_i5gd0")
+systems = null
+metadata/_custom_type_script = "uid://dvoket7v7vbwo"
+
+[node name="PanelComponent" type="Node" parent="EnemiesDefeated" unique_id=1199776011]
+script = ExtResource("7_aaa2f")
+overlayName = "JordiUI/Overlay13"
+containerName = "JordiUI/Overlay13/Container13"
+isVisible = true
+left = 0.8
+top = 0.2
+width = 0.25
+height = 0.1
+
+[node name="TextComponent" type="Node" parent="EnemiesDefeated" unique_id=917079662]
+script = ExtResource("13_xr5qg")
+textAreaName = "JordUI/Overlay14/Container14/Text14"
+text = "Enemies: 0"
+textFont = "Roboto"
+characterHeight = 0.035
+spaceWidth = 0.01
+colour = Vector4(1, 1, 1, 1)
+colourTop = Vector4(1, 1, 1, 1)
+colourBottom = Vector4(1, 1, 1, 1)
+
+[node name="Time" type="Node3D" parent="." unique_id=1367422597]
+script = ExtResource("6_i5gd0")
+systems = null
+metadata/_custom_type_script = "uid://dvoket7v7vbwo"
+
+[node name="PanelComponent" type="Node" parent="Time" unique_id=1068923263]
+script = ExtResource("7_aaa2f")
+overlayName = "JordiUI/Overlay14"
+containerName = "JordiUI/Overlay14/Container14"
+isVisible = true
+left = 0.8
+top = 0.2
+width = 0.25
+height = 0.1
+
+[node name="TextComponent" type="Node" parent="Time" unique_id=132331753]
+script = ExtResource("13_xr5qg")
+textAreaName = "JordUI/Overlay6/Container6/Text6"
+text = "XP: 0 / 100"
+textFont = "Roboto"
+characterHeight = 0.035
+spaceWidth = 0.01
+colour = Vector4(1, 1, 1, 1)
+colourTop = Vector4(1, 1, 1, 1)
+colourBottom = Vector4(1, 1, 1, 1)
