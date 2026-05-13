@@ -3,16 +3,25 @@
 #include <memory>
 
 #include "ChangeSceneMessage.h"
+#include "Message.h"
 #include "PlayerDeadMessage.h"
 #include "HugoInputCodes.h"
 #include "LeveledUpMessage.h"
 #include "ChestGrabMessage.h"
+#include "ChangeToNewInstanceOfSceneMessage.h"
 
 void 
 ChangeSceneSystem::init() {
     // Callback to process scene change requests
     scene.subscribe<ChangeSceneMessage>([this](std::shared_ptr<HUGO::Message> message) {
         std::shared_ptr<ChangeSceneMessage> m = std::static_pointer_cast<ChangeSceneMessage>(message);
+        if(m->destroyCurrent) scene.changeAndDestroyPreviousScene(m->sceneName);
+        else scene.changeScene(m->sceneName);
+    });
+
+    scene.subscribe<ChangeToNewInstanceOfSceneMessage>([this](std::shared_ptr<HUGO::Message> message) {
+        std::shared_ptr<ChangeToNewInstanceOfSceneMessage> m = std::static_pointer_cast<ChangeToNewInstanceOfSceneMessage>(message);
+        scene.loadScene(m->sceneName);
         if(m->destroyCurrent) scene.changeAndDestroyPreviousScene(m->sceneName);
         else scene.changeScene(m->sceneName);
     });
