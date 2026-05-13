@@ -16,7 +16,7 @@
 
 [node name="lose_scene" type="Node3D" unique_id=425554917]
 script = ExtResource("1_bjqob")
-systems = Array[int]([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 25, 24])
+systems = Array[int]([1, 3, 4, 5, 6, 7, 8, 9, 0, 25, 26])
 metadata/_custom_type_script = "uid://dsrxmoaefi1rn"
 
 [node name="Camera" type="Node3D" parent="." unique_id=496740346]
@@ -45,7 +45,6 @@ transform = Transform3D(0.99957526, 0.009936266, 0.027396863, -0.008815205, 0.99
 
 [node name="YouLose" type="Node3D" parent="." unique_id=89289831]
 script = ExtResource("6_i5gd0")
-systems = null
 
 [node name="PanelComponent" type="Node" parent="YouLose" unique_id=1912993134]
 script = ExtResource("7_aaa2f")
@@ -60,7 +59,6 @@ material = "JordiUI/YouLose"
 
 [node name="Retry" type="Node3D" parent="." unique_id=991009414]
 script = ExtResource("6_i5gd0")
-systems = null
 
 [node name="PanelComponent" type="Node" parent="Retry" unique_id=1037937464]
 script = ExtResource("7_aaa2f")
@@ -84,7 +82,6 @@ script = ExtResource("9_l36va")
 
 [node name="Exit" type="Node3D" parent="." unique_id=1031394160]
 script = ExtResource("6_i5gd0")
-systems = null
 
 [node name="PanelComponent" type="Node" parent="Exit" unique_id=510435356]
 script = ExtResource("7_aaa2f")
@@ -125,7 +122,6 @@ metadata/_custom_type_script = "uid://cwpkus4pc4c3r"
 
 [node name="EnemiesDefeated" type="Node3D" parent="." unique_id=1107066858]
 script = ExtResource("6_i5gd0")
-systems = null
 metadata/_custom_type_script = "uid://dvoket7v7vbwo"
 
 [node name="PanelComponent" type="Node" parent="EnemiesDefeated" unique_id=1199776011]
@@ -151,7 +147,6 @@ colourBottom = Vector4(1, 1, 1, 1)
 
 [node name="Time" type="Node3D" parent="." unique_id=1367422597]
 script = ExtResource("6_i5gd0")
-systems = null
 metadata/_custom_type_script = "uid://dvoket7v7vbwo"
 
 [node name="PanelComponent" type="Node" parent="Time" unique_id=1068923263]
