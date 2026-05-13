@@ -9,19 +9,19 @@ SYSTEM RenderSystem
 SYSTEM TweenSystem
 SYSTEM UISystem
 SYSTEM ConsoleSystem
-SYSTEM DynamicAudioSystem
-SYSTEM ChangeSceneSystem
-SYSTEM EnemySpawnSystem
-SYSTEM EnemyAnimationSystem
-SYSTEM EnemyMovementSystem
-SYSTEM PlayerMovementSystem
-SYSTEM DropSystem
 SYSTEM LevelingSystem
-SYSTEM StatSystem
 SYSTEM ProgressionSystem
-SYSTEM PickupSystem
 SYSTEM ProjectileSystem
 SYSTEM FartonSystem
+SYSTEM PlayerMovementSystem
+SYSTEM LoseSceneSystem
+SYSTEM MainMenuSystem
+SYSTEM DynamicAudioSystem
+SYSTEM AudioEventsSystem
+SYSTEM EnemyMovementSystem
+SYSTEM EnemyAnimationSystem
+SYSTEM FartonSystem
+SYSTEM ChangeSceneSystem
 
 ENTITY Skybox 1
     COMPONENT TransformComponent
@@ -1999,22 +1999,6 @@ ENTITY XPText 1
         FLOAT top 0.0
         FLOAT maxWidth 0.0
     COMPONENT XPTextTag
-    START_CHILDREN
-    END_CHILDREN
-END_ENTITY
-
-ENTITY Experience 1
-    COMPONENT TransformComponent
-        VECTOR_3 position 0.0 0.3908417224884 -14.7360248565674
-        QUATERNION rotation 0.0 0.0 0.0 1.0
-        VECTOR_3 scale 0.38499999046326 0.38499999046326 0.38499999046326
-    COMPONENT XPComponent
-        INT experience 100
-    COMPONENT RenderComponent
-        STRING meshName sphere.mesh
-        STRING materialName 
-    COMPONENT PickableComponent
-        FLOAT pickupRadius 0.5
     START_CHILDREN
     END_CHILDREN
 END_ENTITY

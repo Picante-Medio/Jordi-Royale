@@ -12,6 +12,9 @@ ENTITY Projectile 1
         VECTOR_4 pathInfoY 0.0 0.0 0.0 0.0
         INT pathTypeZ 0
         VECTOR_4 pathInfoZ 0.0 0.0 0.0 0.0
+    COMPONENT DamageComponent
+        INT Damage 10
+        INT DamType 1
     COMPONENT ColliderComponent
         COLLIDER_INFO info SPHERE_COLLIDER 0.6362669467926
         FLOAT restitution 0.0
