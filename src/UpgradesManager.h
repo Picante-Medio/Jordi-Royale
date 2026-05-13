@@ -2,6 +2,7 @@
 
 #include <variant>
 #include <string>
+#include <cstdint>
 
 // Info containers to pass upgrade info from UpgradesScene to MainScene
 struct NewWeapon {
