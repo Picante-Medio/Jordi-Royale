@@ -39,6 +39,8 @@ ENTITY Jordi 1
         VECTOR_3 position 0.0 1.43718814849854 0.0
         QUATERNION rotation 0.0 0.0 0.0 1.0
         VECTOR_3 scale 1.0 1.0 1.0
+    COMPONENT LevelComponent
+        INT level 1
     COMPONENT PlayerComponent
         FLOAT jumpPower 2000.0
         FLOAT xpPickupRange 5.0
@@ -1999,6 +2001,22 @@ ENTITY XPText 1
         FLOAT top 0.0
         FLOAT maxWidth 0.0
     COMPONENT XPTextTag
+    START_CHILDREN
+    END_CHILDREN
+END_ENTITY
+
+ENTITY Experience 1
+    COMPONENT TransformComponent
+        VECTOR_3 position 0.0 0.3908417224884 -14.7360248565674
+        QUATERNION rotation 0.0 0.0 0.0 1.0
+        VECTOR_3 scale 0.38499999046326 0.38499999046326 0.38499999046326
+    COMPONENT XPComponent
+        INT experience 100
+    COMPONENT RenderComponent
+        STRING meshName sphere.mesh
+        STRING materialName 
+    COMPONENT PickableComponent
+        FLOAT pickupRadius 0.5
     START_CHILDREN
     END_CHILDREN
 END_ENTITY

@@ -25,6 +25,8 @@ PickupSystem::update(uint32_t dt) {
                     XPGrabMessage message;
                     message.xp = scene.getComponentConst<XPComponent>(pickableComp.entity).experience;
 
+                    scene.sendMessage(message);
+
                     // TODO Animation of experience moving towards player may be added (optional)
                 }
 
