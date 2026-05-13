@@ -6,10 +6,14 @@
 
 #include "ResumeTag.h"
 #include "ExitTag.h"
+#include "ClockTag.h"
+#include "EnemyTag.h"
 
 HSYSTEM(LoseSceneSystem)
     void initResume(ResumeTag& resume);
     void initExit(ExitTag& exit);
+    void initTime(ClockTag& time);
+    void initEnemyCount(EnemyTag& count);
 public:
     void init() override;
     void onLoad() override;
