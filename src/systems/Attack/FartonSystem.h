@@ -15,11 +15,11 @@ private:
     EntityID playerID;
 
     uint32_t t = 0;
-    uint32_t firingRate = 1;
+    uint32_t firingRate = 5000;
 
     float instantiateRadius = 0.3f;
 
-    std::string prefab = "farton";
+    std::string prefab = "Farton";
 
     HUGO::Vector3 findClosestEnemy(HUGO::Vector3 pos);
 END_HSYSTEM()

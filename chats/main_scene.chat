@@ -21,6 +21,7 @@ SYSTEM StatSystem
 SYSTEM ProgressionSystem
 SYSTEM PickupSystem
 SYSTEM ProjectileSystem
+SYSTEM FartonSystem
 
 ENTITY Skybox 1
     COMPONENT TransformComponent

@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://bu545k8j4y0u1"]
+
+[ext_resource type="Script" uid="uid://d3gpbv1up76xn" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="1_21eum"]
+[ext_resource type="Script" uid="uid://5ysnehctvx5b" path="res://addons/HugosChatPlugin/NativeComponents/ColliderComponent.gd" id="2_ccxdj"]
+[ext_resource type="Script" uid="uid://dpjupwgyydq3o" path="res://addons/HugosChatPlugin/NativeComponents/RigidBodyComponent.gd" id="3_8qf41"]
+[ext_resource type="Script" uid="uid://cmidua6v4bry" path="res://addons/HugosChatPlugin/NativeComponents/RenderComponent.gd" id="4_hl644"]
+[ext_resource type="Script" uid="uid://f5ccxmpvxij1" path="res://Components/FartonComponent.gd" id="5_7nvg4"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ccxdj"]
+radius = 0.1
+height = 0.5
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8qf41"]
+radius = 0.1
+height = 0.5
+
+[node name="Farton" type="Node3D" unique_id=1435140913]
+script = ExtResource("1_21eum")
+systems = []
+metadata/_custom_type_script = "uid://d3gpbv1up76xn"
+
+[node name="ColliderComponent" type="CollisionShape3D" parent="." unique_id=2002130713]
+shape = SubResource("CapsuleShape3D_ccxdj")
+script = ExtResource("2_ccxdj")
+active = true
+info = SubResource("CapsuleShape3D_8qf41")
+metadata/_custom_type_script = "uid://5ysnehctvx5b"
+
+[node name="RigidBodyComponent" type="Node" parent="." unique_id=1523095685]
+script = ExtResource("3_8qf41")
+metadata/_custom_type_script = "uid://dpjupwgyydq3o"
+
+[node name="RenderComponent" type="MeshInstance3D" parent="." unique_id=132340521]
+skeleton = NodePath("../RigidBodyComponent")
+script = ExtResource("4_hl644")
+mesh_name = "farton.glb"
+metadata/_custom_type_script = "uid://cmidua6v4bry"
+
+[node name="FartonComponent" type="Node" parent="." unique_id=797822414]
+script = ExtResource("5_7nvg4")

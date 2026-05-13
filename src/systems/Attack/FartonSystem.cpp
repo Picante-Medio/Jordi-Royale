@@ -9,14 +9,14 @@
 #include "EnemyTag.h"
 
 void FartonSystem::init() {
+
+}
+
+void FartonSystem::onLoad() {
     auto& q = scene.query<PlayerComponent>();
     if(q.size() > 0)
         playerID = q[0].getConst<PlayerComponent>().entity;
     else throw std::runtime_error("Player entity does not exist");
-}
-
-void FartonSystem::onLoad() {
-
 }
 
 void FartonSystem::fixedUpdate(uint32_t dt) {
@@ -66,6 +66,7 @@ void FartonSystem::fixedUpdate(uint32_t dt) {
         t = 0;
         HUGO::ErrorOrType<EntityID> res = scene.instantiatePrefab(prefab);
         if(!res.isError()) {
+            std::cout << "Instanciando farton\n";
             TransformComponent& tr = scene.getComponent<TransformComponent>(res.getValue());
             
             HUGO::Vector3 target = findClosestEnemy(tr.position);
@@ -73,6 +74,7 @@ void FartonSystem::fixedUpdate(uint32_t dt) {
 
             const TransformComponent& playerTr = scene.getComponentConst<TransformComponent>(playerID);
             tr.position = playerTr.position + instantiateRadius * tr.rotation.forward();
+            std::cout << "AAAAAAAA farton\n";
         }
     }
 
