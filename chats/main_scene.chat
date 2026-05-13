@@ -12,15 +12,11 @@ SYSTEM ConsoleSystem
 SYSTEM LevelingSystem
 SYSTEM ProgressionSystem
 SYSTEM ProjectileSystem
-SYSTEM FartonSystem
 SYSTEM PlayerMovementSystem
-SYSTEM LoseSceneSystem
-SYSTEM MainMenuSystem
 SYSTEM DynamicAudioSystem
 SYSTEM AudioEventsSystem
 SYSTEM EnemyMovementSystem
 SYSTEM EnemyAnimationSystem
-SYSTEM FartonSystem
 SYSTEM ChangeSceneSystem
 
 ENTITY Skybox 1
@@ -32,6 +28,35 @@ ENTITY Skybox 1
         STRING meshName skybox.glb
         STRING materialName 
     START_CHILDREN
+    END_CHILDREN
+END_ENTITY
+
+ENTITY CameraPivot 1
+    COMPONENT TransformComponent
+        VECTOR_3 position 0.0 2.35101127624512 0.0
+        QUATERNION rotation 0.0 0.0 0.0 1.0
+        VECTOR_3 scale 1.0 1.0 1.0
+    COMPONENT CameraPivotTag
+    START_CHILDREN
+    ENTITY Camara 1
+        COMPONENT TransformComponent
+            VECTOR_3 position 0.0 2.68609762191772 -5.63063764572144
+            QUATERNION rotation -0.0000000079969 0.98312264680862 0.18294766545296 -0.00000004297364
+            VECTOR_3 scale 0.99999988079071 0.99999994039536 0.99999982118607
+        COMPONENT CameraComponent
+            INT projectionType 0
+            FLOAT fovY 60.0
+            FLOAT nearClip 1.0
+            FLOAT farClip 10000.0
+            FLOAT orthoWidth 10.0
+            FLOAT orthoHeight 10.0
+            BOOL autoAspectRatio true
+            BOOL mainCamera true
+            VECTOR_4 clearColor 0.0 0.0 0.0 1.0
+        START_CHILDREN
+        END_CHILDREN
+    END_ENTITY
+
     END_CHILDREN
 END_ENTITY
 
@@ -77,35 +102,6 @@ ENTITY Jordi 1
         STRING materialName 
     COMPONENT AnimationComponent
     START_CHILDREN
-    ENTITY Pivot 1
-        COMPONENT TransformComponent
-            VECTOR_3 position 0.0 0.91382312774658 0.0
-            QUATERNION rotation 0.0 0.0 0.0 1.0
-            VECTOR_3 scale 1.0 1.0 1.0
-        COMPONENT CameraPivotTag
-        START_CHILDREN
-        ENTITY Camara 1
-            COMPONENT TransformComponent
-                VECTOR_3 position 0.0 2.16931867599487 -4.75269985198975
-                QUATERNION rotation -0.0000000079969 0.98312264680862 0.18294766545296 -0.00000004297364
-                VECTOR_3 scale 0.99999988079071 0.99999994039536 0.99999982118607
-            COMPONENT CameraComponent
-                INT projectionType 0
-                FLOAT fovY 60.0
-                FLOAT nearClip 1.0
-                FLOAT farClip 10000.0
-                FLOAT orthoWidth 10.0
-                FLOAT orthoHeight 10.0
-                BOOL autoAspectRatio true
-                BOOL mainCamera true
-                VECTOR_4 clearColor 0.0 0.0 0.0 1.0
-            START_CHILDREN
-            END_CHILDREN
-        END_ENTITY
-
-        END_CHILDREN
-    END_ENTITY
-
     END_CHILDREN
 END_ENTITY
 

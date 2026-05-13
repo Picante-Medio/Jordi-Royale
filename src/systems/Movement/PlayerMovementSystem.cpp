@@ -12,6 +12,7 @@
 #include "CameraComponent.h"
 #include "EnemyTag.h"
 #include "AnimationComponent.h"
+#include "WorldTransformComponent.h"
 
 
 void PlayerMovementSystem::init(){
@@ -57,12 +58,19 @@ void PlayerMovementSystem::update(uint32_t){
     }
 
     lastMousePosition = currentMousePosition;
+
+    updateCameraPivot();
 }
 
 void PlayerMovementSystem::fixedUpdate(uint32_t){
 
     HUGO::Vector3 velocity = HUGO::Vector3();
     HUGO::Vector3 jumpDirection = HUGO::Vector3();
+
+    HUGO::Vector3 camPos = scene.query<CameraComponent, WorldTransformComponent>().begin()->getConst<WorldTransformComponent>().worldPosition;
+    HUGO::Vector3 playerPos = scene.query<PlayerComponent, TransformComponent>().begin()->getConst<TransformComponent>().position;
+
+    diffVectorxz = HUGO::Vector3((playerPos - camPos).x, 0, (playerPos - camPos).z);
 
     // z-axis
     if(scene.getInput()->isActionPressed("Forward")) velocity += diffVectorxz;
@@ -121,6 +129,16 @@ void PlayerMovementSystem::fixedUpdate(uint32_t){
                 cmp.setEnabled("Jump", false);
             }
         });
+        });
+    }
+
+}
+
+void 
+PlayerMovementSystem::updateCameraPivot(){
+    for(auto& item : scene.query<TransformComponent, CameraPivotTag>()){
+        item.modify<TransformComponent>([this](TransformComponent& trans){
+            trans.position = scene.query<PlayerComponent, TransformComponent>().begin()->getConst<TransformComponent>().position + HUGO::Vector3(0, yOffset, 0);
         });
     }
 

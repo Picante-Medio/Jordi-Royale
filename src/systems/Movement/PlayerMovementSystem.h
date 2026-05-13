@@ -13,7 +13,9 @@ const HUGO::Float SENSIBILITY = 0.75;
 // vector from camera to Jordi in x and z exes
 HUGO::Vector3 diffVectorxz;
 
-HUGO::Float yOffset = 1.4;
+HUGO::Float yOffset = 3;
+
+void updateCameraPivot();
 
 public:
 void init() override;

@@ -33,7 +33,7 @@ size = Vector3(500, 0.6121826, 500)
 
 [node name="main_scene" type="Node3D" unique_id=1228723441]
 script = ExtResource("1_865ah")
-systems = Array[int]([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 20, 22, 13, 17, 26, 27, 15, 14, 16, 10, 12, 25])
+systems = Array[int]([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 20, 22, 13, 17, 15, 14, 16, 10, 25])
 
 [node name="Skybox" type="Node3D" parent="." unique_id=1067618066]
 transform = Transform3D(1.33, 0, 0, 0, 1.33, 0, 0, 0, 1.33, 0, 0, 0)
@@ -45,6 +45,25 @@ mesh_name = "skybox.glb"
 
 [node name="skybox" parent="Skybox/RenderComponent" unique_id=1470652032 instance=ExtResource("18_2ebs2")]
 transform = Transform3D(0.99957526, 0.009936266, 0.027396863, -0.008815205, 0.99913085, -0.0407412, -0.027777866, 0.040482387, 0.99879414, 0, 0, 0.08070057)
+
+[node name="CameraPivot" type="Node3D" parent="." unique_id=671569509]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3510113, 0)
+script = ExtResource("2_huasi")
+
+[node name="CameraPivotTag" type="Node" parent="CameraPivot" unique_id=323821913]
+script = ExtResource("9_mai8y")
+
+[node name="Camara" type="Node3D" parent="CameraPivot" unique_id=507972397]
+transform = Transform3D(-0.9999999, 3.2508648e-15, -8.742276e-08, -3.1447712e-08, 0.9330602, 0.35971993, 8.157069e-08, 0.35971996, -0.9330601, 0, 2.6860976, -5.6306376)
+script = ExtResource("2_huasi")
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot/Camara" unique_id=114110815]
+fov = 60.0
+
+[node name="CameraComponent" type="Node" parent="CameraPivot/Camara" unique_id=508518349]
+script = ExtResource("3_drdnd")
+mainCamera = true
+clearColor = Vector4(0, 0, 0, 1)
 
 [node name="Jordi" type="Node3D" parent="." unique_id=499115862]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4371881, 0)
@@ -90,25 +109,6 @@ mesh_name = "jordi.glb"
 
 [node name="AnimationComponent" type="Node" parent="Jordi" unique_id=172929431]
 script = ExtResource("9_drdnd")
-
-[node name="Pivot" type="Node3D" parent="Jordi" unique_id=671569509]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9138231, 0)
-script = ExtResource("2_huasi")
-
-[node name="CameraPivotTag" type="Node" parent="Jordi/Pivot" unique_id=323821913]
-script = ExtResource("9_mai8y")
-
-[node name="Camara" type="Node3D" parent="Jordi/Pivot" unique_id=507972397]
-transform = Transform3D(-0.9999999, 3.2508648e-15, -8.742276e-08, -3.1447712e-08, 0.9330602, 0.35971993, 8.157069e-08, 0.35971996, -0.9330601, 0, 2.1693187, -4.7527)
-script = ExtResource("2_huasi")
-
-[node name="Camera3D" type="Camera3D" parent="Jordi/Pivot/Camara" unique_id=114110815]
-fov = 60.0
-
-[node name="CameraComponent" type="Node" parent="Jordi/Pivot/Camara" unique_id=508518349]
-script = ExtResource("3_drdnd")
-mainCamera = true
-clearColor = Vector4(0, 0, 0, 1)
 
 [node name="Floor" type="Node3D" parent="." unique_id=616089284]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -0.43083662, 0)
