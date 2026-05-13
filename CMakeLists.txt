@@ -56,5 +56,5 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
 add_custom_target(copy_assets ALL
     COMMAND ${CMAKE_COMMAND} -E copy_if_different
     ${CMAKE_SOURCE_DIR}/hugo.config
-    ${CMAKE_SOURCE_DIR}/bin/
+    ${CMAKE_SOURCE_DIR}/bin/hugo.config
     COMMAND_EXPAND_LISTS)
