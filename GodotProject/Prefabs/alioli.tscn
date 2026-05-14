@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://c2bkk54q42pgp"]
+
+[ext_resource type="Script" uid="uid://dmak3mcg4w0h8" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="1_eawce"]
+[ext_resource type="Script" uid="uid://bewpcwg276ktv" path="res://addons/HugosChatPlugin/NativeComponents/ColliderComponent.gd" id="2_xixmh"]
+[ext_resource type="Script" uid="uid://dgu5myf6wqmwa" path="res://addons/HugosChatPlugin/NativeComponents/RigidBodyComponent.gd" id="3_7lqt0"]
+[ext_resource type="Script" uid="uid://c0wlt0qsxdika" path="res://addons/HugosChatPlugin/NativeComponents/RenderComponent.gd" id="4_n0fu3"]
+[ext_resource type="Script" uid="uid://d2ho0r2casb2" path="res://Components/AliOliTag.gd" id="5_xixmh"]
+[ext_resource type="Script" uid="uid://dvkcj1hifj6ui" path="res://Components/DamageComponent.gd" id="6_7lqt0"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_0gurx"]
+height = 0.24316406
+radius = 3.614746
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_335l7"]
+
+[node name="AliOli" type="Node3D" unique_id=597108926]
+transform = Transform3D(7.162457, 0, 0, 0, 0.13213076, 0, 0, 0, 6.9777503, 0, 0, 0)
+script = ExtResource("1_eawce")
+metadata/_custom_type_script = "uid://dmak3mcg4w0h8"
+
+[node name="ColliderComponent" type="CollisionShape3D" parent="." unique_id=570074501]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.004859209, 0)
+shape = SubResource("CylinderShape3D_0gurx")
+script = ExtResource("2_xixmh")
+active = true
+info = SubResource("CylinderShape3D_0gurx")
+isTrigger = true
+metadata/_custom_type_script = "uid://bewpcwg276ktv"
+
+[node name="RigidBodyComponent" type="Node" parent="." unique_id=539225826]
+script = ExtResource("3_7lqt0")
+type = 2
+gravity = Vector3(0, 0, 0)
+metadata/_custom_type_script = "uid://dgu5myf6wqmwa"
+
+[node name="RenderComponent" type="MeshInstance3D" parent="." unique_id=652207919]
+script = ExtResource("4_n0fu3")
+mesh_name = "cylinder.mesh"
+metadata/_custom_type_script = "uid://c0wlt0qsxdika"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RenderComponent" unique_id=791489449]
+mesh = SubResource("CylinderMesh_335l7")
+
+[node name="AliOliTag" type="Node" parent="." unique_id=492358431]
+script = ExtResource("5_xixmh")
+
+[node name="DamageComponent" type="Node" parent="." unique_id=590006172]
+script = ExtResource("6_7lqt0")
+Damage = 5
+DamType = 2
+metadata/_custom_type_script = "uid://dvkcj1hifj6ui"

@@ -1,0 +1,33 @@
+PREFAB AliOli
+ENTITY AliOli 1
+    COMPONENT TransformComponent
+        VECTOR_3 position 0.0 0.0 0.0
+        QUATERNION rotation 0.0 0.0 0.0 1.0
+        VECTOR_3 scale 7.16245698928833 0.13213075697422 6.97775030136108
+    COMPONENT ColliderComponent
+        COLLIDER_INFO info CYLINDER_COLLIDER 3.61474609375 0.12158203125 3.61474609375
+        FLOAT restitution 0.0
+        FLOAT friction 0.0
+        VECTOR_3 positionOffset 0.0 0.00485920906067 0.0
+        QUATERNION rotationOffset 0.0 0.0 0.0 1.0
+        BOOL active false
+        BOOL useGizmo false
+        BOOL isTrigger false
+    COMPONENT RigidBodyComponent
+        FLOAT mass 0.0
+        FLOAT linearDamping 0.0
+        FLOAT angularDamping 0.0
+        VECTOR_3 linearVelocity 0.0 0.0 0.0
+        VECTOR_3 angularVelocity 0.0 0.0 0.0
+        FLOAT linearSleepingThreshold 0.0
+        FLOAT angularSleepingThreshold 0.0
+        INT type 0
+        BOOL dontRotateWithPhysicsOnDynamic false
+        VECTOR_3 gravity 0.0 -9.80000019073486 0.0
+    COMPONENT RenderComponent
+        STRING meshName cylinder.mesh
+        STRING materialName 
+    START_CHILDREN
+    END_CHILDREN
+END_ENTITY
+

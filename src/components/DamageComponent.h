@@ -6,7 +6,8 @@ HCOMPONENT(DamageComponent)
 
 enum DamageType{
     Enemy,
-    Player
+    Player,
+    None
 };
 
 DEFAULT_SERIALIZED_MEMBER(HUGO::Int, Damage, 10);
