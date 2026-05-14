@@ -1,28 +1,25 @@
 [gd_scene format=3 uid="uid://dq2fl1vp76r7r"]
 
-[ext_resource type="Script" uid="uid://d3yq16mo85h5h" path="res://addons/HugosChatPlugin/Entities/scene_tracker.gd" id="1_865ah"]
-[ext_resource type="Script" uid="uid://dmak3mcg4w0h8" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="2_huasi"]
-[ext_resource type="Script" uid="uid://d10rufr7dnrt6" path="res://addons/HugosChatPlugin/NativeComponents/CameraComponent.gd" id="3_drdnd"]
-[ext_resource type="Script" uid="uid://bewpcwg276ktv" path="res://addons/HugosChatPlugin/NativeComponents/ColliderComponent.gd" id="3_m1efj"]
-[ext_resource type="PackedScene" uid="uid://c462xqhte7va4" path="res://Resources/jordi/jordi.glb" id="4_m1efj"]
-[ext_resource type="Script" uid="uid://dgu5myf6wqmwa" path="res://addons/HugosChatPlugin/NativeComponents/RigidBodyComponent.gd" id="4_mai8y"]
-[ext_resource type="Script" uid="uid://dk4nyrs1a6elm" path="res://Components/LevelComponent.gd" id="5_nt2eh"]
-[ext_resource type="Script" uid="uid://bxtnhlmmus6l2" path="res://Components/SpeedComponent.gd" id="6_drdnd"]
-[ext_resource type="Script" uid="uid://dfj2qxmqtkj0s" path="res://Components/HPComponent.gd" id="9_8edxt"]
-[ext_resource type="Script" uid="uid://ooxkdcy2pv63" path="res://addons/HugosChatPlugin/NativeComponents/AnimationComponent.gd" id="9_drdnd"]
-[ext_resource type="Script" uid="uid://d1ljapb1i86tc" path="res://Components/CameraPivotTag.gd" id="9_mai8y"]
-[ext_resource type="Script" uid="uid://b0nmxwhquuske" path="res://Components/PlayerComponent.gd" id="10_76v2p"]
-[ext_resource type="Script" uid="uid://c0wlt0qsxdika" path="res://addons/HugosChatPlugin/NativeComponents/RenderComponent.gd" id="10_mai8y"]
-[ext_resource type="Script" uid="uid://cnmiha8rgpnhn" path="res://addons/HugosChatPlugin/Entities/entity.gd" id="12_lhp3t"]
-[ext_resource type="PackedScene" uid="uid://bs66scu1xl2a6" path="res://Resources/jordi/moon_floor.glb" id="12_psl12"]
-[ext_resource type="Script" uid="uid://b1n66dftn6a7i" path="res://Components/ClockTag.gd" id="13_gnsmo"]
-[ext_resource type="Script" uid="uid://pcb3jv2yfyt7" path="res://addons/HugosChatPlugin/NativeComponents/PanelComponent.gd" id="14_psl12"]
-[ext_resource type="Script" uid="uid://gxurxa2dpqpy" path="res://addons/HugosChatPlugin/NativeComponents/TextComponent.gd" id="15_2ebs2"]
+[ext_resource type="Script" uid="uid://cy1d1kwuy1yu4" path="res://addons/HugosChatPlugin/Entities/scene_tracker.gd" id="1_865ah"]
+[ext_resource type="Script" uid="uid://d3gpbv1up76xn" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="2_huasi"]
+[ext_resource type="Script" uid="uid://bjwx87l5l8cjv" path="res://addons/HugosChatPlugin/NativeComponents/CameraComponent.gd" id="3_drdnd"]
+[ext_resource type="Script" uid="uid://5ysnehctvx5b" path="res://addons/HugosChatPlugin/NativeComponents/ColliderComponent.gd" id="3_m1efj"]
+[ext_resource type="Script" uid="uid://dpjupwgyydq3o" path="res://addons/HugosChatPlugin/NativeComponents/RigidBodyComponent.gd" id="4_mai8y"]
+[ext_resource type="Script" uid="uid://chnmaof0a3ll8" path="res://Components/LevelComponent.gd" id="5_nt2eh"]
+[ext_resource type="Script" uid="uid://dgscgud8jyhsm" path="res://Components/SpeedComponent.gd" id="6_drdnd"]
+[ext_resource type="Script" uid="uid://yr66mrh8xaa8" path="res://Components/HPComponent.gd" id="9_8edxt"]
+[ext_resource type="Script" uid="uid://cwpkus4pc4c3r" path="res://addons/HugosChatPlugin/NativeComponents/AnimationComponent.gd" id="9_drdnd"]
+[ext_resource type="Script" uid="uid://cauioprn35hgk" path="res://Components/CameraPivotTag.gd" id="9_mai8y"]
+[ext_resource type="Script" uid="uid://dbu2e7vd80ife" path="res://Components/PlayerComponent.gd" id="10_76v2p"]
+[ext_resource type="Script" uid="uid://cmidua6v4bry" path="res://addons/HugosChatPlugin/NativeComponents/RenderComponent.gd" id="10_mai8y"]
+[ext_resource type="Script" uid="uid://dvoket7v7vbwo" path="res://addons/HugosChatPlugin/Entities/entity.gd" id="12_lhp3t"]
+[ext_resource type="Script" uid="uid://cvf74f7xkct5i" path="res://Components/ClockTag.gd" id="13_gnsmo"]
+[ext_resource type="Script" uid="uid://dk4tsyuerxuda" path="res://addons/HugosChatPlugin/NativeComponents/PanelComponent.gd" id="14_psl12"]
+[ext_resource type="Script" uid="uid://esoqdkwkniof" path="res://addons/HugosChatPlugin/NativeComponents/TextComponent.gd" id="15_2ebs2"]
 [ext_resource type="PackedScene" uid="uid://dhhopmfyxf4cv" path="res://Prefabs/moai.tscn" id="16_gnsmo"]
-[ext_resource type="PackedScene" uid="uid://du56fi1d3anqo" path="res://Resources/jordi/skybox.glb" id="18_2ebs2"]
-[ext_resource type="Script" uid="uid://chmo4h0bkhtvm" path="res://Components/HPTextTag.gd" id="20_b48ew"]
+[ext_resource type="Script" uid="uid://c6ulchdj60hbe" path="res://Components/HPTextTag.gd" id="20_b48ew"]
 [ext_resource type="PackedScene" uid="uid://c4148ap0mlp3i" path="res://Prefabs/Enemy.tscn" id="20_jvnna"]
-[ext_resource type="Script" uid="uid://cj7lmiqjhcst2" path="res://Components/XPTextTag.gd" id="21_8edxt"]
+[ext_resource type="Script" uid="uid://cqf0jl0bf5sev" path="res://Components/XPTextTag.gd" id="21_8edxt"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_mai8y"]
 height = 1.7327881
@@ -43,7 +40,7 @@ script = ExtResource("2_huasi")
 script = ExtResource("10_mai8y")
 mesh_name = "skybox.glb"
 
-[node name="skybox" parent="Skybox/RenderComponent" unique_id=1470652032 instance=ExtResource("18_2ebs2")]
+[node name="skybox" parent="Skybox/RenderComponent" unique_id=1470652032]
 transform = Transform3D(0.99957526, 0.009936266, 0.027396863, -0.008815205, 0.99913085, -0.0407412, -0.027777866, 0.040482387, 0.99879414, 0, 0, 0.08070057)
 
 [node name="CameraPivot" type="Node3D" parent="." unique_id=671569509]
@@ -105,7 +102,7 @@ transform = Transform3D(1, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1, 0, 0
 script = ExtResource("10_mai8y")
 mesh_name = "jordi.glb"
 
-[node name="jordi" parent="Jordi/RenderComponent" unique_id=1971369228 instance=ExtResource("4_m1efj")]
+[node name="jordi" parent="Jordi/RenderComponent" unique_id=1971369228]
 
 [node name="AnimationComponent" type="Node" parent="Jordi" unique_id=172929431]
 script = ExtResource("9_drdnd")
@@ -118,7 +115,7 @@ script = ExtResource("2_huasi")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000005, -2.810608, -0.1939087, 1.8479648)
 shape = SubResource("BoxShape3D_mai8y")
 script = ExtResource("3_m1efj")
-friction = 1.0
+friction = 1.1
 active = true
 info = SubResource("BoxShape3D_mai8y")
 
@@ -132,7 +129,7 @@ gravity = Vector3(0, 0, 0)
 script = ExtResource("10_mai8y")
 mesh_name = "moon_floor.glb"
 
-[node name="moon_floor" parent="Floor/RenderComponent" unique_id=812548192 instance=ExtResource("12_psl12")]
+[node name="moon_floor" parent="Floor/RenderComponent" unique_id=812548192]
 transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.137, 0, 0.09776577, 0)
 
 [node name="Clock" type="Node3D" parent="." unique_id=389011601]
@@ -192,7 +189,6 @@ colourBottom = Vector4(1, 1, 1, 1)
 
 [node name="HPTextTag" type="Node" parent="HPText" unique_id=129927338]
 script = ExtResource("20_b48ew")
-metadata/_custom_type_script = "uid://chmo4h0bkhtvm"
 
 [node name="XPText" type="Node3D" parent="." unique_id=1544618934]
 script = ExtResource("12_lhp3t")
@@ -220,7 +216,6 @@ colourBottom = Vector4(1, 1, 1, 1)
 
 [node name="XPTextTag" type="Node" parent="XPText" unique_id=1765766746]
 script = ExtResource("21_8edxt")
-metadata/_custom_type_script = "uid://cj7lmiqjhcst2"
 
 [node name="Moais" type="Node3D" parent="." unique_id=382336233]
 script = ExtResource("2_huasi")

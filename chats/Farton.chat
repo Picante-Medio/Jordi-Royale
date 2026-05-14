@@ -3,7 +3,7 @@ ENTITY Farton 1
     COMPONENT TransformComponent
         VECTOR_3 position 0.0 0.0 0.0
         QUATERNION rotation 0.0 0.0 0.0 1.0
-        VECTOR_3 scale 0.5 0.5 0.5
+        VECTOR_3 scale 0.25 0.25 0.25
     COMPONENT ColliderComponent
         COLLIDER_INFO info CAPSULE_COLLIDER 0.10000000149012 0.25
         FLOAT restitution 0.0

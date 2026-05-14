@@ -23,6 +23,7 @@ SYSTEM EnemyMovementSystem
 SYSTEM ChangeSceneSystem
 SYSTEM AudioEventsSystem
 SYSTEM DamageSystem
+SYSTEM FartonSystem
 
 ENTITY Skybox 1
     COMPONENT TransformComponent
@@ -118,7 +119,7 @@ ENTITY Floor 1
     COMPONENT ColliderComponent
         COLLIDER_INFO info BOX_COLLIDER 250.0 0.30609130859375 250.0
         FLOAT restitution 0.0
-        FLOAT friction 1.0
+        FLOAT friction 1.1
         VECTOR_3 positionOffset -2.81060791015625 -0.19390870630741 1.84796476364136
         QUATERNION rotationOffset 0.0 0.0 0.0 1.0
         BOOL active true

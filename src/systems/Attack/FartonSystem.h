@@ -17,7 +17,7 @@ private:
     uint32_t t = 0;
     uint32_t firingRate = 2000;
 
-    float instantiateRadius = 0.3f;
+    float instantiateRadius = 1.5f;
 
     std::string prefab = "Farton";
 

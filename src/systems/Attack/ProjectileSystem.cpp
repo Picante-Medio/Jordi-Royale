@@ -142,15 +142,16 @@ void ProjectileSystem::destroyProjectiles() {
 }
 
 float ProjectileSystem::mru(float s, uint32_t t) {
-    return s*t;
+    return s*t*0.001f;
 }
 
 float ProjectileSystem::mrua(float s0, float a, uint32_t t) {
-    return s0*t + 0.5f*a*t*t;
+    float t_seconds = t * 0.001f;
+    return s0*t + 0.5f*a*t_seconds*t_seconds;
 }
 
 float ProjectileSystem::sin(float A, float b, float c, float k, uint32_t t) {
-    return A * std::sin(k*(t-b)) + c;
+    return A * std::sin(k*(t*0.001f-b)) + c;
 }
 
 std::pair<int, float> ProjectileSystem::getDeltaPosition(const ProjectilePath& path, uint32_t dt) {

@@ -28,13 +28,14 @@ void FartonSystem::fixedUpdate(uint32_t dt) {
         const FartonComponent farton = pack.getConst<FartonComponent>();
         const TransformComponent tr = pack.getConst<TransformComponent>();
 
-        HUGO::Vector3 dist = tr.rotation.forward() * farton.speed * dt;
+        HUGO::Vector3 dist = tr.rotation.forward() * farton.speed * dt * 0.001f;
         
         pack.modify<TransformComponent>([dist](TransformComponent& tr) {
             tr.position += dist;
         });
         pack.modify<FartonComponent>([dist](FartonComponent& farton) {
             farton.distance += dist.length();
+            std::cout << "Distancia recorrida del farton " << farton.entity << " : " << farton.distance << "\n";
         });
     }
 
@@ -67,7 +68,6 @@ void FartonSystem::fixedUpdate(uint32_t dt) {
         t = 0;
         HUGO::ErrorOrType<EntityID> res = scene.instantiatePrefab(prefab);
         if(!res.isError()) {
-            std::cout << "Instanciando farton\n";
             TransformComponent& tr = scene.getComponent<TransformComponent>(res.getValue());
             
             HUGO::Vector3 target = findClosestEnemy(tr.position);
@@ -75,9 +75,8 @@ void FartonSystem::fixedUpdate(uint32_t dt) {
 
             const TransformComponent& playerTr = scene.getComponentConst<TransformComponent>(playerID);
             tr.position = playerTr.position + instantiateRadius * tr.rotation.forward();
-            tr.position.y = 0.5f;
+            tr.position.y = 1.5f;
             std::cout << "Farton instanciado en" << tr.position.x << " " << tr.position.y << " " << tr.position.z << "\n";
-            std::cout << "Escala del farton " << tr.scale.x << " " << tr.scale.y << " " << tr.scale.z << "\n";
         }
     }
 
@@ -89,10 +88,12 @@ void FartonSystem::update(uint32_t) {
 
 HUGO::Vector3 FartonSystem::findClosestEnemy(HUGO::Vector3 pos) {
     float closestDist = FLT_MAX;
-    HUGO::Vector3 closestPos = (FLT_MIN);
+    HUGO::Vector3 closestPos = pos + HUGO::Vector3(FLT_MIN, 0,0);
     for(auto pack : scene.query<EnemyTag, TransformComponent>()) {
-        if((pack.getConst<TransformComponent>().position - pos).length() < closestDist)
+        if((pack.getConst<TransformComponent>().position - pos).length() < closestDist) {
             closestPos = pack.getConst<TransformComponent>().position;
+            closestDist = (closestPos - pos).length();
+        }
     }
     return closestPos;
 }
