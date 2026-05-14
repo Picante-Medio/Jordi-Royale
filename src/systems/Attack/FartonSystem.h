@@ -21,5 +21,7 @@ private:
 
     std::string prefab = "Farton";
 
+    std::set<EntityID> toRemove;
+
     HUGO::Vector3 findClosestEnemy(HUGO::Vector3 pos);
 END_HSYSTEM()

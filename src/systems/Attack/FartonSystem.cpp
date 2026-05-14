@@ -1,6 +1,8 @@
 #include <cfloat>
 #include <exception>
 #include <limits>
+#include <set>
+#include <exception>
 
 #include "FartonSystem.h"
 #include "FartonComponent.h"
@@ -35,16 +37,22 @@ void FartonSystem::fixedUpdate(uint32_t dt) {
         });
         pack.modify<FartonComponent>([dist](FartonComponent& farton) {
             farton.distance += dist.length();
-            std::cout << "Distancia recorrida del farton " << farton.entity << " : " << farton.distance << "\n";
+            // std::cout << "Distancia recorrida del farton " << farton.entity << " : " << farton.distance << "\n";
         });
     }
 
+
     // Remove overdue attacks
-    // Collided with anything
     for(auto pack : scene.query<FartonComponent, ColliderComponent>()) {
+        // Collided with anything
         const ColliderComponent collider = pack.getConst<ColliderComponent>();
         if(!collider.getCollisionInfo().empty())
-            scene.removeEntity(collider.entity);
+            toRemove.insert(collider.entity);
+
+        // Exceeded max distance
+        const FartonComponent farton = pack.getConst<FartonComponent>();
+        if(farton.distance > farton.maxDist)
+            toRemove.insert(farton.entity);
 
         // Uncomment to ignore collisions with player
         // std::vector<EntityID> info = collider.getCollisionInfo();
@@ -56,12 +64,13 @@ void FartonSystem::fixedUpdate(uint32_t dt) {
         // if(destroy) scene.removeEntity(collider.entity);
     }
 
+
     // Exceeded max distance
-    for(auto pack : scene.query<FartonComponent>()) {
-        const FartonComponent farton = pack.getConst<FartonComponent>();
-        if(farton.distance > farton.maxDist)
-            scene.removeEntity(farton.entity);
-    }
+    // for(auto pack : scene.query<FartonComponent>()) {
+    //     const FartonComponent farton = pack.getConst<FartonComponent>();
+    //     if(farton.distance > farton.maxDist)
+    //         scene.removeEntity(farton.entity);
+    // }
 
     // Instantiate new attack towards closest enemy
     if(t > firingRate) {
@@ -69,14 +78,15 @@ void FartonSystem::fixedUpdate(uint32_t dt) {
         HUGO::ErrorOrType<EntityID> res = scene.instantiatePrefab(prefab);
         if(!res.isError()) {
             TransformComponent& tr = scene.getComponent<TransformComponent>(res.getValue());
-            
-            HUGO::Vector3 target = findClosestEnemy(tr.position);
-            tr.rotation = HUGO::lookAt(tr.rotation.forward(), HUGO::Vector3(0,1,0), (target - tr.position)); // no need to normalize
-
             const TransformComponent& playerTr = scene.getComponentConst<TransformComponent>(playerID);
+
+            HUGO::Vector3 target = findClosestEnemy(playerTr.position);
+            HUGO::Vector3 tmp = (target - playerTr.position);
+            tr.rotation = HUGO::lookAt(tr.rotation.forward(),(target - playerTr.position), HUGO::Vector3(0,1,0)); // no need to normalize
+      
             tr.position = playerTr.position + instantiateRadius * tr.rotation.forward();
-            tr.position.y = 1.5f;
-            std::cout << "Farton instanciado en" << tr.position.x << " " << tr.position.y << " " << tr.position.z << "\n";
+            tr.position.y += 0.5f;
+            // std::cout << "Farton instanciado en" << tr.position.x << " " << tr.position.y << " " << tr.position.z << "\n";
         }
     }
 
@@ -84,16 +94,29 @@ void FartonSystem::fixedUpdate(uint32_t dt) {
 
 void FartonSystem::update(uint32_t) {
 
+    for(EntityID id : toRemove) {
+        try {
+            std::cout << "Antes... \n";
+            scene.removeEntity(id);
+            std::cout << "Despues... \n";
+        }
+        catch(std::exception e) {std::cout << "Vaya... " << e.what() << '\n';}
+
+    }
+    toRemove.clear();
 }
 
 HUGO::Vector3 FartonSystem::findClosestEnemy(HUGO::Vector3 pos) {
     float closestDist = FLT_MAX;
     HUGO::Vector3 closestPos = pos + HUGO::Vector3(FLT_MIN, 0,0);
     for(auto pack : scene.query<EnemyTag, TransformComponent>()) {
-        if((pack.getConst<TransformComponent>().position - pos).length() < closestDist) {
+        float dist = (pack.getConst<TransformComponent>().position - pos).length();
+        if(dist < closestDist) {
             closestPos = pack.getConst<TransformComponent>().position;
-            closestDist = (closestPos - pos).length();
+            closestDist = dist;
         }
     }
+    // std::cout << "Enemigo detectado en " << closestPos.x << " " << closestPos.y << " " << closestPos.z << " A distancia " << closestDist << "\n";
+    if(closestDist == FLT_MAX) return pos;
     return closestPos;
 }

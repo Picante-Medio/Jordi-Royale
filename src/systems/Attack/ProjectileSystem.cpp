@@ -125,7 +125,7 @@ void ProjectileSystem::destroyProjectiles() {
         bool destroyOnPlayerContact = scene.hasComponent<DestroyOnPlayerContactTag>(collider.entity);
 
         if (!destroyOnEnemyContact && !destroyOnPlayerContact) 
-            continue;;
+            continue;
 
         for(EntityID id : collider.collisionInfo) {
             if(destroyOnEnemyContact && scene.hasComponent<EnemyTag>(id)) {

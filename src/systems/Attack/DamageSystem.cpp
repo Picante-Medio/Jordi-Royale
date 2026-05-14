@@ -23,8 +23,19 @@ void DamageSystem::onLoad() {
 
 }
 
-void DamageSystem::update(uint32_t dt) {
-    playerID = scene.query<PlayerComponent>().begin()->getConst<PlayerComponent>().entity;
+void DamageSystem::update(uint32_t) {
+
+    
+}
+void DamageSystem::changeHP(EntityID id, HUGO::Int hp){
+    scene.modifyComponent<HPComponent>(id, [hp](HPComponent& entHp){
+        entHp.CurrentHP += hp;
+        if(entHp.CurrentHP > entHp.HPMax) entHp.CurrentHP = entHp.HPMax;
+    });
+}
+
+void DamageSystem::fixedUpdate(uint32_t dt) {
+        playerID = scene.query<PlayerComponent>().begin()->getConst<PlayerComponent>().entity;
     timeSinceEnemyCooldown += dt;
     timeSincePlayerCooldown += dt;
 
@@ -66,15 +77,4 @@ void DamageSystem::update(uint32_t dt) {
             }
         }
     }
-    
-}
-void DamageSystem::changeHP(EntityID id, HUGO::Int hp){
-    scene.modifyComponent<HPComponent>(id, [hp](HPComponent& entHp){
-        entHp.CurrentHP += hp;
-        if(entHp.CurrentHP > entHp.HPMax) entHp.CurrentHP = entHp.HPMax;
-    });
-}
-
-void DamageSystem::fixedUpdate(uint32_t) {
-    
 }

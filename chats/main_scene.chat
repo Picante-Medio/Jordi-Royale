@@ -33,6 +33,7 @@ ENTITY Skybox 1
     COMPONENT RenderComponent
         STRING meshName skybox.glb
         STRING materialName 
+        NIL isVisible <null>
     START_CHILDREN
     END_CHILDREN
 END_ENTITY
@@ -106,6 +107,7 @@ ENTITY Jordi 1
     COMPONENT RenderComponent
         STRING meshName jordi.glb
         STRING materialName 
+        NIL isVisible <null>
     COMPONENT AnimationComponent
     START_CHILDREN
     END_CHILDREN
@@ -139,6 +141,7 @@ ENTITY Floor 1
     COMPONENT RenderComponent
         STRING meshName moon_floor.glb
         STRING materialName 
+        NIL isVisible <null>
     START_CHILDREN
     END_CHILDREN
 END_ENTITY
@@ -199,6 +202,7 @@ ENTITY Enemy 1
     COMPONENT RenderComponent
         STRING meshName jordi-head.glb
         STRING materialName 
+        NIL isVisible <null>
     COMPONENT DamageComponent
         INT Damage 10
         INT DamType 0
@@ -305,6 +309,7 @@ ENTITY Moais 1
         COMPONENT RenderComponent
             STRING meshName jordi-moai.glb
             STRING materialName 
+            NIL isVisible <null>
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -337,6 +342,7 @@ ENTITY Moais 1
         COMPONENT RenderComponent
             STRING meshName jordi-moai.glb
             STRING materialName 
+            NIL isVisible <null>
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -369,6 +375,7 @@ ENTITY Moais 1
         COMPONENT RenderComponent
             STRING meshName jordi-moai.glb
             STRING materialName 
+            NIL isVisible <null>
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -401,6 +408,7 @@ ENTITY Moais 1
         COMPONENT RenderComponent
             STRING meshName jordi-moai.glb
             STRING materialName 
+            NIL isVisible <null>
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -433,6 +441,7 @@ ENTITY Moais 1
         COMPONENT RenderComponent
             STRING meshName jordi-moai.glb
             STRING materialName 
+            NIL isVisible <null>
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -465,6 +474,7 @@ ENTITY Moais 1
         COMPONENT RenderComponent
             STRING meshName jordi-moai.glb
             STRING materialName 
+            NIL isVisible <null>
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -497,6 +507,7 @@ ENTITY Moais 1
         COMPONENT RenderComponent
             STRING meshName jordi-moai.glb
             STRING materialName 
+            NIL isVisible <null>
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -529,6 +540,7 @@ ENTITY Moais 1
         COMPONENT RenderComponent
             STRING meshName jordi-moai.glb
             STRING materialName 
+            NIL isVisible <null>
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -561,6 +573,7 @@ ENTITY Moais 1
         COMPONENT RenderComponent
             STRING meshName jordi-moai.glb
             STRING materialName 
+            NIL isVisible <null>
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -593,6 +606,7 @@ ENTITY Moais 1
         COMPONENT RenderComponent
             STRING meshName jordi-moai.glb
             STRING materialName 
+            NIL isVisible <null>
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -625,6 +639,7 @@ ENTITY Moais 1
         COMPONENT RenderComponent
             STRING meshName jordi-moai.glb
             STRING materialName 
+            NIL isVisible <null>
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -657,6 +672,7 @@ ENTITY Moais 1
         COMPONENT RenderComponent
             STRING meshName jordi-moai.glb
             STRING materialName 
+            NIL isVisible <null>
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -689,6 +705,7 @@ ENTITY Moais 1
         COMPONENT RenderComponent
             STRING meshName jordi-moai.glb
             STRING materialName 
+            NIL isVisible <null>
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -721,6 +738,7 @@ ENTITY Moais 1
         COMPONENT RenderComponent
             STRING meshName jordi-moai.glb
             STRING materialName 
+            NIL isVisible <null>
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -753,6 +771,7 @@ ENTITY Moais 1
         COMPONENT RenderComponent
             STRING meshName jordi-moai.glb
             STRING materialName 
+            NIL isVisible <null>
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -785,6 +804,7 @@ ENTITY Moais 1
         COMPONENT RenderComponent
             STRING meshName jordi-moai.glb
             STRING materialName 
+            NIL isVisible <null>
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -817,6 +837,7 @@ ENTITY Moais 1
         COMPONENT RenderComponent
             STRING meshName jordi-moai.glb
             STRING materialName 
+            NIL isVisible <null>
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -849,6 +870,7 @@ ENTITY Moais 1
         COMPONENT RenderComponent
             STRING meshName jordi-moai.glb
             STRING materialName 
+            NIL isVisible <null>
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -881,6 +903,7 @@ ENTITY Moais 1
         COMPONENT RenderComponent
             STRING meshName jordi-moai.glb
             STRING materialName 
+            NIL isVisible <null>
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -913,6 +936,7 @@ ENTITY Moais 1
         COMPONENT RenderComponent
             STRING meshName jordi-moai.glb
             STRING materialName 
+            NIL isVisible <null>
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -945,6 +969,7 @@ ENTITY Moais 1
         COMPONENT RenderComponent
             STRING meshName jordi-moai.glb
             STRING materialName 
+            NIL isVisible <null>
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -977,6 +1002,7 @@ ENTITY Moais 1
         COMPONENT RenderComponent
             STRING meshName jordi-moai.glb
             STRING materialName 
+            NIL isVisible <null>
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1009,6 +1035,7 @@ ENTITY Moais 1
         COMPONENT RenderComponent
             STRING meshName jordi-moai.glb
             STRING materialName 
+            NIL isVisible <null>
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1041,6 +1068,7 @@ ENTITY Moais 1
         COMPONENT RenderComponent
             STRING meshName jordi-moai.glb
             STRING materialName 
+            NIL isVisible <null>
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1073,6 +1101,7 @@ ENTITY Moais 1
         COMPONENT RenderComponent
             STRING meshName jordi-moai.glb
             STRING materialName 
+            NIL isVisible <null>
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1105,6 +1134,7 @@ ENTITY Moais 1
         COMPONENT RenderComponent
             STRING meshName jordi-moai.glb
             STRING materialName 
+            NIL isVisible <null>
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1137,6 +1167,7 @@ ENTITY Moais 1
         COMPONENT RenderComponent
             STRING meshName jordi-moai.glb
             STRING materialName 
+            NIL isVisible <null>
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1169,6 +1200,7 @@ ENTITY Moais 1
         COMPONENT RenderComponent
             STRING meshName jordi-moai.glb
             STRING materialName 
+            NIL isVisible <null>
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1201,6 +1233,7 @@ ENTITY Moais 1
         COMPONENT RenderComponent
             STRING meshName jordi-moai.glb
             STRING materialName 
+            NIL isVisible <null>
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1233,6 +1266,7 @@ ENTITY Moais 1
         COMPONENT RenderComponent
             STRING meshName jordi-moai.glb
             STRING materialName 
+            NIL isVisible <null>
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1265,6 +1299,7 @@ ENTITY Moais 1
         COMPONENT RenderComponent
             STRING meshName jordi-moai.glb
             STRING materialName 
+            NIL isVisible <null>
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1297,6 +1332,7 @@ ENTITY Moais 1
         COMPONENT RenderComponent
             STRING meshName jordi-moai.glb
             STRING materialName 
+            NIL isVisible <null>
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1329,6 +1365,7 @@ ENTITY Moais 1
         COMPONENT RenderComponent
             STRING meshName jordi-moai.glb
             STRING materialName 
+            NIL isVisible <null>
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1361,6 +1398,7 @@ ENTITY Moais 1
         COMPONENT RenderComponent
             STRING meshName jordi-moai.glb
             STRING materialName 
+            NIL isVisible <null>
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1393,6 +1431,7 @@ ENTITY Moais 1
         COMPONENT RenderComponent
             STRING meshName jordi-moai.glb
             STRING materialName 
+            NIL isVisible <null>
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1425,6 +1464,7 @@ ENTITY Moais 1
         COMPONENT RenderComponent
             STRING meshName jordi-moai.glb
             STRING materialName 
+            NIL isVisible <null>
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1457,6 +1497,7 @@ ENTITY Moais 1
         COMPONENT RenderComponent
             STRING meshName jordi-moai.glb
             STRING materialName 
+            NIL isVisible <null>
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1489,6 +1530,7 @@ ENTITY Moais 1
         COMPONENT RenderComponent
             STRING meshName jordi-moai.glb
             STRING materialName 
+            NIL isVisible <null>
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1521,6 +1563,7 @@ ENTITY Moais 1
         COMPONENT RenderComponent
             STRING meshName jordi-moai.glb
             STRING materialName 
+            NIL isVisible <null>
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1553,6 +1596,7 @@ ENTITY Moais 1
         COMPONENT RenderComponent
             STRING meshName jordi-moai.glb
             STRING materialName 
+            NIL isVisible <null>
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1585,6 +1629,7 @@ ENTITY Moais 1
         COMPONENT RenderComponent
             STRING meshName jordi-moai.glb
             STRING materialName 
+            NIL isVisible <null>
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1617,6 +1662,7 @@ ENTITY Moais 1
         COMPONENT RenderComponent
             STRING meshName jordi-moai.glb
             STRING materialName 
+            NIL isVisible <null>
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1649,6 +1695,7 @@ ENTITY Moais 1
         COMPONENT RenderComponent
             STRING meshName jordi-moai.glb
             STRING materialName 
+            NIL isVisible <null>
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1681,6 +1728,7 @@ ENTITY Moais 1
         COMPONENT RenderComponent
             STRING meshName jordi-moai.glb
             STRING materialName 
+            NIL isVisible <null>
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1713,6 +1761,7 @@ ENTITY Moais 1
         COMPONENT RenderComponent
             STRING meshName jordi-moai.glb
             STRING materialName 
+            NIL isVisible <null>
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1745,6 +1794,7 @@ ENTITY Moais 1
         COMPONENT RenderComponent
             STRING meshName jordi-moai.glb
             STRING materialName 
+            NIL isVisible <null>
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1777,6 +1827,7 @@ ENTITY Moais 1
         COMPONENT RenderComponent
             STRING meshName jordi-moai.glb
             STRING materialName 
+            NIL isVisible <null>
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1809,6 +1860,7 @@ ENTITY Moais 1
         COMPONENT RenderComponent
             STRING meshName jordi-moai.glb
             STRING materialName 
+            NIL isVisible <null>
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1841,6 +1893,7 @@ ENTITY Moais 1
         COMPONENT RenderComponent
             STRING meshName jordi-moai.glb
             STRING materialName 
+            NIL isVisible <null>
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1873,6 +1926,7 @@ ENTITY Moais 1
         COMPONENT RenderComponent
             STRING meshName jordi-moai.glb
             STRING materialName 
+            NIL isVisible <null>
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1905,6 +1959,7 @@ ENTITY Moais 1
         COMPONENT RenderComponent
             STRING meshName jordi-moai.glb
             STRING materialName 
+            NIL isVisible <null>
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1937,6 +1992,7 @@ ENTITY Moais 1
         COMPONENT RenderComponent
             STRING meshName jordi-moai.glb
             STRING materialName 
+            NIL isVisible <null>
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -1969,6 +2025,7 @@ ENTITY Moais 1
         COMPONENT RenderComponent
             STRING meshName jordi-moai.glb
             STRING materialName 
+            NIL isVisible <null>
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
@@ -2001,6 +2058,7 @@ ENTITY Moais 1
         COMPONENT RenderComponent
             STRING meshName jordi-moai.glb
             STRING materialName 
+            NIL isVisible <null>
         START_CHILDREN
         END_CHILDREN
     END_ENTITY

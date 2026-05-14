@@ -2,6 +2,7 @@
 
 #include <math.h>
 #include <cmath>
+#include <algorithm>
 
 #include "HugoMath.h"
 #include "TransformComponent.h"
@@ -14,14 +15,12 @@
 #include "AnimationComponent.h"
 #include "WorldTransformComponent.h"
 
-
 void PlayerMovementSystem::init(){
     
     scene.getInput()->registerAction("Forward", HUGO::KeyCode::W);
     scene.getInput()->registerAction("Backward", HUGO::KeyCode::S);
     scene.getInput()->registerAction("Right", HUGO::KeyCode::D);
     scene.getInput()->registerAction("Left", HUGO::KeyCode::A);
-    // Will be KeyCode::SPACE as soon as changes in HUGO are brought to main
     scene.getInput()->registerAction("Jump", HUGO::KeyCode::SPACE);
 }
 
@@ -62,7 +61,7 @@ void PlayerMovementSystem::update(uint32_t){
     updateCameraPivot();
 }
 
-void PlayerMovementSystem::fixedUpdate(uint32_t){
+void PlayerMovementSystem::fixedUpdate(uint32_t dt){
 
     HUGO::Vector3 velocity = HUGO::Vector3();
     HUGO::Vector3 jumpDirection = HUGO::Vector3();
@@ -88,10 +87,20 @@ void PlayerMovementSystem::fixedUpdate(uint32_t){
     velocity.normalize();
 
     for(auto& item : scene.query<PlayerComponent, RigidBodyComponent, SpeedComponent, TransformComponent, AnimationComponent>()){
-        item.modify<RigidBodyComponent>([&item, velocity, jumpDirection](RigidBodyComponent& rb){
+        item.modify<RigidBodyComponent>([&item, velocity, jumpDirection, dt](RigidBodyComponent& rb){
 
             // horizontal movement
             rb.applyForce(velocity * item.getConst<SpeedComponent>().speed);
+            // HUGO::Vector3 targetVelocity = velocity * item.getConst<SpeedComponent>().speed;
+            // float t_seconds_inv = 1.0f / (dt * 0.001f);
+            // HUGO::Vector3 maxForce = 80.f * velocity;
+            // HUGO::Vector3 force = rb.getMass() * (targetVelocity - rb.getLinearVelocity()) * t_seconds_inv;
+            // if(maxForce.length() < force.length()) {
+            //     force = maxForce;
+            //     // std::cout << "Aplicando maxForce\n";
+            // } 
+            // // else std::cout << "NO Aplicando maxForce\n";
+            // rb.applyForce(force);
 
             // vertical movement
             if(rb.getLinearVelocity().y < 0.05f && rb.getLinearVelocity().y > -0.05f)
