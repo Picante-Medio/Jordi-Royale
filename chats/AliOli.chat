@@ -10,9 +10,9 @@ ENTITY AliOli 1
         FLOAT friction 0.0
         VECTOR_3 positionOffset 0.0 0.00485920906067 0.0
         QUATERNION rotationOffset 0.0 0.0 0.0 1.0
-        BOOL active false
+        BOOL active true
         BOOL useGizmo false
-        BOOL isTrigger false
+        BOOL isTrigger true
     COMPONENT RigidBodyComponent
         FLOAT mass 0.0
         FLOAT linearDamping 0.0
@@ -21,12 +21,17 @@ ENTITY AliOli 1
         VECTOR_3 angularVelocity 0.0 0.0 0.0
         FLOAT linearSleepingThreshold 0.0
         FLOAT angularSleepingThreshold 0.0
-        INT type 0
+        INT type 2
         BOOL dontRotateWithPhysicsOnDynamic false
-        VECTOR_3 gravity 0.0 -9.80000019073486 0.0
+        VECTOR_3 gravity 0.0 0.0 0.0
     COMPONENT RenderComponent
         STRING meshName cylinder.mesh
         STRING materialName 
+        BOOL isVisible false
+    COMPONENT AliOliTag
+    COMPONENT DamageComponent
+        INT Damage 5
+        INT DamType 2
     START_CHILDREN
     END_CHILDREN
 END_ENTITY

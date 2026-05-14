@@ -36,6 +36,7 @@ metadata/_custom_type_script = "uid://dgu5myf6wqmwa"
 [node name="RenderComponent" type="MeshInstance3D" parent="." unique_id=652207919]
 script = ExtResource("4_n0fu3")
 mesh_name = "cylinder.mesh"
+isVisible = false
 metadata/_custom_type_script = "uid://c0wlt0qsxdika"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RenderComponent" unique_id=791489449]

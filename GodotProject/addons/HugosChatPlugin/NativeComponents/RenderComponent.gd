@@ -4,7 +4,7 @@ class_name RenderComponent
 
 @export var mesh_name:String
 @export var materialName:String
-@export var isVisible:bool
+@export var isVisible:bool = true
 
 func get_component() -> Dictionary[String, Variant]:
 	#var splitted_resource_path:PackedStringArray = mesh.resource_path.get_basename().split("/")
