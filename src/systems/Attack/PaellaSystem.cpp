@@ -19,7 +19,7 @@ PaellaSystem::init() {
 
     scene.subscribe<ActivatePaellaMessage>([this](std::shared_ptr<HUGO::Message> m){
         scene.modifyComponent<RenderComponent>(paellas[0], [](RenderComponent& rc) {
-            rc.visible = true;
+            rc.isVisible = true;
         });
 
         active = true;
@@ -58,7 +58,7 @@ PaellaSystem::onLoad() {
 
         // Set visible to false
         scene.modifyComponent<RenderComponent>(paellaEntity, [](RenderComponent& rc) {
-            rc.visible = false;
+            rc.isVisible = false;
         });
 
         paellas[i] = paellaEntity;
