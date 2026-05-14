@@ -27,6 +27,9 @@ ENTITY Enemy 1
     COMPONENT RenderComponent
         STRING meshName jordi-head.glb
         STRING materialName 
+    COMPONENT DamageComponent
+        INT Damage 10
+        INT DamType 0
     COMPONENT HPComponent
         INT HPMax 50
         INT CurrentHP 50

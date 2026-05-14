@@ -2,8 +2,6 @@
 #include "AnimationComponent.h"
 #include "ButtonComponent.h"
 #include "ChangeSceneMessage.h"
-#include "ChangeToNewInstanceOfSceneMessage.h"
-#include "ChangeSceneSystem.h"
 
 void 
 MainMenuSystem::init(){

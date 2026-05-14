@@ -163,6 +163,65 @@ colourBottom = Vector4(1, 1, 1, 1)
 left = 0.45
 top = 0.06
 
+[node name="Enemy" parent="." unique_id=1370903902 instance=ExtResource("20_jvnna")]
+transform = Transform3D(3.875586e-09, 0, -0.325, 0, 0.325, 0, 0.325, 0, 3.875586e-09, 1.3403206, 0.97898364, 3.6341286)
+
+[node name="HPText" type="Node3D" parent="." unique_id=1364359695]
+script = ExtResource("12_lhp3t")
+
+[node name="PanelComponent" type="Node" parent="HPText" unique_id=2083984971]
+script = ExtResource("14_psl12")
+overlayName = "JordiUI/Overlay5"
+containerName = "JordiUI/Overlay5/Container5"
+isVisible = true
+left = 0.8
+top = 0.1
+width = 0.25
+height = 0.1
+
+[node name="TextComponent" type="Node" parent="HPText" unique_id=2142866126]
+script = ExtResource("15_2ebs2")
+textAreaName = "JordUI/Overlay5/Container5/Text5"
+text = "HP: 100 / 100"
+textFont = "Roboto"
+characterHeight = 0.035
+spaceWidth = 0.01
+colour = Vector4(1, 1, 1, 1)
+colourTop = Vector4(1, 1, 1, 1)
+colourBottom = Vector4(1, 1, 1, 1)
+
+[node name="HPTextTag" type="Node" parent="HPText" unique_id=129927338]
+script = ExtResource("20_b48ew")
+metadata/_custom_type_script = "uid://chmo4h0bkhtvm"
+
+[node name="XPText" type="Node3D" parent="." unique_id=1544618934]
+script = ExtResource("12_lhp3t")
+
+[node name="PanelComponent" type="Node" parent="XPText" unique_id=732874575]
+script = ExtResource("14_psl12")
+overlayName = "JordiUI/Overlay6"
+containerName = "JordiUI/Overlay6/Container6"
+isVisible = true
+left = 0.8
+top = 0.2
+width = 0.25
+height = 0.1
+
+[node name="TextComponent" type="Node" parent="XPText" unique_id=1841147408]
+script = ExtResource("15_2ebs2")
+textAreaName = "JordUI/Overlay6/Container6/Text6"
+text = "XP: 0 / 100"
+textFont = "Roboto"
+characterHeight = 0.035
+spaceWidth = 0.01
+colour = Vector4(1, 1, 1, 1)
+colourTop = Vector4(1, 1, 1, 1)
+colourBottom = Vector4(1, 1, 1, 1)
+
+[node name="XPTextTag" type="Node" parent="XPText" unique_id=1765766746]
+script = ExtResource("21_8edxt")
+metadata/_custom_type_script = "uid://cj7lmiqjhcst2"
+
 [node name="Moais" type="Node3D" parent="." unique_id=382336233]
 script = ExtResource("2_huasi")
 
@@ -327,67 +386,5 @@ transform = Transform3D(0.35177308, 0.9031246, 0.24621412, 0.454114, 0.065358326
 
 [node name="Moai54" parent="Moais" unique_id=320054767 instance=ExtResource("16_gnsmo")]
 transform = Transform3D(-0.90880895, 0.40968382, -0.078897774, 0.38961217, 0.9010141, 0.1907258, 0.14922518, 0.14259385, -0.9784671, 22.091204, 0.6965518, -33.45588)
-
-[node name="Enemy" parent="." unique_id=1370903902 instance=ExtResource("20_jvnna")]
-transform = Transform3D(3.875586e-09, 0, -0.325, 0, 0.325, 0, 0.325, 0, 3.875586e-09, 1.3403206, 0.97898364, 3.6341286)
-
-[node name="DamageComponent" parent="Enemy" index="3" unique_id=919601672]
-Damage = null
-
-[node name="HPText" type="Node3D" parent="." unique_id=1364359695]
-script = ExtResource("12_lhp3t")
-
-[node name="PanelComponent" type="Node" parent="HPText" unique_id=2083984971]
-script = ExtResource("14_psl12")
-overlayName = "JordiUI/Overlay5"
-containerName = "JordiUI/Overlay5/Container5"
-isVisible = true
-left = 0.8
-top = 0.1
-width = 0.25
-height = 0.1
-
-[node name="TextComponent" type="Node" parent="HPText" unique_id=2142866126]
-script = ExtResource("15_2ebs2")
-textAreaName = "JordUI/Overlay5/Container5/Text5"
-text = "HP: 100 / 100"
-textFont = "Roboto"
-characterHeight = 0.035
-spaceWidth = 0.01
-colour = Vector4(1, 1, 1, 1)
-colourTop = Vector4(1, 1, 1, 1)
-colourBottom = Vector4(1, 1, 1, 1)
-
-[node name="HPTextTag" type="Node" parent="HPText" unique_id=129927338]
-script = ExtResource("20_b48ew")
-metadata/_custom_type_script = "uid://chmo4h0bkhtvm"
-
-[node name="XPText" type="Node3D" parent="." unique_id=1544618934]
-script = ExtResource("12_lhp3t")
-
-[node name="PanelComponent" type="Node" parent="XPText" unique_id=732874575]
-script = ExtResource("14_psl12")
-overlayName = "JordiUI/Overlay6"
-containerName = "JordiUI/Overlay6/Container6"
-isVisible = true
-left = 0.8
-top = 0.2
-width = 0.25
-height = 0.1
-
-[node name="TextComponent" type="Node" parent="XPText" unique_id=1841147408]
-script = ExtResource("15_2ebs2")
-textAreaName = "JordUI/Overlay6/Container6/Text6"
-text = "XP: 0 / 100"
-textFont = "Roboto"
-characterHeight = 0.035
-spaceWidth = 0.01
-colour = Vector4(1, 1, 1, 1)
-colourTop = Vector4(1, 1, 1, 1)
-colourBottom = Vector4(1, 1, 1, 1)
-
-[node name="XPTextTag" type="Node" parent="XPText" unique_id=1765766746]
-script = ExtResource("21_8edxt")
-metadata/_custom_type_script = "uid://cj7lmiqjhcst2"
 
 [editable path="Enemy"]

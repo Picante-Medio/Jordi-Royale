@@ -22,6 +22,7 @@ SYSTEM PauseEventSystem
 SYSTEM EnemyMovementSystem
 SYSTEM ChangeSceneSystem
 SYSTEM AudioEventsSystem
+SYSTEM DamageSystem
 
 ENTITY Skybox 1
     COMPONENT TransformComponent
@@ -165,6 +166,106 @@ ENTITY Clock 1
         FLOAT left 0.45
         FLOAT top 0.06
         FLOAT maxWidth 0.0
+    START_CHILDREN
+    END_CHILDREN
+END_ENTITY
+
+ENTITY Enemy 1
+    COMPONENT TransformComponent
+        VECTOR_3 position 1.3403205871582 0.97898364067078 3.63412857055664
+        QUATERNION rotation 0.0 -0.70710676908493 0.0 0.70710676908493
+        VECTOR_3 scale 0.32499998807907 0.32499998807907 0.32499998807907
+    COMPONENT ColliderComponent
+        COLLIDER_INFO info SPHERE_COLLIDER 0.68064975738525
+        FLOAT restitution 0.0
+        FLOAT friction 0.5
+        VECTOR_3 positionOffset -0.10348464548588 0.3441943526268 -0.0027465808671
+        QUATERNION rotationOffset 0.0 0.0 0.0 1.0
+        BOOL active true
+        BOOL useGizmo false
+        BOOL isTrigger false
+    COMPONENT RigidBodyComponent
+        FLOAT mass 5.0
+        FLOAT linearDamping 0.5
+        FLOAT angularDamping 0.0
+        VECTOR_3 linearVelocity 0.0 0.0 0.0
+        VECTOR_3 angularVelocity 0.0 0.0 0.0
+        FLOAT linearSleepingThreshold 0.8
+        FLOAT angularSleepingThreshold 1.0
+        INT type 0
+        BOOL dontRotateWithPhysicsOnDynamic true
+        VECTOR_3 gravity 0.0 0.0 0.0
+    COMPONENT RenderComponent
+        STRING meshName jordi-head.glb
+        STRING materialName 
+    COMPONENT DamageComponent
+        INT Damage 10
+        INT DamType 0
+    COMPONENT HPComponent
+        INT HPMax 50
+        INT CurrentHP 50
+    COMPONENT LevelComponent
+        INT level 1
+    COMPONENT SpeedComponent
+        FLOAT speed 3.0
+    COMPONENT EnemyTag
+    COMPONENT AnimationComponent
+    START_CHILDREN
+    END_CHILDREN
+END_ENTITY
+
+ENTITY HPText 1
+    COMPONENT PanelComponent
+        STRING overlayName JordiUI/Overlay5
+        STRING containerName JordiUI/Overlay5/Container5
+        BOOL isVisible true
+        INT metricsMode 0
+        FLOAT left 0.8
+        FLOAT top 0.1
+        FLOAT width 0.25
+        FLOAT height 0.1
+        STRING material 
+    COMPONENT TextComponent
+        STRING textAreaName JordUI/Overlay5/Container5/Text5
+        STRING text HP: 100 / 100
+        STRING textFont Roboto
+        FLOAT characterHeight 0.035
+        FLOAT spaceWidth 0.01
+        VECTOR_4 colour 1.0 1.0 1.0 1.0
+        VECTOR_4 colourTop 1.0 1.0 1.0 1.0
+        VECTOR_4 colourBottom 1.0 1.0 1.0 1.0
+        FLOAT left 0.0
+        FLOAT top 0.0
+        FLOAT maxWidth 0.0
+    COMPONENT HPTextTag
+    START_CHILDREN
+    END_CHILDREN
+END_ENTITY
+
+ENTITY XPText 1
+    COMPONENT PanelComponent
+        STRING overlayName JordiUI/Overlay6
+        STRING containerName JordiUI/Overlay6/Container6
+        BOOL isVisible true
+        INT metricsMode 0
+        FLOAT left 0.8
+        FLOAT top 0.2
+        FLOAT width 0.25
+        FLOAT height 0.1
+        STRING material 
+    COMPONENT TextComponent
+        STRING textAreaName JordUI/Overlay6/Container6/Text6
+        STRING text XP: 0 / 100
+        STRING textFont Roboto
+        FLOAT characterHeight 0.035
+        FLOAT spaceWidth 0.01
+        VECTOR_4 colour 1.0 1.0 1.0 1.0
+        VECTOR_4 colourTop 1.0 1.0 1.0 1.0
+        VECTOR_4 colourBottom 1.0 1.0 1.0 1.0
+        FLOAT left 0.0
+        FLOAT top 0.0
+        FLOAT maxWidth 0.0
+    COMPONENT XPTextTag
     START_CHILDREN
     END_CHILDREN
 END_ENTITY
@@ -1903,103 +2004,6 @@ ENTITY Moais 1
         END_CHILDREN
     END_ENTITY
 
-    END_CHILDREN
-END_ENTITY
-
-ENTITY Enemy 1
-    COMPONENT TransformComponent
-        VECTOR_3 position 1.3403205871582 0.97898364067078 3.63412857055664
-        QUATERNION rotation 0.0 -0.70710676908493 0.0 0.70710676908493
-        VECTOR_3 scale 0.32499998807907 0.32499998807907 0.32499998807907
-    COMPONENT ColliderComponent
-        COLLIDER_INFO info SPHERE_COLLIDER 0.68064975738525
-        FLOAT restitution 0.0
-        FLOAT friction 0.5
-        VECTOR_3 positionOffset -0.10348464548588 0.3441943526268 -0.0027465808671
-        QUATERNION rotationOffset 0.0 0.0 0.0 1.0
-        BOOL active true
-        BOOL useGizmo false
-        BOOL isTrigger false
-    COMPONENT RigidBodyComponent
-        FLOAT mass 5.0
-        FLOAT linearDamping 0.5
-        FLOAT angularDamping 0.0
-        VECTOR_3 linearVelocity 0.0 0.0 0.0
-        VECTOR_3 angularVelocity 0.0 0.0 0.0
-        FLOAT linearSleepingThreshold 0.8
-        FLOAT angularSleepingThreshold 1.0
-        INT type 0
-        BOOL dontRotateWithPhysicsOnDynamic true
-        VECTOR_3 gravity 0.0 0.0 0.0
-    COMPONENT RenderComponent
-        STRING meshName jordi-head.glb
-        STRING materialName 
-    COMPONENT HPComponent
-        INT HPMax 50
-        INT CurrentHP 50
-    COMPONENT LevelComponent
-        INT level 1
-    COMPONENT SpeedComponent
-        FLOAT speed 3.0
-    COMPONENT EnemyTag
-    COMPONENT AnimationComponent
-    START_CHILDREN
-    END_CHILDREN
-END_ENTITY
-
-ENTITY HPText 1
-    COMPONENT PanelComponent
-        STRING overlayName JordiUI/Overlay5
-        STRING containerName JordiUI/Overlay5/Container5
-        BOOL isVisible true
-        INT metricsMode 0
-        FLOAT left 0.8
-        FLOAT top 0.1
-        FLOAT width 0.25
-        FLOAT height 0.1
-        STRING material 
-    COMPONENT TextComponent
-        STRING textAreaName JordUI/Overlay5/Container5/Text5
-        STRING text HP: 100 / 100
-        STRING textFont Roboto
-        FLOAT characterHeight 0.035
-        FLOAT spaceWidth 0.01
-        VECTOR_4 colour 1.0 1.0 1.0 1.0
-        VECTOR_4 colourTop 1.0 1.0 1.0 1.0
-        VECTOR_4 colourBottom 1.0 1.0 1.0 1.0
-        FLOAT left 0.0
-        FLOAT top 0.0
-        FLOAT maxWidth 0.0
-    COMPONENT HPTextTag
-    START_CHILDREN
-    END_CHILDREN
-END_ENTITY
-
-ENTITY XPText 1
-    COMPONENT PanelComponent
-        STRING overlayName JordiUI/Overlay6
-        STRING containerName JordiUI/Overlay6/Container6
-        BOOL isVisible true
-        INT metricsMode 0
-        FLOAT left 0.8
-        FLOAT top 0.2
-        FLOAT width 0.25
-        FLOAT height 0.1
-        STRING material 
-    COMPONENT TextComponent
-        STRING textAreaName JordUI/Overlay6/Container6/Text6
-        STRING text XP: 0 / 100
-        STRING textFont Roboto
-        FLOAT characterHeight 0.035
-        FLOAT spaceWidth 0.01
-        VECTOR_4 colour 1.0 1.0 1.0 1.0
-        VECTOR_4 colourTop 1.0 1.0 1.0 1.0
-        VECTOR_4 colourBottom 1.0 1.0 1.0 1.0
-        FLOAT left 0.0
-        FLOAT top 0.0
-        FLOAT maxWidth 0.0
-    COMPONENT XPTextTag
-    START_CHILDREN
     END_CHILDREN
 END_ENTITY
 

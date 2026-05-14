@@ -34,8 +34,10 @@ void DamageSystem::update(uint32_t dt) {
             const DamageComponent damage = scene.getComponentConst<DamageComponent>(id);
             changeHP(playerID, -damage.Damage);
             timeSinceCooldown = 0;
-            HPComponent playerHP = scene.getComponentConst<HPComponent>(playerID);
+            const HPComponent playerHP = scene.getComponentConst<HPComponent>(playerID);
+            std::cout << playerHP.CurrentHP << std::endl;
             if(playerHP.CurrentHP <= 0){
+                std::cout << "PlayerDead" << std::endl;
                 PlayerDeadMessage m;
                 m.player = playerID;
                 scene.sendMessage<PlayerDeadMessage>(m);
