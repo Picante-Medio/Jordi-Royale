@@ -30,7 +30,7 @@ size = Vector3(500, 0.6121826, 500)
 
 [node name="main_scene" type="Node3D" unique_id=1228723441]
 script = ExtResource("1_865ah")
-systems = Array[int]([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 20, 30, 13, 17, 15, 14, 16, 10, 25, 22, 29, 24, 19, 26, 28])
+systems = Array[int]([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 20, 30, 13, 17, 15, 14, 16, 10, 25, 22, 29, 24, 19, 26, 28, 12, 11])
 
 [node name="Skybox" type="Node3D" parent="." unique_id=1067618066]
 transform = Transform3D(1.33, 0, 0, 0, 1.33, 0, 0, 0, 1.33, 0, 0, 0)
@@ -39,10 +39,6 @@ script = ExtResource("2_huasi")
 [node name="RenderComponent" type="MeshInstance3D" parent="Skybox" unique_id=2091797453]
 script = ExtResource("10_mai8y")
 mesh_name = "skybox.glb"
-isVisible = null
-
-[node name="skybox" parent="Skybox/RenderComponent" unique_id=1470652032]
-transform = Transform3D(0.99957526, 0.009936266, 0.027396863, -0.008815205, 0.99913085, -0.0407412, -0.027777866, 0.040482387, 0.99879414, 0, 0, 0.08070057)
 
 [node name="CameraPivot" type="Node3D" parent="." unique_id=671569509]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3510113, 0)
@@ -102,9 +98,6 @@ script = ExtResource("9_8edxt")
 transform = Transform3D(1, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1, 0, 0, 0)
 script = ExtResource("10_mai8y")
 mesh_name = "jordi.glb"
-isVisible = null
-
-[node name="jordi" parent="Jordi/RenderComponent" unique_id=1971369228]
 
 [node name="AnimationComponent" type="Node" parent="Jordi" unique_id=172929431]
 script = ExtResource("9_drdnd")
@@ -130,10 +123,6 @@ gravity = Vector3(0, 0, 0)
 [node name="RenderComponent" type="MeshInstance3D" parent="Floor" unique_id=345801481]
 script = ExtResource("10_mai8y")
 mesh_name = "moon_floor.glb"
-isVisible = null
-
-[node name="moon_floor" parent="Floor/RenderComponent" unique_id=812548192]
-transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.137, 0, 0.09776577, 0)
 
 [node name="Clock" type="Node3D" parent="." unique_id=389011601]
 script = ExtResource("12_lhp3t")
@@ -164,10 +153,7 @@ left = 0.45
 top = 0.06
 
 [node name="Enemy" parent="." unique_id=1370903902 instance=ExtResource("20_jvnna")]
-transform = Transform3D(3.875586e-09, 0, -0.325, 0, 0.325, 0, 0.325, 0, 3.875586e-09, 1.3403206, 0.97898364, 3.6341286)
-
-[node name="RenderComponent" parent="Enemy" index="2" unique_id=1222548737]
-isVisible = null
+transform = Transform3D(3.875586e-09, 0, -0.325, 0, 0.325, 0, 0.325, 0, 3.875586e-09, 2.5264876, 1.8215375, 3.6341286)
 
 [node name="HPText" type="Node3D" parent="." unique_id=1364359695]
 script = ExtResource("12_lhp3t")

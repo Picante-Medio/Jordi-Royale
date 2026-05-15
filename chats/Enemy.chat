@@ -5,13 +5,13 @@ ENTITY Enemy 1
         QUATERNION rotation 0.0 -0.70710676908493 0.0 0.70710676908493
         VECTOR_3 scale 0.32499998807907 0.32499998807907 0.32499998807907
     COMPONENT ColliderComponent
-        COLLIDER_INFO info SPHERE_COLLIDER 0.68064975738525
+        COLLIDER_INFO info SPHERE_COLLIDER 0.5
         FLOAT restitution 0.0
         FLOAT friction 0.5
         VECTOR_3 positionOffset -0.10348464548588 0.3441943526268 -0.0027465808671
         QUATERNION rotationOffset 0.0 0.0 0.0 1.0
         BOOL active true
-        BOOL useGizmo false
+        BOOL useGizmo true
         BOOL isTrigger false
     COMPONENT RigidBodyComponent
         FLOAT mass 5.0
@@ -27,6 +27,7 @@ ENTITY Enemy 1
     COMPONENT RenderComponent
         STRING meshName jordi-head.glb
         STRING materialName 
+        BOOL isVisible true
     COMPONENT DamageComponent
         INT Damage 10
         INT DamType 0

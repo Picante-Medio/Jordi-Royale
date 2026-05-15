@@ -7,11 +7,11 @@
 [ext_resource type="Script" uid="uid://f5ccxmpvxij1" path="res://Components/FartonComponent.gd" id="5_7nvg4"]
 [ext_resource type="Script" uid="uid://dlt0sfvp2lxlg" path="res://Components/DamageComponent.gd" id="6_8qf41"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ccxdj"]
-radius = 0.1
-height = 0.5
-
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8qf41"]
+radius = 0.1
+height = 0.7
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hl644"]
 radius = 0.1
 height = 0.7
 
@@ -22,27 +22,31 @@ metadata/_custom_type_script = "uid://d3gpbv1up76xn"
 
 [node name="ColliderComponent" type="CollisionShape3D" parent="." unique_id=2002130713]
 transform = Transform3D(1, 0, 0, 0, 0.012112278, -0.9999266, 0, 0.9999266, 0.012112278, 0, 0, 0)
-shape = SubResource("CapsuleShape3D_ccxdj")
+shape = SubResource("CapsuleShape3D_8qf41")
 script = ExtResource("2_ccxdj")
+friction = 0.5
 active = true
 useGizmo = true
-info = SubResource("CapsuleShape3D_8qf41")
+info = SubResource("CapsuleShape3D_hl644")
 metadata/_custom_type_script = "uid://5ysnehctvx5b"
 
 [node name="RigidBodyComponent" type="Node" parent="." unique_id=1523095685]
 script = ExtResource("3_8qf41")
-type = 2
+mass = 0.5
+dontRotateWithPhysicsOnDynamic = true
+gravity = Vector3(0, 0, 0)
 metadata/_custom_type_script = "uid://dpjupwgyydq3o"
 
 [node name="RenderComponent" type="MeshInstance3D" parent="." unique_id=132340521]
 skeleton = NodePath("../RigidBodyComponent")
 script = ExtResource("4_hl644")
 mesh_name = "farton.glb"
-isVisible = null
 metadata/_custom_type_script = "uid://cmidua6v4bry"
 
 [node name="FartonComponent" type="Node" parent="." unique_id=797822414]
 script = ExtResource("5_7nvg4")
+maxDist = 20.0
+speed = 8.0
 
 [node name="DamageComponent" type="Node" parent="." unique_id=1859208691]
 script = ExtResource("6_8qf41")
