@@ -71,7 +71,7 @@ END_ENTITY
 
 ENTITY Jordi 1
     COMPONENT TransformComponent
-        VECTOR_3 position 0.0 1.43718814849854 0.0
+        VECTOR_3 position 0.0 12.5413360595703 0.0
         QUATERNION rotation 0.0 0.0 0.0 1.0
         VECTOR_3 scale 1.0 1.0 1.0
     COMPONENT LevelComponent
@@ -137,7 +137,7 @@ ENTITY Floor 1
         VECTOR_3 angularVelocity 0.0 0.0 0.0
         FLOAT linearSleepingThreshold 0.8
         FLOAT angularSleepingThreshold 1.0
-        INT type 0
+        INT type 1
         BOOL dontRotateWithPhysicsOnDynamic false
         VECTOR_3 gravity 0.0 0.0 0.0
     COMPONENT RenderComponent
