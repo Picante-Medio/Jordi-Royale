@@ -1,12 +1,8 @@
 #include "AudioEventsSystem.h"
 
-#include <algorithm>
-
 #include "DynamicTrackMessage.h"
-#include "EcsTypes.h"
-#include "HugoInputCodes.h"
-#include "DynamicAudioComponent.h"
-#include "AudioComponent.h"
+#include "HugoTypes.h"
+#include "LuaBinder.h"
 
 void 
 AudioEventsSystem::init() {
@@ -15,30 +11,20 @@ AudioEventsSystem::init() {
 
 void 
 AudioEventsSystem::onLoad() {
-
+    LuaBinder& luaBinder = LuaBinder::getInstance();
+    luaBinder.registerMethod<AudioEventsSystem, void, HUGO::String>(*this, &AudioEventsSystem::sendToggleTrack, "toggle");
 }
 
 void 
 AudioEventsSystem::update(uint32_t dt) {
-    DynamicTrackMessage message;
-    message.action = TOGGLE;
 
-    if(scene.getInput()->wasKeyJustPressed(HUGO::KeyCode::H)) {
-        message.trackName = "base";
-    }
+}
 
-    if(scene.getInput()->wasKeyJustPressed(HUGO::KeyCode::J)) {
-        message.trackName = "main";
-    }
+void 
+AudioEventsSystem::sendToggleTrack(HUGO::String name) {
+    DynamicTrackMessage dynMsg;
+    dynMsg.action = TOGGLE;
+    dynMsg.trackName = name;
 
-    if(scene.getInput()->wasKeyJustPressed(HUGO::KeyCode::K)) {
-        message.trackName = "hi-hat";
-    }
-
-    if(scene.getInput()->wasKeyJustPressed(HUGO::KeyCode::L)) {
-        message.trackName = "kick-snare";
-    }
-
-    if(message.trackName != "") 
-        scene.sendMessage(message);
+    scene.sendMessage(dynMsg);
 }

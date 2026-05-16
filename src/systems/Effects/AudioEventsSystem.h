@@ -1,8 +1,11 @@
 #pragma once
 
 #include "HugoSystemMacros.h"
+#include "HugoTypes.h"
 
 HSYSTEM(AudioEventsSystem)
+
+    void sendToggleTrack(HUGO::String trackname);
 public:
     void init() override;
     void onLoad() override;

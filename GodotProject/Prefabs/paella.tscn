@@ -8,7 +8,7 @@
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0gcoj"]
 
-[node name="Entity3D" type="Node3D" unique_id=1058428034]
+[node name="Paella" type="Node3D" unique_id=1058428034]
 script = ExtResource("1_0dabe")
 metadata/_custom_type_script = "uid://dmak3mcg4w0h8"
 

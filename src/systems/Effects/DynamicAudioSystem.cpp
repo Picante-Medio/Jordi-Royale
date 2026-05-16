@@ -15,7 +15,7 @@ void
 DynamicAudioSystem::init() {
     scene.subscribe<DynamicTrackMessage>([this](std::shared_ptr<HUGO::Message> m){
         std::shared_ptr<DynamicTrackMessage> message = std::static_pointer_cast<DynamicTrackMessage>(m);
-        toggleTrack(message->trackName, message->action);
+        changeTrackState(message->trackName, message->action);
     });
 
     scene.onUpdateComponent<DynamicAudioComponent>().connect(this, &DynamicAudioSystem::onUpdateDyn);
@@ -92,7 +92,11 @@ DynamicAudioSystem::equalizeTracks() {
 }
 
 void 
-DynamicAudioSystem::toggleTrack(HUGO::String trackName, Action action) {
+DynamicAudioSystem::changeTrackState(HUGO::String trackName, Action action) {
+
+    if(!trackEntities.count(trackName)) 
+        return;
+
     switch(action) {
         case ACTIVATE:
             activateTrack(trackName);

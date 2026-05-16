@@ -22,7 +22,7 @@ HSYSTEM(DynamicAudioSystem)
     void deactivateTrack(HUGO::String track);
 
     void equalizeTracks();
-    void toggleTrack(HUGO::String track, Action action);
+    void changeTrackState(HUGO::String track, Action action);
 
     void onUpdateDyn(DynamicAudioComponent& dyn);
 public:
