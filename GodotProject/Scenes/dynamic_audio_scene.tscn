@@ -10,82 +10,82 @@
 
 [node name="DynamicAudioScene" type="Node3D" unique_id=1774039654]
 script = ExtResource("1_7lj06")
-systems = Array[int]([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 20])
+systems = Array[int]([1, 2, 3, 4, 5, 6, 7, 8, 9, 14, 15, 0])
 metadata/_custom_type_script = "uid://d3yq16mo85h5h"
 
 [node name="Music" type="Node3D" parent="." unique_id=1284055831]
 script = ExtResource("2_otbdy")
 metadata/_custom_type_script = "uid://cnmiha8rgpnhn"
 
-[node name="Base" type="Node3D" parent="Music" unique_id=1498434341]
+[node name="Arpegio" type="Node3D" parent="Music" unique_id=1498434341]
 script = ExtResource("2_otbdy")
 metadata/_custom_type_script = "uid://cnmiha8rgpnhn"
 
-[node name="AudioComponent" type="Node" parent="Music/Base" unique_id=1520814922]
+[node name="AudioComponent" type="Node" parent="Music/Arpegio" unique_id=1520814922]
 script = ExtResource("3_7ad7k")
 loop = true
 metadata/_custom_type_script = "uid://bmpf25fmc8sgi"
 
-[node name="DynamicAudioComponent" type="Node" parent="Music/Base" unique_id=1141180882]
+[node name="DynamicAudioComponent" type="Node" parent="Music/Arpegio" unique_id=1141180882]
 script = ExtResource("4_on83b")
-audioName = "base"
+audioName = "arpegiotrack"
 metadata/_custom_type_script = "uid://daxy0cbeqt3hv"
 
-[node name="TweenComponent" type="Node" parent="Music/Base" unique_id=1922796916]
+[node name="TweenComponent" type="Node" parent="Music/Arpegio" unique_id=1922796916]
 script = ExtResource("5_on83b")
 metadata/_custom_type_script = "uid://dkssn7rd5ejsj"
 
-[node name="Main" type="Node3D" parent="Music" unique_id=343352689]
+[node name="Bass" type="Node3D" parent="Music" unique_id=343352689]
 script = ExtResource("2_otbdy")
 metadata/_custom_type_script = "uid://cnmiha8rgpnhn"
 
-[node name="AudioComponent" type="Node" parent="Music/Main" unique_id=1594949526]
+[node name="AudioComponent" type="Node" parent="Music/Bass" unique_id=1594949526]
 script = ExtResource("3_7ad7k")
 loop = true
 metadata/_custom_type_script = "uid://bmpf25fmc8sgi"
 
-[node name="DynamicAudioComponent" type="Node" parent="Music/Main" unique_id=215300402]
+[node name="DynamicAudioComponent" type="Node" parent="Music/Bass" unique_id=215300402]
 script = ExtResource("4_on83b")
-audioName = "main"
+audioName = "basstrack"
 metadata/_custom_type_script = "uid://daxy0cbeqt3hv"
 
-[node name="TweenComponent" type="Node" parent="Music/Main" unique_id=2023394444]
+[node name="TweenComponent" type="Node" parent="Music/Bass" unique_id=2023394444]
 script = ExtResource("5_on83b")
 metadata/_custom_type_script = "uid://dkssn7rd5ejsj"
 
-[node name="Hi-Hat" type="Node3D" parent="Music" unique_id=762015101]
+[node name="Chords" type="Node3D" parent="Music" unique_id=762015101]
 script = ExtResource("2_otbdy")
 metadata/_custom_type_script = "uid://cnmiha8rgpnhn"
 
-[node name="AudioComponent" type="Node" parent="Music/Hi-Hat" unique_id=1669479053]
+[node name="AudioComponent" type="Node" parent="Music/Chords" unique_id=1669479053]
 script = ExtResource("3_7ad7k")
 loop = true
 metadata/_custom_type_script = "uid://bmpf25fmc8sgi"
 
-[node name="DynamicAudioComponent" type="Node" parent="Music/Hi-Hat" unique_id=2120018936]
+[node name="DynamicAudioComponent" type="Node" parent="Music/Chords" unique_id=2120018936]
 script = ExtResource("4_on83b")
-audioName = "hi-hat"
+audioName = "chordstrack"
 metadata/_custom_type_script = "uid://daxy0cbeqt3hv"
 
-[node name="TweenComponent" type="Node" parent="Music/Hi-Hat" unique_id=1227584934]
+[node name="TweenComponent" type="Node" parent="Music/Chords" unique_id=1227584934]
 script = ExtResource("5_on83b")
 metadata/_custom_type_script = "uid://dkssn7rd5ejsj"
 
-[node name="Kick-Snare" type="Node3D" parent="Music" unique_id=1147136077]
+[node name="Melody" type="Node3D" parent="Music" unique_id=1147136077]
 script = ExtResource("2_otbdy")
 metadata/_custom_type_script = "uid://cnmiha8rgpnhn"
 
-[node name="AudioComponent" type="Node" parent="Music/Kick-Snare" unique_id=917044802]
+[node name="AudioComponent" type="Node" parent="Music/Melody" unique_id=917044802]
 script = ExtResource("3_7ad7k")
 loop = true
 metadata/_custom_type_script = "uid://bmpf25fmc8sgi"
 
-[node name="DynamicAudioComponent" type="Node" parent="Music/Kick-Snare" unique_id=206478337]
+[node name="DynamicAudioComponent" type="Node" parent="Music/Melody" unique_id=206478337]
 script = ExtResource("4_on83b")
-audioName = "kick-snare"
+audioName = "melodytrack"
 metadata/_custom_type_script = "uid://daxy0cbeqt3hv"
 
-[node name="TweenComponent" type="Node" parent="Music/Kick-Snare" unique_id=2108628855]
+[node name="TweenComponent" type="Node" parent="Music/Melody" unique_id=2108628855]
 script = ExtResource("5_on83b")
 metadata/_custom_type_script = "uid://dkssn7rd5ejsj"
 

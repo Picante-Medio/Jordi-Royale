@@ -1,7 +1,7 @@
 SCENE DynamicAudioScene
 SYSTEM AudioSystem
 SYSTEM PhysicsGizmoSystem
-SYSTEM HierarchySystem
+SYSTEM TransformSystem
 SYSTEM ParticleSystem
 SYSTEM CameraSystem
 SYSTEM LightSystem
@@ -9,12 +9,12 @@ SYSTEM RenderSystem
 SYSTEM TweenSystem
 SYSTEM UISystem
 SYSTEM ConsoleSystem
-SYSTEM DynamicAudioSystem
 SYSTEM AudioEventsSystem
+SYSTEM DynamicAudioSystem
 
 ENTITY Music 1
     START_CHILDREN
-    ENTITY Base 1
+    ENTITY Arpegio 1
         COMPONENT AudioComponent
             INT type 0
             STRING audioName 
@@ -26,14 +26,14 @@ ENTITY Music 1
         COMPONENT DynamicAudioComponent
             FLOAT maxVolume 1.0
             FLOAT minVolume 0.0
-            STRING audioName base
+            STRING audioName arpegiotrack
             FLOAT interpolationMiliseconds 1500.0
         COMPONENT TweenComponent
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
 
-    ENTITY Main 1
+    ENTITY Bass 1
         COMPONENT AudioComponent
             INT type 0
             STRING audioName 
@@ -45,14 +45,14 @@ ENTITY Music 1
         COMPONENT DynamicAudioComponent
             FLOAT maxVolume 1.0
             FLOAT minVolume 0.0
-            STRING audioName main
+            STRING audioName basstrack
             FLOAT interpolationMiliseconds 1500.0
         COMPONENT TweenComponent
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
 
-    ENTITY Hi-Hat 1
+    ENTITY Chords 1
         COMPONENT AudioComponent
             INT type 0
             STRING audioName 
@@ -64,14 +64,14 @@ ENTITY Music 1
         COMPONENT DynamicAudioComponent
             FLOAT maxVolume 1.0
             FLOAT minVolume 0.0
-            STRING audioName hi-hat
+            STRING audioName chordstrack
             FLOAT interpolationMiliseconds 1500.0
         COMPONENT TweenComponent
         START_CHILDREN
         END_CHILDREN
     END_ENTITY
 
-    ENTITY Kick-Snare 1
+    ENTITY Melody 1
         COMPONENT AudioComponent
             INT type 0
             STRING audioName 
@@ -83,7 +83,7 @@ ENTITY Music 1
         COMPONENT DynamicAudioComponent
             FLOAT maxVolume 1.0
             FLOAT minVolume 0.0
-            STRING audioName kick-snare
+            STRING audioName melodytrack
             FLOAT interpolationMiliseconds 1500.0
         COMPONENT TweenComponent
         START_CHILDREN
