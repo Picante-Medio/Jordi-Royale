@@ -73,16 +73,23 @@ void FartonSystem::fixedUpdate(uint32_t dt) {
         t = 0;
         HUGO::ErrorOrType<EntityID> res = scene.instantiatePrefab(prefab);
         if(!res.isError()) {
-            // TransformComponent& tr = scene.getComponent<TransformComponent>(res.getValue());
-            WorldTransformComponent& worldTr = scene.getComponent<WorldTransformComponent>(res.getValue());
-            RigidBodyComponent& rb = scene.getComponent<RigidBodyComponent>(res.getValue());
+            // TransformComponent& tr = scene.getComponentConst<TransformComponent>(res.getValue());
             const WorldTransformComponent& playerTr = scene.getComponentConst<WorldTransformComponent>(playerID);
 
             HUGO::Vector3 target = findClosestEnemy(playerTr.worldPosition);
-            worldTr.worldRotation = HUGO::lookAt(worldTr.worldRotation.forward(),(target - playerTr.worldPosition), HUGO::Vector3(0,1,0)); // no need to normalize
-      
-            worldTr.worldPosition = playerTr.worldPosition + instantiateRadius * worldTr.worldRotation.forward();
-            worldTr.worldPosition.y += 0.5f;
+
+            scene.modifyComponent<WorldTransformComponent>(res.getValue(), 
+                [&target, &playerTr, this](WorldTransformComponent& worldTr) {
+                    worldTr.worldRotation = HUGO::lookAt(
+                        worldTr.worldRotation.forward(),
+                        (target - playerTr.worldPosition), 
+                        HUGO::Vector3(0,1,0)
+                    ); // no need to normalize
+
+                    worldTr.worldPosition = 
+                        playerTr.worldPosition + instantiateRadius * worldTr.worldRotation.forward();
+                    worldTr.worldPosition.y += 0.5f;
+            });
             
         }
     }

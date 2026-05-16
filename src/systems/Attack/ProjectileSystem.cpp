@@ -96,13 +96,23 @@ void ProjectileSystem::createProjectiles(uint32_t dt) {
             const WeaponInfoComponent& weaponInfo = pack.getConst<WeaponInfoComponent>();
             HUGO::ErrorOrType<EntityID> id = scene.instantiatePrefab(weaponInfo.prefab);
             if(!id.isError() && scene.hasComponent<ProjectileComponent>(id.getValue())) {
+
                 // Set projectile paths
-                ProjectileComponent& projectileComp = scene.getComponent<ProjectileComponent>(id.getValue());
-                projectileComp.setPaths();
+                scene.modifyComponent<ProjectileComponent>(id.getValue(), 
+                    [](ProjectileComponent& projectileComp){
+                        projectileComp.setPaths();
+                    }
+                );
 
                 // Set forward direction
-                TransformComponent& tr = scene.getComponent<TransformComponent>(id.getValue());
-                tr.rotation = (HUGO::lookAt(tr.rotation.forward(), tr.rotation.up(), weaponInfo.initialDirection(dt)));
+                scene.modifyComponent<TransformComponent>(id.getValue(), 
+                    [&weaponInfo, &dt](TransformComponent& tr){
+                        tr.rotation = (
+                            HUGO::lookAt(tr.rotation.forward(), 
+                            tr.rotation.up(), 
+                            weaponInfo.initialDirection(dt)));
+                    }
+                );
             }
         }
     }

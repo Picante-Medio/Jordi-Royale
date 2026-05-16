@@ -39,7 +39,7 @@ void DamageSystem::fixedUpdate(uint32_t dt) {
     timeSinceEnemyCooldown += dt;
     timeSincePlayerCooldown += dt;
 
-    for(EntityID id : scene.getComponent<ColliderComponent>(playerID).getCollisionInfo()){
+    for(EntityID id : scene.getComponentConst<ColliderComponent>(playerID).getCollisionInfo()){
 
         if(timeSinceEnemyCooldown < msEnemyCooldown) continue;
         if(scene.hasComponent<DamageComponent>(id) && scene.getComponentConst<DamageComponent>(id).DamType == DamageComponent::Enemy){
