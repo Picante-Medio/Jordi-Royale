@@ -58,14 +58,14 @@ void FartonSystem::fixedUpdate(uint32_t dt) {
         // if(!info.empty()) {   
         //     bool destroy = false;
         //     for(auto it = info.begin(); it != info.end() && !destroy; ++it)
-        //     destroy = *it != playerID;
+        //         destroy = *it != playerID;
         //     if(destroy) toRemove.insert(collider.entity);
         // }
 
-        // // Exceeded max distance
-        // const FartonComponent farton = pack.getConst<FartonComponent>();
-        // if(farton.distance > farton.maxDist)
-        //     toRemove.insert(farton.entity);
+        // Exceeded max distance
+        const FartonComponent farton = pack.getConst<FartonComponent>();
+        if(farton.distance > farton.maxDist)
+            toRemove.insert(farton.entity);
     }
 
     // Instantiate new attack towards closest enemy
