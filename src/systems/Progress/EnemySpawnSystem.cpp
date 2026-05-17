@@ -1,87 +1,95 @@
 #include "EnemySpawnSystem.h"
-#include "SpawnPointTag.h"
-#include "TransformComponent.h"
-#include "HugoError.h"
-#include "IncreaseEnemyLevelMessage.h"
-#include "SpawnBossMessage.h"
+
+#include <math.h>
+
 #include "ChangeEnemyDensityMessage.h"
+#include "EcsTypes.h"
+#include "HugoError.h"
+#include "HugoTypes.h"
+#include "IncreaseEnemyLevelMessage.h"
+#include "JordiRandom.h"
+#include "SpawnBossMessage.h"
+#include "TransformComponent.h"
+#include "DamageComponent.h"
+#include "HPComponent.h"
+#include "PlayerComponent.h"
 
-void 
-EnemySpawnSystem::init() {
-    prefabs = std::vector<HUGO::String>();
-    bossPrefabs = std::vector<HUGO::String>();
+void EnemySpawnSystem::init() {
+    JordiRandom& rng = JordiRandom::Instance();
 
-    prefabs.push_back("Enemy");
-    //prefabs.push_back("JordiHead");
+    prefabs = {
+        "Enemy",
+    };
 
-    bossPrefabs.push_back("Boss");
+    bossPrefabs = {
+        "Boss",
+    };
 
-    rnd.Init();
-    spawnTimeWithVariance = spawnTime + static_cast<HUGO::Int>(rnd.randomInRange(-spawnTime * timeVariance, spawnTime * timeVariance));
-    actWave = rnd.randomInRange(0, prefabs.size()-1);
-    spawners =std::vector<EntityID>();
-    for(auto it : scene.query<SpawnPointTag, TransformComponent>()){
-        spawners.push_back(it.getConst<SpawnPointTag>().entity);
-    }
-
-    scene.subscribe<IncreaseEnemyLevelMessage>([this](std::shared_ptr<HUGO::Message> message){
-        enemiesLevel++;
+    scene.subscribe<IncreaseEnemyLevelMessage>([this](std::shared_ptr<HUGO::Message> message) {
+        enemyLevel++; 
     });
 
-    scene.subscribe<SpawnBossMessage>([this](std::shared_ptr<HUGO::Message> message){
-        spawnEnemy(bossPrefabs[actWave]);
+    scene.subscribe<SpawnBossMessage>([this, &rng](std::shared_ptr<HUGO::Message> message) {
+        spawnEnemy(bossPrefabs[rng.randomIntInRange(0, bossPrefabs.size())]);
     });
 
-    scene.subscribe<ChangeEnemyDensityMessage>([this](std::shared_ptr<HUGO::Message> message){
+    scene.subscribe<ChangeEnemyDensityMessage>([this](std::shared_ptr<HUGO::Message> message) {
         std::shared_ptr<ChangeEnemyDensityMessage> m = std::static_pointer_cast<ChangeEnemyDensityMessage>(message);
         spawnTime = m->milisecondsBetweenSpawns;
     });
 }
 
+
 void 
 EnemySpawnSystem::onLoad() {
-
-}
-
-void 
-EnemySpawnSystem::fixedUpdate(uint32_t) {
+    playerID = scene.query<PlayerComponent>().begin()->getConst<PlayerComponent>().entity;
 }
 
 void 
 EnemySpawnSystem::update(uint32_t dt) {
-
-    ms += dt;
-    int i = 0;
-    for(auto it : scene.query<SpawnPointTag, TransformComponent>()){
-        spawners[i] = it.getConst<SpawnPointTag>().entity;
-        i++;
+    enemySpawnTimer += dt;
+    if(enemySpawnTimer >= spawnTime) {
+        enemySpawnTimer = 0;
+        spawnEnemy(prefabs[JordiRandom::Instance().randomIntInRange(0, prefabs.size())]);
     }
-
-    if(spawners.size() > 0 && spawnTimeWithVariance <= ms){
-        spawnEnemy(prefabs[actWave]);
-        ms = ms - spawnTimeWithVariance;
-        spawnTimeWithVariance = spawnTime + static_cast<HUGO::Int>(rnd.randomInRange(-spawnTime * timeVariance, spawnTime * timeVariance));
-    }
-    
-    
 }
 
-void
-EnemySpawnSystem::spawnEnemy(HUGO::String prefab){
-    HUGO::ErrorOrType<EntityID> en = scene.instantiatePrefab(prefab);
-    if(en.isError()){
-        scene.log(en.getError().description());
+void 
+EnemySpawnSystem::spawnEnemy(HUGO::String prefab) {
+    HUGO::ErrorOrType<EntityID> enemyPrefab = scene.instantiatePrefab(prefab);
+
+    // Check if prefab exists
+    if(enemyPrefab.isError()) 
+        return;
+    const EntityID enemy = enemyPrefab.getValue();
+
+    // Check if enemy is correctly set up
+    if(!scene.hasComponent<TransformComponent>(enemy) 
+        || !scene.hasComponent<DamageComponent>(enemy)
+        || !scene.hasComponent<HPComponent>(enemy))
+    {
+        scene.removeEntity(enemy);
+        return;
     }
-    else{
-        EntityID enemyID = en.getValue();
-        TransformComponent actSpawner = scene.getComponentConst<TransformComponent>(spawners[rnd.randomInRange(0, spawners.size()-1)]);
-          
-        scene.modifyComponent<TransformComponent>(enemyID, [this, actSpawner](TransformComponent& trans){
-            trans.position = HUGO::Vector3(
-            rnd.randomDoubleWithVariance(actSpawner.position.x, spawnVariance),
-            0.f,
-            rnd.randomDoubleWithVariance(actSpawner.position.z, spawnVariance));
+
+    // Change parameters according to level
+    scene.modifyComponent<DamageComponent>(enemy, [this](DamageComponent& dc){
+        dc.Damage *= enemyLevel;
+    });
+
+    if(enemyLevel > 2) {
+        scene.modifyComponent<HPComponent>(enemy, [this](HPComponent& hp){
+            hp.HPMax *=  0.5 * enemyLevel;
         });
     }
-      
+
+    scene.modifyComponent<TransformComponent>(enemy, [this](TransformComponent& tc) {
+        JordiRandom& rng = JordiRandom::Instance();
+        const float angle = rng.randomDoubleInRange(0, 2.f * HUGO::PI);
+        const TransformComponent& jordiTransform = scene.getComponentConst<TransformComponent>(playerID);
+
+        tc.position.x = jordiTransform.position.x + std::cos(angle) * spawnRadius;
+        tc.position.y = jordiTransform.position.y;
+        tc.position.z = jordiTransform.position.z + std::sin(angle) * spawnRadius;
+    });
 }

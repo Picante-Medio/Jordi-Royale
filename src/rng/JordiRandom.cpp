@@ -7,23 +7,23 @@ JordiRandom::Init(unsigned long int seed) {
 }
 
 double 
-JordiRandom::randomInRange(double minInclusive, double maxExclusive) {
+JordiRandom::randomDoubleInRange(double minInclusive, double maxExclusive) {
     std::uniform_real_distribution<double> urd(minInclusive, maxExclusive);
     return urd(rng);
 }
 
 int 
-JordiRandom::randomInRange(int minInclusive, int maxInclusive) {
+JordiRandom::randomIntInRange(int minInclusive, int maxInclusive) {
     std::uniform_int_distribution<int> uid(minInclusive, maxInclusive);
     return uid(rng);
 }
 
 double 
 JordiRandom::randomDoubleWithVariance(double value, double variance){
-    return value + randomInRange(-variance, variance);
+    return value + randomDoubleInRange(-variance, variance);
 }
 
 int 
 JordiRandom::randomIntWithVariance(int value, int variance){
-    return value + randomInRange(-variance, variance);
+    return value + randomIntInRange(-variance, variance);
 }

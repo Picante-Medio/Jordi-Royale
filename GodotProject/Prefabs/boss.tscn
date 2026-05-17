@@ -1,13 +1,12 @@
 [gd_scene format=3 uid="uid://c3kkpdeydr4yq"]
 
-[ext_resource type="Script" uid="uid://d3gpbv1up76xn" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="1_ej3y6"]
-[ext_resource type="Script" uid="uid://5ysnehctvx5b" path="res://addons/HugosChatPlugin/NativeComponents/ColliderComponent.gd" id="3_wft1y"]
-[ext_resource type="Script" uid="uid://b4cohkcfhgq44" path="res://addons/HugosChatPlugin/NativeComponents/RigidBodyComponent.gd" id="4_2tswx"]
-[ext_resource type="Script" uid="uid://cmidua6v4bry" path="res://addons/HugosChatPlugin/NativeComponents/RenderComponent.gd" id="5_nj6ug"]
-[ext_resource type="Script" uid="uid://bwwrka02til6w" path="res://Components/DamageComponent.gd" id="6_jnpp6"]
-[ext_resource type="Script" uid="uid://yr66mrh8xaa8" path="res://Components/HPComponent.gd" id="7_jn2bs"]
-[ext_resource type="Script" uid="uid://chnmaof0a3ll8" path="res://Components/LevelComponent.gd" id="8_7larv"]
-[ext_resource type="Script" uid="uid://dgscgud8jyhsm" path="res://Components/SpeedComponent.gd" id="9_aubs4"]
+[ext_resource type="Script" uid="uid://dmak3mcg4w0h8" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="1_ej3y6"]
+[ext_resource type="Script" uid="uid://bewpcwg276ktv" path="res://addons/HugosChatPlugin/NativeComponents/ColliderComponent.gd" id="3_wft1y"]
+[ext_resource type="Script" uid="uid://dgu5myf6wqmwa" path="res://addons/HugosChatPlugin/NativeComponents/RigidBodyComponent.gd" id="4_2tswx"]
+[ext_resource type="Script" uid="uid://c0wlt0qsxdika" path="res://addons/HugosChatPlugin/NativeComponents/RenderComponent.gd" id="5_nj6ug"]
+[ext_resource type="Script" uid="uid://dvkcj1hifj6ui" path="res://Components/DamageComponent.gd" id="6_jnpp6"]
+[ext_resource type="Script" uid="uid://dfj2qxmqtkj0s" path="res://Components/HPComponent.gd" id="7_jn2bs"]
+[ext_resource type="Script" uid="uid://bxtnhlmmus6l2" path="res://Components/SpeedComponent.gd" id="9_aubs4"]
 [ext_resource type="Script" uid="uid://bnnrk17c7rob4" path="res://Components/EnemyTag.gd" id="9_ej3y6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jccr3"]
@@ -47,9 +46,6 @@ DamType = 0
 script = ExtResource("7_jn2bs")
 HPMax = 500
 CurrentHP = 500
-
-[node name="LevelComponent" type="Node" parent="." unique_id=554129512]
-script = ExtResource("8_7larv")
 
 [node name="SpeedComponent" type="Node" parent="." unique_id=101251184]
 script = ExtResource("9_aubs4")

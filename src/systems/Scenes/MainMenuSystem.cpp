@@ -2,11 +2,15 @@
 #include "AnimationComponent.h"
 #include "ButtonComponent.h"
 #include "ChangeSceneMessage.h"
+#include "JordiRandom.h"
 
 void 
 MainMenuSystem::init(){
     scene.onAddComponent<ResumeTag>().connect(this, &MainMenuSystem::initResume);
     scene.onAddComponent<ExitTag>().connect(this, &MainMenuSystem::initExit);
+
+    // Initialize new seed every time a main scene is created
+    JordiRandom::Instance().Init();
 }
 
 void 

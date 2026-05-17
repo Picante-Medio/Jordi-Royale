@@ -27,14 +27,13 @@ ENTITY Boss 1
     COMPONENT RenderComponent
         STRING meshName cube.mesh
         STRING materialName 
+        BOOL isVisible true
     COMPONENT DamageComponent
         INT Damage 30
         INT DamType 0
     COMPONENT HPComponent
         INT HPMax 500
         INT CurrentHP 500
-    COMPONENT LevelComponent
-        INT level 1
     COMPONENT SpeedComponent
         FLOAT speed 2.0
     COMPONENT EnemyTag

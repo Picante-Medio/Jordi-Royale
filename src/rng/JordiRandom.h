@@ -16,8 +16,8 @@ public:
 
     void Init(unsigned long int = time(nullptr));
 
-    double randomInRange(double minInclusive, double maxExclusive);
-    int randomInRange(int minInclusive, int maxExclusive);
+    double randomDoubleInRange(double minInclusive, double maxExclusive);
+    int randomIntInRange(int minInclusive, int maxExclusive);
 
     double randomDoubleWithVariance(double value, double variance);
     int randomIntWithVariance(int value, int variance);
