@@ -14,7 +14,7 @@ private:
     HUGO::Int enemySpawnTimer = 0;
     HUGO::Int enemyLevel = 1;
 
-    const HUGO::Float spawnRadius = 20.f;
+    const HUGO::Float spawnRadius = 50.f;
 
     void spawnEnemy(HUGO::String prefab);
 public:

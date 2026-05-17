@@ -1,5 +1,6 @@
 #include "EnemySpawnSystem.h"
 
+#include <iostream>
 #include <math.h>
 
 #include "ChangeEnemyDensityMessage.h"
@@ -30,7 +31,10 @@ void EnemySpawnSystem::init() {
     });
 
     scene.subscribe<SpawnBossMessage>([this, &rng](std::shared_ptr<HUGO::Message> message) {
-        spawnEnemy(bossPrefabs[rng.randomIntInRange(0, bossPrefabs.size())]);
+        // If there is more than one
+        // spawnEnemy(bossPrefabs[rng.randomIntInRange(0, bossPrefabs.size())]);
+        
+        spawnEnemy("Boss");
     });
 
     scene.subscribe<ChangeEnemyDensityMessage>([this](std::shared_ptr<HUGO::Message> message) {
@@ -50,12 +54,16 @@ EnemySpawnSystem::update(uint32_t dt) {
     enemySpawnTimer += dt;
     if(enemySpawnTimer >= spawnTime) {
         enemySpawnTimer = 0;
-        spawnEnemy(prefabs[JordiRandom::Instance().randomIntInRange(0, prefabs.size())]);
+        // If there is more than one
+        // spawnEnemy(prefabs[JordiRandom::Instance().randomIntInRange(0, prefabs.size())]);
+
+        spawnEnemy("Enemy");
     }
 }
 
 void 
 EnemySpawnSystem::spawnEnemy(HUGO::String prefab) {
+    std::cout << "Spawning enemy\n";
     HUGO::ErrorOrType<EntityID> enemyPrefab = scene.instantiatePrefab(prefab);
 
     // Check if prefab exists
