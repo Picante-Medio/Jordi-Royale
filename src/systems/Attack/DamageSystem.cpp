@@ -48,8 +48,11 @@ void DamageSystem::fixedUpdate(uint32_t dt) {
             timeSinceEnemyCooldown = 0;
             const HPComponent playerHP = scene.getComponentConst<HPComponent>(playerID);
             std::cout << playerHP.CurrentHP << std::endl;
-            if(playerHP.CurrentHP <= 0){
+            if(!playerHP.dead && playerHP.CurrentHP <= 0){
                 std::cout << "PlayerDead" << std::endl;
+                scene.modifyComponent<HPComponent>(playerHP.entity, [](HPComponent& hp){
+                    hp.dead = true;
+                });
                 PlayerDeadMessage m;
                 m.player = playerID;
                 scene.sendMessage<PlayerDeadMessage>(m);
@@ -69,8 +72,11 @@ void DamageSystem::fixedUpdate(uint32_t dt) {
                 changeHP(collider.entity, -damage.Damage);
                 timeSincePlayerCooldown = 0;
                 HPComponent hp = enemy.getConst<HPComponent>();
-                if(hp.CurrentHP <= 0){
+                if(!hp.dead && hp.CurrentHP <= 0){
                     std::cout << "Enemigo muelto\n";
+                    scene.modifyComponent<HPComponent>(hp.entity, [](HPComponent& ehp){
+                        ehp.dead = true;
+                    });
                     EnemyDeadMessage m;
                     m.enemy = hp.entity;
                     scene.sendMessage<EnemyDeadMessage>(m);

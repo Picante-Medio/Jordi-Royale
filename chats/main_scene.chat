@@ -10,8 +10,6 @@ SYSTEM TweenSystem
 SYSTEM UISystem
 SYSTEM ConsoleSystem
 SYSTEM PickupSystem
-SYSTEM RotateSystem
-SYSTEM AliOliSystem
 SYSTEM PlayerMovementSystem
 SYSTEM DynamicAudioSystem
 SYSTEM AudioEventsSystem
@@ -20,12 +18,10 @@ SYSTEM ProjectileSystem
 SYSTEM ChangeSceneSystem
 SYSTEM EnemySpawnSystem
 SYSTEM PauseEventSystem
-SYSTEM UpgradeSystem
 SYSTEM LevelingSystem
-SYSTEM PauseSystem
-SYSTEM MainMenuSystem
 SYSTEM FartonSystem
 SYSTEM DamageSystem
+SYSTEM DropSystem
 
 ENTITY Skybox 1
     COMPONENT TransformComponent
