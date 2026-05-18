@@ -71,7 +71,7 @@ DropSystem::spawnChest(HUGO::Vector3 position) {
 void 
 DropSystem::spawnXP(HUGO::Vector3 position, int amount) {
     for(int i = 0; i < amount; ++i) {
-        HUGO::ErrorOrType<EntityID> xpPrefab = scene.instantiatePrefab("XP");
+        HUGO::ErrorOrType<EntityID> xpPrefab = scene.instantiatePrefab("Experience");
 
         // If the prefab does not exist, log it to console
         if(xpPrefab.isError()) {
