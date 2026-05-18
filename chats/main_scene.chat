@@ -86,7 +86,7 @@ ENTITY Jordi 1
         VECTOR_3 positionOffset 0.0 0.87217998504639 0.0
         QUATERNION rotationOffset 0.0 0.00000008940698 0.0 1.0
         BOOL active true
-        BOOL useGizmo false
+        BOOL useGizmo true
         BOOL isTrigger false
     COMPONENT RigidBodyComponent
         FLOAT mass 5.0

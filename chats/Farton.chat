@@ -29,8 +29,8 @@ ENTITY Farton 1
         STRING materialName 
         BOOL isVisible true
     COMPONENT FartonComponent
-        FLOAT maxDist 10.0
-        FLOAT speed 5.0
+        FLOAT maxDist 20.0
+        FLOAT speed 8.0
     COMPONENT DamageComponent
         INT Damage 15
         INT DamType 1

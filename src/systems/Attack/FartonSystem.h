@@ -15,9 +15,9 @@ private:
     EntityID playerID;
 
     uint32_t t = 0;
-    uint32_t firingRate = 500;
+    uint32_t firingRate = 400;
 
-    float instantiateRadius = .5f;
+    float instantiateRadius = 1.f;
 
     std::string prefab = "Farton";
 

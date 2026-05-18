@@ -14,7 +14,6 @@ ChangeSceneSystem::init() {
     // Callback to process scene change requests
     scene.subscribe<ChangeSceneMessage>([this](std::shared_ptr<HUGO::Message> message) {
         std::shared_ptr<ChangeSceneMessage> m = std::static_pointer_cast<ChangeSceneMessage>(message);
-        std::cout << "Changing scene to " << m->sceneName << std::endl;
         if(m->destroyCurrent) scene.changeAndDestroyPreviousScene(m->sceneName);
         else scene.changeScene(m->sceneName);
     });

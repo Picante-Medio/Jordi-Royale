@@ -36,12 +36,10 @@ void FartonSystem::fixedUpdate(uint32_t dt) {
             rb.setLinearVelocity(farton.speed * tr.worldRotation.forward());
         });
 
-        // std::cout << "Farton " << tr.entity << " forward: " << tr.worldRotation.forward().x << " " << tr.worldRotation.forward().y << " " << tr.worldRotation.forward().z << "\n";
         HUGO::Vector3 dist = tr.worldRotation.forward() * farton.speed * dt * 0.001f;
         
         pack.modify<FartonComponent>([dist](FartonComponent& farton) {
             farton.distance += dist.length();
-            // std::cout << "Distancia recorrida del farton " << farton.entity << " : " << farton.distance << "\n";
         });
     }
 
@@ -54,13 +52,13 @@ void FartonSystem::fixedUpdate(uint32_t dt) {
         //     toRemove.insert(collider.entity);
 
         // Ignore collisions with player
-        // std::vector<EntityID> info = collider.getCollisionInfo();
-        // if(!info.empty()) {   
-        //     bool destroy = false;
-        //     for(auto it = info.begin(); it != info.end() && !destroy; ++it)
-        //         destroy = *it != playerID;
-        //     if(destroy) toRemove.insert(collider.entity);
-        // }
+        std::vector<EntityID> info = collider.getCollisionInfo();
+        if(!info.empty()) {   
+            bool destroy = false;
+            for(auto it = info.begin(); it != info.end() && !destroy; ++it)
+                destroy = *it != playerID;
+            if(destroy) toRemove.insert(collider.entity);
+        }
 
         // Exceeded max distance
         const FartonComponent farton = pack.getConst<FartonComponent>();
@@ -97,14 +95,8 @@ void FartonSystem::fixedUpdate(uint32_t dt) {
 }
 
 void FartonSystem::update(uint32_t) {
-    try {
-        for(EntityID id : toRemove) {
-            std::cout << "Borrando entidad " << id << "\n";
-            scene.removeEntity(id);
-        }
-    }
-    catch(std::exception e) {
-        std::cout << "Fallo al borrar entidad: " << e.what() << '\n';
+    for(EntityID id : toRemove) {
+        scene.removeEntity(id);
     }
 
     toRemove.clear();
