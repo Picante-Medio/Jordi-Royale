@@ -22,6 +22,8 @@ SYSTEM LevelingSystem
 SYSTEM FartonSystem
 SYSTEM DamageSystem
 SYSTEM DropSystem
+SYSTEM ProgressionSystem
+SYSTEM StatSystem
 
 ENTITY Skybox 1
     COMPONENT TransformComponent
@@ -78,7 +80,7 @@ ENTITY Jordi 1
         FLOAT objectPickupRange 1.0
         INT airJumps 0
     COMPONENT SpeedComponent
-        FLOAT speed 80.0
+        FLOAT speed 10.0
     COMPONENT ColliderComponent
         COLLIDER_INFO info CYLINDER_COLLIDER 0.20200000703335 0.86639404296875 0.20200000703335
         FLOAT restitution 0.0
@@ -86,7 +88,7 @@ ENTITY Jordi 1
         VECTOR_3 positionOffset 0.0 0.87217998504639 0.0
         QUATERNION rotationOffset 0.0 0.00000008940698 0.0 1.0
         BOOL active true
-        BOOL useGizmo true
+        BOOL useGizmo false
         BOOL isTrigger false
     COMPONENT RigidBodyComponent
         FLOAT mass 5.0

@@ -16,7 +16,6 @@
 #include "WorldTransformComponent.h"
 
 void PlayerMovementSystem::init(){
-    
     scene.getInput()->registerAction("Forward", HUGO::KeyCode::W);
     scene.getInput()->registerAction("Backward", HUGO::KeyCode::S);
     scene.getInput()->registerAction("Right", HUGO::KeyCode::D);
@@ -47,9 +46,7 @@ void PlayerMovementSystem::update(uint32_t){
     HUGO::Vector3 playerPos = scene.query<PlayerComponent, TransformComponent>().begin()->getConst<TransformComponent>().position;
 
     HUGO::Vector2 diff = currentMousePosition - lastMousePosition;
-    HUGO::Quaternion rotation = HUGO::Quaternion(HUGO::Radian(HUGO::Degree(-diff.x * 360 * SENSIBILITY)), playerUp);
-
-    // rigidboy is a cylinder, rotation is not needed
+    HUGO::Quaternion rotation = HUGO::Quaternion(HUGO::Radian(HUGO::Degree(-diff.x * 360 * SENSIBILITY)), playerUp); // rigidboy is a cylinder, rotation is not needed
     for(auto& item : scene.query<TransformComponent, CameraPivotTag>()){
         item.modify<TransformComponent>([rotation](TransformComponent& trans){
             trans.rotation *= rotation;
@@ -63,7 +60,7 @@ void PlayerMovementSystem::update(uint32_t){
 
 void PlayerMovementSystem::fixedUpdate(uint32_t dt){
 
-    HUGO::Vector3 velocity = HUGO::Vector3();
+    HUGO::Vector3 direction = HUGO::Vector3();
     HUGO::Vector3 jumpDirection = HUGO::Vector3();
 
     HUGO::Vector3 camPos = scene.query<CameraComponent, WorldTransformComponent>().begin()->getConst<WorldTransformComponent>().worldPosition;
@@ -72,45 +69,40 @@ void PlayerMovementSystem::fixedUpdate(uint32_t dt){
     diffVectorxz = HUGO::Vector3((playerPos - camPos).x, 0, (playerPos - camPos).z);
 
     // z-axis
-    if(scene.getInput()->isActionPressed("Forward")) velocity += diffVectorxz;
-    else if(scene.getInput()->isActionPressed("Backward")) velocity = velocity - diffVectorxz;
+    if(scene.getInput()->isActionPressed("Forward")) direction += diffVectorxz;
+    else if(scene.getInput()->isActionPressed("Backward")) direction = direction - diffVectorxz;
 
     // x-axis
-    if(scene.getInput()->isActionPressed("Right")) velocity += diffVectorxz.cross(HUGO::Vector3(0, 1, 0));
-    else if(scene.getInput()->isActionPressed("Left")) velocity = velocity - diffVectorxz.cross(HUGO::Vector3(0, 1, 0));
+    if(scene.getInput()->isActionPressed("Right")) direction += diffVectorxz.cross(HUGO::Vector3(0, 1, 0));
+    else if(scene.getInput()->isActionPressed("Left")) direction = direction - diffVectorxz.cross(HUGO::Vector3(0, 1, 0));
 
     // Jump
     if(scene.getInput()->isActionPressed("Jump"))
         jumpDirection = HUGO::Vector3(0.f, 1.f, 0.f);
 
     // normalize
-    velocity.normalize();
+    direction.normalize();
 
     for(auto& item : scene.query<PlayerComponent, RigidBodyComponent, SpeedComponent, TransformComponent, AnimationComponent>()){
-        item.modify<RigidBodyComponent>([&item, velocity, jumpDirection, dt](RigidBodyComponent& rb){
+        item.modify<RigidBodyComponent>([&item, direction, jumpDirection, dt](RigidBodyComponent& rb){
 
             // horizontal movement
-            rb.applyForce(velocity * item.getConst<SpeedComponent>().speed);
-            // HUGO::Vector3 targetVelocity = velocity * item.getConst<SpeedComponent>().speed;
-            // float t_seconds_inv = 1.0f / (dt * 0.001f);
-            // HUGO::Vector3 maxForce = 80.f * velocity;
-            // HUGO::Vector3 force = rb.getMass() * (targetVelocity - rb.getLinearVelocity()) * t_seconds_inv;
-            // if(maxForce.length() < force.length()) {
-            //     force = maxForce;
-            //     // std::cout << "Aplicando maxForce\n";
-            // } 
-            // // else std::cout << "NO Aplicando maxForce\n";
-            // rb.applyForce(force);
+            const HUGO::Vector3 desiredVel = direction * item.getConst<SpeedComponent>().speed;
+            HUGO::Vector3 horizontalVel = rb.getLinearVelocity(); horizontalVel.y = 0;
+            const HUGO::Vector3 velError = desiredVel - horizontalVel;
+            const float dtSeconds = dt / 1000.0f;
+            rb.applyForce(rb.mass * velError / dtSeconds);
 
             // vertical movement
-            if(rb.getLinearVelocity().y < 0.05f && rb.getLinearVelocity().y > -0.05f)
+            bool canJump = rb.getLinearVelocity().y < 0.5f && rb.getLinearVelocity().y > -0.55f;
+            if(canJump && jumpDirection != HUGO::Vector3())
                 rb.applyForce(jumpDirection * item.getConst<PlayerComponent>().jumpPower);
 
             // rotation
-            item.modify<TransformComponent>([rb, velocity](TransformComponent& trans){
-                if(velocity == HUGO::Vector3()) return;
-                HUGO::Vector3 rotation = HUGO::Vector3(0, 0, 1).cross(velocity);
-                HUGO::Float wValue = sqrt(pow(HUGO::Vector3(0, 0, 1).length(), 2) * pow(velocity.length(), 2)) + velocity.z;
+            item.modify<TransformComponent>([rb, direction](TransformComponent& trans){
+                if(direction == HUGO::Vector3()) return;
+                HUGO::Vector3 rotation = HUGO::Vector3(0, 0, 1).cross(direction);
+                HUGO::Float wValue = sqrt(pow(HUGO::Vector3(0, 0, 1).length(), 2) * pow(direction.length(), 2)) + direction.z;
                 trans.rotation = HUGO::Quaternion(wValue, rotation.x, rotation.y, rotation.z);
 
                 // Needed because previous calculations doesn't work properly when going forward and I don't know math
