@@ -629,28 +629,24 @@ metadata/_custom_type_script = "uid://cnmiha8rgpnhn"
 script = ExtResource("10_vtepg")
 metadata/_custom_type_script = "uid://cnmiha8rgpnhn"
 
-[node name="AudioComponent" type="Node" parent="Music/Arpegio" unique_id=822315250]
-script = ExtResource("15_wyh8j")
-loop = true
-metadata/_custom_type_script = "uid://bmpf25fmc8sgi"
-
 [node name="DynamicAudioComponent" type="Node" parent="Music/Arpegio" unique_id=495311868]
 script = ExtResource("16_ujyyl")
-audioName = "arpegiotrack"
+audioName = "basstrack"
 metadata/_custom_type_script = "uid://daxy0cbeqt3hv"
 
 [node name="TweenComponent" type="Node" parent="Music/Arpegio" unique_id=552140275]
 script = ExtResource("17_mkpwh")
 metadata/_custom_type_script = "uid://dkssn7rd5ejsj"
 
+[node name="AudioComponent" type="Node" parent="Music/Arpegio" unique_id=1098913751]
+script = ExtResource("15_wyh8j")
+audioName = "basstrack"
+loop = true
+metadata/_custom_type_script = "uid://bmpf25fmc8sgi"
+
 [node name="Bass" type="Node3D" parent="Music" unique_id=1694599251]
 script = ExtResource("10_vtepg")
 metadata/_custom_type_script = "uid://cnmiha8rgpnhn"
-
-[node name="AudioComponent" type="Node" parent="Music/Bass" unique_id=1434862634]
-script = ExtResource("15_wyh8j")
-loop = true
-metadata/_custom_type_script = "uid://bmpf25fmc8sgi"
 
 [node name="DynamicAudioComponent" type="Node" parent="Music/Bass" unique_id=1808730637]
 script = ExtResource("16_ujyyl")
@@ -661,18 +657,18 @@ metadata/_custom_type_script = "uid://daxy0cbeqt3hv"
 script = ExtResource("17_mkpwh")
 metadata/_custom_type_script = "uid://dkssn7rd5ejsj"
 
+[node name="AudioComponent" type="Node" parent="Music/Bass" unique_id=1164272203]
+script = ExtResource("15_wyh8j")
+audioName = "basstrack"
+loop = true
+metadata/_custom_type_script = "uid://bmpf25fmc8sgi"
+
 [node name="Chords" type="Node3D" parent="Music" unique_id=2103508190]
 script = ExtResource("10_vtepg")
 metadata/_custom_type_script = "uid://cnmiha8rgpnhn"
 
-[node name="AudioComponent" type="Node" parent="Music/Chords" unique_id=1441001775]
-script = ExtResource("15_wyh8j")
-loop = true
-metadata/_custom_type_script = "uid://bmpf25fmc8sgi"
-
 [node name="DynamicAudioComponent" type="Node" parent="Music/Chords" unique_id=1469414183]
 script = ExtResource("16_ujyyl")
-minVolume = 0.5
 audioName = "chordstrack"
 metadata/_custom_type_script = "uid://daxy0cbeqt3hv"
 
@@ -680,14 +676,15 @@ metadata/_custom_type_script = "uid://daxy0cbeqt3hv"
 script = ExtResource("17_mkpwh")
 metadata/_custom_type_script = "uid://dkssn7rd5ejsj"
 
+[node name="AudioComponent" type="Node" parent="Music/Chords" unique_id=98765898]
+script = ExtResource("15_wyh8j")
+audioName = "chordstrack"
+loop = true
+metadata/_custom_type_script = "uid://bmpf25fmc8sgi"
+
 [node name="Melody" type="Node3D" parent="Music" unique_id=1123903438]
 script = ExtResource("10_vtepg")
 metadata/_custom_type_script = "uid://cnmiha8rgpnhn"
-
-[node name="AudioComponent" type="Node" parent="Music/Melody" unique_id=1030101429]
-script = ExtResource("15_wyh8j")
-loop = true
-metadata/_custom_type_script = "uid://bmpf25fmc8sgi"
 
 [node name="DynamicAudioComponent" type="Node" parent="Music/Melody" unique_id=836378327]
 script = ExtResource("16_ujyyl")
@@ -697,3 +694,9 @@ metadata/_custom_type_script = "uid://daxy0cbeqt3hv"
 [node name="TweenComponent" type="Node" parent="Music/Melody" unique_id=451022788]
 script = ExtResource("17_mkpwh")
 metadata/_custom_type_script = "uid://dkssn7rd5ejsj"
+
+[node name="AudioComponent" type="Node" parent="Music/Melody" unique_id=419217040]
+script = ExtResource("15_wyh8j")
+audioName = "melodytrack"
+loop = true
+metadata/_custom_type_script = "uid://bmpf25fmc8sgi"
