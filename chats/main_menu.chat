@@ -8,7 +8,7 @@ SYSTEM RenderSystem
 SYSTEM TweenSystem
 SYSTEM UISystem
 SYSTEM ConsoleSystem
-SYSTEM MainMenuSystem
+SYSTEM LoseSceneSystem
 SYSTEM ChangeSceneSystem
 SYSTEM DynamicAudioSystem
 SYSTEM AudioEventsSystem
@@ -5488,12 +5488,10 @@ ENTITY Music 1
     START_CHILDREN
     ENTITY Arpegio 1
         COMPONENT AudioComponent
-            INT type 0
             STRING audioName 
             FLOAT volume 0.0
             BOOL loop true
             FLOAT pitch 0.0
-            FLOAT startTime 0.0
             BOOL isPlaying false
         COMPONENT DynamicAudioComponent
             FLOAT maxVolume 1.0
@@ -5507,12 +5505,10 @@ ENTITY Music 1
 
     ENTITY Bass 1
         COMPONENT AudioComponent
-            INT type 0
             STRING audioName 
             FLOAT volume 0.0
             BOOL loop true
             FLOAT pitch 0.0
-            FLOAT startTime 0.0
             BOOL isPlaying false
         COMPONENT DynamicAudioComponent
             FLOAT maxVolume 1.0
@@ -5526,16 +5522,14 @@ ENTITY Music 1
 
     ENTITY Chords 1
         COMPONENT AudioComponent
-            INT type 0
             STRING audioName 
             FLOAT volume 0.0
             BOOL loop true
             FLOAT pitch 0.0
-            FLOAT startTime 0.0
             BOOL isPlaying false
         COMPONENT DynamicAudioComponent
             FLOAT maxVolume 1.0
-            FLOAT minVolume 0.0
+            FLOAT minVolume 0.5
             STRING audioName chordstrack
             FLOAT interpolationMiliseconds 1500.0
         COMPONENT TweenComponent
@@ -5545,12 +5539,10 @@ ENTITY Music 1
 
     ENTITY Melody 1
         COMPONENT AudioComponent
-            INT type 0
             STRING audioName 
             FLOAT volume 0.0
             BOOL loop true
             FLOAT pitch 0.0
-            FLOAT startTime 0.0
             BOOL isPlaying false
         COMPONENT DynamicAudioComponent
             FLOAT maxVolume 1.0

@@ -38,6 +38,7 @@ ENTITY Projectile 1
     COMPONENT RenderComponent
         STRING meshName sphere.mesh
         STRING materialName 
+        BOOL isVisible true
     START_CHILDREN
     END_CHILDREN
 END_ENTITY

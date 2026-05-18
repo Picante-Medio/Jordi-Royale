@@ -1,6 +1,7 @@
 #include "DynamicAudioSystem.h"
 
 #include <cmath>
+#include <iostream>
 #include <memory>
 
 #include "AudioComponent.h"
@@ -23,17 +24,19 @@ DynamicAudioSystem::init() {
 
 void 
 DynamicAudioSystem::onLoad() {
+    std::cout << "Dynamic Audio OnLoad\n";
     for(auto pack : scene.query<DynamicAudioComponent, AudioComponent>()) {
         const DynamicAudioComponent& dyn = pack.getConst<DynamicAudioComponent>();
 
+        std::cout << "Found track " << dyn.audioName << "\n";
         trackEntities[dyn.audioName] = TrackEntity{dyn.entity, false};
         pack.modify<AudioComponent>([this, dyn](AudioComponent& ac){
             ac.audioName = dyn.audioName;
             ac.isPlaying = true;
             ac.loop = true;
             ac.volume = dyn.minVolume;
-            ac.type = HUGO::MUSIC;
         });
+
     }
 }
 

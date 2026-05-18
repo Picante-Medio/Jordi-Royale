@@ -9,6 +9,7 @@ ENTITY Experience 1
     COMPONENT RenderComponent
         STRING meshName sphere.mesh
         STRING materialName 
+        BOOL isVisible true
     COMPONENT PickableComponent
         FLOAT pickupRadius 0.5
     START_CHILDREN

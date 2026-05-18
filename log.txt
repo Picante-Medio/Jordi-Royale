@@ -1,0 +1,468 @@
+Configuring with preset: Linux-Debug
+Build type:              Debug
+Building with preset:   DEBUG_LINUX
+-- ========lua========
+-- ================================
+-- Configuring HUGO dependencies...
+-- ================================
+-- ======pugixml======
+-- =====miniaudio=====
+-- Compiling as C++ (GNU/Clang)
+-- Found vorbisfile via pkg-config: vorbisfile
+-- Checking for module 'opusfile'
+--   Package 'opusfile' not found
+-- libopusfile not found. miniaudio_libopus will be excluded.
+-- Found SDL2: /usr/lib/libSDL2.so
+-- SteamAudio not found. miniaudio_engine_steamaudio will be excluded.
+-- ======Bullet3======
+-- ======assimp=======
+-- Shared libraries disabled
+-- GCC13 detected disabling "-Wdangling-reference" in Cpp files as it appears to be a false positive
+-- compiling zlib from sources
+-- Build an import-only version of Assimp.
+-- GCC13 detected disabling "-Warray-bounds and -Wstringop-overflow" for AssetLib/MDL/MDLLoader.cpp as it appears to be a false positive
+-- VRML disabled
+-- tinyusdz disabled
+-- Enabled importer formats: AMF 3DS AC ASE ASSBIN B3D BVH COLLADA DXF CSM HMP IRRMESH IQM IRR LWO LWS MD2 MD3 MD5 MDC MDL NFF NDO OFF OBJ OPENGEX PLY MS3D COB BLEND IFC XGL FBX Q3D Q3BSP RAW SIB SMD STL TERRAGEN 3D X X3D GLTF 3MF MMD
+-- Disabled importer formats: OGRE USD
+-- Treating all warnings as errors (for assimp library only)
+-- ======OGRE3D=======
+-- Configuring OGRE 14.5.2
+-- DEPENDENCIES_DIR: /home/diego/Projects/JordiRoyale/build/linux-debug/_deps/ogre-build/Dependencies
+-- Looking for FreeImage...
+-- Checking for module 'freeimage'
+--   Package 'freeimage' not found
+-- Could not locate FreeImage
+-- Looking for Cg...
+-- Checking for module 'Cg'
+--   Package 'Cg' not found
+-- Could not locate Cg
+-- Looking for Softimage...
+-- Could not locate Softimage
+-- 
+-----------------------------------------------------------------------------
+-- The following external packages were located on your system.
+-- This installation will have the extra features provided by these packages, unless disabled.
++ freetype
++ Wayland
++ X11
++ OpenGL
++ OpenGL ES 2.x
++ Python
++ pugixml
++ zlib
++ Assimp
++ SDL2
++ Qt
+-----------------------------------------------------------------------------
+-- The following OPTIONAL packages could NOT be located on your system.
+-- Consider installing them to enable more features from this software.
++ freeimage: Support for commonly used graphics image formats <http://freeimage.sourceforge.net>
++ cg: C for graphics shader language <http://developer.nvidia.com/object/cg_toolkit.html>
++ Vulkan SDK: Vulkan RenderSystem, glslang Plugin. Alternatively use system packages <https://vulkan.lunarg.com/>
++ OpenEXR: Load High dynamic range images <http://www.openexr.com/>
++ SWIG: Language bindings (Python, Java, C#) for OGRE <http://www.swig.org/>
++ Bullet: Bullet physics <https://pybullet.org>
++ Doxygen: Tool for building API documentation <http://doxygen.org>
++ Softimage: Softimage SDK needed for building XSIExporter <>
+-----------------------------------------------------------------------------
+
+-- 
+----------------------------------------------------------------------------
+  FEATURE SUMMARY
+----------------------------------------------------------------------------
+
+Building components:
+  + Overlay
+  + RTShader System
+  + RTShader System Shaders
+Building plugins:
+  + Octree scene manager
+  + STBI codec (generic)
+  + Portal connected zone scene manager
+  + Particle FX
+  + Assimp loader (.obj, .ply, .fbx and more)
+Building rendersystems:
+  + OpenGL
+  + OpenGL 3+
+Building executables:
+  + Tools
+Building core features:
+  + Mesh Lod
+  + DDS image codec (.dds)
+  + ETC image codec (.pkm, .ktx) 
+  + ASTC image codec (.astc)
+  + ZIP archives
+  + Multi-threaded WorkQueue
+
+Build type:                      shared
+Use double precision:            disabled
+Assert mode:                     exceptions
+
+----------------------------------------------------------------------------
+
+-- Configuring done (0.5s)
+-- Generating done (0.2s)
+-- Build files have been written to: /home/diego/Projects/JordiRoyale/build/linux-debug
+[  0%] Built target pugixml-static
+[  1%] Built target miniaudio
+[  1%] Built target Bullet3Collision
+[  1%] Built target copy_assets
+[  2%] Built target Bullet3Dynamics
+[  5%] Built target lua_shared
+[ 24%] Built target OgreMain
+[ 26%] Built target zlibstatic
+[ 26%] Built target Bullet3Common
+[ 27%] Built target miniaudio_libvorbis
+[ 30%] Built target lua_static
+[ 32%] Built target LinearMath
+[ 36%] Built target BulletDynamics
+[ 36%] Built target Bullet2FileLoader
+[ 36%] Built target Bullet3Geometry
+[ 37%] Built target BulletInverseDynamics
+[ 40%] Built target Bullet3OpenCL_clew
+[ 50%] Built target BulletCollision
+[ 51%] Built target Plugin_OctreeSceneManager
+[ 53%] Built target BulletSoftBody
+[ 53%] Built target OgreXMLConverter
+[ 54%] Built target HugoAPI
+[ 54%] Built target VRMLConverter
+[ 56%] Built target Plugin_PCZSceneManager
+[ 56%] Built target Codec_STBI
+[ 57%] Built target OgreOverlay
+[ 59%] Built target OgreGLSupport
+[ 63%] Built target OgreRTShaderSystem
+[ 63%] Built target Plugin_OctreeZone
+[ 65%] Built target Plugin_ParticleFX
+[ 67%] Built target JordiRoyale
+[ 67%] Built target OgreAssimpConverter
+[ 70%] Built target RenderSystem_GL3Plus
+[ 75%] Built target RenderSystem_GL
+[ 96%] Built target assimp
+[ 96%] Built target Codec_Assimp
+[100%] Built target HUGO
+ma_engine initialized correctly
+========================================
+Scanning audio assets from: ../Resources/audios/
+Registered: basstrack -> music/BassTrack.wav
+Registered: jordiroyaleost -> music/JordiRoyaleOST.wav
+Registered: chordstrack -> music/ChordsTrack.wav
+Registered: arpegiotrack -> music/ArpegioTrack.wav
+Registered: golden -> music/golden.mp3
+Registered: melodytrack -> music/MelodyTrack.wav
+Registered: kick-snare -> music/Kick-Snare.mp3
+Registered: risa -> sfx/risa.wav
+Registered: scream -> sfx/scream.mp3
+========================================
+Registered 9 audio assets
+========================================
+Debug file saved: ../Resources/audios/AudioAssetsDebug.log
+Creating resource group General
+Creating resource group OgreInternal
+Creating resource group OgreAutodetect
+SceneManagerFactory for type 'DefaultSceneManager' registered.
+Registering ResourceManager for type Material
+Registering ResourceManager for type Mesh
+Registering ResourceManager for type Skeleton
+MovableObjectFactory for type 'ParticleSystem' registered.
+ArchiveFactory for type 'FileSystem' registered
+ArchiveFactory for type 'Zip' registered
+ArchiveFactory for type 'EmbeddedZip' registered
+DDS codec registering
+ETC codec registering
+ASTC codec registering
+Registering ResourceManager for type GpuProgram
+Registering ResourceManager for type Compositor
+MovableObjectFactory for type 'Entity' registered.
+MovableObjectFactory for type 'Light' registered.
+MovableObjectFactory for type 'BillboardSet' registered.
+MovableObjectFactory for type 'ManualObject' registered.
+MovableObjectFactory for type 'BillboardChain' registered.
+MovableObjectFactory for type 'RibbonTrail' registered.
+MovableObjectFactory for type 'StaticGeometry' registered.
+MovableObjectFactory for type 'Rectangle2D' registered.
+Loading library RenderSystem_GL.so.14.5
+Installing plugin: GL RenderSystem
+OpenGL Rendering Subsystem created.
+Plugin successfully installed
+Loading library Codec_STBI.so.14.5
+stb_image - v2.30 - public domain image loader
+Supported formats: jpeg,jpg,png,bmp,psd,tga,gif,pic,ppm,pgm,hdr
+Loading library Plugin_ParticleFX.so.14.5
+Installing plugin: ParticleFX
+Particle Emitter Type 'Point' registered
+Particle Emitter Type 'Box' registered
+Particle Emitter Type 'Ellipsoid' registered
+Particle Emitter Type 'Cylinder' registered
+Particle Emitter Type 'Ring' registered
+Particle Emitter Type 'HollowEllipsoid' registered
+Particle Affector Type 'LinearForce' registered
+Particle Affector Type 'ColourFader' registered
+Particle Affector Type 'ColourFader2' registered
+Particle Affector Type 'ColourImage' registered
+Particle Affector Type 'ColourInterpolator' registered
+Particle Affector Type 'Scaler' registered
+Particle Affector Type 'Rotator' registered
+Particle Affector Type 'DirectionRandomiser' registered
+Particle Affector Type 'DeflectorPlane' registered
+Particle Affector Type 'TextureAnimator' registered
+Plugin successfully installed
+Loading library Codec_Assimp.so.14.5
+Assimp - 6.0.e0b52347 - Open-Asset-Importer
+Supported formats: 3d 3ds 3mf ac ac3d acc amf ase ask assbin b3d blend bvh cob csm dae dxf enff fbx glb gltf hmp ifc ifczip iqm irr irrmesh lwo lws lxo md2 md3 md5anim md5camera md5mesh mdl mot ms3d ndo nff obj off ogex pk3 ply pmx prj q3o q3s scn sib smd step stl stp ter uc vrm vta x x3d x3db xgl xml zae zgl
+
+*-*-* OGRE Initialising
+*-*-* Version 14.5.2 (Tsathoggua)
+Initialize::configure_ogre => ERROR: unable to configure Ogre
+OverlayElementFactory for type Panel registered.
+OverlayElementFactory for type BorderPanel registered.
+OverlayElementFactory for type TextArea registered.
+Registering ResourceManager for type Font
+CPU Identifier & Features
+-------------------------
+ *   CPU ID: GenuineIntel: 12th Gen Intel(R) Core(TM) i7-12700H
+ *          SSE: yes
+ *         SSE2: yes
+ *         SSE3: yes
+ *        SSE41: yes
+ *        SSE42: yes
+ *          MMX: yes
+ *       MMXEXT: yes
+ *        3DNOW: no
+ *     3DNOWEXT: no
+ *         CMOV: yes
+ *          TSC: yes
+ *INVARIANT TSC: yes
+ *          FPU: yes
+ *          PRO: yes
+ *           HT: no
+-------------------------
+******************************
+*** Starting EGL Subsystem ***
+******************************
+EGL_VENDOR = Mesa Project
+EGL_VERSION = 1.5
+EGL_EXTENSIONS = EGL_EXT_platform_base EGL_EXT_device_base EGL_EXT_device_enumeration EGL_EXT_device_query EGL_KHR_client_get_all_proc_addresses EGL_EXT_client_extensions EGL_KHR_debug EGL_KHR_platform_x11 EGL_EXT_platform_x11 EGL_EXT_platform_device EGL_MESA_platform_surfaceless EGL_EXT_explicit_device EGL_KHR_platform_wayland EGL_EXT_platform_wayland EGL_KHR_platform_gbm EGL_MESA_platform_gbm EGL_EXT_platform_xcb EGL_ANDROID_blob_cache EGL_ANDROID_native_fence_sync EGL_CHROMIUM_sync_control EGL_ANGLE_sync_control_rate EGL_EXT_buffer_age EGL_EXT_config_select_group EGL_EXT_create_context_robustness EGL_EXT_image_dma_buf_import EGL_EXT_image_dma_buf_import_modifiers EGL_EXT_protected_content EGL_EXT_query_reset_notification_strategy EGL_EXT_surface_compression EGL_EXT_swap_buffers_with_damage EGL_IMG_context_priority EGL_KHR_cl_event2 EGL_KHR_config_attribs EGL_KHR_context_flush_control EGL_KHR_create_context EGL_KHR_create_context_no_error EGL_KHR_fence_sync EGL_KHR_get_all_proc_addresses EGL_KHR_gl_colorspace EGL_KHR_gl_renderbuffer_image EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_3D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_image EGL_KHR_image_base EGL_KHR_image_pixmap EGL_KHR_no_config_context EGL_KHR_partial_update EGL_KHR_reusable_sync EGL_KHR_surfaceless_context EGL_KHR_swap_buffers_with_damage EGL_EXT_pixel_format_float EGL_KHR_wait_sync EGL_MESA_configless_context EGL_MESA_gl_interop EGL_MESA_image_dma_buf_export EGL_MESA_query_driver EGL_MESA_x11_native_visual_id EGL_NOK_texture_from_pixmap 
+Registering ResourceManager for type Texture
+RenderSystem::_createRenderWindow "HUGO Window", 1000x800 windowed  miscParams: externalWindowHandle=27263023 
+EGLWindow: colourBufferSize=8/8/8/8 gamma=0 FSAA=0
+GL_VERSION = 4.6.0.0
+GL_VENDOR = Intel
+GL_RENDERER = Mesa Intel(R) Iris(R) Xe Graphics (ADL GT2)
+GL_EXTENSIONS = GL_ARB_multisample GL_EXT_abgr GL_EXT_bgra GL_EXT_blend_color GL_EXT_blend_minmax GL_EXT_blend_subtract GL_EXT_copy_texture GL_EXT_subtexture GL_EXT_texture_object GL_EXT_vertex_array GL_EXT_compiled_vertex_array GL_EXT_texture GL_EXT_texture3D GL_IBM_rasterpos_clip GL_ARB_point_parameters GL_EXT_draw_range_elements GL_EXT_packed_pixels GL_EXT_point_parameters GL_EXT_rescale_normal GL_EXT_separate_specular_color GL_EXT_texture_edge_clamp GL_SGIS_generate_mipmap GL_SGIS_texture_border_clamp GL_SGIS_texture_edge_clamp GL_SGIS_texture_lod GL_ARB_framebuffer_sRGB GL_ARB_multitexture GL_EXT_framebuffer_sRGB GL_IBM_multimode_draw_arrays GL_IBM_texture_mirrored_repeat GL_3DFX_texture_compression_FXT1 GL_ARB_texture_cube_map GL_ARB_texture_env_add GL_ARB_transpose_matrix GL_EXT_blend_func_separate GL_EXT_fog_coord GL_EXT_multi_draw_arrays GL_EXT_secondary_color GL_EXT_texture_env_add GL_EXT_texture_filter_anisotropic GL_EXT_texture_lod_bias GL_INGR_blend_func_separate GL_NV_blend_square GL_NV_light_max_exponent GL_NV_texgen_reflection GL_NV_texture_env_combine4 GL_S3_s3tc GL_SUN_multi_draw_arrays GL_ARB_texture_border_clamp GL_ARB_texture_compression GL_EXT_framebuffer_object GL_EXT_texture_compression_s3tc GL_EXT_texture_env_combine GL_EXT_texture_env_dot3 GL_MESA_window_pos GL_NV_packed_depth_stencil GL_NV_texture_rectangle GL_ARB_depth_texture GL_ARB_occlusion_query GL_ARB_shadow GL_ARB_texture_env_combine GL_ARB_texture_env_crossbar GL_ARB_texture_env_dot3 GL_ARB_texture_mirrored_repeat GL_ARB_window_pos GL_ATI_fragment_shader GL_EXT_stencil_two_side GL_EXT_texture_cube_map GL_NV_depth_clamp GL_NV_fog_distance GL_NV_half_float GL_APPLE_packed_pixels GL_ARB_draw_buffers GL_ARB_fragment_program GL_ARB_fragment_shader GL_ARB_shader_objects GL_ARB_vertex_program GL_ARB_vertex_shader GL_ATI_draw_buffers GL_ATI_texture_env_combine3 GL_ATI_texture_float GL_EXT_depth_bounds_test GL_EXT_shadow_funcs GL_EXT_stencil_wrap GL_MESA_pack_invert GL_NV_primitive_restart GL_ARB_depth_clamp GL_ARB_fragment_program_shadow GL_ARB_half_float_pixel GL_ARB_occlusion_query2 GL_ARB_point_sprite GL_ARB_shading_language_100 GL_ARB_sync GL_ARB_texture_non_power_of_two GL_ARB_vertex_buffer_object GL_ATI_blend_equation_separate GL_EXT_blend_equation_separate GL_OES_read_format GL_ARB_color_buffer_float GL_ARB_pixel_buffer_object GL_ARB_texture_compression_rgtc GL_ARB_texture_float GL_ARB_texture_rectangle GL_ATI_texture_compression_3dc GL_EXT_packed_float GL_EXT_pixel_buffer_object GL_EXT_texture_compression_dxt1 GL_EXT_texture_compression_rgtc GL_EXT_texture_rectangle GL_EXT_texture_sRGB GL_EXT_texture_shared_exponent GL_ARB_framebuffer_object GL_EXT_framebuffer_blit GL_EXT_framebuffer_multisample GL_EXT_packed_depth_stencil GL_ARB_vertex_array_object GL_ATI_separate_stencil GL_EXT_draw_buffers2 GL_EXT_draw_instanced GL_EXT_gpu_program_parameters GL_EXT_gpu_shader4 GL_EXT_texture_array GL_EXT_texture_compression_latc GL_EXT_texture_integer GL_EXT_texture_sRGB_decode GL_EXT_timer_query GL_OES_EGL_image GL_AMD_performance_monitor GL_EXT_texture_buffer_object GL_AMD_texture_texture4 GL_ARB_copy_buffer GL_ARB_depth_buffer_float GL_ARB_draw_instanced GL_ARB_half_float_vertex GL_ARB_instanced_arrays GL_ARB_map_buffer_range GL_ARB_texture_buffer_object GL_ARB_texture_rg GL_ARB_texture_swizzle GL_ARB_vertex_array_bgra GL_EXT_texture_swizzle GL_EXT_vertex_array_bgra GL_NV_conditional_render GL_AMD_conservative_depth GL_AMD_depth_clamp_separate GL_AMD_draw_buffers_blend GL_AMD_seamless_cubemap_per_texture GL_AMD_shader_stencil_export GL_ARB_ES2_compatibility GL_ARB_blend_func_extended GL_ARB_compatibility GL_ARB_debug_output GL_ARB_draw_buffers_blend GL_ARB_draw_elements_base_vertex GL_ARB_explicit_attrib_location GL_ARB_fragment_coord_conventions GL_ARB_provoking_vertex GL_ARB_sample_shading GL_ARB_sampler_objects GL_ARB_seamless_cube_map GL_ARB_shader_stencil_export GL_ARB_shader_texture_lod GL_ARB_tessellation_shader GL_ARB_texture_buffer_object_rgb32 GL_ARB_texture_cube_map_array GL_ARB_texture_gather GL_ARB_texture_multisample GL_ARB_texture_query_lod GL_ARB_texture_rgb10_a2ui GL_ARB_uniform_buffer_object GL_ARB_vertex_type_2_10_10_10_rev GL_EXT_provoking_vertex GL_EXT_texture_snorm GL_EXT_texture_storage GL_MESA_texture_signed_rgba GL_NV_copy_image GL_NV_texture_barrier GL_ARB_draw_indirect GL_ARB_get_program_binary GL_ARB_gpu_shader5 GL_ARB_gpu_shader_fp64 GL_ARB_robustness GL_ARB_separate_shader_objects GL_ARB_shader_bit_encoding GL_ARB_shader_precision GL_ARB_shader_subroutine GL_ARB_texture_compression_bptc GL_ARB_timer_query GL_ARB_transform_feedback2 GL_ARB_transform_feedback3 GL_ARB_vertex_attrib_64bit GL_ARB_viewport_array GL_EXT_direct_state_access GL_EXT_vertex_attrib_64bit GL_AMD_multi_draw_indirect GL_ANGLE_texture_compression_dxt3 GL_ANGLE_texture_compression_dxt5 GL_ARB_base_instance GL_ARB_compressed_texture_pixel_storage GL_ARB_conservative_depth GL_ARB_internalformat_query GL_ARB_map_buffer_alignment GL_ARB_shader_atomic_counters GL_ARB_shader_image_load_store GL_ARB_shading_language_420pack GL_ARB_shading_language_packing GL_ARB_texture_storage GL_ARB_transform_feedback_instanced GL_EXT_framebuffer_multisample_blit_scaled GL_EXT_transform_feedback GL_AMD_query_buffer_object GL_AMD_shader_trinary_minmax GL_AMD_vertex_shader_layer GL_AMD_vertex_shader_viewport_index GL_ARB_ES3_compatibility GL_ARB_arrays_of_arrays GL_ARB_clear_buffer_object GL_ARB_compute_shader GL_ARB_copy_image GL_ARB_explicit_uniform_location GL_ARB_fragment_layer_viewport GL_ARB_framebuffer_no_attachments GL_ARB_invalidate_subdata GL_ARB_multi_draw_indirect GL_ARB_program_interface_query GL_ARB_robust_buffer_access_behavior GL_ARB_shader_image_size GL_ARB_shader_storage_buffer_object GL_ARB_stencil_texturing GL_ARB_texture_buffer_range GL_ARB_texture_query_levels GL_ARB_texture_storage_multisample GL_ARB_texture_view GL_ARB_vertex_attrib_binding GL_KHR_debug GL_KHR_robustness GL_KHR_texture_compression_astc_ldr GL_AMD_pinned_memory GL_ARB_buffer_storage GL_ARB_clear_texture GL_ARB_compute_variable_group_size GL_ARB_enhanced_layouts GL_ARB_indirect_parameters GL_ARB_internalformat_query2 GL_ARB_multi_bind GL_ARB_query_buffer_object GL_ARB_seamless_cubemap_per_texture GL_ARB_shader_draw_parameters GL_ARB_shader_group_vote GL_ARB_shading_language_include GL_ARB_texture_mirror_clamp_to_edge GL_ARB_texture_stencil8 GL_ARB_vertex_type_10f_11f_11f_rev GL_EXT_debug_label GL_EXT_shader_framebuffer_fetch GL_EXT_shader_integer_mix GL_INTEL_performance_query GL_ARB_ES3_1_compatibility GL_ARB_clip_control GL_ARB_conditional_render_inverted GL_ARB_cull_distance GL_ARB_derivative_control GL_ARB_direct_state_access GL_ARB_get_texture_sub_image GL_ARB_pipeline_statistics_query GL_ARB_shader_texture_image_samples GL_ARB_texture_barrier GL_ARB_transform_feedback_overflow_query GL_EXT_polygon_offset_clamp GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_coherent GL_KHR_context_flush_control GL_KHR_robust_buffer_access_behavior GL_ARB_ES3_2_compatibility GL_ARB_fragment_shader_interlock GL_ARB_gpu_shader_int64 GL_ARB_parallel_shader_compile GL_ARB_post_depth_coverage GL_ARB_shader_atomic_counter_ops GL_ARB_shader_ballot GL_ARB_shader_clock GL_ARB_shader_viewport_layer_array GL_ARB_texture_filter_minmax GL_EXT_shader_samples_identical GL_EXT_texture_sRGB_R8 GL_KHR_no_error GL_KHR_texture_compression_astc_sliced_3d GL_NV_fragment_shader_interlock GL_ARB_gl_spirv GL_ARB_spirv_extensions GL_MESA_shader_integer_functions GL_ARB_polygon_offset_clamp GL_ARB_texture_filter_anisotropic GL_EXT_memory_object GL_EXT_memory_object_fd GL_EXT_semaphore GL_EXT_semaphore_fd GL_KHR_parallel_shader_compile GL_NV_alpha_to_coverage_dither_control GL_EXT_EGL_image_storage GL_EXT_shader_framebuffer_fetch_non_coherent GL_EXT_texture_shadow_lod GL_INTEL_blackhole_render GL_INTEL_shader_atomic_float_minmax GL_INTEL_shader_integer_functions2 GL_MESA_framebuffer_flip_y GL_NV_compute_shader_derivatives GL_EXT_EGL_sync GL_EXT_demote_to_helper_invocation GL_KHR_shader_subgroup GL_EXT_EGL_image_storage_compression GL_NV_ES1_1_compatibility GL_MESA_texture_const_bandwidth GL_EXT_shader_clock 
+***************************
+*** GL Renderer Started ***
+***************************
+GLSL support detected
+GL: Using GL_EXT_framebuffer_object for rendering to textures (best)
+FBO PF_UNKNOWN depth/stencil support: D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8
+FBO PF_L8 depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8
+FBO PF_L16 depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8
+FBO PF_A8 depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8
+FBO PF_R5G6B5 depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8
+FBO PF_A4R4G4B4 depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8
+FBO PF_A1R5G5B5 depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8
+FBO PF_R8G8B8 depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8
+FBO PF_B8G8R8 depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8
+FBO PF_A8R8G8B8 depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8
+FBO PF_A8B8G8R8 depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8
+FBO PF_B8G8R8A8 depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8
+FBO PF_FLOAT16_RGB depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8
+FBO PF_FLOAT16_RGBA depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8
+FBO PF_FLOAT32_RGB depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8
+FBO PF_FLOAT32_RGBA depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8
+FBO PF_X8R8G8B8 depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8
+FBO PF_X8B8G8R8 depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8
+FBO PF_R8G8B8A8 depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8
+FBO PF_DEPTH16 depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8
+FBO PF_SHORT_RGBA depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8
+FBO PF_R3G3B2 depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8
+FBO PF_FLOAT16_R depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8
+FBO PF_FLOAT32_R depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8
+FBO PF_FLOAT16_GR depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8
+FBO PF_FLOAT32_GR depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8
+FBO PF_SHORT_RGB depth/stencil support: D0S0 D0S1 D0S4 D0S8 D0S16 D16S0 D24S0 D32S0 Packed-D24S8
+[GL] : Valid FBO targets PF_UNKNOWN PF_L8 PF_L16 PF_A8 PF_R5G6B5 PF_A4R4G4B4 PF_A1R5G5B5 PF_R8G8B8 PF_B8G8R8 PF_A8R8G8B8 PF_A8B8G8R8 PF_B8G8R8A8 PF_FLOAT16_RGB PF_FLOAT16_RGBA PF_FLOAT32_RGB PF_FLOAT32_RGBA PF_X8R8G8B8 PF_X8B8G8R8 PF_R8G8B8A8 PF_DEPTH16 PF_SHORT_RGBA PF_R3G3B2 PF_FLOAT16_R PF_FLOAT32_R PF_FLOAT16_GR PF_FLOAT32_GR PF_SHORT_RGB 
+RenderSystem capabilities
+-------------------------
+RenderSystem Name: OpenGL Rendering Subsystem
+GPU Vendor: intel
+Device Name: Mesa Intel(R) Iris(R) Xe Graphics (ADL GT2)
+Driver Version: 4.6.0.0
+ * Fixed function pipeline: yes
+ * 32-bit index buffers: yes
+ * Hardware stencil buffer: yes
+   - Two sided stencil support: yes
+   - Wrap stencil values: yes
+ * Gpu programs: yes
+   - Vertex constant 4-vectors: 2048
+   - Fragment constant 4-vectors: 2048
+ * Geometry programs: yes
+   - Number of constant 4-vectors: 4096
+ * Tessellation programs: no
+ * Mesh programs: no
+ * Compute programs: no
+ * VP/RT index from any shader: no
+ * Supported Shader Profiles: arbfp1 arbvp1 glsl glsl100 glsl110 glsl120 ps_1_1 ps_1_2 ps_1_3 ps_1_4
+ * Read-back compiled shader: yes
+ * Number of vertex attributes: 16
+ * Textures
+   - Number of texture units: 16
+   - Number of vertex textures: 32
+   - Floating point: yes
+   - Non-power-of-two: yes
+   - 1D textures: yes
+   - 2D array textures: yes
+   - 3D textures: yes
+   - Anisotropic filtering: yes
+ * Texture Compression: yes
+   - DXT: yes
+   - VTC: no
+   - PVRTC: no
+   - ATC: no
+   - ETC1: no
+   - ETC2: no
+   - BC4/BC5: no
+   - BC6H/BC7: no
+   - ASTC: no
+   - Automatic mipmap generation: yes
+ * Vertex Buffers
+   - Render to Vertex Buffer: no
+   - Instance Data: yes
+   - Primitive Restart: no
+   - INT_10_10_10_2_NORM element type: no
+   - 16x3 element types: no
+ * Read/Write Buffers: no
+ * Hardware Occlusion Query: yes
+ * User clip planes: yes
+ * Depth clamping: no
+ * Hardware render-to-texture: yes
+   - Multiple Render Targets: 8
+ * Point Sprites: yes
+   - Max Size: 255
+ * Wide Lines: yes
+ * Hardware Gamma: yes
+ * PBuffer support: yes
+ * Vertex Array Objects: no
+ * Separate shader objects: no
+   - redeclare GLSL interface block: no
+ * Debugging/ profiling events: no
+ * Map buffer storage: yes
+DefaultWorkQueue('Root') initialising on thread 140409152938432.
+Particle Renderer Type 'billboard' registered
+DefaultWorkQueue('Root')::WorkerFunc - thread 140408218703552 starting.
+DefaultWorkQueue('Root')::WorkerFunc - thread 140408050939584 starting.
+Added resource location '/home/diego/Projects/JordiRoyale/Resources/weapons' of type 'FileSystem' to resource group 'General'
+Added resource location '/home/diego/Projects/JordiRoyale/Resources/audios' of type 'FileSystem' to resource group 'General'
+Added resource location '/home/diego/Projects/JordiRoyale/Resources/audios/music' of type 'FileSystem' to resource group 'General'
+Added resource location '/home/diego/Projects/JordiRoyale/Resources/audios/music/peaks' of type 'FileSystem' to resource group 'General'
+Added resource location '/home/diego/Projects/JordiRoyale/Resources/audios/sfx' of type 'FileSystem' to resource group 'General'
+Added resource location '/home/diego/Projects/JordiRoyale/Resources/enemies' of type 'FileSystem' to resource group 'General'
+Added resource location '/home/diego/Projects/JordiRoyale/Resources/materials' of type 'FileSystem' to resource group 'General'
+Added resource location '/home/diego/Projects/JordiRoyale/Resources/engine' of type 'FileSystem' to resource group 'General'
+Added resource location '/home/diego/Projects/JordiRoyale/Resources/engine/models' of type 'FileSystem' to resource group 'General'
+Added resource location '/home/diego/Projects/JordiRoyale/Resources/engine/particles' of type 'FileSystem' to resource group 'General'
+Added resource location '/home/diego/Projects/JordiRoyale/Resources/engine/fonts' of type 'FileSystem' to resource group 'General'
+Added resource location '/home/diego/Projects/JordiRoyale/Resources/engine/fonts/fontdef' of type 'FileSystem' to resource group 'General'
+Added resource location '/home/diego/Projects/JordiRoyale/Resources/engine/fonts/ttf' of type 'FileSystem' to resource group 'General'
+Added resource location '/home/diego/Projects/JordiRoyale/Resources/engine/overlays' of type 'FileSystem' to resource group 'General'
+Added resource location '/home/diego/Projects/JordiRoyale/Resources/engine/materials' of type 'FileSystem' to resource group 'General'
+Added resource location '/home/diego/Projects/JordiRoyale/Resources/engine/textures' of type 'FileSystem' to resource group 'General'
+Added resource location '/home/diego/Projects/JordiRoyale/Resources/jordi' of type 'FileSystem' to resource group 'General'
+Added resource location '/home/diego/Projects/JordiRoyale/Resources/textures' of type 'FileSystem' to resource group 'General'
+Added resource location '/home/diego/Projects/JordiRoyale/Resources/engine/models/Sinbad.zip' of type 'Zip' to resource group 'General'
+Renderer available: OpenGL Rendering Subsystem
+Parsing scripts for resource group General
+Parsing script jordiUI.material
+Parsing script console.material
+Parsing script UI.material
+Parsing script prueba.material
+Parsing script Sinbad.material
+Parsing script smoke_bomb.particle
+Parsing script roboto.fontdef
+Parsing script bitcount.fontdef
+Parsing script pause.overlay
+Parsing script test.overlay
+Finished parsing scripts for resource group General
+Creating resources for group General
+All done
+Parsing scripts for resource group OgreAutodetect
+Finished parsing scripts for resource group OgreAutodetect
+Creating resources for group OgreAutodetect
+All done
+Parsing scripts for resource group OgreInternal
+Finished parsing scripts for resource group OgreInternal
+Creating resources for group OgreInternal
+All done
+Texture 'gray.png': Loading 1 faces(PF_A8B8G8R8,240x240x1) with 7 hardware generated mipmaps from Image. Internal format is PF_A8B8G8R8,240x240x1.
+Texture 'darkGray.png': Loading 1 faces(PF_A8B8G8R8,240x240x1) with 7 hardware generated mipmaps from Image. Internal format is PF_A8B8G8R8,240x240x1.
+Mesh: Loading jordi.glb.
+Assimp: Info,  T0: Load jordi.glb
+Assimp: Info,  T0: Found a possible importer: glTF Importer; trying signature-based detection
+Assimp: Info,  T0: Found a possible importer: glTF2 Importer; trying signature-based detection
+Assimp: Info,  T0: Found a matching importer for this file format: glTF2 Importer.
+Assimp: Info,  T0: Import root directory is './'
+Assimp: Info,  T0: Entering post processing pipeline
+Assimp: Info,  T0: TransformUVCoordsProcess finished
+Assimp: Info,  T0: Points: 0, Lines: 0, Triangles: 1, Polygons: 0 (Meshes, X = removed)
+Assimp: Info,  T0: Leaving post processing pipeline
+Texture 'jordi.glbjordi_texture_20.png': Loading 1 faces(PF_A8B8G8R8,256x256x1) with 8 hardware generated mipmaps from Image. Internal format is PF_A8B8G8R8,256x256x1.
+Mesh: Loading moon_floor.glb.
+Assimp: Info,  T0: Load moon_floor.glb
+Assimp: Info,  T0: Found a possible importer: glTF Importer; trying signature-based detection
+Assimp: Info,  T0: Found a possible importer: glTF2 Importer; trying signature-based detection
+Assimp: Info,  T0: Found a matching importer for this file format: glTF2 Importer.
+Assimp: Info,  T0: Import root directory is './'
+Assimp: Info,  T0: Entering post processing pipeline
+Assimp: Info,  T0: TransformUVCoordsProcess finished
+Assimp: Info,  T0: Points: 0, Lines: 0, Triangles: 1, Polygons: 0 (Meshes, X = removed)
+Assimp: Info,  T0: Leaving post processing pipeline
+Texture 'moon_floor.glbrock0.jpg': Loading 1 faces(PF_B8G8R8,184x182x1) with 7 hardware generated mipmaps from Image. Internal format is PF_B8G8R8,184x182x1.
+Mesh: Loading skybox.glb.
+Assimp: Info,  T0: Load skybox.glb
+Assimp: Info,  T0: Found a possible importer: glTF Importer; trying signature-based detection
+Assimp: Info,  T0: Found a possible importer: glTF2 Importer; trying signature-based detection
+Assimp: Info,  T0: Found a matching importer for this file format: glTF2 Importer.
+Assimp: Info,  T0: Import root directory is './'
+Assimp: Info,  T0: Entering post processing pipeline
+Assimp: Info,  T0: TransformUVCoordsProcess finished
+Assimp: Info,  T0: Points: 0, Lines: 0, Triangles: 1, Polygons: 0 (Meshes, X = removed)
+Assimp: Info,  T0: Leaving post processing pipeline
+Texture 'skybox.glbskybox0.png': Loading 1 faces(PF_A8B8G8R8,2000x1000x1) with 10 hardware generated mipmaps from Image. Internal format is PF_A8B8G8R8,2000x1000x1.
+Texture 'JordiTitle.png': Loading 1 faces(PF_A8B8G8R8,289x98x1) with 8 hardware generated mipmaps from Image. Internal format is PF_A8B8G8R8,289x98x1.
+Texture 'JordiStart.png': Loading 1 faces(PF_A8B8G8R8,1164x622x1) with 10 hardware generated mipmaps from Image. Internal format is PF_A8B8G8R8,1164x622x1.
+Texture 'JordiExit.png': Loading 1 faces(PF_A8B8G8R8,1164x622x1) with 10 hardware generated mipmaps from Image. Internal format is PF_A8B8G8R8,1164x622x1.
+Mesh: Loading jordi-moai.glb.
+Assimp: Info,  T0: Load jordi-moai.glb
+Assimp: Info,  T0: Found a possible importer: glTF Importer; trying signature-based detection
+Assimp: Info,  T0: Found a possible importer: glTF2 Importer; trying signature-based detection
+Assimp: Info,  T0: Found a matching importer for this file format: glTF2 Importer.
+Assimp: Info,  T0: Import root directory is './'
+Assimp: Info,  T0: Entering post processing pipeline
+Assimp: Info,  T0: TransformUVCoordsProcess finished
+Assimp: Info,  T0: Points: 0, Lines: 0, Triangles: 2, Polygons: 0 (Meshes, X = removed)
+Assimp: Info,  T0: Leaving post processing pipeline
+Texture 'jordi-moai.glbjordi_moai_filtered20.png': Loading 1 faces(PF_A8B8G8R8,128x128x1) with 7 hardware generated mipmaps from Image. Internal format is PF_A8B8G8R8,128x128x1.
+btWorld
+Texture 'JordiExitHover.png': Loading 1 faces(PF_A8B8G8R8,1164x622x1) with 10 hardware generated mipmaps from Image. Internal format is PF_A8B8G8R8,1164x622x1.
+Texture 'JordiExitPressed.png': Loading 1 faces(PF_A8B8G8R8,1164x622x1) with 10 hardware generated mipmaps from Image. Internal format is PF_A8B8G8R8,1164x622x1.
+DefaultWorkQueue('Root') shutting down on thread 140409152938432.
+DefaultWorkQueue('Root')::WorkerFunc - thread 140408050939584 stopped.
+DefaultWorkQueue('Root')::WorkerFunc - thread 140408218703552 stopped.
+*-*-* OGRE Shutdown
+Unregistering ResourceManager for type Font
+*-*-* OGRE Shutdown
+Unregistering ResourceManager for type Compositor
+Unregistering ResourceManager for type Material
+Unregistering ResourceManager for type GpuProgram
+Unloading library Codec_Assimp
+Uninstalling plugin: ParticleFX
+Plugin successfully uninstalled
+Unloading library Plugin_ParticleFX
+Unloading library Codec_STBI
+Uninstalling plugin: GL RenderSystem
+Unregistering ResourceManager for type Texture
+Plugin successfully uninstalled
+Unloading library RenderSystem_GL
+Unregistering ResourceManager for type Skeleton
+Unregistering ResourceManager for type Mesh

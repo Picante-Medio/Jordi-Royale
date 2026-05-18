@@ -7,6 +7,7 @@ ENTITY Chest 1
     COMPONENT RenderComponent
         STRING meshName 
         STRING materialName 
+        BOOL isVisible true
     COMPONENT PickableComponent
         FLOAT pickupRadius 1.535
     START_CHILDREN

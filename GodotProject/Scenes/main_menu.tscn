@@ -672,6 +672,7 @@ metadata/_custom_type_script = "uid://bmpf25fmc8sgi"
 
 [node name="DynamicAudioComponent" type="Node" parent="Music/Chords" unique_id=1469414183]
 script = ExtResource("16_ujyyl")
+minVolume = 0.5
 audioName = "chordstrack"
 metadata/_custom_type_script = "uid://daxy0cbeqt3hv"
 

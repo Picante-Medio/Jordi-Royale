@@ -13,6 +13,7 @@ ENTITY Mountain 1
         COMPONENT RenderComponent
             STRING meshName mountain.glb
             STRING materialName 
+            BOOL isVisible true
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -45,6 +46,7 @@ ENTITY Mountain 1
         COMPONENT RenderComponent
             STRING meshName mountain.glb
             STRING materialName 
+            BOOL isVisible true
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -77,6 +79,7 @@ ENTITY Mountain 1
         COMPONENT RenderComponent
             STRING meshName mountain.glb
             STRING materialName 
+            BOOL isVisible true
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -109,6 +112,7 @@ ENTITY Mountain 1
         COMPONENT RenderComponent
             STRING meshName mountain.glb
             STRING materialName 
+            BOOL isVisible true
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -141,6 +145,7 @@ ENTITY Mountain 1
         COMPONENT RenderComponent
             STRING meshName mountain.glb
             STRING materialName 
+            BOOL isVisible true
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -173,6 +178,7 @@ ENTITY Mountain 1
         COMPONENT RenderComponent
             STRING meshName mountain.glb
             STRING materialName 
+            BOOL isVisible true
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -205,6 +211,7 @@ ENTITY Mountain 1
         COMPONENT RenderComponent
             STRING meshName mountain.glb
             STRING materialName 
+            BOOL isVisible true
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0
@@ -237,6 +244,7 @@ ENTITY Mountain 1
         COMPONENT RenderComponent
             STRING meshName mountain.glb
             STRING materialName 
+            BOOL isVisible true
         COMPONENT RigidBodyComponent
             FLOAT mass 0.0
             FLOAT linearDamping 0.0

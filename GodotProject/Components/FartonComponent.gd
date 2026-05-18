@@ -2,8 +2,8 @@
 extends Component
 class_name FartonComponent
 
-@export var maxDist:float = 10.0
-@export var speed:float = 3.0
+@export var maxDist:float = 15.0
+@export var speed:float = 6.0
 
 func get_component() -> Dictionary[String, Variant]:
 	return {

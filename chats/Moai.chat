@@ -27,6 +27,7 @@ ENTITY Moai 1
     COMPONENT RenderComponent
         STRING meshName jordi-moai.glb
         STRING materialName 
+        BOOL isVisible true
     START_CHILDREN
     END_CHILDREN
 END_ENTITY
