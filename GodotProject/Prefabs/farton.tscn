@@ -46,7 +46,7 @@ metadata/_custom_type_script = "uid://cmidua6v4bry"
 [node name="FartonComponent" type="Node" parent="." unique_id=797822414]
 script = ExtResource("5_7nvg4")
 maxDist = 20.0
-speed = 8.0
+speed = 10.0
 
 [node name="DamageComponent" type="Node" parent="." unique_id=1859208691]
 script = ExtResource("6_8qf41")

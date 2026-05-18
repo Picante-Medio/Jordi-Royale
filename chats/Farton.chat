@@ -30,7 +30,7 @@ ENTITY Farton 1
         BOOL isVisible true
     COMPONENT FartonComponent
         FLOAT maxDist 20.0
-        FLOAT speed 8.0
+        FLOAT speed 10.0
     COMPONENT DamageComponent
         INT Damage 15
         INT DamType 1
