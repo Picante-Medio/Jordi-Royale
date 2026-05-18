@@ -16,12 +16,10 @@ ENTITY Music 1
     START_CHILDREN
     ENTITY Arpegio 1
         COMPONENT AudioComponent
-            INT type 0
-            STRING audioName 
+            STRING audioName arpegiotrack
             FLOAT volume 0.0
             BOOL loop true
             FLOAT pitch 0.0
-            FLOAT startTime 0.0
             BOOL isPlaying false
         COMPONENT DynamicAudioComponent
             FLOAT maxVolume 1.0
@@ -35,12 +33,10 @@ ENTITY Music 1
 
     ENTITY Bass 1
         COMPONENT AudioComponent
-            INT type 0
-            STRING audioName 
+            STRING audioName basstrack
             FLOAT volume 0.0
             BOOL loop true
             FLOAT pitch 0.0
-            FLOAT startTime 0.0
             BOOL isPlaying false
         COMPONENT DynamicAudioComponent
             FLOAT maxVolume 1.0
@@ -54,12 +50,10 @@ ENTITY Music 1
 
     ENTITY Chords 1
         COMPONENT AudioComponent
-            INT type 0
-            STRING audioName 
+            STRING audioName chordstrack
             FLOAT volume 0.0
             BOOL loop true
             FLOAT pitch 0.0
-            FLOAT startTime 0.0
             BOOL isPlaying false
         COMPONENT DynamicAudioComponent
             FLOAT maxVolume 1.0
@@ -73,12 +67,10 @@ ENTITY Music 1
 
     ENTITY Melody 1
         COMPONENT AudioComponent
-            INT type 0
-            STRING audioName 
+            STRING audioName melodytrack
             FLOAT volume 0.0
             BOOL loop true
             FLOAT pitch 0.0
-            FLOAT startTime 0.0
             BOOL isPlaying false
         COMPONENT DynamicAudioComponent
             FLOAT maxVolume 1.0
