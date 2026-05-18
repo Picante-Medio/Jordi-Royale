@@ -20,7 +20,7 @@
 
 [node name="main_menu" type="Node3D" unique_id=1949461621]
 script = ExtResource("1_opfnp")
-systems = Array[int]([1, 3, 4, 5, 6, 7, 8, 9, 0, 27, 25, 15, 14])
+systems = Array[int]([1, 3, 4, 5, 6, 7, 8, 9, 0, 20, 21, 19])
 
 [node name="Camera" type="Node3D" parent="." unique_id=974168509]
 transform = Transform3D(0.29999998, 0, 0, 0, 0.4073511, 0.08523656, 0, -0.10914939, 0.31810713, 0, 1.708715, 3.6169834)
@@ -631,7 +631,7 @@ metadata/_custom_type_script = "uid://cnmiha8rgpnhn"
 
 [node name="DynamicAudioComponent" type="Node" parent="Music/Arpegio" unique_id=495311868]
 script = ExtResource("16_ujyyl")
-audioName = "basstrack"
+audioName = "arpegiotrack"
 metadata/_custom_type_script = "uid://daxy0cbeqt3hv"
 
 [node name="TweenComponent" type="Node" parent="Music/Arpegio" unique_id=552140275]
@@ -640,7 +640,7 @@ metadata/_custom_type_script = "uid://dkssn7rd5ejsj"
 
 [node name="AudioComponent" type="Node" parent="Music/Arpegio" unique_id=1098913751]
 script = ExtResource("15_wyh8j")
-audioName = "basstrack"
+audioName = "arpegiotrack"
 loop = true
 metadata/_custom_type_script = "uid://bmpf25fmc8sgi"
 
