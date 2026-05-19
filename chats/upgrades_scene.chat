@@ -38,29 +38,71 @@ ENTITY Title 1
         BOOL isVisible true
         INT metricsMode 0
         FLOAT left 0.3
-        FLOAT top 0.2
-        FLOAT width 0.4
-        FLOAT height 0.15
+        FLOAT top 0.05
+        FLOAT width 0.3
+        FLOAT height 0.1
         STRING material JordiUI/JordiUpgradesTitle
     START_CHILDREN
     END_CHILDREN
 END_ENTITY
 
-ENTITY Resume 1
+ENTITY Upgrade1 1
     COMPONENT PanelComponent
         STRING overlayName JordiUI/JordiOverlay2
-        STRING containerName JordiUI/JordiOverlay2/JordiContainer2
+        STRING containerName JordiUI/JordiOverlay3/JordiContainer2
+        BOOL isVisible true
+        INT metricsMode 0
+        FLOAT left 0.08
+        FLOAT top 0.25
+        FLOAT width 0.25
+        FLOAT height 0.6
+        STRING material JordiUI/UpgradePanel_blue_regular
+    COMPONENT ButtonComponent
+        STRING normalMaterial JordiUI/UpgradePanel_blue_regular
+        STRING hoverMaterial JordiUI/UpgradePanel_blue_selected
+        STRING pressedMaterial JordiUI/UpgradePanel_blue_hover
+        STRING disabledMaterial 
+    COMPONENT ResumeTag
+    START_CHILDREN
+    END_CHILDREN
+END_ENTITY
+
+ENTITY Upgrade2 1
+    COMPONENT PanelComponent
+        STRING overlayName JordiUI/JordiOverlay3
+        STRING containerName JordiUI/JordiOverlay3/JordiContainer3
         BOOL isVisible true
         INT metricsMode 0
         FLOAT left 0.38
-        FLOAT top 0.8
+        FLOAT top 0.25
         FLOAT width 0.25
-        FLOAT height 0.1
-        STRING material JordiUI/Resume
+        FLOAT height 0.6
+        STRING material JordiUI/UpgradePanel_blue_regular
     COMPONENT ButtonComponent
-        STRING normalMaterial JordiUI/Resume
-        STRING hoverMaterial JordiUI/ResumeHover
-        STRING pressedMaterial JordiUI/ResumePressed
+        STRING normalMaterial JordiUI/UpgradePanel_blue_regular
+        STRING hoverMaterial JordiUI/UpgradePanel_blue_selected
+        STRING pressedMaterial JordiUI/UpgradePanel_blue_hover
+        STRING disabledMaterial 
+    COMPONENT ResumeTag
+    START_CHILDREN
+    END_CHILDREN
+END_ENTITY
+
+ENTITY Upgrade3 1
+    COMPONENT PanelComponent
+        STRING overlayName JordiUI/JordiOverlay4
+        STRING containerName JordiUI/JordiOverlay3/JordiContainer4
+        BOOL isVisible true
+        INT metricsMode 0
+        FLOAT left 0.68
+        FLOAT top 0.25
+        FLOAT width 0.25
+        FLOAT height 0.6
+        STRING material JordiUI/UpgradePanel_blue_regular
+    COMPONENT ButtonComponent
+        STRING normalMaterial JordiUI/UpgradePanel_blue_regular
+        STRING hoverMaterial JordiUI/UpgradePanel_blue_selected
+        STRING pressedMaterial JordiUI/UpgradePanel_blue_hover
         STRING disabledMaterial 
     COMPONENT ResumeTag
     START_CHILDREN

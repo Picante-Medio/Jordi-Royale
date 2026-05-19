@@ -30,30 +30,76 @@ overlayName = "JordiUI/JordiOverlay1"
 containerName = "JordiUI/JordiOverlay10/JordiContainer1"
 isVisible = true
 left = 0.3
-top = 0.2
-width = 0.4
-height = 0.15
+top = 0.05
+width = 0.3
+height = 0.1
 material = "JordiUI/JordiUpgradesTitle"
 
-[node name="Resume" type="Node3D" parent="." unique_id=164494623]
+[node name="Upgrade1" type="Node3D" parent="." unique_id=601369927]
 script = ExtResource("4_fhcau")
 
-[node name="PanelComponent" type="Node" parent="Resume" unique_id=967402636]
+[node name="PanelComponent" type="Node" parent="Upgrade1" unique_id=1635941985]
 script = ExtResource("5_vn66e")
 overlayName = "JordiUI/JordiOverlay2"
-containerName = "JordiUI/JordiOverlay2/JordiContainer2"
+containerName = "JordiUI/JordiOverlay3/JordiContainer2"
+isVisible = true
+left = 0.08
+top = 0.25
+width = 0.25
+height = 0.6
+material = "JordiUI/UpgradePanel_blue_regular"
+
+[node name="ButtonComponent" type="Node" parent="Upgrade1" unique_id=740646600]
+script = ExtResource("6_ljkl2")
+normalMaterial = "JordiUI/UpgradePanel_blue_regular"
+hoverMaterial = "JordiUI/UpgradePanel_blue_selected"
+pressedMaterial = "JordiUI/UpgradePanel_blue_hover"
+
+[node name="ResumeTag" type="Node" parent="Upgrade1" unique_id=1995269634]
+script = ExtResource("7_u1ecs")
+
+[node name="Upgrade2" type="Node3D" parent="." unique_id=1965248124]
+script = ExtResource("4_fhcau")
+
+[node name="PanelComponent" type="Node" parent="Upgrade2" unique_id=2039364695]
+script = ExtResource("5_vn66e")
+overlayName = "JordiUI/JordiOverlay3"
+containerName = "JordiUI/JordiOverlay3/JordiContainer3"
 isVisible = true
 left = 0.38
-top = 0.8
+top = 0.25
 width = 0.25
-height = 0.1
-material = "JordiUI/Resume"
+height = 0.6
+material = "JordiUI/UpgradePanel_blue_regular"
 
-[node name="ButtonComponent" type="Node" parent="Resume" unique_id=1821923184]
+[node name="ButtonComponent" type="Node" parent="Upgrade2" unique_id=825081047]
 script = ExtResource("6_ljkl2")
-normalMaterial = "JordiUI/Resume"
-hoverMaterial = "JordiUI/ResumeHover"
-pressedMaterial = "JordiUI/ResumePressed"
+normalMaterial = "JordiUI/UpgradePanel_blue_regular"
+hoverMaterial = "JordiUI/UpgradePanel_blue_selected"
+pressedMaterial = "JordiUI/UpgradePanel_blue_hover"
 
-[node name="ResumeTag" type="Node" parent="Resume" unique_id=1507604011]
+[node name="ResumeTag" type="Node" parent="Upgrade2" unique_id=932933364]
+script = ExtResource("7_u1ecs")
+
+[node name="Upgrade3" type="Node3D" parent="." unique_id=1704574624]
+script = ExtResource("4_fhcau")
+
+[node name="PanelComponent" type="Node" parent="Upgrade3" unique_id=928012806]
+script = ExtResource("5_vn66e")
+overlayName = "JordiUI/JordiOverlay4"
+containerName = "JordiUI/JordiOverlay3/JordiContainer4"
+isVisible = true
+left = 0.68
+top = 0.25
+width = 0.25
+height = 0.6
+material = "JordiUI/UpgradePanel_blue_regular"
+
+[node name="ButtonComponent" type="Node" parent="Upgrade3" unique_id=1016078971]
+script = ExtResource("6_ljkl2")
+normalMaterial = "JordiUI/UpgradePanel_blue_regular"
+hoverMaterial = "JordiUI/UpgradePanel_blue_selected"
+pressedMaterial = "JordiUI/UpgradePanel_blue_hover"
+
+[node name="ResumeTag" type="Node" parent="Upgrade3" unique_id=2121417172]
 script = ExtResource("7_u1ecs")
