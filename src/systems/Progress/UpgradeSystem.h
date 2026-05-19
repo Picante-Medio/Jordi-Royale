@@ -1,9 +1,11 @@
 #pragma once
 
-#include "HUGO.h"
+#include "HugoSystemMacros.h"
+
+struct ResumeTag;
 
 HSYSTEM(UpgradeSystem)
-
+    void resumeGame(ResumeTag& tag);
 public:
     void init() override;
     void onLoad() override;

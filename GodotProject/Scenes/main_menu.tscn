@@ -1,26 +1,23 @@
 [gd_scene format=3 uid="uid://dovrj8omkblii"]
 
-[ext_resource type="Script" uid="uid://d3yq16mo85h5h" path="res://addons/HugosChatPlugin/Entities/scene_tracker.gd" id="1_opfnp"]
-[ext_resource type="Script" uid="uid://dmak3mcg4w0h8" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="2_cp0ys"]
-[ext_resource type="Script" uid="uid://d10rufr7dnrt6" path="res://addons/HugosChatPlugin/NativeComponents/CameraComponent.gd" id="3_yhxw7"]
-[ext_resource type="Script" uid="uid://c0wlt0qsxdika" path="res://addons/HugosChatPlugin/NativeComponents/RenderComponent.gd" id="4_trj04"]
-[ext_resource type="PackedScene" uid="uid://c462xqhte7va4" path="res://Resources/jordi/jordi.glb" id="5_16hvj"]
-[ext_resource type="Script" uid="uid://ooxkdcy2pv63" path="res://addons/HugosChatPlugin/NativeComponents/AnimationComponent.gd" id="6_vr1f0"]
+[ext_resource type="Script" uid="uid://cy1d1kwuy1yu4" path="res://addons/HugosChatPlugin/Entities/scene_tracker.gd" id="1_opfnp"]
+[ext_resource type="Script" uid="uid://d3gpbv1up76xn" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="2_cp0ys"]
+[ext_resource type="Script" uid="uid://bjwx87l5l8cjv" path="res://addons/HugosChatPlugin/NativeComponents/CameraComponent.gd" id="3_yhxw7"]
+[ext_resource type="Script" uid="uid://cmidua6v4bry" path="res://addons/HugosChatPlugin/NativeComponents/RenderComponent.gd" id="4_trj04"]
+[ext_resource type="Script" uid="uid://cwpkus4pc4c3r" path="res://addons/HugosChatPlugin/NativeComponents/AnimationComponent.gd" id="6_vr1f0"]
 [ext_resource type="PackedScene" uid="uid://dhhopmfyxf4cv" path="res://Prefabs/moai.tscn" id="7_cp0ys"]
-[ext_resource type="PackedScene" uid="uid://bs66scu1xl2a6" path="res://Resources/jordi/moon_floor.glb" id="8_yhxw7"]
-[ext_resource type="PackedScene" uid="uid://du56fi1d3anqo" path="res://Resources/jordi/skybox.glb" id="9_trj04"]
-[ext_resource type="Script" uid="uid://cnmiha8rgpnhn" path="res://addons/HugosChatPlugin/Entities/entity.gd" id="10_vtepg"]
-[ext_resource type="Script" uid="uid://pcb3jv2yfyt7" path="res://addons/HugosChatPlugin/NativeComponents/PanelComponent.gd" id="11_8dnnj"]
-[ext_resource type="Script" uid="uid://xa5vy2f4cqcd" path="res://addons/HugosChatPlugin/NativeComponents/ButtonComponent.gd" id="12_m3bi6"]
-[ext_resource type="Script" uid="uid://c28cgq4w1hvd6" path="res://Components/ResumeTag.gd" id="13_wyh8j"]
-[ext_resource type="Script" uid="uid://cr4oouyu1olwy" path="res://Components/ExitTag.gd" id="14_ujyyl"]
-[ext_resource type="Script" uid="uid://bmpf25fmc8sgi" path="res://addons/HugosChatPlugin/NativeComponents/AudioComponent.gd" id="15_wyh8j"]
-[ext_resource type="Script" uid="uid://daxy0cbeqt3hv" path="res://Components/DynamicAudioComponent.gd" id="16_ujyyl"]
-[ext_resource type="Script" uid="uid://dkssn7rd5ejsj" path="res://addons/HugosChatPlugin/NativeComponents/TweenComponent.gd" id="17_mkpwh"]
+[ext_resource type="Script" uid="uid://dvoket7v7vbwo" path="res://addons/HugosChatPlugin/Entities/entity.gd" id="10_vtepg"]
+[ext_resource type="Script" uid="uid://dk4tsyuerxuda" path="res://addons/HugosChatPlugin/NativeComponents/PanelComponent.gd" id="11_8dnnj"]
+[ext_resource type="Script" uid="uid://md4cctv0w84l" path="res://addons/HugosChatPlugin/NativeComponents/ButtonComponent.gd" id="12_m3bi6"]
+[ext_resource type="Script" uid="uid://ce5n8xghok4bj" path="res://Components/ResumeTag.gd" id="13_wyh8j"]
+[ext_resource type="Script" uid="uid://vltyy7jc2pk6" path="res://Components/ExitTag.gd" id="14_ujyyl"]
+[ext_resource type="Script" uid="uid://bobn8tk556ese" path="res://addons/HugosChatPlugin/NativeComponents/AudioComponent.gd" id="15_wyh8j"]
+[ext_resource type="Script" uid="uid://forlexv385gl" path="res://Components/DynamicAudioComponent.gd" id="16_ujyyl"]
+[ext_resource type="Script" uid="uid://wvkaljk8cwms" path="res://addons/HugosChatPlugin/NativeComponents/TweenComponent.gd" id="17_mkpwh"]
 
 [node name="main_menu" type="Node3D" unique_id=1949461621]
 script = ExtResource("1_opfnp")
-systems = Array[int]([1, 3, 4, 5, 6, 7, 8, 9, 0, 20, 21, 19])
+systems = Array[int]([1, 3, 4, 5, 6, 7, 8, 9, 0, 20, 21, 19, 24])
 
 [node name="Camera" type="Node3D" parent="." unique_id=974168509]
 transform = Transform3D(0.29999998, 0, 0, 0, 0.4073511, 0.08523656, 0, -0.10914939, 0.31810713, 0, 1.708715, 3.6169834)
@@ -44,7 +41,7 @@ transform = Transform3D(1, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1, 0, 0
 script = ExtResource("4_trj04")
 mesh_name = "jordi.glb"
 
-[node name="jordi" parent="Jordi/RenderComponent" unique_id=2142999384 instance=ExtResource("5_16hvj")]
+[node name="jordi" parent="Jordi/RenderComponent" unique_id=2142999384]
 
 [node name="AnimationComponent" type="Node" parent="Jordi" unique_id=870133970]
 script = ExtResource("6_vr1f0")
@@ -57,7 +54,7 @@ script = ExtResource("2_cp0ys")
 script = ExtResource("4_trj04")
 mesh_name = "moon_floor.glb"
 
-[node name="moon_floor" parent="Floor/RenderComponent" unique_id=325277606 instance=ExtResource("8_yhxw7")]
+[node name="moon_floor" parent="Floor/RenderComponent" unique_id=325277606]
 transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.137, 0, 0.09776577, 0)
 
 [node name="Skybox" type="Node3D" parent="." unique_id=1754892423]
@@ -68,7 +65,7 @@ script = ExtResource("2_cp0ys")
 script = ExtResource("4_trj04")
 mesh_name = "skybox.glb"
 
-[node name="skybox" parent="Skybox/RenderComponent" unique_id=129807196 instance=ExtResource("9_trj04")]
+[node name="skybox" parent="Skybox/RenderComponent" unique_id=129807196]
 transform = Transform3D(0.99957526, 0.009936266, 0.027396863, -0.008815205, 0.99913085, -0.0407412, -0.027777866, 0.040482387, 0.99879414, 0, 0, 0.08070057)
 
 [node name="Title" type="Node3D" parent="." unique_id=819654104]
@@ -623,80 +620,63 @@ transform = Transform3D(0.14922522, 0.14259383, -0.9784671, 0.38961217, 0.901014
 
 [node name="Music" type="Node3D" parent="." unique_id=1122818085]
 script = ExtResource("10_vtepg")
-metadata/_custom_type_script = "uid://cnmiha8rgpnhn"
 
 [node name="Arpegio" type="Node3D" parent="Music" unique_id=1852775269]
 script = ExtResource("10_vtepg")
-metadata/_custom_type_script = "uid://cnmiha8rgpnhn"
 
 [node name="DynamicAudioComponent" type="Node" parent="Music/Arpegio" unique_id=495311868]
 script = ExtResource("16_ujyyl")
 audioName = "arpegiotrack"
-metadata/_custom_type_script = "uid://daxy0cbeqt3hv"
 
 [node name="TweenComponent" type="Node" parent="Music/Arpegio" unique_id=552140275]
 script = ExtResource("17_mkpwh")
-metadata/_custom_type_script = "uid://dkssn7rd5ejsj"
 
 [node name="AudioComponent" type="Node" parent="Music/Arpegio" unique_id=1098913751]
 script = ExtResource("15_wyh8j")
 audioName = "arpegiotrack"
 loop = true
-metadata/_custom_type_script = "uid://bmpf25fmc8sgi"
 
 [node name="Bass" type="Node3D" parent="Music" unique_id=1694599251]
 script = ExtResource("10_vtepg")
-metadata/_custom_type_script = "uid://cnmiha8rgpnhn"
 
 [node name="DynamicAudioComponent" type="Node" parent="Music/Bass" unique_id=1808730637]
 script = ExtResource("16_ujyyl")
 audioName = "basstrack"
-metadata/_custom_type_script = "uid://daxy0cbeqt3hv"
 
 [node name="TweenComponent" type="Node" parent="Music/Bass" unique_id=2043725888]
 script = ExtResource("17_mkpwh")
-metadata/_custom_type_script = "uid://dkssn7rd5ejsj"
 
 [node name="AudioComponent" type="Node" parent="Music/Bass" unique_id=1164272203]
 script = ExtResource("15_wyh8j")
 audioName = "basstrack"
 loop = true
-metadata/_custom_type_script = "uid://bmpf25fmc8sgi"
 
 [node name="Chords" type="Node3D" parent="Music" unique_id=2103508190]
 script = ExtResource("10_vtepg")
-metadata/_custom_type_script = "uid://cnmiha8rgpnhn"
 
 [node name="DynamicAudioComponent" type="Node" parent="Music/Chords" unique_id=1469414183]
 script = ExtResource("16_ujyyl")
 audioName = "chordstrack"
-metadata/_custom_type_script = "uid://daxy0cbeqt3hv"
 
 [node name="TweenComponent" type="Node" parent="Music/Chords" unique_id=914345185]
 script = ExtResource("17_mkpwh")
-metadata/_custom_type_script = "uid://dkssn7rd5ejsj"
 
 [node name="AudioComponent" type="Node" parent="Music/Chords" unique_id=98765898]
 script = ExtResource("15_wyh8j")
 audioName = "chordstrack"
 loop = true
-metadata/_custom_type_script = "uid://bmpf25fmc8sgi"
 
 [node name="Melody" type="Node3D" parent="Music" unique_id=1123903438]
 script = ExtResource("10_vtepg")
-metadata/_custom_type_script = "uid://cnmiha8rgpnhn"
 
 [node name="DynamicAudioComponent" type="Node" parent="Music/Melody" unique_id=836378327]
 script = ExtResource("16_ujyyl")
 audioName = "melodytrack"
-metadata/_custom_type_script = "uid://daxy0cbeqt3hv"
 
 [node name="TweenComponent" type="Node" parent="Music/Melody" unique_id=451022788]
 script = ExtResource("17_mkpwh")
-metadata/_custom_type_script = "uid://dkssn7rd5ejsj"
 
 [node name="AudioComponent" type="Node" parent="Music/Melody" unique_id=419217040]
 script = ExtResource("15_wyh8j")
 audioName = "melodytrack"
 loop = true
-metadata/_custom_type_script = "uid://bmpf25fmc8sgi"
