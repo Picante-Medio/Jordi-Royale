@@ -10,7 +10,7 @@
 
 [node name="upgrades_scene" type="Node3D" unique_id=149519334]
 script = ExtResource("1_cl5il")
-systems = Array[int]([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 27])
+systems = Array[int]([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 27, 28])
 metadata/_custom_type_script = "uid://cy1d1kwuy1yu4"
 
 [node name="Camera" type="Node3D" parent="." unique_id=405792707]

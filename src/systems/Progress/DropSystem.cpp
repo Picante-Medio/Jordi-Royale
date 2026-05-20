@@ -57,7 +57,7 @@ DropSystem::spawnChest(HUGO::Vector3 position) {
 
     // If the prefab does not exist, log it to console
     if(chestPrefab.isError()) {
-        scene.log(std::make_shared<HUGO::StringError>(chestPrefab.getError()));
+        scene.log(HUGO::StringError(chestPrefab.getError()));
         return;
     }
 
@@ -75,7 +75,7 @@ DropSystem::spawnXP(HUGO::Vector3 position, int amount) {
 
         // If the prefab does not exist, log it to console
         if(xpPrefab.isError()) {
-            scene.log(std::make_shared<HUGO::StringError>(xpPrefab.getError()));
+            scene.log(HUGO::StringError(xpPrefab.getError()));
             return;
         }
 
