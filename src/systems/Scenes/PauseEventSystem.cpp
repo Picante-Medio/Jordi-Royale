@@ -5,7 +5,7 @@
 
 void 
 PauseEventSystem::update(uint32_t dt) {
-    if(scene.getInput()->isKeyPressed(HUGO::KeyCode::ESC)) {
+    if(scene.getInput().isKeyPressed(HUGO::KeyCode::ESC)) {
         ChangeSceneMessage message;
         message.sceneName = "pause_scene";
         message.destroyCurrent = false;

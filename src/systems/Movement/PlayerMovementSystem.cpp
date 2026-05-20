@@ -16,17 +16,17 @@
 #include "WorldTransformComponent.h"
 
 void PlayerMovementSystem::init(){
-    scene.getInput()->registerAction("Forward", HUGO::KeyCode::W);
-    scene.getInput()->registerAction("Backward", HUGO::KeyCode::S);
-    scene.getInput()->registerAction("Right", HUGO::KeyCode::D);
-    scene.getInput()->registerAction("Left", HUGO::KeyCode::A);
-    scene.getInput()->registerAction("Jump", HUGO::KeyCode::SPACE);
+    scene.getInput().registerAction("Forward", HUGO::KeyCode::W);
+    scene.getInput().registerAction("Backward", HUGO::KeyCode::S);
+    scene.getInput().registerAction("Right", HUGO::KeyCode::D);
+    scene.getInput().registerAction("Left", HUGO::KeyCode::A);
+    scene.getInput().registerAction("Jump", HUGO::KeyCode::SPACE);
 }
 
 // every time the scene is loaded, the mouse position is registered again
 void PlayerMovementSystem::onLoad(){
-    lastMousePosition = HUGO::Vector2(scene.getInput()->getMouseRelativePosition().x, 
-                                      scene.getInput()->getMouseRelativePosition().y);
+    lastMousePosition = HUGO::Vector2(scene.getInput().getMouseRelativePosition().x, 
+                                      scene.getInput().getMouseRelativePosition().y);
 
     for(auto jordi: scene.query<PlayerComponent, AnimationComponent>()){
         jordi.modify<AnimationComponent>([](AnimationComponent& cmp){
@@ -39,8 +39,8 @@ void PlayerMovementSystem::onLoad(){
 
 void PlayerMovementSystem::update(uint32_t){
 
-    HUGO::Vector2 currentMousePosition = HUGO::Vector2(scene.getInput()->getMouseRelativePosition().x, 
-                                                       scene.getInput()->getMouseRelativePosition().y);
+    HUGO::Vector2 currentMousePosition = HUGO::Vector2(scene.getInput().getMouseRelativePosition().x, 
+                                                       scene.getInput().getMouseRelativePosition().y);
 
     HUGO::Vector3 playerUp = scene.query<PlayerComponent, TransformComponent>().begin()->getConst<TransformComponent>().rotation.up();
     HUGO::Vector3 playerPos = scene.query<PlayerComponent, TransformComponent>().begin()->getConst<TransformComponent>().position;
@@ -69,15 +69,15 @@ void PlayerMovementSystem::fixedUpdate(uint32_t dt){
     diffVectorxz = HUGO::Vector3((playerPos - camPos).x, 0, (playerPos - camPos).z);
 
     // z-axis
-    if(scene.getInput()->isActionPressed("Forward")) direction += diffVectorxz;
-    else if(scene.getInput()->isActionPressed("Backward")) direction = direction - diffVectorxz;
+    if(scene.getInput().isActionPressed("Forward")) direction += diffVectorxz;
+    else if(scene.getInput().isActionPressed("Backward")) direction = direction - diffVectorxz;
 
     // x-axis
-    if(scene.getInput()->isActionPressed("Right")) direction += diffVectorxz.cross(HUGO::Vector3(0, 1, 0));
-    else if(scene.getInput()->isActionPressed("Left")) direction = direction - diffVectorxz.cross(HUGO::Vector3(0, 1, 0));
+    if(scene.getInput().isActionPressed("Right")) direction += diffVectorxz.cross(HUGO::Vector3(0, 1, 0));
+    else if(scene.getInput().isActionPressed("Left")) direction = direction - diffVectorxz.cross(HUGO::Vector3(0, 1, 0));
 
     // Jump
-    if(scene.getInput()->isActionPressed("Jump"))
+    if(scene.getInput().isActionPressed("Jump"))
         jumpDirection = HUGO::Vector3(0.f, 1.f, 0.f);
 
     // normalize
