@@ -10,7 +10,6 @@ SYSTEM TweenSystem
 SYSTEM UISystem
 SYSTEM ConsoleSystem
 SYSTEM UpgradeSystem
-SYSTEM ChangeSceneSystem
 
 ENTITY Camera 1
     COMPONENT TransformComponent
@@ -37,7 +36,7 @@ ENTITY Title 1
         STRING containerName JordiUI/JordiOverlay10/JordiContainer1
         BOOL isVisible true
         INT metricsMode 0
-        FLOAT left 0.3
+        FLOAT left 0.35
         FLOAT top 0.05
         FLOAT width 0.3
         FLOAT height 0.1

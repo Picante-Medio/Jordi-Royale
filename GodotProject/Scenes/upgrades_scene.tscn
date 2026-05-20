@@ -10,7 +10,7 @@
 
 [node name="upgrades_scene" type="Node3D" unique_id=149519334]
 script = ExtResource("1_cl5il")
-systems = Array[int]([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 11, 24])
+systems = Array[int]([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 27])
 metadata/_custom_type_script = "uid://cy1d1kwuy1yu4"
 
 [node name="Camera" type="Node3D" parent="." unique_id=405792707]
@@ -29,7 +29,7 @@ script = ExtResource("5_vn66e")
 overlayName = "JordiUI/JordiOverlay1"
 containerName = "JordiUI/JordiOverlay10/JordiContainer1"
 isVisible = true
-left = 0.3
+left = 0.35
 top = 0.05
 width = 0.3
 height = 0.1
