@@ -1,25 +1,28 @@
 [gd_scene format=3 uid="uid://dq2fl1vp76r7r"]
 
-[ext_resource type="Script" uid="uid://d3yq16mo85h5h" path="res://addons/HugosChatPlugin/Entities/scene_tracker.gd" id="1_865ah"]
-[ext_resource type="Script" uid="uid://dmak3mcg4w0h8" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="2_huasi"]
-[ext_resource type="Script" uid="uid://d10rufr7dnrt6" path="res://addons/HugosChatPlugin/NativeComponents/CameraComponent.gd" id="3_drdnd"]
-[ext_resource type="Script" uid="uid://bewpcwg276ktv" path="res://addons/HugosChatPlugin/NativeComponents/ColliderComponent.gd" id="3_m1efj"]
-[ext_resource type="Script" uid="uid://dgu5myf6wqmwa" path="res://addons/HugosChatPlugin/NativeComponents/RigidBodyComponent.gd" id="4_mai8y"]
-[ext_resource type="Script" uid="uid://dk4nyrs1a6elm" path="res://Components/LevelComponent.gd" id="5_nt2eh"]
-[ext_resource type="Script" uid="uid://bxtnhlmmus6l2" path="res://Components/SpeedComponent.gd" id="6_drdnd"]
-[ext_resource type="Script" uid="uid://dfj2qxmqtkj0s" path="res://Components/HPComponent.gd" id="9_8edxt"]
-[ext_resource type="Script" uid="uid://ooxkdcy2pv63" path="res://addons/HugosChatPlugin/NativeComponents/AnimationComponent.gd" id="9_drdnd"]
-[ext_resource type="Script" uid="uid://d1ljapb1i86tc" path="res://Components/CameraPivotTag.gd" id="9_mai8y"]
-[ext_resource type="Script" uid="uid://b0nmxwhquuske" path="res://Components/PlayerComponent.gd" id="10_76v2p"]
-[ext_resource type="Script" uid="uid://c0wlt0qsxdika" path="res://addons/HugosChatPlugin/NativeComponents/RenderComponent.gd" id="10_mai8y"]
-[ext_resource type="Script" uid="uid://cnmiha8rgpnhn" path="res://addons/HugosChatPlugin/Entities/entity.gd" id="12_lhp3t"]
-[ext_resource type="Script" uid="uid://b1n66dftn6a7i" path="res://Components/ClockTag.gd" id="13_gnsmo"]
-[ext_resource type="Script" uid="uid://pcb3jv2yfyt7" path="res://addons/HugosChatPlugin/NativeComponents/PanelComponent.gd" id="14_psl12"]
-[ext_resource type="Script" uid="uid://gxurxa2dpqpy" path="res://addons/HugosChatPlugin/NativeComponents/TextComponent.gd" id="15_2ebs2"]
+[ext_resource type="Script" uid="uid://dsrxmoaefi1rn" path="res://addons/HugosChatPlugin/Entities/scene_tracker.gd" id="1_865ah"]
+[ext_resource type="Script" uid="uid://d3gpbv1up76xn" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="2_huasi"]
+[ext_resource type="Script" uid="uid://bjwx87l5l8cjv" path="res://addons/HugosChatPlugin/NativeComponents/CameraComponent.gd" id="3_drdnd"]
+[ext_resource type="Script" uid="uid://5ysnehctvx5b" path="res://addons/HugosChatPlugin/NativeComponents/ColliderComponent.gd" id="3_m1efj"]
+[ext_resource type="Script" uid="uid://b4cohkcfhgq44" path="res://addons/HugosChatPlugin/NativeComponents/RigidBodyComponent.gd" id="4_mai8y"]
+[ext_resource type="Script" uid="uid://chnmaof0a3ll8" path="res://Components/LevelComponent.gd" id="5_nt2eh"]
+[ext_resource type="Script" uid="uid://dgscgud8jyhsm" path="res://Components/SpeedComponent.gd" id="6_drdnd"]
+[ext_resource type="Script" uid="uid://yr66mrh8xaa8" path="res://Components/HPComponent.gd" id="9_8edxt"]
+[ext_resource type="Script" uid="uid://cwpkus4pc4c3r" path="res://addons/HugosChatPlugin/NativeComponents/AnimationComponent.gd" id="9_drdnd"]
+[ext_resource type="Script" uid="uid://cauioprn35hgk" path="res://Components/CameraPivotTag.gd" id="9_mai8y"]
+[ext_resource type="Script" uid="uid://dbu2e7vd80ife" path="res://Components/PlayerComponent.gd" id="10_76v2p"]
+[ext_resource type="Script" uid="uid://cmidua6v4bry" path="res://addons/HugosChatPlugin/NativeComponents/RenderComponent.gd" id="10_mai8y"]
+[ext_resource type="Script" uid="uid://dvoket7v7vbwo" path="res://addons/HugosChatPlugin/Entities/entity.gd" id="12_lhp3t"]
+[ext_resource type="Script" uid="uid://cvf74f7xkct5i" path="res://Components/ClockTag.gd" id="13_gnsmo"]
+[ext_resource type="Script" uid="uid://dk4tsyuerxuda" path="res://addons/HugosChatPlugin/NativeComponents/PanelComponent.gd" id="14_psl12"]
+[ext_resource type="Script" uid="uid://esoqdkwkniof" path="res://addons/HugosChatPlugin/NativeComponents/TextComponent.gd" id="15_2ebs2"]
 [ext_resource type="PackedScene" uid="uid://dhhopmfyxf4cv" path="res://Prefabs/moai.tscn" id="16_gnsmo"]
 [ext_resource type="Script" uid="uid://chmo4h0bkhtvm" path="res://Components/HPTextTag.gd" id="20_b48ew"]
 [ext_resource type="PackedScene" uid="uid://c4148ap0mlp3i" path="res://Prefabs/Enemy.tscn" id="20_jvnna"]
+[ext_resource type="Script" uid="uid://forlexv385gl" path="res://Components/DynamicAudioComponent.gd" id="21_5oxhp"]
 [ext_resource type="Script" uid="uid://cj7lmiqjhcst2" path="res://Components/XPTextTag.gd" id="21_8edxt"]
+[ext_resource type="Script" uid="uid://wvkaljk8cwms" path="res://addons/HugosChatPlugin/NativeComponents/TweenComponent.gd" id="22_nt2eh"]
+[ext_resource type="Script" uid="uid://bobn8tk556ese" path="res://addons/HugosChatPlugin/NativeComponents/AudioComponent.gd" id="23_5cm5d"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_mai8y"]
 height = 1.7327881
@@ -30,7 +33,7 @@ size = Vector3(500, 0.6121826, 500)
 
 [node name="main_scene" type="Node3D" unique_id=1228723441]
 script = ExtResource("1_865ah")
-systems = Array[int]([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 20, 17, 15, 14, 16, 10, 25, 22, 29, 19, 12, 11, 18, 21, 23])
+systems = Array[int]([1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 32, 20, 31, 29, 16, 10, 25, 22, 29, 19, 12, 11, 18, 21, 23])
 
 [node name="Skybox" type="Node3D" parent="." unique_id=1067618066]
 transform = Transform3D(1.33, 0, 0, 0, 1.33, 0, 0, 0, 1.33, 0, 0, 0)
@@ -374,5 +377,68 @@ transform = Transform3D(0.35177308, 0.9031246, 0.24621412, 0.454114, 0.065358326
 
 [node name="Moai54" parent="Moais" unique_id=320054767 instance=ExtResource("16_gnsmo")]
 transform = Transform3D(-0.90880895, 0.40968382, -0.078897774, 0.38961217, 0.9010141, 0.1907258, 0.14922518, 0.14259385, -0.9784671, 22.091204, 0.6965518, -33.45588)
+
+[node name="Music" type="Node3D" parent="." unique_id=967918234]
+script = ExtResource("12_lhp3t")
+
+[node name="Arpegio" type="Node3D" parent="Music" unique_id=1763436854]
+script = ExtResource("12_lhp3t")
+
+[node name="DynamicAudioComponent" type="Node" parent="Music/Arpegio" unique_id=533131910]
+script = ExtResource("21_5oxhp")
+audioName = "arpegiotrack"
+
+[node name="TweenComponent" type="Node" parent="Music/Arpegio" unique_id=770378532]
+script = ExtResource("22_nt2eh")
+
+[node name="AudioComponent" type="Node" parent="Music/Arpegio" unique_id=1906377584]
+script = ExtResource("23_5cm5d")
+audioName = "arpegiotrack"
+loop = true
+
+[node name="Bass" type="Node3D" parent="Music" unique_id=1789750474]
+script = ExtResource("12_lhp3t")
+
+[node name="DynamicAudioComponent" type="Node" parent="Music/Bass" unique_id=582168110]
+script = ExtResource("21_5oxhp")
+audioName = "basstrack"
+
+[node name="TweenComponent" type="Node" parent="Music/Bass" unique_id=1515130109]
+script = ExtResource("22_nt2eh")
+
+[node name="AudioComponent" type="Node" parent="Music/Bass" unique_id=175552006]
+script = ExtResource("23_5cm5d")
+audioName = "basstrack"
+loop = true
+
+[node name="Chords" type="Node3D" parent="Music" unique_id=600066942]
+script = ExtResource("12_lhp3t")
+
+[node name="DynamicAudioComponent" type="Node" parent="Music/Chords" unique_id=225602691]
+script = ExtResource("21_5oxhp")
+audioName = "chordstrack"
+
+[node name="TweenComponent" type="Node" parent="Music/Chords" unique_id=1378975740]
+script = ExtResource("22_nt2eh")
+
+[node name="AudioComponent" type="Node" parent="Music/Chords" unique_id=1869830411]
+script = ExtResource("23_5cm5d")
+audioName = "chordstrack"
+loop = true
+
+[node name="Melody" type="Node3D" parent="Music" unique_id=1058141928]
+script = ExtResource("12_lhp3t")
+
+[node name="DynamicAudioComponent" type="Node" parent="Music/Melody" unique_id=533683638]
+script = ExtResource("21_5oxhp")
+audioName = "melodytrack"
+
+[node name="TweenComponent" type="Node" parent="Music/Melody" unique_id=797011773]
+script = ExtResource("22_nt2eh")
+
+[node name="AudioComponent" type="Node" parent="Music/Melody" unique_id=1937477037]
+script = ExtResource("23_5cm5d")
+audioName = "melodytrack"
+loop = true
 
 [editable path="Enemy"]

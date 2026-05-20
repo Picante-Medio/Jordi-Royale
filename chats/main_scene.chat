@@ -24,6 +24,7 @@ SYSTEM DamageSystem
 SYSTEM DropSystem
 SYSTEM ProgressionSystem
 SYSTEM StatSystem
+SYSTEM MusicSystem
 
 ENTITY Skybox 1
     COMPONENT TransformComponent
@@ -2057,6 +2058,79 @@ ENTITY Moais 1
             STRING meshName jordi-moai.glb
             STRING materialName 
             BOOL isVisible true
+        START_CHILDREN
+        END_CHILDREN
+    END_ENTITY
+
+    END_CHILDREN
+END_ENTITY
+
+ENTITY Music 1
+    START_CHILDREN
+    ENTITY Arpegio 1
+        COMPONENT DynamicAudioComponent
+            FLOAT maxVolume 1.0
+            FLOAT minVolume 0.0
+            STRING audioName arpegiotrack
+            FLOAT interpolationMiliseconds 1500.0
+        COMPONENT TweenComponent
+        COMPONENT AudioComponent
+            STRING audioName arpegiotrack
+            FLOAT volume 0.0
+            BOOL loop true
+            FLOAT pitch 0.0
+            BOOL isPlaying false
+        START_CHILDREN
+        END_CHILDREN
+    END_ENTITY
+
+    ENTITY Bass 1
+        COMPONENT DynamicAudioComponent
+            FLOAT maxVolume 1.0
+            FLOAT minVolume 0.0
+            STRING audioName basstrack
+            FLOAT interpolationMiliseconds 1500.0
+        COMPONENT TweenComponent
+        COMPONENT AudioComponent
+            STRING audioName basstrack
+            FLOAT volume 0.0
+            BOOL loop true
+            FLOAT pitch 0.0
+            BOOL isPlaying false
+        START_CHILDREN
+        END_CHILDREN
+    END_ENTITY
+
+    ENTITY Chords 1
+        COMPONENT DynamicAudioComponent
+            FLOAT maxVolume 1.0
+            FLOAT minVolume 0.0
+            STRING audioName chordstrack
+            FLOAT interpolationMiliseconds 1500.0
+        COMPONENT TweenComponent
+        COMPONENT AudioComponent
+            STRING audioName chordstrack
+            FLOAT volume 0.0
+            BOOL loop true
+            FLOAT pitch 0.0
+            BOOL isPlaying false
+        START_CHILDREN
+        END_CHILDREN
+    END_ENTITY
+
+    ENTITY Melody 1
+        COMPONENT DynamicAudioComponent
+            FLOAT maxVolume 1.0
+            FLOAT minVolume 0.0
+            STRING audioName melodytrack
+            FLOAT interpolationMiliseconds 1500.0
+        COMPONENT TweenComponent
+        COMPONENT AudioComponent
+            STRING audioName melodytrack
+            FLOAT volume 0.0
+            BOOL loop true
+            FLOAT pitch 0.0
+            BOOL isPlaying false
         START_CHILDREN
         END_CHILDREN
     END_ENTITY

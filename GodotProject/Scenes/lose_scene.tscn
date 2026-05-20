@@ -13,6 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://bwqapp5sejmab" path="res://Resources/enemies/jordi-head.glb" id="11_7rhoi"]
 [ext_resource type="Script" uid="uid://cwpkus4pc4c3r" path="res://addons/HugosChatPlugin/NativeComponents/AnimationComponent.gd" id="12_w4o7h"]
 [ext_resource type="Script" uid="uid://esoqdkwkniof" path="res://addons/HugosChatPlugin/NativeComponents/TextComponent.gd" id="13_xr5qg"]
+[ext_resource type="Script" uid="uid://forlexv385gl" path="res://Components/DynamicAudioComponent.gd" id="14_aaa2f"]
+[ext_resource type="Script" uid="uid://wvkaljk8cwms" path="res://addons/HugosChatPlugin/NativeComponents/TweenComponent.gd" id="15_80pwb"]
+[ext_resource type="Script" uid="uid://bobn8tk556ese" path="res://addons/HugosChatPlugin/NativeComponents/AudioComponent.gd" id="16_l36va"]
 
 [node name="lose_scene" type="Node3D" unique_id=425554917]
 script = ExtResource("1_bjqob")
@@ -169,3 +172,66 @@ spaceWidth = 0.01
 colour = Vector4(1, 1, 1, 1)
 colourTop = Vector4(1, 1, 1, 1)
 colourBottom = Vector4(1, 1, 1, 1)
+
+[node name="Music" type="Node3D" parent="." unique_id=79801875]
+script = ExtResource("6_i5gd0")
+
+[node name="Arpegio" type="Node3D" parent="Music" unique_id=1921087006]
+script = ExtResource("6_i5gd0")
+
+[node name="DynamicAudioComponent" type="Node" parent="Music/Arpegio" unique_id=1499382191]
+script = ExtResource("14_aaa2f")
+audioName = "arpegiotrack"
+
+[node name="TweenComponent" type="Node" parent="Music/Arpegio" unique_id=182390415]
+script = ExtResource("15_80pwb")
+
+[node name="AudioComponent" type="Node" parent="Music/Arpegio" unique_id=1470498768]
+script = ExtResource("16_l36va")
+audioName = "arpegiotrack"
+loop = true
+
+[node name="Bass" type="Node3D" parent="Music" unique_id=86787294]
+script = ExtResource("6_i5gd0")
+
+[node name="DynamicAudioComponent" type="Node" parent="Music/Bass" unique_id=1022710072]
+script = ExtResource("14_aaa2f")
+audioName = "basstrack"
+
+[node name="TweenComponent" type="Node" parent="Music/Bass" unique_id=891843217]
+script = ExtResource("15_80pwb")
+
+[node name="AudioComponent" type="Node" parent="Music/Bass" unique_id=1611452129]
+script = ExtResource("16_l36va")
+audioName = "basstrack"
+loop = true
+
+[node name="Chords" type="Node3D" parent="Music" unique_id=1596271571]
+script = ExtResource("6_i5gd0")
+
+[node name="DynamicAudioComponent" type="Node" parent="Music/Chords" unique_id=1510442175]
+script = ExtResource("14_aaa2f")
+audioName = "chordstrack"
+
+[node name="TweenComponent" type="Node" parent="Music/Chords" unique_id=1943206312]
+script = ExtResource("15_80pwb")
+
+[node name="AudioComponent" type="Node" parent="Music/Chords" unique_id=1709811664]
+script = ExtResource("16_l36va")
+audioName = "chordstrack"
+loop = true
+
+[node name="Melody" type="Node3D" parent="Music" unique_id=1031097944]
+script = ExtResource("6_i5gd0")
+
+[node name="DynamicAudioComponent" type="Node" parent="Music/Melody" unique_id=855147100]
+script = ExtResource("14_aaa2f")
+audioName = "melodytrack"
+
+[node name="TweenComponent" type="Node" parent="Music/Melody" unique_id=1477853825]
+script = ExtResource("15_80pwb")
+
+[node name="AudioComponent" type="Node" parent="Music/Melody" unique_id=1062737249]
+script = ExtResource("16_l36va")
+audioName = "melodytrack"
+loop = true
