@@ -3,8 +3,7 @@
 [ext_resource type="Script" uid="uid://d3gpbv1up76xn" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="1_83jca"]
 [ext_resource type="Script" uid="uid://5ysnehctvx5b" path="res://addons/HugosChatPlugin/NativeComponents/ColliderComponent.gd" id="2_4rfy7"]
 [ext_resource type="Script" uid="uid://cmidua6v4bry" path="res://addons/HugosChatPlugin/NativeComponents/RenderComponent.gd" id="2_paxit"]
-[ext_resource type="PackedScene" uid="uid://sexmm4a14j08" path="res://Resources/jordi/jordi-moai.glb" id="3_qpgin"]
-[ext_resource type="Script" uid="uid://b4cohkcfhgq44" path="res://addons/HugosChatPlugin/NativeComponents/RigidBodyComponent.gd" id="5_dsilo"]
+[ext_resource type="Script" uid="uid://dpjupwgyydq3o" path="res://addons/HugosChatPlugin/NativeComponents/RigidBodyComponent.gd" id="5_dsilo"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_c771c"]
 height = 8.432739
@@ -18,7 +17,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10321045, 0)
 shape = SubResource("CylinderShape3D_c771c")
 script = ExtResource("2_4rfy7")
 active = true
-useGizmo = true
 info = SubResource("CylinderShape3D_c771c")
 
 [node name="RigidBodyComponent" type="Node" parent="." unique_id=1471038585]
@@ -30,4 +28,4 @@ gravity = Vector3(0, 0, 0)
 script = ExtResource("2_paxit")
 mesh_name = "jordi-moai.glb"
 
-[node name="jordi-moai" parent="RenderComponent" unique_id=721947767 instance=ExtResource("3_qpgin")]
+[node name="jordi-moai" parent="RenderComponent" unique_id=721947767]

@@ -26,7 +26,6 @@ shape = SubResource("CapsuleShape3D_8qf41")
 script = ExtResource("2_ccxdj")
 friction = 0.5
 active = true
-useGizmo = true
 info = SubResource("CapsuleShape3D_hl644")
 metadata/_custom_type_script = "uid://5ysnehctvx5b"
 

@@ -11,7 +11,7 @@ ENTITY Farton 1
         VECTOR_3 positionOffset 0.0 0.0 0.0
         QUATERNION rotationOffset 0.70281136035919 0.0 0.0 0.71137624979019
         BOOL active true
-        BOOL useGizmo true
+        BOOL useGizmo false
         BOOL isTrigger false
     COMPONENT RigidBodyComponent
         FLOAT mass 0.5

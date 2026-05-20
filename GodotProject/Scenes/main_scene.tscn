@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://dq2fl1vp76r7r"]
 
-[ext_resource type="Script" uid="uid://dsrxmoaefi1rn" path="res://addons/HugosChatPlugin/Entities/scene_tracker.gd" id="1_865ah"]
+[ext_resource type="Script" uid="uid://cy1d1kwuy1yu4" path="res://addons/HugosChatPlugin/Entities/scene_tracker.gd" id="1_865ah"]
 [ext_resource type="Script" uid="uid://d3gpbv1up76xn" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="2_huasi"]
 [ext_resource type="Script" uid="uid://bjwx87l5l8cjv" path="res://addons/HugosChatPlugin/NativeComponents/CameraComponent.gd" id="3_drdnd"]
 [ext_resource type="Script" uid="uid://5ysnehctvx5b" path="res://addons/HugosChatPlugin/NativeComponents/ColliderComponent.gd" id="3_m1efj"]
-[ext_resource type="Script" uid="uid://b4cohkcfhgq44" path="res://addons/HugosChatPlugin/NativeComponents/RigidBodyComponent.gd" id="4_mai8y"]
+[ext_resource type="Script" uid="uid://dpjupwgyydq3o" path="res://addons/HugosChatPlugin/NativeComponents/RigidBodyComponent.gd" id="4_mai8y"]
 [ext_resource type="Script" uid="uid://chnmaof0a3ll8" path="res://Components/LevelComponent.gd" id="5_nt2eh"]
 [ext_resource type="Script" uid="uid://dgscgud8jyhsm" path="res://Components/SpeedComponent.gd" id="6_drdnd"]
 [ext_resource type="Script" uid="uid://yr66mrh8xaa8" path="res://Components/HPComponent.gd" id="9_8edxt"]
@@ -17,10 +17,10 @@
 [ext_resource type="Script" uid="uid://dk4tsyuerxuda" path="res://addons/HugosChatPlugin/NativeComponents/PanelComponent.gd" id="14_psl12"]
 [ext_resource type="Script" uid="uid://esoqdkwkniof" path="res://addons/HugosChatPlugin/NativeComponents/TextComponent.gd" id="15_2ebs2"]
 [ext_resource type="PackedScene" uid="uid://dhhopmfyxf4cv" path="res://Prefabs/moai.tscn" id="16_gnsmo"]
-[ext_resource type="Script" uid="uid://chmo4h0bkhtvm" path="res://Components/HPTextTag.gd" id="20_b48ew"]
+[ext_resource type="Script" uid="uid://c6ulchdj60hbe" path="res://Components/HPTextTag.gd" id="20_b48ew"]
 [ext_resource type="PackedScene" uid="uid://c4148ap0mlp3i" path="res://Prefabs/Enemy.tscn" id="20_jvnna"]
 [ext_resource type="Script" uid="uid://forlexv385gl" path="res://Components/DynamicAudioComponent.gd" id="21_5oxhp"]
-[ext_resource type="Script" uid="uid://cj7lmiqjhcst2" path="res://Components/XPTextTag.gd" id="21_8edxt"]
+[ext_resource type="Script" uid="uid://cqf0jl0bf5sev" path="res://Components/XPTextTag.gd" id="21_8edxt"]
 [ext_resource type="Script" uid="uid://wvkaljk8cwms" path="res://addons/HugosChatPlugin/NativeComponents/TweenComponent.gd" id="22_nt2eh"]
 [ext_resource type="Script" uid="uid://bobn8tk556ese" path="res://addons/HugosChatPlugin/NativeComponents/AudioComponent.gd" id="23_5cm5d"]
 
@@ -33,7 +33,7 @@ size = Vector3(500, 0.6121826, 500)
 
 [node name="main_scene" type="Node3D" unique_id=1228723441]
 script = ExtResource("1_865ah")
-systems = Array[int]([1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 32, 20, 31, 29, 16, 10, 25, 22, 29, 19, 12, 11, 18, 21, 23])
+systems = Array[int]([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 20, 31, 16, 10, 22, 19, 12, 18, 24, 13, 26, 15, 17, 28, 23, 21, 25])
 
 [node name="Skybox" type="Node3D" parent="." unique_id=1067618066]
 transform = Transform3D(1.33, 0, 0, 0, 1.33, 0, 0, 0, 1.33, 0, 0, 0)
