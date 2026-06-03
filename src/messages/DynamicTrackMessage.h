@@ -11,6 +11,6 @@ enum Action {
 
 struct DynamicTrackMessage : HUGO::Message {
 
-    HUGO::String trackName = "";
+    std::string trackName = "";
     Action action;
 };

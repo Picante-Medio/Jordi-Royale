@@ -7,16 +7,16 @@
 HSYSTEM(EnemySpawnSystem)
 private:
     EntityID playerID;
-    std::vector<HUGO::String> prefabs;
-    std::vector<HUGO::String> bossPrefabs;
+    std::vector<std::string> prefabs;
+    std::vector<std::string> bossPrefabs;
 
     HUGO::Int spawnTime = 2000;    //in miliseconds
     HUGO::Int enemySpawnTimer = 0;
     HUGO::Int enemyLevel = 1;
 
-    const HUGO::Float spawnRadius = 50.f;
+    const float spawnRadius = 50.f;
 
-    void spawnEnemy(HUGO::String prefab);
+    void spawnEnemy(std::string prefab);
 public:
     void init() override;
     void update(uint32_t dt) override;

@@ -57,10 +57,10 @@ void
 LoseSceneSystem::initTime(ClockTag& time){
     scene.modifyComponent<TextComponent>(time.entity, [this](TextComponent& text){
         
-        HUGO::String sHours = "";
-        HUGO::String sMinutes = "";
-        HUGO::String sSeconds = "";
-        HUGO::String sMilisenconds = "";
+        std::string sHours = "";
+        std::string sMinutes = "";
+        std::string sSeconds = "";
+        std::string sMilisenconds = "";
 
         UpgradesManager ins = UpgradesManager::Instance();
 
@@ -75,7 +75,7 @@ LoseSceneSystem::initTime(ClockTag& time){
         sSeconds += std::to_string(ins.getSeconds());
         sMilisenconds += std::to_string(ins.getMiliseconds());
 
-        HUGO::String timeText = "Time: " + sHours + ":" + sMinutes + ":" + sSeconds + ":" + sMilisenconds;
+        std::string timeText = "Time: " + sHours + ":" + sMinutes + ":" + sSeconds + ":" + sMilisenconds;
         text.text = timeText;
     });
 }
@@ -84,7 +84,7 @@ void
 LoseSceneSystem::initEnemyCount(EnemyTag& count){
     scene.modifyComponent<TextComponent>(count.entity, [this](TextComponent& text){
         
-        HUGO::String countText = "Enemies defeated: ";
+        std::string countText = "Enemies defeated: ";
         countText += std::to_string(UpgradesManager::Instance().getEnemies());
         text.text = countText;
     });

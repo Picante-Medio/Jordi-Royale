@@ -4,10 +4,10 @@
 
 HSYSTEM(AliOliSystem)
 
-    HUGO::Float damage = 5.f;
+    float damage = 5.f;
     HUGO::Int count = 1;
 
-    HUGO::Bool active = false;
+    bool active = false;
 public:
     void init() override;
     void onLoad() override;

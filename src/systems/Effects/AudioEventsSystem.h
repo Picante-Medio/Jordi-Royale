@@ -5,7 +5,7 @@
 
 HSYSTEM(AudioEventsSystem)
 
-    void sendToggleTrack(HUGO::String trackname);
+    void sendToggleTrack(std::string trackname);
 public:
     void init() override;
     void onLoad() override;

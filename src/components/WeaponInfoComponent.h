@@ -4,7 +4,7 @@
 
 HCOMPONENT(WeaponInfoComponent)
 
-HUGO::String prefab;
+std::string prefab;
 
 // ms between firing each attack
 uint32_t firingRate;

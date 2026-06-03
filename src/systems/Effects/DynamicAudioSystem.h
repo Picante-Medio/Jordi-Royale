@@ -15,14 +15,14 @@ HSYSTEM(DynamicAudioSystem)
         bool active;
     };
 
-    std::unordered_map<HUGO::String, TrackEntity> trackEntities;
+    std::unordered_map<std::string, TrackEntity> trackEntities;
     int activeCounter = 0;
 
-    void activateTrack(HUGO::String track);
-    void deactivateTrack(HUGO::String track);
+    void activateTrack(std::string track);
+    void deactivateTrack(std::string track);
 
     void equalizeTracks();
-    void changeTrackState(HUGO::String track, Action action);
+    void changeTrackState(std::string track, Action action);
 
     void onUpdateDyn(DynamicAudioComponent& dyn);
 public:

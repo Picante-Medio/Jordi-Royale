@@ -41,7 +41,7 @@ DynamicAudioSystem::onLoad() {
 }
 
 void 
-DynamicAudioSystem::activateTrack(HUGO::String trackName) {
+DynamicAudioSystem::activateTrack(std::string trackName) {
     if (trackEntities[trackName].active)
         return;
 
@@ -53,7 +53,7 @@ DynamicAudioSystem::activateTrack(HUGO::String trackName) {
 }
 
 void 
-DynamicAudioSystem::deactivateTrack(HUGO::String trackName) {
+DynamicAudioSystem::deactivateTrack(std::string trackName) {
     if (!trackEntities[trackName].active)
         return;
 
@@ -95,7 +95,7 @@ DynamicAudioSystem::equalizeTracks() {
 }
 
 void 
-DynamicAudioSystem::changeTrackState(HUGO::String trackName, Action action) {
+DynamicAudioSystem::changeTrackState(std::string trackName, Action action) {
 
     if(!trackEntities.count(trackName)) 
         return;

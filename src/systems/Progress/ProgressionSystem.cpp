@@ -72,10 +72,10 @@ ProgressionSystem::update(uint32_t dt){
         // Update clock
         item.modify<TextComponent>([this](TextComponent& text){
 
-            HUGO::String sHours = "";
-            HUGO::String sMinutes = "";
-            HUGO::String sSeconds = "";
-            HUGO::String sMilisenconds = "";
+            std::string sHours = "";
+            std::string sMinutes = "";
+            std::string sSeconds = "";
+            std::string sMilisenconds = "";
 
             if(hours < 10) sHours += "0";
             if(minutes < 10) sMinutes += "0";
@@ -88,7 +88,7 @@ ProgressionSystem::update(uint32_t dt){
             sSeconds += std::to_string(seconds);
             sMilisenconds += std::to_string(miliseconds);
 
-            HUGO::String timeText = sHours + ":" + sMinutes + ":" + sSeconds + ":" + sMilisenconds;
+            std::string timeText = sHours + ":" + sMinutes + ":" + sSeconds + ":" + sMilisenconds;
             text.text = timeText;
         });
     }

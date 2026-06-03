@@ -102,7 +102,7 @@ void PlayerMovementSystem::fixedUpdate(uint32_t dt){
             item.modify<TransformComponent>([rb, direction](TransformComponent& trans){
                 if(direction == HUGO::Vector3()) return;
                 HUGO::Vector3 rotation = HUGO::Vector3(0, 0, 1).cross(direction);
-                HUGO::Float wValue = sqrt(pow(HUGO::Vector3(0, 0, 1).length(), 2) * pow(direction.length(), 2)) + direction.z;
+                float wValue = sqrt(pow(HUGO::Vector3(0, 0, 1).length(), 2) * pow(direction.length(), 2)) + direction.z;
                 trans.rotation = HUGO::Quaternion(wValue, rotation.x, rotation.y, rotation.z);
 
                 // Needed because previous calculations doesn't work properly when going forward and I don't know math

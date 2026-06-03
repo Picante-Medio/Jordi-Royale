@@ -53,7 +53,7 @@ void
 StatSystem::updateHPText(HPComponent& hp){
     if(scene.hasComponent<PlayerComponent>(hp.entity)){
         scene.query<HPTextTag, TextComponent>().begin()->modify<TextComponent>([hp](TextComponent& text){
-            HUGO::String result = "HP: ";
+            std::string result = "HP: ";
             result += std::to_string(hp.CurrentHP);
             result += " / ";
             result += std::to_string(hp.HPMax);
@@ -67,7 +67,7 @@ void
 StatSystem::updateXPText(LevelComponent& xp){
     if(scene.hasComponent<PlayerComponent>(xp.entity)){
         scene.query<XPTextTag, TextComponent>().begin()->modify<TextComponent>([xp](TextComponent& text){
-            HUGO::String result = "XP: ";
+            std::string result = "XP: ";
             result += std::to_string(xp.currentExperience);
             result += " / ";
             result += std::to_string(xp.experienceToNextLevel);

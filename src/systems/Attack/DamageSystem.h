@@ -7,11 +7,11 @@ private:
 void changeHP(EntityID id, HUGO::Int hp);
 EntityID playerID;
 
-HUGO::Float msEnemyCooldown = 300;
-HUGO::Float timeSinceEnemyCooldown = 300;
+float msEnemyCooldown = 300;
+float timeSinceEnemyCooldown = 300;
 
-HUGO::Float msPlayerCooldown = 300;
-HUGO::Float timeSincePlayerCooldown = 300;
+float msPlayerCooldown = 300;
+float timeSincePlayerCooldown = 300;
 
 public:
 void init() override;
