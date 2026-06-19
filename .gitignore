@@ -28,3 +28,6 @@
 *.uid
 .builds/
 export_presets.cfg
+
+#Ignores de clangd
+**clangd.cpp

@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dcu38ionq78c8"]
+
+[ext_resource type="Script" uid="uid://bv4fdb5khcnbk" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="1_dqlyx"]
+[ext_resource type="Script" uid="uid://bcy5j0b8kojdh" path="res://Components/XPComponent.gd" id="2_2j81c"]
+[ext_resource type="Script" uid="uid://bpive0dt6e0xe" path="res://addons/HugosChatPlugin/NativeComponents/RenderComponent.gd" id="3_1c0x6"]
+[ext_resource type="Script" uid="uid://5g2xdwa7tbk8" path="res://Components/PickableComponent.gd" id="4_2j81c"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_dqlyx"]
+
+[node name="Experience" type="Node3D" unique_id=938051609]
+transform = Transform3D(0.385, 0, 0, 0, 0.385, 0, 0, 0, 0.385, 0, 0, 0)
+script = ExtResource("1_dqlyx")
+metadata/_custom_type_script = "uid://bv4fdb5khcnbk"
+
+[node name="XPComponent" type="Node" parent="." unique_id=2014084323]
+script = ExtResource("2_2j81c")
+metadata/_custom_type_script = "uid://bcy5j0b8kojdh"
+
+[node name="RenderComponent" type="MeshInstance3D" parent="." unique_id=1620803185]
+script = ExtResource("3_1c0x6")
+mesh_name = "sphere.mesh"
+metadata/_custom_type_script = "uid://bpive0dt6e0xe"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RenderComponent" unique_id=313259280]
+mesh = SubResource("SphereMesh_dqlyx")
+
+[node name="PickableComponent" type="Node" parent="." unique_id=620507334]
+script = ExtResource("4_2j81c")
+metadata/_custom_type_script = "uid://5g2xdwa7tbk8"

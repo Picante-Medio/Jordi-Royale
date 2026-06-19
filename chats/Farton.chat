@@ -1,0 +1,40 @@
+PREFAB Farton
+ENTITY Farton 1
+    COMPONENT TransformComponent
+        VECTOR_3 position 0.0 0.0 0.0
+        QUATERNION rotation 0.0 0.0 0.0 1.0
+        VECTOR_3 scale 0.25 0.25 0.25
+    COMPONENT ColliderComponent
+        COLLIDER_INFO info CAPSULE_COLLIDER 0.10000000149012 0.34999999403954
+        FLOAT restitution 0.0
+        FLOAT friction 0.5
+        VECTOR_3 positionOffset 0.0 0.0 0.0
+        QUATERNION rotationOffset 0.70281136035919 0.0 0.0 0.71137624979019
+        BOOL active true
+        BOOL useGizmo false
+        BOOL isTrigger false
+    COMPONENT RigidBodyComponent
+        FLOAT mass 0.5
+        FLOAT linearDamping 0.0
+        FLOAT angularDamping 0.0
+        VECTOR_3 linearVelocity 0.0 0.0 0.0
+        VECTOR_3 angularVelocity 0.0 0.0 0.0
+        FLOAT linearSleepingThreshold 0.0
+        FLOAT angularSleepingThreshold 0.0
+        INT type 0
+        BOOL dontRotateWithPhysicsOnDynamic true
+        VECTOR_3 gravity 0.0 0.0 0.0
+    COMPONENT RenderComponent
+        STRING meshName farton.glb
+        STRING materialName 
+        BOOL isVisible true
+    COMPONENT FartonComponent
+        FLOAT maxDist 20.0
+        FLOAT speed 10.0
+    COMPONENT DamageComponent
+        INT Damage 15
+        INT DamType 1
+    START_CHILDREN
+    END_CHILDREN
+END_ENTITY
+

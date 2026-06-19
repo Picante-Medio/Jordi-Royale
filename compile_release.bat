@@ -1,0 +1,60 @@
+@echo off
+setlocal
+
+echo(
+echo ===================================================
+echo    Compiling Jordi Royale in RELEASE via script
+echo ===================================================
+echo(
+echo ----------------------------------
+echo    Ensuring engine submodule...
+echo ----------------------------------
+echo(
+
+set LOG_DIR=build\logs
+if not exist "%LOG_DIR%" mkdir "%LOG_DIR%"
+
+powershell -NoProfile -Command ^
+  "git submodule update --init --recursive 2>&1 | Tee-Object '%LOG_DIR%\git_submodules.log'; exit $LASTEXITCODE"
+
+if errorlevel 1 (
+    echo Error updating engine submodule. Check "%LOG_DIR%\git_submodules.log" for more information
+    exit /b 1
+)
+
+
+echo(
+echo ----------------------------------
+echo    CMake configure step...
+echo ----------------------------------
+echo(
+
+powershell -NoProfile -Command ^
+  "cmake --preset VS_17_2022_x64 2>&1 | Tee-Object '%LOG_DIR%\configure.log'; exit $LASTEXITCODE"
+
+if errorlevel 1 (
+    echo Error in configuration step. Check "%LOG_DIR%\configure.log" for more information
+    exit /b 1
+)
+
+echo(
+echo ----------------------------------
+echo    CMake compiling step...
+echo ----------------------------------
+echo(
+
+powershell -NoProfile -Command ^
+  "cmake --build --preset RELEASE_VS_17_2022_x64 2>&1 | Tee-Object '%LOG_DIR%\build.log'; exit $LASTEXITCODE"
+
+if errorlevel 1 (
+    echo Error in compiling step. Check "%LOG_DIR%\build.log" for more information
+    exit /b 1
+)
+
+echo(
+echo ======================================
+echo     Compiling finished succesfully
+echo ======================================
+
+endlocal
+pause

@@ -1,0 +1,274 @@
+PREFAB Mountain
+ENTITY Mountain 1
+    COMPONENT TransformComponent
+        VECTOR_3 position 0.0 0.0 0.0
+        QUATERNION rotation 0.0 0.0 0.0 1.0
+        VECTOR_3 scale 1.0 1.0 1.0
+    START_CHILDREN
+    ENTITY Entity3D 1
+        COMPONENT TransformComponent
+            VECTOR_3 position 0.0 0.0 0.0
+            QUATERNION rotation 0.0 0.0 0.0 1.0
+            VECTOR_3 scale 1.0 1.0 1.0
+        COMPONENT RenderComponent
+            STRING meshName mountain.glb
+            STRING materialName 
+            BOOL isVisible true
+        COMPONENT RigidBodyComponent
+            FLOAT mass 0.0
+            FLOAT linearDamping 0.0
+            FLOAT angularDamping 0.0
+            VECTOR_3 linearVelocity 0.0 0.0 0.0
+            VECTOR_3 angularVelocity 0.0 0.0 0.0
+            FLOAT linearSleepingThreshold 0.0
+            FLOAT angularSleepingThreshold 0.0
+            INT type 1
+            BOOL dontRotateWithPhysicsOnDynamic false
+            VECTOR_3 gravity 0.0 -9.80000019073486 0.0
+        COMPONENT ColliderComponent
+            COLLIDER_INFO info BOX_COLLIDER 9.80055999755859 7.36807250976562 9.43167114257812
+            FLOAT restitution 0.0
+            FLOAT friction 0.0
+            VECTOR_3 positionOffset 0.10582733154297 4.19503784179688 -0.06631469726562
+            QUATERNION rotationOffset 0.0 0.0 0.0 1.0
+            BOOL active true
+            BOOL useGizmo true
+            BOOL isTrigger false
+        START_CHILDREN
+        END_CHILDREN
+    END_ENTITY
+
+    ENTITY Entity3D2 1
+        COMPONENT TransformComponent
+            VECTOR_3 position 17.519847869873 0.0 0.0
+            QUATERNION rotation 0.0 0.0 0.0 1.0
+            VECTOR_3 scale 1.0 1.0 1.0
+        COMPONENT RenderComponent
+            STRING meshName mountain.glb
+            STRING materialName 
+            BOOL isVisible true
+        COMPONENT RigidBodyComponent
+            FLOAT mass 0.0
+            FLOAT linearDamping 0.0
+            FLOAT angularDamping 0.0
+            VECTOR_3 linearVelocity 0.0 0.0 0.0
+            VECTOR_3 angularVelocity 0.0 0.0 0.0
+            FLOAT linearSleepingThreshold 0.0
+            FLOAT angularSleepingThreshold 0.0
+            INT type 1
+            BOOL dontRotateWithPhysicsOnDynamic false
+            VECTOR_3 gravity 0.0 -9.80000019073486 0.0
+        COMPONENT ColliderComponent
+            COLLIDER_INFO info BOX_COLLIDER 9.80055999755859 7.36807250976562 9.43167114257812
+            FLOAT restitution 0.0
+            FLOAT friction 0.0
+            VECTOR_3 positionOffset 0.10582733154297 4.19503784179688 -0.06631469726562
+            QUATERNION rotationOffset 0.0 0.0 0.0 1.0
+            BOOL active true
+            BOOL useGizmo false
+            BOOL isTrigger false
+        START_CHILDREN
+        END_CHILDREN
+    END_ENTITY
+
+    ENTITY Entity3D3 1
+        COMPONENT TransformComponent
+            VECTOR_3 position -34.8930244445801 0.0 0.0
+            QUATERNION rotation 0.0 0.0 0.0 1.0
+            VECTOR_3 scale 1.0 1.0 1.0
+        COMPONENT RenderComponent
+            STRING meshName mountain.glb
+            STRING materialName 
+            BOOL isVisible true
+        COMPONENT RigidBodyComponent
+            FLOAT mass 0.0
+            FLOAT linearDamping 0.0
+            FLOAT angularDamping 0.0
+            VECTOR_3 linearVelocity 0.0 0.0 0.0
+            VECTOR_3 angularVelocity 0.0 0.0 0.0
+            FLOAT linearSleepingThreshold 0.0
+            FLOAT angularSleepingThreshold 0.0
+            INT type 1
+            BOOL dontRotateWithPhysicsOnDynamic false
+            VECTOR_3 gravity 0.0 -9.80000019073486 0.0
+        COMPONENT ColliderComponent
+            COLLIDER_INFO info BOX_COLLIDER 9.80055999755859 7.36807250976562 9.43167114257812
+            FLOAT restitution 0.0
+            FLOAT friction 0.0
+            VECTOR_3 positionOffset 0.10582733154297 4.19503784179688 -0.06631469726562
+            QUATERNION rotationOffset 0.0 0.0 0.0 1.0
+            BOOL active true
+            BOOL useGizmo false
+            BOOL isTrigger false
+        START_CHILDREN
+        END_CHILDREN
+    END_ENTITY
+
+    ENTITY Entity3D4 1
+        COMPONENT TransformComponent
+            VECTOR_3 position 35.0061454772949 0.0 0.0
+            QUATERNION rotation 0.0 0.0 0.0 1.0
+            VECTOR_3 scale 1.0 1.0 1.0
+        COMPONENT RenderComponent
+            STRING meshName mountain.glb
+            STRING materialName 
+            BOOL isVisible true
+        COMPONENT RigidBodyComponent
+            FLOAT mass 0.0
+            FLOAT linearDamping 0.0
+            FLOAT angularDamping 0.0
+            VECTOR_3 linearVelocity 0.0 0.0 0.0
+            VECTOR_3 angularVelocity 0.0 0.0 0.0
+            FLOAT linearSleepingThreshold 0.0
+            FLOAT angularSleepingThreshold 0.0
+            INT type 1
+            BOOL dontRotateWithPhysicsOnDynamic false
+            VECTOR_3 gravity 0.0 -9.80000019073486 0.0
+        COMPONENT ColliderComponent
+            COLLIDER_INFO info BOX_COLLIDER 9.80055999755859 7.36807250976562 9.43167114257812
+            FLOAT restitution 0.0
+            FLOAT friction 0.0
+            VECTOR_3 positionOffset 0.10582733154297 4.19503784179688 -0.06631469726562
+            QUATERNION rotationOffset 0.0 0.0 0.0 1.0
+            BOOL active true
+            BOOL useGizmo false
+            BOOL isTrigger false
+        START_CHILDREN
+        END_CHILDREN
+    END_ENTITY
+
+    ENTITY Entity3D5 1
+        COMPONENT TransformComponent
+            VECTOR_3 position -53.0298004150391 0.0 0.0
+            QUATERNION rotation 0.0 0.0 0.0 1.0
+            VECTOR_3 scale 1.0 1.0 1.0
+        COMPONENT RenderComponent
+            STRING meshName mountain.glb
+            STRING materialName 
+            BOOL isVisible true
+        COMPONENT RigidBodyComponent
+            FLOAT mass 0.0
+            FLOAT linearDamping 0.0
+            FLOAT angularDamping 0.0
+            VECTOR_3 linearVelocity 0.0 0.0 0.0
+            VECTOR_3 angularVelocity 0.0 0.0 0.0
+            FLOAT linearSleepingThreshold 0.0
+            FLOAT angularSleepingThreshold 0.0
+            INT type 1
+            BOOL dontRotateWithPhysicsOnDynamic false
+            VECTOR_3 gravity 0.0 -9.80000019073486 0.0
+        COMPONENT ColliderComponent
+            COLLIDER_INFO info BOX_COLLIDER 9.80055999755859 7.36807250976562 9.43167114257812
+            FLOAT restitution 0.0
+            FLOAT friction 0.0
+            VECTOR_3 positionOffset 0.10582733154297 4.19503784179688 -0.06631469726562
+            QUATERNION rotationOffset 0.0 0.0 0.0 1.0
+            BOOL active true
+            BOOL useGizmo false
+            BOOL isTrigger false
+        START_CHILDREN
+        END_CHILDREN
+    END_ENTITY
+
+    ENTITY Entity3D6 1
+        COMPONENT TransformComponent
+            VECTOR_3 position 52.3828430175781 0.0 0.0
+            QUATERNION rotation 0.0 0.0 0.0 1.0
+            VECTOR_3 scale 1.0 1.0 1.0
+        COMPONENT RenderComponent
+            STRING meshName mountain.glb
+            STRING materialName 
+            BOOL isVisible true
+        COMPONENT RigidBodyComponent
+            FLOAT mass 0.0
+            FLOAT linearDamping 0.0
+            FLOAT angularDamping 0.0
+            VECTOR_3 linearVelocity 0.0 0.0 0.0
+            VECTOR_3 angularVelocity 0.0 0.0 0.0
+            FLOAT linearSleepingThreshold 0.0
+            FLOAT angularSleepingThreshold 0.0
+            INT type 1
+            BOOL dontRotateWithPhysicsOnDynamic false
+            VECTOR_3 gravity 0.0 -9.80000019073486 0.0
+        COMPONENT ColliderComponent
+            COLLIDER_INFO info BOX_COLLIDER 9.80055999755859 7.36807250976562 9.43167114257812
+            FLOAT restitution 0.0
+            FLOAT friction 0.0
+            VECTOR_3 positionOffset 0.10582733154297 4.19503784179688 -0.06631469726562
+            QUATERNION rotationOffset 0.0 0.0 0.0 1.0
+            BOOL active true
+            BOOL useGizmo false
+            BOOL isTrigger false
+        START_CHILDREN
+        END_CHILDREN
+    END_ENTITY
+
+    ENTITY Entity3D7 1
+        COMPONENT TransformComponent
+            VECTOR_3 position -70.0911865234375 0.0 0.0
+            QUATERNION rotation 0.0 0.0 0.0 1.0
+            VECTOR_3 scale 1.0 1.0 1.0
+        COMPONENT RenderComponent
+            STRING meshName mountain.glb
+            STRING materialName 
+            BOOL isVisible true
+        COMPONENT RigidBodyComponent
+            FLOAT mass 0.0
+            FLOAT linearDamping 0.0
+            FLOAT angularDamping 0.0
+            VECTOR_3 linearVelocity 0.0 0.0 0.0
+            VECTOR_3 angularVelocity 0.0 0.0 0.0
+            FLOAT linearSleepingThreshold 0.0
+            FLOAT angularSleepingThreshold 0.0
+            INT type 1
+            BOOL dontRotateWithPhysicsOnDynamic false
+            VECTOR_3 gravity 0.0 -9.80000019073486 0.0
+        COMPONENT ColliderComponent
+            COLLIDER_INFO info BOX_COLLIDER 9.80055999755859 7.36807250976562 9.43167114257812
+            FLOAT restitution 0.0
+            FLOAT friction 0.0
+            VECTOR_3 positionOffset 0.10582733154297 4.19503784179688 -0.06631469726562
+            QUATERNION rotationOffset 0.0 0.0 0.0 1.0
+            BOOL active true
+            BOOL useGizmo false
+            BOOL isTrigger false
+        START_CHILDREN
+        END_CHILDREN
+    END_ENTITY
+
+    ENTITY Entity3D8 1
+        COMPONENT TransformComponent
+            VECTOR_3 position -16.3543968200684 0.0 0.0
+            QUATERNION rotation 0.0 0.0 0.0 1.0
+            VECTOR_3 scale 1.0 1.0 1.0
+        COMPONENT RenderComponent
+            STRING meshName mountain.glb
+            STRING materialName 
+            BOOL isVisible true
+        COMPONENT RigidBodyComponent
+            FLOAT mass 0.0
+            FLOAT linearDamping 0.0
+            FLOAT angularDamping 0.0
+            VECTOR_3 linearVelocity 0.0 0.0 0.0
+            VECTOR_3 angularVelocity 0.0 0.0 0.0
+            FLOAT linearSleepingThreshold 0.0
+            FLOAT angularSleepingThreshold 0.0
+            INT type 1
+            BOOL dontRotateWithPhysicsOnDynamic false
+            VECTOR_3 gravity 0.0 -9.80000019073486 0.0
+        COMPONENT ColliderComponent
+            COLLIDER_INFO info BOX_COLLIDER 9.80055999755859 7.36807250976562 9.43167114257812
+            FLOAT restitution 0.0
+            FLOAT friction 0.0
+            VECTOR_3 positionOffset 0.10582733154297 4.19503784179688 -0.06631469726562
+            QUATERNION rotationOffset 0.0 0.0 0.0 1.0
+            BOOL active true
+            BOOL useGizmo false
+            BOOL isTrigger false
+        START_CHILDREN
+        END_CHILDREN
+    END_ENTITY
+
+    END_CHILDREN
+END_ENTITY
+

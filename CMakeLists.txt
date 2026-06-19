@@ -11,12 +11,9 @@ include(FetchContent)
 
 FetchContent_Declare(
     HUGO
-    GIT_REPOSITORY https://github.com/Proyecto3-FDI-UCM/2526-Grupo01-HUGO.git
-    GIT_TAG main
-    SOURCE_SUBDIR HUGO
-    UPDATE_DISCONNECTED OFF # uncomment if working offline
-    GIT_SHALLOW TRUE
+    SOURCE_DIR ${CMAKE_SOURCE_DIR}/HUGO/HUGO
 )
+
 
 set(HUGO_BUILD_ENGINE ON CACHE BOOL "" FORCE)
 
@@ -56,3 +53,8 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
     LIBRARY_OUTPUT_DIRECTORY_DEBUG ${CMAKE_SOURCE_DIR}/bin
     LIBRARY_OUTPUT_DIRECTORY_RELEASE ${CMAKE_SOURCE_DIR}/bin)
 
+add_custom_target(copy_assets ALL
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+    ${CMAKE_SOURCE_DIR}/hugo.config
+    ${CMAKE_SOURCE_DIR}/bin/hugo.config
+    COMMAND_EXPAND_LISTS)

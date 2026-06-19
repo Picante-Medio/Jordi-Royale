@@ -1,0 +1,16 @@
+PREFAB Chest
+ENTITY Chest 1
+    COMPONENT TransformComponent
+        VECTOR_3 position 0.0 0.0 0.0
+        QUATERNION rotation 0.0 0.0 0.0 1.0
+        VECTOR_3 scale 1.0 1.0 1.0
+    COMPONENT RenderComponent
+        STRING meshName 
+        STRING materialName 
+        BOOL isVisible true
+    COMPONENT PickableComponent
+        FLOAT pickupRadius 1.535
+    START_CHILDREN
+    END_CHILDREN
+END_ENTITY
+

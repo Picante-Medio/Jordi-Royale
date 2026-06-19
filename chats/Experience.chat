@@ -1,0 +1,18 @@
+PREFAB Experience
+ENTITY Experience 1
+    COMPONENT TransformComponent
+        VECTOR_3 position 0.0 0.0 0.0
+        QUATERNION rotation 0.0 0.0 0.0 1.0
+        VECTOR_3 scale 0.38499999046326 0.38499999046326 0.38499999046326
+    COMPONENT XPComponent
+        INT experience 5
+    COMPONENT RenderComponent
+        STRING meshName sphere.mesh
+        STRING materialName 
+        BOOL isVisible true
+    COMPONENT PickableComponent
+        FLOAT pickupRadius 0.5
+    START_CHILDREN
+    END_CHILDREN
+END_ENTITY
+

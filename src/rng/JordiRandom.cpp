@@ -1,0 +1,29 @@
+#include "JordiRandom.h"
+#include <random>
+
+void
+JordiRandom::Init(unsigned long int seed) {
+    rng = std::default_random_engine(seed);
+}
+
+double 
+JordiRandom::randomDoubleInRange(double minInclusive, double maxExclusive) {
+    std::uniform_real_distribution<double> urd(minInclusive, maxExclusive);
+    return urd(rng);
+}
+
+int 
+JordiRandom::randomIntInRange(int minInclusive, int maxInclusive) {
+    std::uniform_int_distribution<int> uid(minInclusive, maxInclusive);
+    return uid(rng);
+}
+
+double 
+JordiRandom::randomDoubleWithVariance(double value, double variance){
+    return value + randomDoubleInRange(-variance, variance);
+}
+
+int 
+JordiRandom::randomIntWithVariance(int value, int variance){
+    return value + randomIntInRange(-variance, variance);
+}

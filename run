@@ -24,18 +24,17 @@ if [[ $PRINT_INFO == true ]]; then
     echo "Building with preset:   $BUILD_PRESET"
 fi
 
-
 # Configure
 cmake --preset "$CONFIG_PRESET"
 
 # Build
-cmake --build --preset "$BUILD_PRESET" --jobs 8
+cmake --build --preset "$BUILD_PRESET"
 
 # Run
 cd bin
 if [[ $BUILD_TYPE == "Debug" ]]; then
   ./HUGOd
 else
-  ./HUGO
+  ./HUGO JordiRoyale
 fi
 

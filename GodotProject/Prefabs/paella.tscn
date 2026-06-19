@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://do65jd8r7ouev"]
+
+[ext_resource type="Script" uid="uid://dmak3mcg4w0h8" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="1_0dabe"]
+[ext_resource type="Script" uid="uid://c0wlt0qsxdika" path="res://addons/HugosChatPlugin/NativeComponents/RenderComponent.gd" id="2_h8qmv"]
+[ext_resource type="Script" uid="uid://bewpcwg276ktv" path="res://addons/HugosChatPlugin/NativeComponents/ColliderComponent.gd" id="2_v5uqb"]
+[ext_resource type="Script" uid="uid://dvkcj1hifj6ui" path="res://Components/DamageComponent.gd" id="4_iltr4"]
+[ext_resource type="Script" uid="uid://dgu5myf6wqmwa" path="res://addons/HugosChatPlugin/NativeComponents/RigidBodyComponent.gd" id="5_6ydgn"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_0gcoj"]
+
+[node name="Paella" type="Node3D" unique_id=1058428034]
+script = ExtResource("1_0dabe")
+metadata/_custom_type_script = "uid://dmak3mcg4w0h8"
+
+[node name="ColliderComponent" type="CollisionShape3D" parent="." unique_id=376575926]
+shape = SubResource("SphereShape3D_0gcoj")
+script = ExtResource("2_v5uqb")
+active = true
+useGizmo = true
+info = SubResource("SphereShape3D_0gcoj")
+metadata/_custom_type_script = "uid://bewpcwg276ktv"
+
+[node name="RenderComponent" type="MeshInstance3D" parent="." unique_id=1713832227]
+script = ExtResource("2_h8qmv")
+mesh_name = "sphere.mesh"
+metadata/_custom_type_script = "uid://c0wlt0qsxdika"
+
+[node name="DamageComponent" type="Node" parent="." unique_id=1707276634]
+script = ExtResource("4_iltr4")
+metadata/_custom_type_script = "uid://dvkcj1hifj6ui"
+
+[node name="RigidBodyComponent" type="Node" parent="." unique_id=379247711]
+script = ExtResource("5_6ydgn")
+metadata/_custom_type_script = "uid://dgu5myf6wqmwa"

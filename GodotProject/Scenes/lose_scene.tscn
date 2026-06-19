@@ -1,0 +1,237 @@
+[gd_scene format=3 uid="uid://eyiubta3lqqg"]
+
+[ext_resource type="Script" uid="uid://dsrxmoaefi1rn" path="res://addons/HugosChatPlugin/Entities/scene_tracker.gd" id="1_bjqob"]
+[ext_resource type="Script" uid="uid://d3gpbv1up76xn" path="res://addons/HugosChatPlugin/Entities/entity3d.gd" id="2_ncd1c"]
+[ext_resource type="Script" uid="uid://bjwx87l5l8cjv" path="res://addons/HugosChatPlugin/NativeComponents/CameraComponent.gd" id="3_w4o7h"]
+[ext_resource type="Script" uid="uid://cmidua6v4bry" path="res://addons/HugosChatPlugin/NativeComponents/RenderComponent.gd" id="4_xr5qg"]
+[ext_resource type="PackedScene" uid="uid://du56fi1d3anqo" path="res://Resources/jordi/skybox.glb" id="5_uf5po"]
+[ext_resource type="Script" uid="uid://dvoket7v7vbwo" path="res://addons/HugosChatPlugin/Entities/entity.gd" id="6_i5gd0"]
+[ext_resource type="Script" uid="uid://dk4tsyuerxuda" path="res://addons/HugosChatPlugin/NativeComponents/PanelComponent.gd" id="7_aaa2f"]
+[ext_resource type="Script" uid="uid://md4cctv0w84l" path="res://addons/HugosChatPlugin/NativeComponents/ButtonComponent.gd" id="8_80pwb"]
+[ext_resource type="Script" uid="uid://c28cgq4w1hvd6" path="res://Components/ResumeTag.gd" id="9_l36va"]
+[ext_resource type="Script" uid="uid://cr4oouyu1olwy" path="res://Components/ExitTag.gd" id="10_b6qs2"]
+[ext_resource type="PackedScene" uid="uid://bwqapp5sejmab" path="res://Resources/enemies/jordi-head.glb" id="11_7rhoi"]
+[ext_resource type="Script" uid="uid://cwpkus4pc4c3r" path="res://addons/HugosChatPlugin/NativeComponents/AnimationComponent.gd" id="12_w4o7h"]
+[ext_resource type="Script" uid="uid://esoqdkwkniof" path="res://addons/HugosChatPlugin/NativeComponents/TextComponent.gd" id="13_xr5qg"]
+[ext_resource type="Script" uid="uid://forlexv385gl" path="res://Components/DynamicAudioComponent.gd" id="14_aaa2f"]
+[ext_resource type="Script" uid="uid://wvkaljk8cwms" path="res://addons/HugosChatPlugin/NativeComponents/TweenComponent.gd" id="15_80pwb"]
+[ext_resource type="Script" uid="uid://bobn8tk556ese" path="res://addons/HugosChatPlugin/NativeComponents/AudioComponent.gd" id="16_l36va"]
+
+[node name="lose_scene" type="Node3D" unique_id=425554917]
+script = ExtResource("1_bjqob")
+systems = Array[int]([1, 3, 4, 5, 6, 7, 8, 9, 0, 25, 26])
+metadata/_custom_type_script = "uid://dsrxmoaefi1rn"
+
+[node name="Camera" type="Node3D" parent="." unique_id=496740346]
+transform = Transform3D(0.29999998, 0, 0, 0, 0.4073511, 0.08523656, 0, -0.10914939, 0.31810713, 0, 1.708715, 3.6169834)
+script = ExtResource("2_ncd1c")
+
+[node name="Camera3D" type="Camera3D" parent="Camera" unique_id=1650988971]
+transform = Transform3D(3.3333335, 0, 0, 0, 2.3712366, 0, 0, 0, 3.036479, 0, 0, 0)
+fov = 60.0
+
+[node name="CameraComponent" type="Node" parent="Camera" unique_id=474242396]
+script = ExtResource("3_w4o7h")
+mainCamera = true
+clearColor = Vector4(0, 0, 0, 1)
+
+[node name="Skybox" type="Node3D" parent="." unique_id=345314542]
+transform = Transform3D(5.32, 0, 0, 0, 5.32, 0, 0, 0, 5.32, 0, -0.43083662, 0)
+script = ExtResource("2_ncd1c")
+
+[node name="RenderComponent" type="MeshInstance3D" parent="Skybox" unique_id=1028610117]
+script = ExtResource("4_xr5qg")
+mesh_name = "skybox.glb"
+
+[node name="skybox" parent="Skybox/RenderComponent" unique_id=1833941159 instance=ExtResource("5_uf5po")]
+transform = Transform3D(0.99957526, 0.009936266, 0.027396863, -0.008815205, 0.99913085, -0.0407412, -0.027777866, 0.040482387, 0.99879414, 0, 0, 0.08070057)
+
+[node name="YouLose" type="Node3D" parent="." unique_id=89289831]
+script = ExtResource("6_i5gd0")
+
+[node name="PanelComponent" type="Node" parent="YouLose" unique_id=1912993134]
+script = ExtResource("7_aaa2f")
+overlayName = "JordiUI/JordiOverlay10"
+containerName = "JordiUI/JordiOverlay10/JordiContainer10"
+isVisible = true
+left = 0.1
+top = 0.2
+width = 0.8
+height = 0.5
+material = "JordiUI/YouLose"
+
+[node name="Retry" type="Node3D" parent="." unique_id=991009414]
+script = ExtResource("6_i5gd0")
+
+[node name="PanelComponent" type="Node" parent="Retry" unique_id=1037937464]
+script = ExtResource("7_aaa2f")
+overlayName = "JordiUI/JordiOverlay11"
+containerName = "JordiUI/JordiOverlay11/JordiContainer11"
+isVisible = true
+left = 0.36
+top = 0.55
+width = 0.25
+height = 0.1
+material = "JordiUI/Retry"
+
+[node name="ButtonComponent" type="Node" parent="Retry" unique_id=426243314]
+script = ExtResource("8_80pwb")
+normalMaterial = "JordiUI/Retry"
+hoverMaterial = "JordiUI/RetryHover"
+pressedMaterial = "JordiUI/RetryPressed"
+
+[node name="ResumeTag" type="Node" parent="Retry" unique_id=492997336]
+script = ExtResource("9_l36va")
+
+[node name="Exit" type="Node3D" parent="." unique_id=1031394160]
+script = ExtResource("6_i5gd0")
+
+[node name="PanelComponent" type="Node" parent="Exit" unique_id=510435356]
+script = ExtResource("7_aaa2f")
+overlayName = "JordiUI/JordiOverlay12"
+containerName = "JordiUI/JordiOverlay12/JordiContainer12"
+isVisible = true
+left = 0.36
+top = 0.7
+width = 0.25
+height = 0.1
+material = "JordiUI/Exit"
+
+[node name="ButtonComponent" type="Node" parent="Exit" unique_id=187445418]
+script = ExtResource("8_80pwb")
+normalMaterial = "JordiUI/Exit"
+hoverMaterial = "JordiUI/ExitHover"
+pressedMaterial = "JordiUI/ExitPressed"
+
+[node name="ExitTag" type="Node" parent="Exit" unique_id=2024278355]
+script = ExtResource("10_b6qs2")
+
+[node name="Enemy" type="Node3D" parent="." unique_id=1421178535]
+transform = Transform3D(-1.3987646e-08, -5.443141e-16, -0.32, -0.08237424, 0.30921596, 3.6006924e-09, 0.30921596, 0.08237424, -1.351626e-08, 0, 0.938689, 1.7925022)
+script = ExtResource("2_ncd1c")
+metadata/_custom_type_script = "uid://d3gpbv1up76xn"
+
+[node name="RenderComponent" type="MeshInstance3D" parent="Enemy" unique_id=1635828876]
+script = ExtResource("4_xr5qg")
+mesh_name = "jordi-head.glb"
+metadata/_custom_type_script = "uid://cmidua6v4bry"
+
+[node name="jordi-head" parent="Enemy/RenderComponent" unique_id=2009954866 instance=ExtResource("11_7rhoi")]
+transform = Transform3D(1, 0, 7.1054274e-15, 0, 1, -2.6645353e-15, 0, 0, 1, 0, 0, 0)
+
+[node name="AnimationComponent" type="Node" parent="Enemy" unique_id=635498957]
+script = ExtResource("12_w4o7h")
+metadata/_custom_type_script = "uid://cwpkus4pc4c3r"
+
+[node name="EnemiesDefeated" type="Node3D" parent="." unique_id=1107066858]
+script = ExtResource("6_i5gd0")
+metadata/_custom_type_script = "uid://dvoket7v7vbwo"
+
+[node name="PanelComponent" type="Node" parent="EnemiesDefeated" unique_id=1199776011]
+script = ExtResource("7_aaa2f")
+overlayName = "JordiUI/Overlay13"
+containerName = "JordiUI/Overlay13/Container13"
+isVisible = true
+left = 0.8
+top = 0.2
+width = 0.25
+height = 0.1
+
+[node name="TextComponent" type="Node" parent="EnemiesDefeated" unique_id=917079662]
+script = ExtResource("13_xr5qg")
+textAreaName = "JordUI/Overlay14/Container14/Text14"
+text = "Enemies: 0"
+textFont = "Roboto"
+characterHeight = 0.035
+spaceWidth = 0.01
+colour = Vector4(1, 1, 1, 1)
+colourTop = Vector4(1, 1, 1, 1)
+colourBottom = Vector4(1, 1, 1, 1)
+
+[node name="Time" type="Node3D" parent="." unique_id=1367422597]
+script = ExtResource("6_i5gd0")
+metadata/_custom_type_script = "uid://dvoket7v7vbwo"
+
+[node name="PanelComponent" type="Node" parent="Time" unique_id=1068923263]
+script = ExtResource("7_aaa2f")
+overlayName = "JordiUI/Overlay14"
+containerName = "JordiUI/Overlay14/Container14"
+isVisible = true
+left = 0.8
+top = 0.2
+width = 0.25
+height = 0.1
+
+[node name="TextComponent" type="Node" parent="Time" unique_id=132331753]
+script = ExtResource("13_xr5qg")
+textAreaName = "JordUI/Overlay6/Container6/Text6"
+text = "XP: 0 / 100"
+textFont = "Roboto"
+characterHeight = 0.035
+spaceWidth = 0.01
+colour = Vector4(1, 1, 1, 1)
+colourTop = Vector4(1, 1, 1, 1)
+colourBottom = Vector4(1, 1, 1, 1)
+
+[node name="Music" type="Node3D" parent="." unique_id=79801875]
+script = ExtResource("6_i5gd0")
+
+[node name="Arpegio" type="Node3D" parent="Music" unique_id=1921087006]
+script = ExtResource("6_i5gd0")
+
+[node name="DynamicAudioComponent" type="Node" parent="Music/Arpegio" unique_id=1499382191]
+script = ExtResource("14_aaa2f")
+audioName = "arpegiotrack"
+
+[node name="TweenComponent" type="Node" parent="Music/Arpegio" unique_id=182390415]
+script = ExtResource("15_80pwb")
+
+[node name="AudioComponent" type="Node" parent="Music/Arpegio" unique_id=1470498768]
+script = ExtResource("16_l36va")
+audioName = "arpegiotrack"
+loop = true
+
+[node name="Bass" type="Node3D" parent="Music" unique_id=86787294]
+script = ExtResource("6_i5gd0")
+
+[node name="DynamicAudioComponent" type="Node" parent="Music/Bass" unique_id=1022710072]
+script = ExtResource("14_aaa2f")
+audioName = "basstrack"
+
+[node name="TweenComponent" type="Node" parent="Music/Bass" unique_id=891843217]
+script = ExtResource("15_80pwb")
+
+[node name="AudioComponent" type="Node" parent="Music/Bass" unique_id=1611452129]
+script = ExtResource("16_l36va")
+audioName = "basstrack"
+loop = true
+
+[node name="Chords" type="Node3D" parent="Music" unique_id=1596271571]
+script = ExtResource("6_i5gd0")
+
+[node name="DynamicAudioComponent" type="Node" parent="Music/Chords" unique_id=1510442175]
+script = ExtResource("14_aaa2f")
+audioName = "chordstrack"
+
+[node name="TweenComponent" type="Node" parent="Music/Chords" unique_id=1943206312]
+script = ExtResource("15_80pwb")
+
+[node name="AudioComponent" type="Node" parent="Music/Chords" unique_id=1709811664]
+script = ExtResource("16_l36va")
+audioName = "chordstrack"
+loop = true
+
+[node name="Melody" type="Node3D" parent="Music" unique_id=1031097944]
+script = ExtResource("6_i5gd0")
+
+[node name="DynamicAudioComponent" type="Node" parent="Music/Melody" unique_id=855147100]
+script = ExtResource("14_aaa2f")
+audioName = "melodytrack"
+
+[node name="TweenComponent" type="Node" parent="Music/Melody" unique_id=1477853825]
+script = ExtResource("15_80pwb")
+
+[node name="AudioComponent" type="Node" parent="Music/Melody" unique_id=1062737249]
+script = ExtResource("16_l36va")
+audioName = "melodytrack"
+loop = true

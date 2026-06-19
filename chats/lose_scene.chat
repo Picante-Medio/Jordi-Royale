@@ -1,0 +1,189 @@
+SCENE lose_scene
+SYSTEM AudioSystem
+SYSTEM PhysicsGizmoSystem
+SYSTEM TransformSystem
+SYSTEM ParticleSystem
+SYSTEM CameraSystem
+SYSTEM LightSystem
+SYSTEM RenderSystem
+SYSTEM TweenSystem
+SYSTEM UISystem
+SYSTEM ConsoleSystem
+SYSTEM LoseSceneSystem
+SYSTEM ChangeSceneSystem
+SYSTEM MusicSystem
+SYSTEM DynamicAudioSystem
+
+ENTITY Camera 1
+    COMPONENT TransformComponent
+        VECTOR_3 position 0.0 1.70871496200562 3.61698341369629
+        QUATERNION rotation -0.13052615523338 0.0 0.0 0.99144488573074
+        VECTOR_3 scale 0.29999998211861 0.42172089219093 0.32932874560356
+    COMPONENT CameraComponent
+        INT projectionType 0
+        FLOAT fovY 60.0
+        FLOAT nearClip 1.0
+        FLOAT farClip 10000.0
+        FLOAT orthoWidth 10.0
+        FLOAT orthoHeight 10.0
+        BOOL autoAspectRatio true
+        BOOL mainCamera true
+        VECTOR_4 clearColor 0.0 0.0 0.0 1.0
+    START_CHILDREN
+    END_CHILDREN
+END_ENTITY
+
+ENTITY Skybox 1
+    COMPONENT TransformComponent
+        VECTOR_3 position 0.0 -0.43083661794662 0.0
+        QUATERNION rotation 0.0 0.0 0.0 1.0
+        VECTOR_3 scale 5.32000017166138 5.32000017166138 5.32000017166138
+    COMPONENT RenderComponent
+        STRING meshName skybox.glb
+        STRING materialName 
+    START_CHILDREN
+    END_CHILDREN
+END_ENTITY
+
+ENTITY YouLose 1
+    COMPONENT PanelComponent
+        STRING overlayName JordiUI/JordiOverlay10
+        STRING containerName JordiUI/JordiOverlay10/JordiContainer10
+        BOOL isVisible true
+        INT metricsMode 0
+        FLOAT left 0.1
+        FLOAT top 0.2
+        FLOAT width 0.8
+        FLOAT height 0.5
+        STRING material JordiUI/YouLose
+    START_CHILDREN
+    END_CHILDREN
+END_ENTITY
+
+ENTITY Retry 1
+    COMPONENT PanelComponent
+        STRING overlayName JordiUI/JordiOverlay11
+        STRING containerName JordiUI/JordiOverlay11/JordiContainer11
+        BOOL isVisible true
+        INT metricsMode 0
+        FLOAT left 0.36
+        FLOAT top 0.55
+        FLOAT width 0.25
+        FLOAT height 0.1
+        STRING material JordiUI/Retry
+    COMPONENT ButtonComponent
+        STRING normalMaterial JordiUI/Retry
+        STRING hoverMaterial JordiUI/RetryHover
+        STRING pressedMaterial JordiUI/RetryPressed
+        STRING disabledMaterial 
+    COMPONENT ResumeTag
+    START_CHILDREN
+    END_CHILDREN
+END_ENTITY
+
+ENTITY Exit 1
+    COMPONENT PanelComponent
+        STRING overlayName JordiUI/JordiOverlay12
+        STRING containerName JordiUI/JordiOverlay12/JordiContainer12
+        BOOL isVisible true
+        INT metricsMode 0
+        FLOAT left 0.36
+        FLOAT top 0.7
+        FLOAT width 0.25
+        FLOAT height 0.1
+        STRING material JordiUI/Exit
+    COMPONENT ButtonComponent
+        STRING normalMaterial JordiUI/Exit
+        STRING hoverMaterial JordiUI/ExitHover
+        STRING pressedMaterial JordiUI/ExitPressed
+        STRING disabledMaterial 
+    COMPONENT ExitTag
+    START_CHILDREN
+    END_CHILDREN
+END_ENTITY
+
+ENTITY Enemy 1
+    COMPONENT TransformComponent
+        VECTOR_3 position 0.0 0.93868899345398 1.7925021648407
+        QUATERNION rotation 0.09178812801838 -0.70112413167953 -0.09178812801838 0.70112401247025
+        VECTOR_3 scale 0.32000005245209 0.32000005245209 0.31999999284744
+    COMPONENT RenderComponent
+        STRING meshName jordi-head.glb
+        STRING materialName 
+    COMPONENT AnimationComponent
+    START_CHILDREN
+    END_CHILDREN
+END_ENTITY
+
+ENTITY Music 1
+    START_CHILDREN
+    ENTITY Arpegio 1
+        COMPONENT DynamicAudioComponent
+            FLOAT maxVolume 1.0
+            FLOAT minVolume 0.0
+            STRING audioName arpegiotrack
+            FLOAT interpolationMiliseconds 1500.0
+        COMPONENT TweenComponent
+        COMPONENT AudioComponent
+            STRING audioName arpegiotrack
+            FLOAT volume 0.0
+            BOOL loop true
+            FLOAT pitch 0.0
+            BOOL isPlaying false
+        START_CHILDREN
+        END_CHILDREN
+    END_ENTITY
+
+    ENTITY Bass 1
+        COMPONENT DynamicAudioComponent
+            FLOAT maxVolume 1.0
+            FLOAT minVolume 0.0
+            STRING audioName basstrack
+            FLOAT interpolationMiliseconds 1500.0
+        COMPONENT TweenComponent
+        COMPONENT AudioComponent
+            STRING audioName basstrack
+            FLOAT volume 0.0
+            BOOL loop true
+            FLOAT pitch 0.0
+            BOOL isPlaying false
+        START_CHILDREN
+        END_CHILDREN
+    END_ENTITY
+
+    ENTITY Chords 1
+        COMPONENT DynamicAudioComponent
+            FLOAT maxVolume 1.0
+            FLOAT minVolume 0.0
+            STRING audioName chordstrack
+            FLOAT interpolationMiliseconds 1500.0
+        COMPONENT TweenComponent
+        COMPONENT AudioComponent
+            STRING audioName chordstrack
+            FLOAT volume 0.0
+            BOOL loop true
+            FLOAT pitch 0.0
+            BOOL isPlaying false
+        START_CHILDREN
+        END_CHILDREN
+    END_ENTITY
+
+    ENTITY Melody 1
+        COMPONENT DynamicAudioComponent
+            FLOAT maxVolume 1.0
+            FLOAT minVolume 0.0
+            STRING audioName melodytrack
+            FLOAT interpolationMiliseconds 1500.0
+        COMPONENT TweenComponent
+        COMPONENT AudioComponent
+            STRING audioName melodytrack
+            FLOAT volume 0.0
+            BOOL loop true
+            FLOAT pitch 0.0
+            BOOL isPlaying false
+        START_CHILDREN
+        END_CHILDREN
+    END_ENTITY
+
+    END_CHILDREN
+END_ENTITY
