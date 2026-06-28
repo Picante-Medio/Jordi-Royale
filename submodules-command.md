@@ -1,8 +1,9 @@
-### Para actualizar los submodulos:
+### Para inicializar los submodulos:
 
-`git submodule update --init --recursive`
+`git submodule update --init --recursive --remote`
 
-Esto es necesario la primera vez (cuando el submodulo no está inicializado en tu local)
+Esto es necesario la primera vez (cuando el submodulo no está inicializado en tu local).
+También se utiliza para cambiar el commit al que apunta el submodulo al mas reciente de la rama.
 
 ### Configuracion para que en tu ordenador cada vez que hagas pull actualice submodulos
 
