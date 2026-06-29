@@ -47,9 +47,7 @@ void DamageSystem::fixedUpdate(uint32_t dt) {
             changeHP(playerID, -damage.Damage);
             timeSinceEnemyCooldown = 0;
             const HPComponent playerHP = scene.getComponentConst<HPComponent>(playerID);
-            std::cout << playerHP.CurrentHP << std::endl;
             if(!playerHP.dead && playerHP.CurrentHP <= 0){
-                std::cout << "PlayerDead" << std::endl;
                 scene.modifyComponent<HPComponent>(playerHP.entity, [](HPComponent& hp){
                     hp.dead = true;
                 });
@@ -68,12 +66,10 @@ void DamageSystem::fixedUpdate(uint32_t dt) {
         for(EntityID id : collider.getCollisionInfo()){
             if(scene.hasComponent<DamageComponent>(id) && scene.getComponentConst<DamageComponent>(id).DamType == DamageComponent::Player){
                 const DamageComponent& damage = scene.getComponentConst<DamageComponent>(id);
-                // std::cout << "Colisionando con entidad " << damage.entity << "\n";
                 changeHP(collider.entity, -damage.Damage);
                 timeSincePlayerCooldown = 0;
                 HPComponent hp = enemy.getConst<HPComponent>();
                 if(!hp.dead && hp.CurrentHP <= 0){
-                    // std::cout << "Enemigo muelto\n";
                     scene.modifyComponent<HPComponent>(hp.entity, [](HPComponent& ehp){
                         ehp.dead = true;
                     });

@@ -63,7 +63,6 @@ EnemySpawnSystem::update(uint32_t dt) {
 
 void 
 EnemySpawnSystem::spawnEnemy(std::string prefab) {
-    std::cout << "Spawning enemy\n";
     HUGO::ErrorOrType<EntityID> enemyPrefab = scene.instantiatePrefab(prefab);
 
     // Check if prefab exists

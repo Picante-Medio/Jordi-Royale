@@ -26,23 +26,14 @@ ChangeSceneSystem::init() {
     });
     
     scene.subscribe<LeveledUpMessage>([this](std::shared_ptr<HUGO::Message> message) {
-        ChangeSceneMessage signal;
-        signal.sceneName = "upgrades_scene";
-        signal.destroyCurrent = false;
-        
-        scene.sendMessage(signal);
+        scene.changeScene("upgrades_scene");
     });
     
     scene.subscribe<ChestGrabMessage>([this](std::shared_ptr<HUGO::Message> message) {
-        ChangeSceneMessage signal;
-        signal.sceneName = "upgrades_scene";
-        signal.destroyCurrent = false;
-        
-        scene.sendMessage(signal);
+        scene.changeScene("upgrades_scene");
     });
 
 }
 
 void
-ChangeSceneSystem::update(uint32_t) {
-}
+ChangeSceneSystem::update(uint32_t) {}

@@ -1,7 +1,6 @@
 #include "DynamicAudioSystem.h"
 
 #include <cmath>
-#include <iostream>
 #include <memory>
 
 #include "AudioComponent.h"
@@ -24,11 +23,9 @@ DynamicAudioSystem::init() {
 
 void 
 DynamicAudioSystem::onLoad() {
-    std::cout << "Dynamic Audio OnLoad\n";
     for(auto pack : scene.query<DynamicAudioComponent, AudioComponent>()) {
         const DynamicAudioComponent& dyn = pack.getConst<DynamicAudioComponent>();
 
-        std::cout << "Found track " << dyn.audioName << "\n";
         trackEntities[dyn.audioName] = TrackEntity{dyn.entity, false};
         pack.modify<AudioComponent>([this, dyn](AudioComponent& ac){
             ac.audioName = dyn.audioName;
@@ -45,7 +42,6 @@ DynamicAudioSystem::activateTrack(std::string trackName) {
     if (trackEntities[trackName].active)
         return;
 
-    std::cout << "Activated track " << trackName << "\n";
     trackEntities[trackName].active = true;
     activeCounter++;
 
@@ -57,7 +53,6 @@ DynamicAudioSystem::deactivateTrack(std::string trackName) {
     if (!trackEntities[trackName].active)
         return;
 
-    std::cout << "Deactivated track " << trackName << "\n";
     trackEntities[trackName].active = false;
     activeCounter--;
 
