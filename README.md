@@ -14,7 +14,7 @@ Es importante si se clona el repositorio de 0 ejecutar `git submodule update --i
 
 ## Como generar ficheros de proyecto en Windows
 
-Ejecutar `build.bat` disponible en la raíz 
+Ejecutar `build_solution.bat` disponible en la raíz 
 
 Los ficheros de solución se generarán en la ruta `./build/Windows/x64`, ahí estará disponible la solución del proyecto.
 
@@ -23,3 +23,7 @@ Los ficheros de solución se generarán en la ruta `./build/Windows/x64`, ahí e
 Se puede utilizar o bien el `.sln` y compilar desde visual studio mediante la interfaz gráfica, o ejecutando `compile_debug.bat` o `compile_release.bat`, según convenga.
 
 Se generará un `HUGO.exe` (o `HUGOd.exe`) en el directorio `./bin` desde el que ejecutar el juego.
+
+### Limpiar proyecto
+
+Para limpiar los ficheros de proyecto y binarios generados será necesario ejecutar `./clean_build.bat`.
