@@ -25,8 +25,6 @@ void PlayerMovementSystem::init(){
 
 // every time the scene is loaded, the mouse position is registered again
 void PlayerMovementSystem::onLoad(){
-    lastMousePosition = HUGO::Vector2(scene.getInput().getMouseRelativePosition().x, 
-                                      scene.getInput().getMouseRelativePosition().y);
 
     for(auto jordi: scene.query<PlayerComponent, AnimationComponent>()){
         jordi.modify<AnimationComponent>([](AnimationComponent& cmp){
@@ -39,21 +37,16 @@ void PlayerMovementSystem::onLoad(){
 
 void PlayerMovementSystem::update(uint32_t){
 
-    HUGO::Vector2 currentMousePosition = HUGO::Vector2(scene.getInput().getMouseRelativePosition().x, 
-                                                       scene.getInput().getMouseRelativePosition().y);
-
     HUGO::Vector3 playerUp = scene.query<PlayerComponent, TransformComponent>().begin()->getConst<TransformComponent>().rotation.up();
     HUGO::Vector3 playerPos = scene.query<PlayerComponent, TransformComponent>().begin()->getConst<TransformComponent>().position;
 
-    HUGO::Vector2 diff = currentMousePosition - lastMousePosition;
-    HUGO::Quaternion rotation = HUGO::Quaternion(HUGO::Radian(HUGO::Degree(-diff.x * 360 * SENSIBILITY)), playerUp); // rigidboy is a cylinder, rotation is not needed
+    HUGO::Quaternion rotation = HUGO::Quaternion(HUGO::Radian(HUGO::Degree(-scene.getInput().getMouseDelta().x * 360 * SENSIBILITY)), playerUp); // rigidboy is a cylinder, rotation is not needed
     for(auto& item : scene.query<TransformComponent, CameraPivotTag>()){
         item.modify<TransformComponent>([rotation](TransformComponent& trans){
             trans.rotation *= rotation;
         });
     }
 
-    lastMousePosition = currentMousePosition;
 
     updateCameraPivot();
 }

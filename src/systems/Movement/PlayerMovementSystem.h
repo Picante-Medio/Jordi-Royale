@@ -6,9 +6,7 @@
 struct TransformComponent;
 HSYSTEM(PlayerMovementSystem)
 
-HUGO::Vector2 lastMousePosition;
-// a value of 1 means that moving the mouse the total horizontal length of the screen will do a 360 degree rotation
-const float SENSIBILITY = 0.75;
+const float SENSIBILITY = 0.001;
 
 // vector from camera to Jordi in x and z exes
 HUGO::Vector3 diffVectorxz;

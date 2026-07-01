@@ -4,6 +4,7 @@
 #include "HugoSystemMacros.h"
 
 HSYSTEM(ChangeSceneSystem)
+    void captureMouseOnGame(std::string sceneName);
 public:
     void init() override;
     void update(uint32_t) override;

@@ -15,21 +15,25 @@ ChangeSceneSystem::init() {
     scene.subscribe<ChangeSceneMessage>([this](std::shared_ptr<HUGO::Message> message) {
         std::shared_ptr<ChangeSceneMessage> m = std::static_pointer_cast<ChangeSceneMessage>(message);
 
-        
+        captureMouseOnGame(m->sceneName);
+
         if(m->destroyCurrent) scene.changeAndDestroyPreviousScene(m->sceneName);
         else scene.changeScene(m->sceneName);
     });
 
     // If player dies, change scene to losing
     scene.subscribe<PlayerDeadMessage>([this](std::shared_ptr<HUGO::Message> message){
+        captureMouseOnGame("lose_scene");
         scene.changeAndDestroyPreviousScene("lose_scene");
     });
     
     scene.subscribe<LeveledUpMessage>([this](std::shared_ptr<HUGO::Message> message) {
+        captureMouseOnGame("upgrades_scene");
         scene.changeScene("upgrades_scene");
     });
     
     scene.subscribe<ChestGrabMessage>([this](std::shared_ptr<HUGO::Message> message) {
+        captureMouseOnGame("upgrades_scene");
         scene.changeScene("upgrades_scene");
     });
 
@@ -37,3 +41,17 @@ ChangeSceneSystem::init() {
 
 void
 ChangeSceneSystem::update(uint32_t) {}
+
+void 
+ChangeSceneSystem::captureMouseOnGame(std::string sceneName){
+
+    HUGO::ErrorOrVoid result;
+
+    if(sceneName == "main_scene")
+        result = scene.getInput().captureMouse(true);
+    else
+        result = scene.getInput().captureMouse(false);
+
+    if(result.isError())
+        scene.log(result.getError());
+}
